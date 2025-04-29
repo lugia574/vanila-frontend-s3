@@ -1,0 +1,19 @@
+@use "../assets/fonts/font";
+@use "./variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+head,
+body {
+  font-family: "Pretendard", "BMDOHYEON", sans-serif;
+  background-color: var(--color-backgrounfd);
+  color: var(--font-basic-color);
+}
+
+.main {
+  padding: 1.5rem 2rem;
+}

@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Run PR Labeler
-        uses: technote-space/pr-labeler-action@v1.7.0
+        uses: technote-space/pr-labeler-action@v4.3.3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

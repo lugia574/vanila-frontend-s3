@@ -17,3 +17,14 @@ body {
 .main {
   padding: 1.5rem 2rem;
 }
+
+// a 밑줄제거
+a{
+  text-decoration: none;
+}
+
+// li 장식 제거
+menu, ol, li{
+  list-style: none;
+}
+

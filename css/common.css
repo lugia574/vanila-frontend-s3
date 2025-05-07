@@ -52,3 +52,16 @@ body {
 .main {
   padding: 1.5rem 2rem;
 }
+
+.blind {
+  position: absolute;
+  top: -9999px;
+}
+
+a {
+  text-decoration: none;
+}
+
+menu, ol, li {
+  list-style: none;
+}

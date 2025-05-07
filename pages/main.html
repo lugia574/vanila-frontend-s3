@@ -4,47 +4,127 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/common.scss" />
-    <link rel="stylesheet" href="./styles/header.scss" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <!-- <link rel="stylesheet" href="../css/header.css" /> -->
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
-    <main>
+    <jean-header></jean-header>
+
+    <main class="main">
       <div class="main-wrap">
-        <div class="main-banner slider">
-          <ul class="slides">
-            <li class="slide"><a href="#"></a></li>
-            <li class="slide"><a href="#"></a></li>
-            <li class="slide"><a href="#"></a></li>
-            <li class="slide"><a href="#"></a></li>
-          </ul>
-          <div class="control-wrap"></div>
-        </div>
-        <div class="contest-banner">
-          <div class="contest-img"></div>
-          <ul class="contest-slider">
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-          </ul>
-        </div>
-        <div class="policy-banner">
-          <div class="policy-img"></div>
-          <ul class="policy-slider">
-            <li class="slide active"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-          </ul>
-        </div>
-        <div class="license-banner">
-          <div class="license-img"></div>
-          <ul class="license-slider">
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-          </ul>
-        </div>
-        <div class="community-wrap"></div>
+        <section class="main-section main-slide-wrap">
+          <h2 class="blind">main slider</h2>
+          <div class="inner">
+            <div class="swiper main-slide">
+              <ul class="swiper-wrapper main-slide-list">
+                <li class="swiper-slide">
+                  <a href="#"><img src="../assets/images-lcw/main-logo1.png" alt="메인배너1" /></a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#"><img src="../assets/images-lcw/main-logo2.png" alt="메인배너2" /></a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#"><img src="../assets/images-lcw/main-logo3.png" alt="메인배너3" /></a>
+                </li>
+              </ul>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-progressbar"></div>
+          </div>
+        </section>
+        <section class="contest-section">
+          <h2 class="blind">contest slider</h2>
+          <div class="inner">
+            <div class="swiper contest-list">
+              <div class="contest-logo">
+                <a href="#">
+                  <img src="../assets/images-lcw/contest-logo.png" alt="공모전 로고"
+                /></a>
+              </div>
+              <ul class="contest-slide">
+                <li class="">
+                  <a href="#"
+                    ><img src="../assets/images-lcw/contest-image1.png" alt="공모전 이미지1"
+                  /></a>
+                </li>
+                <li class="">
+                  <a href="#"
+                    ><img src="../assets/images-lcw/contest-image2.png" alt="공모전 이미지2"
+                  /></a>
+                </li>
+                <li class="">
+                  <a href="#"
+                    ><img src="../assets/images-lcw/contest-image3.png" alt="공모전 이미지3"
+                  /></a>
+                </li>
+                <li class="">
+                  <a href="#"
+                    ><img src="../assets/images-lcw/contest-image4.png" alt="공모전 이미지4"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h2 class="blind">contest slider</h2>
+          <div class="inner">
+            <div class="swiper contest-list">
+              <ul class="contest-slide">
+                <li class="">
+                  <a href="#">정책1</a>
+                </li>
+                <li class="">
+                  <a href="#">정책2</a>
+                </li>
+                <li class="">
+                  <a href="#">정책3</a>
+                </li>
+                <li class="">
+                  <a href="#">정책4</a>
+                </li>
+              </ul>
+              <div class="contest-logo">
+                <a href="#"> <img src="../assets/images-lcw/policy-logo.png" alt="정책 로고" /></a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="policy-section">
+          <h2 class="blind">contest slider</h2>
+          <div class="inner">
+            <div class="swiper contest-list">
+              <div class="contest-logo">
+                <a href="#"> <img src="../assets/images-lcw/license-logo.png" alt="정책 로고" /></a>
+              </div>
+              <ul class="contest-slide">
+                <li class="">
+                  <a href="#">정책1</a>
+                </li>
+                <li class="">
+                  <a href="#">정책2</a>
+                </li>
+                <li class="">
+                  <a href="#">정책3</a>
+                </li>
+                <li class="">
+                  <a href="#">정책4</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="community"></section>
       </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/main/banner.js"></script>
+    <script src="../js/components/header.js"></script>
   </body>
 </html>

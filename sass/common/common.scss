@@ -1,5 +1,6 @@
-@use '../assets/fonts/font';
+@use '../../assets/fonts/font';
 @use './variables';
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,4 +17,9 @@ body {
 
 .main {
   padding: 1.5rem 2rem;
+}
+
+.blind {
+  position: absolute;
+  top: -9999px;
 }

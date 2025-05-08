@@ -25,12 +25,25 @@ body {
 }
 
 // a 밑줄제거
-a{
+a {
   text-decoration: none;
 }
 
 // li 장식 제거
-menu, ol, li{
+menu,
+ol,
+li {
   list-style: none;
 }
 
+/* button 커서 */
+button {
+  cursor: pointer;
+}
+
+/* img, video 정렬 크기 */
+img,
+video {
+  max-width: 100%;
+  vertical-align: middle;
+}

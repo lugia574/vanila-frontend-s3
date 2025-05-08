@@ -1,0 +1,237 @@
+@use "../../assets/fonts/font";
+@use "../common/variables";
+
+body{
+    background-color: white;
+}
+.filter-wrap{
+    width: 70%;
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    
+    ul{
+        display: flex;
+        gap: 10px;
+        padding: 10px;
+        li{
+            a{  
+                width: auto;
+                height: auto    ;
+                border: none;
+                border-radius: 16px;
+                padding: 5px 10px 5px 10px;
+                background-color: var(--color-background);
+            }
+
+        }
+        i{
+            display: block;
+            background-image: url(../../assets/icons/iconmonstr-reload-lined.svg);
+            width: 1.4rem;
+            height: 1.4rem;
+        }
+        
+    }
+
+    div{
+        padding: 10px;
+        position: relative;
+        input{
+            display: flex;
+            margin: 0 auto;
+            height: 45px;
+            width: 60%;
+            border: none;
+            border-radius: 8px;
+            background: rgb(200, 199, 199);
+            padding: 10px 20px;
+            position: relative;
+        }
+        i{
+            position: absolute;
+            display: block;
+            background-image: url(../../assets/icons/iconmonstr-magnifier-lined.svg);
+            width: 1.4rem;
+            height: 1.4rem;
+            background-size: contain; 
+            background-repeat: no-repeat; 
+            background-position: center; 
+
+            // 위치 조정
+            top: 50%; /* 세로 중앙에서 시작 */
+            right: calc(20% + 1.5rem); /* 오른쪽 여백 조정 */
+            transform: translateY(-50%); /* 정확한 세로 중앙 정렬 */
+        }
+
+    }
+}
+
+// 글 분류
+.division{
+    // width 부분 확인 필요
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 0 auto;
+
+    ul{
+        display: flex;
+        gap: 15px;
+        padding: 15px;
+        li{
+            a{
+                font: var(--font-bold);
+                font-size: var(--font-large-size);
+                .card-icon{
+                    display: block;
+                    background-image: url(../../assets/icons/iconmonstr-layout-table-lined.svg);
+                    width: 1.5rem;
+                    height: 1.5rem;
+                }
+                .list-icon{
+                    display: block;
+                    background-image: url(../../assets/icons/iconmonstr-list-lined.svg);
+                    width: 1.5rem;
+                    height: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+// 글
+.content-wrap{
+    display: flex;
+    flex-direction: column; /* 세로 방향 정렬 */
+    gap: 10px;
+    width: 70%;
+    border-radius: 8px;
+    // 그냥 블랙으로?
+    border: 0.5px solid var(--font-basic-color);
+    margin: 0 auto 20px;
+
+    .content-header{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        .left-group, .right-group{
+            display: flex;
+            gap: 20px;
+
+        }
+
+        .left-group{
+            .title{
+                font: var(--font-bold);
+                font-size: var(--font-large-size);
+            }
+            .field{
+                border: none;
+                border-radius: 8px;
+                background-color: var(--default-border);
+                color: var(--color-background);
+                padding: 2px 10px 2px 10px;
+            }
+        }
+
+        .right-group{
+            .type{
+                border: none;
+                border-radius: 8px;
+                background-color: var(--color-background);
+                color: var(--default-border);
+                padding: 2px 10px 2px 10px;
+            }
+            .d-day{
+                border: none;
+                border-radius: 8px;
+                background-color: var(--color-orange);
+                color: var(--color-background);
+                padding: 2px 10px 2px 10px;
+            }
+        }
+    }
+    .content-summary{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    .content-footer{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        .left-group, .right-group{
+            display: flex;
+            gap: 20px;
+        }
+
+        .right-group{
+            .comment{
+                display: flex;
+                gap: 5px;
+                i{
+                    display: block;
+                    background-image: url(../../assets/icons/iconmonstr-speech-bubble-comment-thin.svg);
+                    width: 1.5rem;
+                    height: 1.5rem;
+                }
+            }
+
+            .scrap{
+                display: flex;
+                gap: 5px;
+                i{
+                    display: block;
+                    background-image: url(../../assets/icons/iconmonstr-heart-lined.svg);
+                    width: 1.3rem;
+                    height: 1.3rem;
+                }
+            }
+        }
+
+    }
+}
+
+// 페이징
+.page-num{
+        display: flex;
+        margin: 0 auto;
+    ul{
+        display: flex;
+        gap: 10px;
+        margin: 0 auto;
+        i,li{
+            width: 2rem;
+            height: 2rem;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .left-arrow{
+            background-position: center; /* 배경 이미지 중앙 정렬 */
+            background-repeat: no-repeat; /* 배경 이미지 반복 방지 */
+            background-size: contain;    /* 배경 이미지가 컨테이너에 맞게 조정 */
+            display: block;
+            background-image: url(../../assets/icons/iconmonstr-angel-left-thin.svg);
+        }
+
+        .right-arrow{
+            background-position: center; /* 배경 이미지 중앙 정렬 */
+            background-repeat: no-repeat; /* 배경 이미지 반복 방지 */
+            background-size: contain;    /* 배경 이미지가 컨테이너에 맞게 조정 */
+            display: block;
+            background-image: url(../../assets/icons/iconmonstr-angel-right-thin.svg);
+            align-items: center;
+        }
+    }
+}
+

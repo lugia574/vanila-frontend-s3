@@ -1,0 +1,59 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "BMDOHYEON";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+:root {
+  /* 색상코드 */
+  --color-backgrounfd: #f0f0f0;
+  --color-sky: #a4d7ee;
+  --color-ivory: #f9e3a3;
+  --color-orange: #fc8d09;
+  /* 폰트 */
+  --font-basic-color: #26424a;
+  --font-small-size: 0.875rem;
+  --font-middle-size: 1rem;
+  --font-large-size: 1.125rem;
+  --font-xlarge-size: 2rem;
+  --font-default: 400;
+  --font-bold: 700;
+  --default-border: #26424a;
+  --border-radius: 0.5rem;
+}
+
+.main-contest-card-wrap {
+  display: flex;
+  position: relative;
+  width: 14em;
+  height: 14rem;
+  border-radius: 8px;
+  box-shadow: 2px 6px 4px 0px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.main-contest-card-wrap .d-day-box {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 0.25rem 0.5rem;
+  color: var(--color-backgrounfd);
+  background: var(--color-orange);
+  border-radius: 1rem;
+  font-size: var(--font-small-size);
+}
+.main-contest-card-wrap .contest-img > img {
+  width: 100%;
+}

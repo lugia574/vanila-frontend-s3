@@ -40,6 +40,6 @@ body {
   top: auto !important;
   bottom: 0 !important;
   position: absolute;
-  z-index: 100;
+  z-index: 1;
   background: none;
 }

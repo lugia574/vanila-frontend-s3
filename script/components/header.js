@@ -2,17 +2,24 @@ class JeanHeader extends HTMLElement {
   constructor() {
     super();
     this.shadow = this.attachShadow({ mode: 'open' });
-    this.loadHeader(); // 비동기 함수 호출
+    this.loadHeader();
   }
 
   async loadHeader() {
     try {
-      const res = await fetch('../css/header.css');
-      const css = await res.text();
+      // comm.css 불러오기
+      const commRes = await fetch('../css/common.css');
+      const commCss = await commRes.text();
 
+      // header.css 불러오기
+      const headerRes = await fetch('../css/header.css');
+      const headerCss = await headerRes.text();
+
+      // style 태그 생성 및 두 CSS를 결합
       const style = document.createElement('style');
-      style.textContent = css;
+      style.textContent = `${commCss}\n${headerCss}`;
 
+      // header 태그 생성 및 내용 삽입
       const header = document.createElement('header');
       header.innerHTML = `
         <div class="content-center">
@@ -34,6 +41,7 @@ class JeanHeader extends HTMLElement {
         </div>
       `;
 
+      // Shadow DOM에 style과 header 삽입
       this.shadow.appendChild(style);
       this.shadow.appendChild(header);
     } catch (error) {

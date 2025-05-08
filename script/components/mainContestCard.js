@@ -18,34 +18,45 @@ class MainContestCard extends HTMLElement {
     this.render();
   }
 
-  render() {
+  async render() {
     const day = this.getAttribute('day') || '0';
     const src = this.getAttribute('src') || 'default 이미지';
 
-    // 중복 렌더링 방지 (fetch 중일 때 다시 호출되면 막기)
+    // 중복 렌더링 방지
     if (this.renderingInProgress) return;
     this.renderingInProgress = true;
 
     this.shadow.innerHTML = ''; // 기존 내용 제거
 
-    // CSS fetch
-    fetch('../css/mainContestCard.css')
-      .then(res => res.text())
-      .then(css => {
-        const style = document.createElement('style');
-        style.textContent = css;
+    try {
+      // comm.css와 mainContestCard.css 비동기로 불러오기
+      const [commRes, cardRes] = await Promise.all([
+        fetch('../css/common.css'),
+        fetch('../css/mainContestCard.css'),
+      ]);
 
-        const wrapper = document.createElement('div');
-        wrapper.className = 'main-contest-card-wrap';
-        wrapper.innerHTML = `
-            <div class="d-day-box">D-${day}</div>
-            <div class="contest-img">
-                <img src="${src}" alt="공모전 이미지" />
-            </div>`;
+      const commCss = await commRes.text();
+      const cardCss = await cardRes.text();
 
-        this.shadow.appendChild(style);
-        this.shadow.appendChild(wrapper);
-      });
+      const style = document.createElement('style');
+      style.textContent = `${commCss}\n${cardCss}`;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'main-contest-card-wrap';
+      wrapper.innerHTML = `
+        <div class="d-day-box">D-${day}</div>
+        <div class="contest-img">
+          <img src="${src}" alt="공모전 이미지" />
+        </div>
+      `;
+
+      this.shadow.appendChild(style);
+      this.shadow.appendChild(wrapper);
+    } catch (error) {
+      console.error('MainContestCard 로딩 실패:', error);
+    } finally {
+      this.renderingInProgress = false;
+    }
   }
 }
 

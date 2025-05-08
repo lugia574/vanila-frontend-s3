@@ -1,19 +1,22 @@
 @charset "UTF-8";
 @font-face {
-  font-family: "BMDOHYEON";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff") format("woff");
+  font-family: 'BMDOHYEON';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Pretendard";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-family: 'Pretendard';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "Pretendard";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-family: 'Pretendard';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
   font-weight: 700;
   font-style: normal;
 }
@@ -43,7 +46,7 @@
 
 head,
 body {
-  font-family: "Pretendard", "BMDOHYEON", sans-serif;
+  font-family: 'Pretendard', 'BMDOHYEON', sans-serif;
   background-color: var(--color-background);
   color: var(--font-basic-color);
 }
@@ -61,11 +64,26 @@ a {
   text-decoration: none;
 }
 
-menu, ol, li {
+menu,
+ol,
+li {
   list-style: none;
 }
 
+/* button 커서 */
+button {
+  cursor: pointer;
+}
+
+/* img, video 정렬 크기 */
+img,
+video {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
 /* input:focus 테두리 제거 */
-input:focus, a:focus {
+input:focus,
+a:focus {
   outline: none;
 }

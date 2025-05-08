@@ -1,0 +1,160 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "BMDOHYEON";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+:root {
+  /* 색상코드 */
+  --color-background: #f0f0f0;
+  --color-sky: #a4d7ee;
+  --color-ivory: #f9e3a3;
+  --color-orange: #fc8d09;
+  /* 폰트 */
+  --font-basic-color: #26424a;
+  --font-small-size: 0.875rem;
+  --font-middle-size: 1rem;
+  --font-large-size: 1.125rem;
+  --font-xlarge-size: 2rem;
+  --font-default: 400;
+  --font-bold: 700;
+  --default-border: #26424a;
+  --border-radius: 0.5rem;
+}
+
+/* 로그인 영역 */
+.login-wrap {
+  height: calc(100vh - 160px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 탭 스타일 */
+  /* 로그인 폼 컨테이너 */
+}
+.login-wrap .content-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 1rem;
+  width: 460px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+.login-wrap h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+.login-wrap .login-tabs {
+  display: flex;
+  width: 100%;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ddd;
+}
+.login-wrap .login-tabs .tab {
+  flex: 1;
+  text-align: center;
+  padding: 1rem;
+  cursor: pointer;
+  color: #666;
+  font-weight: 500;
+}
+.login-wrap .login-tabs .tab.active {
+  color: #26424a;
+  font-weight: bold;
+  border-bottom: 2px solid #26424a;
+}
+.login-wrap .login-forms-container {
+  width: 100%;
+}
+
+/* 기업회원 로그인 폼 */
+.company-login {
+  width: 100%;
+}
+.company-login .form-row {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.company-login .form-row label {
+  margin-bottom: 0.5rem;
+  color: black;
+}
+.company-login .form-row input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+.company-login .form-row button {
+  padding: 0.75rem;
+  background-color: #26424a;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+.company-login .form-row button:hover {
+  background-color: #1f353b;
+}
+
+/* 개인회원 로그인 폼 */
+.personal-login {
+  width: 100%;
+  display: none;
+}
+.personal-login .social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+.personal-login .social-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  width: 100%;
+  color: white;
+}
+.personal-login .social-buttons button span {
+  margin-right: 1rem;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.personal-login .social-buttons .naver-login {
+  background-color: #03c75a;
+}
+.personal-login .social-buttons .kakao-login {
+  background-color: #fee500;
+  color: #333;
+}
+.personal-login .social-buttons .google-login {
+  background-color: #4285f4;
+}

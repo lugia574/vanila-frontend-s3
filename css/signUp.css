@@ -1,0 +1,176 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "BMDOHYEON";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+:root {
+  /* 색상코드 */
+  --color-background: #f0f0f0;
+  --color-sky: #a4d7ee;
+  --color-ivory: #f9e3a3;
+  --color-orange: #fc8d09;
+  /* 폰트 */
+  --font-basic-color: #26424a;
+  --font-small-size: 0.875rem;
+  --font-middle-size: 1rem;
+  --font-large-size: 1.125rem;
+  --font-xlarge-size: 2rem;
+  --font-default: 400;
+  --font-bold: 700;
+  --default-border: #26424a;
+  --border-radius: 0.5rem;
+}
+
+.sign-up-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2rem 0;
+  background-color: #f8f9fa;
+}
+.sign-up-wrapper .sign-up-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 2.5rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.sign-up-wrapper .sign-up-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #26424a;
+  font-weight: 600;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .input-group {
+  margin-bottom: 1.5rem;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .input-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .input-group input:focus {
+  outline: none;
+  border-color: #26424a;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .input-group .password-guide {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #666;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .input-group .password-confirm-message {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .input-group .password-confirm-message.match {
+  color: #28a745;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .input-group .password-confirm-message.not-match {
+  color: #dc3545;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .input-with-button {
+  display: flex;
+  gap: 0.5rem;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .input-with-button input {
+  flex: 1;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .input-with-button .check-btn {
+  padding: 0 1rem;
+  background-color: #26424a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .input-with-button .check-btn:hover {
+  background-color: #1a2f36;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .auth-info-box {
+  padding: 1rem;
+  background-color: #f1f8ff;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #0066cc;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .auth-info-box p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #0066cc;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .terms-group {
+  margin-bottom: 2rem;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .terms-group .checkbox-wrapper {
+  display: flex;
+  align-items: center;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .terms-group .checkbox-wrapper input[type=checkbox] {
+  margin-right: 0.5rem;
+  width: auto;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .terms-group .checkbox-wrapper label {
+  display: inline;
+  cursor: pointer;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .btn-group {
+  margin-top: 1rem;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .btn-group .sign-up-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: #fc8d09;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.sign-up-wrapper .sign-up-container .sign-up-form .btn-group .sign-up-btn:hover {
+  background-color: #e87d00;
+}
+
+@media (max-width: 768px) {
+  .sign-up-wrapper {
+    padding: 1rem;
+  }
+  .sign-up-wrapper .sign-up-container {
+    padding: 1.5rem;
+  }
+  .sign-up-wrapper .sign-up-container .sign-up-form .input-with-button {
+    flex-direction: column;
+  }
+  .sign-up-wrapper .sign-up-container .sign-up-form .input-with-button .check-btn {
+    width: 100%;
+    padding: 0.75rem;
+  }
+}

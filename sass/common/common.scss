@@ -10,9 +10,8 @@
 head,
 body {
   font-family: 'Pretendard', 'BMDOHYEON', sans-serif;
-  background-color: var(--color-backgrounfd);
+  background-color: var(--color-background);
   color: var(--font-basic-color);
-  display: flex;
 }
 
 .main {
@@ -46,4 +45,9 @@ img,
 video {
   max-width: 100%;
   vertical-align: middle;
+}
+/* input:focus 테두리 제거 */
+input:focus,
+a:focus {
+  outline: none;
 }

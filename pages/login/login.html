@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login-page</title>
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/login.css" />
+  </head>
+  <body>
+    <jean-header></jean-header>
+
+    <main id="container">
+      <section class="login-wrap">
+        <div class="content-center">
+          <h2>로그인</h2>
+
+          <!-- 로그인 탭 -->
+          <div class="login-tabs">
+            <div class="tab personal-tab" onclick="switchTab('personal')">개인회원</div>
+            <div class="tab company-tab active" onclick="switchTab('company')">기업회원</div>
+          </div>
+
+          <!-- 로그인 폼 컨테이너 -->
+          <div class="login-forms-container">
+            <!-- 기업회원 로그인 폼 -->
+            <form action="/login/company" method="post" class="company-login">
+              <div class="form-row">
+                <label for="companyId">아이디</label>
+                <input type="text" id="companyId" name="companyId" required />
+              </div>
+              <div class="form-row">
+                <label for="companyPw">비밀번호</label>
+                <input type="password" id="companyPw" name="companyPw" required />
+              </div>
+              <div class="form-row">
+                <button type="submit">로그인</button>
+              </div>
+            </form>
+
+            <!-- 개인회원 로그인 폼 -->
+            <div class="personal-login">
+              <div class="social-buttons">
+                <button class="naver-login">
+                  <span>N</span>
+                  네이버 로그인
+                </button>
+                <button class="kakao-login">
+                  <span>K</span>
+                  카카오 로그인
+                </button>
+                <button class="google-login">
+                  <span>G</span>
+                  구글 로그인
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="../../script/components/header.js"></script>
+    <script src="../../script/login/login.js"></script>
+  </body>
+</html>

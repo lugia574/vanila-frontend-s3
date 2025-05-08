@@ -1,0 +1,246 @@
+@use "../../assets/fonts/font";
+@use "../common/variables";
+
+body{
+    background-color: white;
+}
+
+// 기본정보
+.basic-info{
+    background-color: white;
+    width: 60%;
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px 0px 20px 0px;
+
+    .basic-title{
+        font-weight: var(--font-bold);
+        size: var(--font-xlarge-size);
+        padding: 20px 0 20px 0;
+        width: 60%;
+    }
+
+    .type{
+        border-top: 2px solid gray;
+        padding: 10px 0 20px 0;
+        form>input{
+            width: 2rem;
+            height: 100%;
+        }
+    }
+
+    // 공모전 main/sub 선택
+    .type-detail{
+        display: flex;
+        gap: 5rem;
+
+        .main-type, .sub-type{
+            width: 100%;
+            ul{
+                li:first-child{
+                    margin-bottom: 0.5rem;
+                    position: relative;  
+                    a{  
+                        // 분야, 참여
+                        color: black;
+                        font-weight: var(--font-bold);
+                    }
+                }
+
+                li:nth-child(2){
+                    margin-bottom: 0.5rempx;
+                    position: relative;  
+                    a{
+                        // 공모전 분야를 선택해주세요.
+                        display: block;
+                        width: 100%;
+                        max-width: 25rem;
+                        height: 2rem;
+                        line-height: 2rem;
+                        padding-left: 5px;
+                        color: rgb(200, 199, 199);
+                        border: 1px solid rgb(200, 199, 199);
+                        border-radius: 8px;
+                    }
+                }
+
+                //항목들(TODO : 클릭했을때 뜨도록 js)
+                .main-type-sub, .sub-type-sub{
+                    display: none;
+                    /* 부모사이즈에 관여X, 별도 분리 */
+                    position: absolute;
+                    background: white;
+                    padding: 20px;
+                    left: 50%;
+                    min-width: 16rem;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+
+    // 시작일 종료일
+    .period-wrap{
+        display: flex;  
+        gap: 5rem;
+        padding-top: 0.5rem;
+        .start-date-wrap, .end-date-wrap{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            label{
+                padding-bottom: 0.5rem;
+            }
+            input{
+                display: block;
+                width: 100%;
+                max-width: 25rem;
+                height: 2rem;
+                line-height: 2rem;
+                padding-left: 5px;
+                color: rgb(200, 199, 199);
+                border: 1px solid rgb(200, 199, 199);
+                border-radius: 8px;
+            }
+        }
+    }
+}
+
+// 모집정보
+.recruitment-info{
+    background-color: white;
+    width: 60%;
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px 0px 20px 0px;
+
+    .recruitment-title{
+        font-weight: var(--font-bold);
+        size: var(--font-xlarge-size);
+        padding: 20px 0 20px 0;
+        width: 60%;
+    }
+
+    .recuritment-wrap{
+        width: 100%;
+        border-top: 2px solid gray;
+        padding: 10px 0 20px 0;
+        display: flex;
+        gap: 5rem;
+
+        .recruitment-end-wrap, .recruitment-count-wrap{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            label{
+                padding-bottom: 0.5rem;
+            }
+            input{
+                display: block;
+                width: 100%;
+                max-width: 25rem;
+                height: 2rem;
+                line-height: 2rem;
+                padding-left: 5px;
+                color: rgb(200, 199, 199);
+                border: 1px solid rgb(200, 199, 199);
+                border-radius: 8px;
+            }            
+        }
+    }
+
+    .recruitment-count-wrap{
+        .recruitment-count-detail-wrap{
+            display: flex;
+            gap: 5rem;
+            .recruitment-role, .recruitment-count{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 0.5rem;
+                span{
+                    padding-bottom: 0.5rem;
+                }
+                label{
+                    padding-bottom: 0.5rem;
+                }
+                input{
+                    display: block;
+                    width: 100%;
+                    max-width: 25rem;
+                    height: 2rem;
+                    line-height: 2rem;
+                    padding-left: 5px;
+                    color: rgb(200, 199, 199);
+                    border: 1px solid rgb(200, 199, 199);
+                    border-radius: 8px;
+                }
+            }
+        }
+
+        .recruitment-count-detail-btn{
+            display: flex;
+            justify-content: right;
+            gap: 0.5rem;
+            button{
+                background: var(--color-background);
+                width: 4rem;
+                height: 2rem;
+                border: none;
+                border-radius: 8px;
+        
+            }
+        }
+
+    }
+}
+
+// 제목
+.title-wrap{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 60%;
+
+    span{
+        padding-bottom: 0.5rem;
+    }
+    input{
+        display: block;
+        width: 100%;
+        height: 2rem;
+        line-height: 2rem;
+        padding-left: 5px;
+        color: rgb(200, 199, 199);
+        border: 1px solid rgb(200, 199, 199);
+        border-radius: 8px;
+    }
+
+}
+
+// 에디터(테스트버전)
+#content{
+    width: 60%;
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px 0px 20px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+// 버튼
+.content-btn-wrap{
+    width: 80%;
+    display: flex;
+    justify-content: right;
+    gap: 0.5rem;
+
+    button{
+        background: var(--color-background);
+        width: 4rem;
+        height: 2rem;
+        border: none;
+        border-radius: 8px;
+    }
+}

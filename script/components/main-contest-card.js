@@ -32,7 +32,7 @@ class MainContestCard extends HTMLElement {
       // comm.css와 mainContestCard.css 비동기로 불러오기
       const [commRes, cardRes] = await Promise.all([
         fetch('../../css/common.css'),
-        fetch('../../css/mainContestCard.css'),
+        fetch('../../css/main-contest-card.css'),
       ]);
 
       const commCss = await commRes.text();

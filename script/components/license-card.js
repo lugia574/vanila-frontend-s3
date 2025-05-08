@@ -35,7 +35,7 @@ class LicenseCard extends HTMLElement {
       // comm.css와 mainContestCard.css 비동기로 불러오기
       const [commRes, cardRes] = await Promise.all([
         fetch('../../css/common.css'),
-        fetch('../../css/licenseCard.css'),
+        fetch('../../css/license-card.css'),
       ]);
 
       const commCss = await commRes.text();

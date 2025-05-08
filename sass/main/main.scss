@@ -1,3 +1,6 @@
+@use '../../assets/fonts/font';
+@use '../common/variables';
+
 body {
   flex-direction: column;
 }
@@ -20,39 +23,84 @@ body {
     }
   }
 
-  .contest-section {
-    max-width: 1280px;
-    height: 260px;
-    .contest-list {
+  .section {
+    max-width: 1400px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .section-list {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 1rem;
-      .contest-logo > a > img {
-        width: 200px;
-      }
+      gap: 2rem;
+      flex-wrap: wrap;
 
-      .contest-slide {
+      .section-slide {
         display: flex;
         gap: 1rem;
+        padding: 1rem;
+        flex-wrap: wrap;
         > li > a > img {
-          width: 180px;
+          // width: 100%;
         }
       }
+      .section-intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        padding: 2rem;
+        width: 14em;
+        height: 14rem;
+        > div {
+          h3 {
+            font-weight: var(--font-xlarge-size);
+            font-size: var(--font-xlarge-size);
+            margin-bottom: 1rem;
+          }
+          p {
+            font-size: var(--font-large-size);
+          }
+        }
+        .section-btn {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          align-items: center;
+          li img {
+            display: block;
+            width: 24px;
+          }
+        }
+      }
+    }
 
-      //   .swiper-wrapper {
-      //     width: 80% !important;
-      //     right: 0;
+    //   .swiper-wrapper {
+    //     width: 80% !important;
+    //     right: 0;
 
-      //     overflow: hidden;
-      //     > .swiper-slide {
-      //       width: 200px;
-      //     }
+    //     overflow: hidden;
+    //     > .swiper-slide {
+    //       width: 200px;
+    //     }
 
-      //     > li {
-      //       width: 240px !important;
-      //     }
-      //   }
+    //     > li {
+    //       width: 240px !important;
+    //     }
+    //   }
+  }
+
+  .policy-section.section {
+    .section-list {
+      .policy-intro {
+        order: 1;
+      }
+
+      .section-slide {
+        order: 0;
+      }
     }
   }
 

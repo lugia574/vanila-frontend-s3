@@ -8,11 +8,11 @@ class JeanHeader extends HTMLElement {
   async loadHeader() {
     try {
       // comm.css 불러오기
-      const commRes = await fetch('../css/common.css');
+      const commRes = await fetch('../../css/common.css');
       const commCss = await commRes.text();
 
       // header.css 불러오기
-      const headerRes = await fetch('../css/header.css');
+      const headerRes = await fetch('../../css/header.css');
       const headerCss = await headerRes.text();
 
       // style 태그 생성 및 두 CSS를 결합

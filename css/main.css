@@ -39,18 +39,25 @@ body {
   flex-direction: column;
 }
 
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .main-wrap {
   display: flex;
   flex-direction: column;
   gap: 5rem;
+  width: 100vw;
+  max-width: 1400px;
+  min-width: 480px;
   justify-content: center;
   align-items: center;
 }
 .main-wrap .main-section {
   position: relative;
-  width: 100%;
-  max-width: 1400px;
-  min-width: 480px;
+  width: 90%;
 }
 .main-wrap .main-section ul > li > a > img {
   width: 100%;

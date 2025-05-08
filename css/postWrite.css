@@ -1,0 +1,249 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "BMDOHYEON";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+:root {
+  /* 색상코드 */
+  --color-background: #f0f0f0;
+  --color-sky: #a4d7ee;
+  --color-ivory: #f9e3a3;
+  --color-orange: #fc8d09;
+  /* 폰트 */
+  --font-basic-color: #26424a;
+  --font-small-size: 0.875rem;
+  --font-middle-size: 1rem;
+  --font-large-size: 1.125rem;
+  --font-xlarge-size: 2rem;
+  --font-default: 400;
+  --font-bold: 700;
+  --default-border: #26424a;
+  --border-radius: 0.5rem;
+}
+
+body {
+  background-color: white;
+}
+
+.basic-info {
+  background-color: white;
+  width: 60%;
+  margin: 0 auto;
+  text-align: left;
+  padding: 20px 0px 20px 0px;
+}
+.basic-info .basic-title {
+  font-weight: var(--font-bold);
+  size: var(--font-xlarge-size);
+  padding: 20px 0 20px 0;
+  width: 60%;
+}
+.basic-info .type {
+  border-top: 2px solid gray;
+  padding: 10px 0 20px 0;
+}
+.basic-info .type form > input {
+  width: 2rem;
+  height: 100%;
+}
+.basic-info .type-detail {
+  display: flex;
+  gap: 5rem;
+}
+.basic-info .type-detail .main-type, .basic-info .type-detail .sub-type {
+  width: 100%;
+}
+.basic-info .type-detail .main-type ul li:first-child, .basic-info .type-detail .sub-type ul li:first-child {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+.basic-info .type-detail .main-type ul li:first-child a, .basic-info .type-detail .sub-type ul li:first-child a {
+  color: black;
+  font-weight: var(--font-bold);
+}
+.basic-info .type-detail .main-type ul li:nth-child(2), .basic-info .type-detail .sub-type ul li:nth-child(2) {
+  margin-bottom: 0.5rempx;
+  position: relative;
+}
+.basic-info .type-detail .main-type ul li:nth-child(2) a, .basic-info .type-detail .sub-type ul li:nth-child(2) a {
+  display: block;
+  width: 100%;
+  max-width: 25rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding-left: 5px;
+  color: rgb(200, 199, 199);
+  border: 1px solid rgb(200, 199, 199);
+  border-radius: 8px;
+}
+.basic-info .type-detail .main-type ul .main-type-sub, .basic-info .type-detail .main-type ul .sub-type-sub, .basic-info .type-detail .sub-type ul .main-type-sub, .basic-info .type-detail .sub-type ul .sub-type-sub {
+  display: none;
+  /* 부모사이즈에 관여X, 별도 분리 */
+  position: absolute;
+  background: white;
+  padding: 20px;
+  left: 50%;
+  min-width: 16rem;
+  transform: translateX(-50%);
+}
+.basic-info .period-wrap {
+  display: flex;
+  gap: 5rem;
+  padding-top: 0.5rem;
+}
+.basic-info .period-wrap .start-date-wrap, .basic-info .period-wrap .end-date-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.basic-info .period-wrap .start-date-wrap label, .basic-info .period-wrap .end-date-wrap label {
+  padding-bottom: 0.5rem;
+}
+.basic-info .period-wrap .start-date-wrap input, .basic-info .period-wrap .end-date-wrap input {
+  display: block;
+  width: 100%;
+  max-width: 25rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding-left: 5px;
+  color: rgb(200, 199, 199);
+  border: 1px solid rgb(200, 199, 199);
+  border-radius: 8px;
+}
+
+.recruitment-info {
+  background-color: white;
+  width: 60%;
+  margin: 0 auto;
+  text-align: left;
+  padding: 20px 0px 20px 0px;
+}
+.recruitment-info .recruitment-title {
+  font-weight: var(--font-bold);
+  size: var(--font-xlarge-size);
+  padding: 20px 0 20px 0;
+  width: 60%;
+}
+.recruitment-info .recuritment-wrap {
+  width: 100%;
+  border-top: 2px solid gray;
+  padding: 10px 0 20px 0;
+  display: flex;
+  gap: 5rem;
+}
+.recruitment-info .recuritment-wrap .recruitment-end-wrap, .recruitment-info .recuritment-wrap .recruitment-count-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.recruitment-info .recuritment-wrap .recruitment-end-wrap label, .recruitment-info .recuritment-wrap .recruitment-count-wrap label {
+  padding-bottom: 0.5rem;
+}
+.recruitment-info .recuritment-wrap .recruitment-end-wrap input, .recruitment-info .recuritment-wrap .recruitment-count-wrap input {
+  display: block;
+  width: 100%;
+  max-width: 25rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding-left: 5px;
+  color: rgb(200, 199, 199);
+  border: 1px solid rgb(200, 199, 199);
+  border-radius: 8px;
+}
+.recruitment-info .recruitment-count-wrap .recruitment-count-detail-wrap {
+  display: flex;
+  gap: 5rem;
+}
+.recruitment-info .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role, .recruitment-info .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0.5rem;
+}
+.recruitment-info .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role span, .recruitment-info .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count span {
+  padding-bottom: 0.5rem;
+}
+.recruitment-info .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role label, .recruitment-info .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count label {
+  padding-bottom: 0.5rem;
+}
+.recruitment-info .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role input, .recruitment-info .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count input {
+  display: block;
+  width: 100%;
+  max-width: 25rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding-left: 5px;
+  color: rgb(200, 199, 199);
+  border: 1px solid rgb(200, 199, 199);
+  border-radius: 8px;
+}
+.recruitment-info .recruitment-count-wrap .recruitment-count-detail-btn {
+  display: flex;
+  justify-content: right;
+  gap: 0.5rem;
+}
+.recruitment-info .recruitment-count-wrap .recruitment-count-detail-btn button {
+  background: var(--color-background);
+  width: 4rem;
+  height: 2rem;
+  border: none;
+  border-radius: 8px;
+}
+
+.title-wrap {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 60%;
+}
+.title-wrap span {
+  padding-bottom: 0.5rem;
+}
+.title-wrap input {
+  display: block;
+  width: 100%;
+  height: 2rem;
+  line-height: 2rem;
+  padding-left: 5px;
+  color: rgb(200, 199, 199);
+  border: 1px solid rgb(200, 199, 199);
+  border-radius: 8px;
+}
+
+#content {
+  width: 60%;
+  margin: 0 auto;
+  text-align: left;
+  padding: 20px 0px 20px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-btn-wrap {
+  width: 80%;
+  display: flex;
+  justify-content: right;
+  gap: 0.5rem;
+}
+.content-btn-wrap button {
+  background: var(--color-background);
+  width: 4rem;
+  height: 2rem;
+  border: none;
+  border-radius: 8px;
+}

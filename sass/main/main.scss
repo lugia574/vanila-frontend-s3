@@ -1,0 +1,65 @@
+body {
+  flex-direction: column;
+}
+
+.main-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+
+  justify-content: center;
+  align-items: center;
+
+  .main-section {
+    position: relative;
+
+    max-width: 1280px;
+    ul > li > a > img {
+      width: 100%;
+    }
+  }
+
+  .contest-section {
+    max-width: 1280px;
+    height: 260px;
+    .contest-list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      .contest-logo > a > img {
+        width: 200px;
+      }
+
+      .contest-slide {
+        display: flex;
+        gap: 1rem;
+        > li > a > img {
+          width: 180px;
+        }
+      }
+
+      //   .swiper-wrapper {
+      //     width: 80% !important;
+      //     right: 0;
+
+      //     overflow: hidden;
+      //     > .swiper-slide {
+      //       width: 200px;
+      //     }
+
+      //     > li {
+      //       width: 240px !important;
+      //     }
+      //   }
+    }
+  }
+
+  .swiper-progressbar {
+    top: auto !important;
+    bottom: 0 !important;
+    position: absolute;
+    z-index: 100;
+    background: none;
+  }
+}

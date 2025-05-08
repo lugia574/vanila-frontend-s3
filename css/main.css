@@ -1,0 +1,45 @@
+body {
+  flex-direction: column;
+}
+
+.main-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+.main-wrap .main-section {
+  position: relative;
+  max-width: 1280px;
+}
+.main-wrap .main-section ul > li > a > img {
+  width: 100%;
+}
+.main-wrap .contest-section {
+  max-width: 1280px;
+  height: 260px;
+}
+.main-wrap .contest-section .contest-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.main-wrap .contest-section .contest-list .contest-logo > a > img {
+  width: 200px;
+}
+.main-wrap .contest-section .contest-list .contest-slide {
+  display: flex;
+  gap: 1rem;
+}
+.main-wrap .contest-section .contest-list .contest-slide > li > a > img {
+  width: 180px;
+}
+.main-wrap .swiper-progressbar {
+  top: auto !important;
+  bottom: 0 !important;
+  position: absolute;
+  z-index: 100;
+  background: none;
+}

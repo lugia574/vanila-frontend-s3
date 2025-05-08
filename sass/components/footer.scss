@@ -1,0 +1,65 @@
+@use '../../assets/fonts/font';
+@use '../common/variables';
+
+/* 푸터 */
+footer {
+  background-color: #26424a;
+  color: white;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  margin-top: auto;
+
+  .footer-top {
+    margin-bottom: 1rem;
+    padding: 0 2rem;
+  }
+
+  .footer-middle {
+    margin-bottom: 1rem;
+    padding: 0 2rem;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+
+    .footer-links {
+      a {
+        color: white;
+        text-decoration: none;
+        margin: 0 0.3rem;
+
+        &:nth-child(2) {
+          color: #fc8d09;
+        }
+      }
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+  }
+
+  /* 반응형 미디어 쿼리 */
+  @media (max-width: 768px) {
+    .footer-top,
+    .footer-middle,
+    .footer-bottom {
+      padding: 0 1rem; /* 모바일에서는 여백 줄이기 */
+    }
+
+    .footer-bottom {
+      flex-direction: column; /* 모바일에서는 수직 정렬 */
+      gap: 0.5rem; /* 항목 간 간격 */
+
+      .footer-links,
+      .footer-copy {
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/common.css" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      /*  */
+      .license-wrap {
+        display: flex;
+        flex-direction: column;
+        width: 260px;
+        height: 160px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid gray;
+        box-shadow: 2px 6px 4px 0px rgba(0, 0, 0, 0.25);
+
+        .license-top {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          justify-content: space-between;
+          align-items: center;
+
+          .lincensc-top-left,
+          lincensc-top-right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+          }
+
+          .tag-box,
+          .d-day-box {
+            top: 0;
+            border-radius: 8px;
+            padding: 0.25rem 0.5rem;
+            font-size: 16px;
+          }
+          .tag-box {
+            background: gray;
+            color: var(--color-background);
+          }
+          .d-day-box {
+            right: 0;
+            color: var(--color-background);
+            background: var(--color-orange);
+          }
+        }
+        .license-bottom {
+          .license-title > h3 {
+            font-weight: 700;
+            font-size: 1.25rem;
+            padding: 1rem 0;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="license-wrap">
+      <div class="license-top">
+        <div class="lincensc-top-left">
+          <a href="#" class="tag-box">태그1</a>
+          <a href="#" class="tag-box">태그2</a>
+        </div>
+        <div class="lincensc-top-right">
+          <div class="d-day-box">D-123</div>
+        </div>
+      </div>
+      <div class="license-bottom">
+        <div class="license-title">
+          <h3 class="card-title">한국사 능력검정</h3>
+        </div>
+        <div class="license-summary">
+          <p>기업의 청년고용 확대를 지원하고, 취업애로 청년의 취업을 촉진함...</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

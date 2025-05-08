@@ -12,8 +12,9 @@ body {
 
   .main-section {
     position: relative;
-
-    max-width: 1280px;
+    width: 100%;
+    max-width: 1400px;
+    min-width: 480px;
     ul > li > a > img {
       width: 100%;
     }

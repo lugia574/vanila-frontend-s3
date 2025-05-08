@@ -11,7 +11,9 @@ body {
 }
 .main-wrap .main-section {
   position: relative;
-  max-width: 1280px;
+  width: 100%;
+  max-width: 1400px;
+  min-width: 480px;
 }
 .main-wrap .main-section ul > li > a > img {
   width: 100%;
@@ -40,6 +42,6 @@ body {
   top: auto !important;
   bottom: 0 !important;
   position: absolute;
-  z-index: 1;
+  z-index: 100;
   background: none;
 }

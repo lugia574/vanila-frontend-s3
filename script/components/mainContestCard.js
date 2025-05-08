@@ -45,9 +45,9 @@ class MainContestCard extends HTMLElement {
       wrapper.className = 'main-contest-card-wrap';
       wrapper.innerHTML = `
         <div class="d-day-box">D-${day}</div>
-        <div class="contest-img">
+        <a href="#" class="contest-img">
           <img src="${src}" alt="공모전 이미지" />
-        </div>
+        </a>
       `;
 
       this.shadow.appendChild(style);

@@ -15,7 +15,12 @@ body {
 }
 
 .main {
+}
+
+main> .wrap {
+  max-width: 1200px;
   padding: 1.5rem 2rem;
+  margin: 0 auto;
 }
 
 .blind {
@@ -39,6 +44,8 @@ li {
 
 /* button 커서 */
 button {
+  border: 0;
+  outline: 0;
   cursor: pointer;
 }
 

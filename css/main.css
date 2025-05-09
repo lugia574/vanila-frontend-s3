@@ -49,39 +49,44 @@ body {
 .main-wrap {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
-  width: 100vw;
-  max-width: 1400px;
   min-width: 480px;
   justify-content: center;
   align-items: center;
 }
-.main-wrap .main-section {
+.main-wrap .main-banner {
+  margin-top: 90px;
   position: relative;
   width: 100%;
 }
-.main-wrap .main-section ul > li > a > img {
+.main-wrap .main-banner ul > li > a > img {
   width: 100%;
 }
-.main-wrap .section {
+.main-wrap .main-banner .swiper-progressbar {
+  top: auto !important;
+  bottom: 0 !important;
+  position: absolute;
+  z-index: 100;
+  background: none;
+}
+.main-wrap .main-contents .section {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.main-wrap .section .section-list {
+.main-wrap .main-contents .section .section-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
 }
-.main-wrap .section .section-list .section-slide {
+.main-wrap .main-contents .section .section-list .section-slide {
   display: flex;
   gap: 1rem;
   padding: 1rem;
   flex-wrap: wrap;
 }
-.main-wrap .section .section-list .section-intro {
+.main-wrap .main-contents .section .section-list .section-intro {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,39 +98,32 @@ body {
   background: var(--font-basic-color);
   color: white;
 }
-.main-wrap .section .section-list .section-intro > div h2 {
+.main-wrap .main-contents .section .section-list .section-intro > div h2 {
   color: var(--color-sky);
   font-weight: var(--font-xlarge-size);
   font-size: var(--font-xlarge-size);
   margin-bottom: 1rem;
 }
-.main-wrap .section .section-list .section-intro > div p {
+.main-wrap .main-contents .section .section-list .section-intro > div p {
   font-size: var(--font-large-size);
 }
-.main-wrap .section .section-list .section-intro .section-btn {
+.main-wrap .main-contents .section .section-list .section-intro .section-btn {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
 }
-.main-wrap .section .section-list .section-intro .section-btn li {
+.main-wrap .main-contents .section .section-list .section-intro .section-btn li {
   display: flex;
 }
-.main-wrap .section .section-list .section-intro .section-btn li .swiper-button-next,
-.main-wrap .section .section-list .section-intro .section-btn li .swiper-button-prev {
+.main-wrap .main-contents .section .section-list .section-intro .section-btn li .swiper-button-next,
+.main-wrap .main-contents .section .section-list .section-intro .section-btn li .swiper-button-prev {
   position: relative;
   color: white;
 }
-.main-wrap .policy-section.section .section-list .policy-intro {
+.main-wrap .main-contents .policy-section.section .section-list .policy-intro {
   order: 1;
 }
-.main-wrap .policy-section.section .section-list .section-slide {
+.main-wrap .main-contents .policy-section.section .section-list .section-slide {
   order: 0;
-}
-.main-wrap .swiper-progressbar {
-  top: auto !important;
-  bottom: 0 !important;
-  position: absolute;
-  z-index: 100;
-  background: none;
 }

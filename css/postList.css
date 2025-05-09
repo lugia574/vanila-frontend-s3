@@ -35,25 +35,21 @@
   --border-radius: 0.5rem;
 }
 
-body {
-  background-color: white;
-}
-
 .filter-wrap {
   width: 70%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 10px auto;
   padding: 10px;
   border-radius: 8px;
-  border: none;
+  border: 1px solid var(--default-border);
   background-color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 10;
 }
 .filter-wrap ul {
   display: flex;
   gap: 10px;
   padding: 10px;
+  flex-wrap: wrap;
 }
 .filter-wrap ul li a {
   width: auto;
@@ -62,12 +58,13 @@ body {
   border-radius: 16px;
   padding: 5px 10px 5px 10px;
   background-color: var(--color-background);
+  font-size: var(--font-small-size);
 }
 .filter-wrap ul i {
   display: block;
   background-image: url(../../assets/icons/iconmonstr-reload-lined.svg);
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.2rem;
+  height: 1.2rem;
 }
 .filter-wrap div {
   padding: 10px;
@@ -80,7 +77,7 @@ body {
   width: 60%;
   border: none;
   border-radius: 8px;
-  background: rgb(200, 199, 199);
+  background: var(--color-background);
   padding: 10px 20px;
   position: relative;
 }
@@ -98,29 +95,30 @@ body {
   transform: translateY(-50%); /* 정확한 세로 중앙 정렬 */
 }
 
-.division {
+.division-wrap {
   width: 70%;
+  max-width: 1400px;
   display: flex;
   justify-content: space-between;
   gap: 15px;
   margin: 0 auto;
 }
-.division ul {
+.division-wrap ul {
   display: flex;
   gap: 15px;
   padding: 15px;
 }
-.division ul li a {
+.division-wrap ul li a {
   font: var(--font-bold);
   font-size: var(--font-large-size);
 }
-.division ul li a .card-icon {
+.division-wrap ul li a .card-icon {
   display: block;
   background-image: url(../../assets/icons/iconmonstr-layout-table-lined.svg);
   width: 1.5rem;
   height: 1.5rem;
 }
-.division ul li a .list-icon {
+.division-wrap ul li a .list-icon {
   display: block;
   background-image: url(../../assets/icons/iconmonstr-list-lined.svg);
   width: 1.5rem;
@@ -132,9 +130,11 @@ body {
   flex-direction: column; /* 세로 방향 정렬 */
   gap: 10px;
   width: 70%;
+  max-width: 1400px;
   border-radius: 8px;
-  border: 0.5px solid var(--font-basic-color);
+  border: 0.5px solid var(--default-border);
   margin: 0 auto 20px;
+  background-color: white;
 }
 .content-wrap .content-header {
   display: flex;
@@ -150,6 +150,7 @@ body {
   font-size: var(--font-large-size);
 }
 .content-wrap .content-header .left-group .field {
+  font-size: var(--font-small-size);
   border: none;
   border-radius: 8px;
   background-color: var(--default-border);
@@ -157,6 +158,7 @@ body {
   padding: 2px 10px 2px 10px;
 }
 .content-wrap .content-header .right-group .type {
+  font-size: var(--font-small-size);
   border: none;
   border-radius: 8px;
   background-color: var(--color-background);
@@ -164,6 +166,7 @@ body {
   padding: 2px 10px 2px 10px;
 }
 .content-wrap .content-header .right-group .d-day {
+  font-size: var(--font-small-size);
   border: none;
   border-radius: 8px;
   background-color: var(--color-orange);
@@ -208,13 +211,17 @@ body {
 .page-num {
   display: flex;
   margin: 0 auto;
+  width: 70%;
+  max-width: 1400px;
 }
 .page-num ul {
   display: flex;
   gap: 10px;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 .page-num ul i, .page-num ul li {
+  background-color: white;
   width: 2rem;
   height: 2rem;
   border: 1px solid black;

@@ -35,62 +35,69 @@
   --border-radius: 0.5rem;
 }
 
-body {
+.wrap {
   background-color: white;
 }
 
-.basic-info {
+.basic-info-section {
+  margin-top: 1rem;
+}
+
+.basic-info-wrap {
   background-color: white;
-  width: 60%;
+  width: 70%;
+  max-width: 1400px;
   margin: 0 auto;
   text-align: left;
-  padding: 20px 0px 20px 0px;
+  padding: 0 0 2rem 0;
 }
-.basic-info .basic-title {
+.basic-info-wrap .basic-title-wrap {
   font-weight: var(--font-bold);
-  size: var(--font-xlarge-size);
-  padding: 20px 0 20px 0;
-  width: 60%;
+  font-size: var(--font-large-size);
+  padding: 0.5rem 0 0.5rem 0;
+  width: 70%;
+  max-width: 1400px;
 }
-.basic-info .type {
-  border-top: 2px solid gray;
-  padding: 10px 0 20px 0;
+.basic-info-wrap .type {
+  border-top: 2px solid var(--color-background);
+  padding: 1rem 0 2rem 0;
 }
-.basic-info .type form > input {
+.basic-info-wrap .type form > input {
   width: 2rem;
   height: 100%;
 }
-.basic-info .type-detail {
+.basic-info-wrap .type-detail {
   display: flex;
   gap: 5rem;
 }
-.basic-info .type-detail .main-type, .basic-info .type-detail .sub-type {
+.basic-info-wrap .type-detail .main-type, .basic-info-wrap .type-detail .sub-type {
   width: 100%;
 }
-.basic-info .type-detail .main-type ul li:first-child, .basic-info .type-detail .sub-type ul li:first-child {
+.basic-info-wrap .type-detail .main-type ul li:first-child, .basic-info-wrap .type-detail .sub-type ul li:first-child {
   margin-bottom: 0.5rem;
   position: relative;
 }
-.basic-info .type-detail .main-type ul li:first-child a, .basic-info .type-detail .sub-type ul li:first-child a {
+.basic-info-wrap .type-detail .main-type ul li:first-child a, .basic-info-wrap .type-detail .sub-type ul li:first-child a {
   color: black;
   font-weight: var(--font-bold);
 }
-.basic-info .type-detail .main-type ul li:nth-child(2), .basic-info .type-detail .sub-type ul li:nth-child(2) {
+.basic-info-wrap .type-detail .main-type ul li:nth-child(2), .basic-info-wrap .type-detail .sub-type ul li:nth-child(2) {
   margin-bottom: 0.5rempx;
   position: relative;
 }
-.basic-info .type-detail .main-type ul li:nth-child(2) a, .basic-info .type-detail .sub-type ul li:nth-child(2) a {
+.basic-info-wrap .type-detail .main-type ul li:nth-child(2) a, .basic-info-wrap .type-detail .sub-type ul li:nth-child(2) a {
   display: block;
   width: 100%;
   max-width: 25rem;
   height: 2rem;
   line-height: 2rem;
   padding-left: 5px;
-  color: rgb(200, 199, 199);
   border: 1px solid rgb(200, 199, 199);
   border-radius: 8px;
+  font-size: var(--font-small-size);
+  color: var(--color-background);
 }
-.basic-info .type-detail .main-type ul .main-type-sub, .basic-info .type-detail .main-type ul .sub-type-sub, .basic-info .type-detail .sub-type ul .main-type-sub, .basic-info .type-detail .sub-type ul .sub-type-sub {
+.basic-info-wrap .type-detail .main-type ul .main-type-sub, .basic-info-wrap .type-detail .main-type ul .sub-type-sub, .basic-info-wrap .type-detail .sub-type ul .main-type-sub, .basic-info-wrap .type-detail .sub-type ul .sub-type-sub {
   display: none;
   /* 부모사이즈에 관여X, 별도 분리 */
   position: absolute;
@@ -100,20 +107,20 @@ body {
   min-width: 16rem;
   transform: translateX(-50%);
 }
-.basic-info .period-wrap {
+.basic-info-wrap .period-wrap {
   display: flex;
   gap: 5rem;
   padding-top: 0.5rem;
 }
-.basic-info .period-wrap .start-date-wrap, .basic-info .period-wrap .end-date-wrap {
+.basic-info-wrap .period-wrap .start-date-wrap, .basic-info-wrap .period-wrap .end-date-wrap {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.basic-info .period-wrap .start-date-wrap label, .basic-info .period-wrap .end-date-wrap label {
+.basic-info-wrap .period-wrap .start-date-wrap label, .basic-info-wrap .period-wrap .end-date-wrap label {
   padding-bottom: 0.5rem;
 }
-.basic-info .period-wrap .start-date-wrap input, .basic-info .period-wrap .end-date-wrap input {
+.basic-info-wrap .period-wrap .start-date-wrap input, .basic-info-wrap .period-wrap .end-date-wrap input {
   display: block;
   width: 100%;
   max-width: 25rem;
@@ -125,35 +132,43 @@ body {
   border-radius: 8px;
 }
 
-.recruitment-info {
+.recruitment-info-wrap {
   background-color: white;
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
   text-align: left;
-  padding: 20px 0px 20px 0px;
+  padding: 2rem 0 2rem 0;
 }
-.recruitment-info .recruitment-title {
+.recruitment-info-wrap .recruitment-title-wrap {
+  background-color: white;
+  width: 70%;
+  max-width: 1400px;
+  text-align: left;
+  padding: 0.5rem 0 0.5rem 0;
+}
+.recruitment-info-wrap .recruitment-title-wrap .recruitment-title {
   font-weight: var(--font-bold);
-  size: var(--font-xlarge-size);
-  padding: 20px 0 20px 0;
-  width: 60%;
+  font-size: var(--font-large-size);
+  padding: 0.5rem 0 0.5rem 0;
+  width: 70%;
+  max-width: 1400px;
 }
-.recruitment-info .recuritment-wrap {
+.recruitment-info-wrap .recuritment-wrap {
   width: 100%;
-  border-top: 2px solid gray;
+  border-top: 2px solid var(--color-background);
   padding: 10px 0 20px 0;
   display: flex;
   gap: 5rem;
 }
-.recruitment-info .recuritment-wrap .recruitment-end-wrap, .recruitment-info .recuritment-wrap .recruitment-count-wrap {
+.recruitment-info-wrap .recuritment-wrap .recruitment-end-wrap, .recruitment-info-wrap .recuritment-wrap .recruitment-count-wrap {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.recruitment-info .recuritment-wrap .recruitment-end-wrap label, .recruitment-info .recuritment-wrap .recruitment-count-wrap label {
+.recruitment-info-wrap .recuritment-wrap .recruitment-end-wrap label, .recruitment-info-wrap .recuritment-wrap .recruitment-count-wrap label {
   padding-bottom: 0.5rem;
 }
-.recruitment-info .recuritment-wrap .recruitment-end-wrap input, .recruitment-info .recuritment-wrap .recruitment-count-wrap input {
+.recruitment-info-wrap .recuritment-wrap .recruitment-end-wrap input, .recruitment-info-wrap .recuritment-wrap .recruitment-count-wrap input {
   display: block;
   width: 100%;
   max-width: 25rem;
@@ -164,23 +179,23 @@ body {
   border: 1px solid rgb(200, 199, 199);
   border-radius: 8px;
 }
-.recruitment-info .recruitment-count-wrap .recruitment-count-detail-wrap {
+.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap {
   display: flex;
   gap: 5rem;
 }
-.recruitment-info .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role, .recruitment-info .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count {
+.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role, .recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count {
   width: 100%;
   display: flex;
   flex-direction: column;
   padding-bottom: 0.5rem;
 }
-.recruitment-info .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role span, .recruitment-info .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count span {
+.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role span, .recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count span {
   padding-bottom: 0.5rem;
 }
-.recruitment-info .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role label, .recruitment-info .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count label {
+.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role label, .recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count label {
   padding-bottom: 0.5rem;
 }
-.recruitment-info .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role input, .recruitment-info .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count input {
+.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role input, .recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count input {
   display: block;
   width: 100%;
   max-width: 25rem;
@@ -191,12 +206,12 @@ body {
   border: 1px solid rgb(200, 199, 199);
   border-radius: 8px;
 }
-.recruitment-info .recruitment-count-wrap .recruitment-count-detail-btn {
+.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-btn {
   display: flex;
   justify-content: right;
   gap: 0.5rem;
 }
-.recruitment-info .recruitment-count-wrap .recruitment-count-detail-btn button {
+.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-btn button {
   background: var(--color-background);
   width: 4rem;
   height: 2rem;
@@ -209,7 +224,8 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 60%;
+  width: 70%;
+  max-width: 1400px;
 }
 .title-wrap span {
   padding-bottom: 0.5rem;
@@ -221,12 +237,18 @@ body {
   line-height: 2rem;
   padding-left: 5px;
   color: rgb(200, 199, 199);
-  border: 1px solid rgb(200, 199, 199);
+  border: 1px solid var(--color-background);
   border-radius: 8px;
 }
 
-#content {
-  width: 60%;
+.content-wrap {
+  width: 70%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.content-wrap #content {
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
   text-align: left;
   padding: 20px 0px 20px 0px;
@@ -235,7 +257,9 @@ body {
 }
 
 .content-btn-wrap {
-  width: 80%;
+  margin: 0 auto;
+  width: 70%;
+  max-width: 1400px;
   display: flex;
   justify-content: right;
   gap: 0.5rem;

@@ -1,45 +1,124 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "BMDOHYEON";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+:root {
+  /* 색상코드 */
+  --color-background: #f0f0f0;
+  --color-sky: #a4d7ee;
+  --color-ivory: #f9e3a3;
+  --color-orange: #fc8d09;
+  /* 폰트 */
+  --font-basic-color: #26424a;
+  --font-small-size: 0.875rem;
+  --font-middle-size: 1rem;
+  --font-large-size: 1.125rem;
+  --font-xlarge-size: 2rem;
+  --font-default: 400;
+  --font-bold: 700;
+  --default-border: #26424a;
+  --border-radius: 0.5rem;
+}
+
 body {
   flex-direction: column;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-wrap {
   display: flex;
   flex-direction: column;
   gap: 5rem;
+  width: 100vw;
+  max-width: 1400px;
+  min-width: 480px;
   justify-content: center;
   align-items: center;
 }
 .main-wrap .main-section {
   position: relative;
-  max-width: 1280px;
+  width: 90%;
 }
 .main-wrap .main-section ul > li > a > img {
   width: 100%;
 }
-.main-wrap .contest-section {
-  max-width: 1280px;
-  height: 260px;
+.main-wrap .section {
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.main-wrap .contest-section .contest-list {
+.main-wrap .section .section-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
-.main-wrap .contest-section .contest-list .contest-logo > a > img {
-  width: 200px;
-}
-.main-wrap .contest-section .contest-list .contest-slide {
+.main-wrap .section .section-list .section-slide {
   display: flex;
   gap: 1rem;
+  padding: 1rem;
+  flex-wrap: wrap;
 }
-.main-wrap .contest-section .contest-list .contest-slide > li > a > img {
-  width: 180px;
+.main-wrap .section .section-list .section-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+  width: 14em;
+  height: 14rem;
+}
+.main-wrap .section .section-list .section-intro > div h3 {
+  font-weight: var(--font-xlarge-size);
+  font-size: var(--font-xlarge-size);
+  margin-bottom: 1rem;
+}
+.main-wrap .section .section-list .section-intro > div p {
+  font-size: var(--font-large-size);
+}
+.main-wrap .section .section-list .section-intro .section-btn {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-wrap .section .section-list .section-intro .section-btn li img {
+  display: block;
+  width: 24px;
+}
+.main-wrap .policy-section.section .section-list .policy-intro {
+  order: 1;
+}
+.main-wrap .policy-section.section .section-list .section-slide {
+  order: 0;
 }
 .main-wrap .swiper-progressbar {
   top: auto !important;
   bottom: 0 !important;
   position: absolute;
-  z-index: 1;
+  z-index: 100;
   background: none;
 }

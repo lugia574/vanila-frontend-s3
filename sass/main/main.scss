@@ -8,6 +8,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 
 .main-wrap {
@@ -23,7 +24,7 @@ body {
 
   .main-section {
     position: relative;
-    width: 90%;
+    width: 100%;
 
     ul > li > a > img {
       width: 100%;
@@ -31,8 +32,6 @@ body {
   }
 
   .section {
-    max-width: 1400px;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,8 +57,11 @@ body {
         padding: 2rem;
         width: 14em;
         height: 14rem;
+        background: var(--font-basic-color);
+        color: white;
         > div {
-          h3 {
+          h2 {
+            color: var(--color-sky);
             font-weight: var(--font-xlarge-size);
             font-size: var(--font-xlarge-size);
             margin-bottom: 1rem;
@@ -73,9 +75,13 @@ body {
           width: 100%;
           justify-content: space-between;
           align-items: center;
-          li img {
-            display: block;
-            width: 24px;
+          li {
+            display: flex;
+            .swiper-button-next,
+            .swiper-button-prev {
+              position: relative;
+              color: white;
+            }
           }
         }
       }

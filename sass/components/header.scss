@@ -1,73 +1,74 @@
+@use '../../assets/fonts/font';
+@use '../common/variables';
 
-@use "../../assets/fonts/font";
-@use "../common/variables";
-
-:root{
-    color: var(--font-basic-color);
-    background: white;
+:root {
+  color: var(--font-basic-color);
+  background: white;
 }
 
-header{
-    width: 100%;
-    box-shadow: 0 0 2rem 0 gray;
+header {
+  width: 100%;
+  box-shadow: 0 0 0.25rem 0 gray;
+  background: white;
+  z-index: 9999;
+  min-width: 480px;
 
-    .content-center{
-        color: var(--font-basic-color);
+  .content-center {
+    color: var(--font-basic-color);
 
-        background: white;
-        font-family: "Pretendard", sans-serif;
+    font-family: 'Pretendard', sans-serif;
 
+    max-width: 1400px;
 
-        width: 100%;
-        height: 50px;
-        margin: auto;
-        // 위, 오른쪽, 아래, 왼쪽
-        padding: 3rem 2rem 3rem 2rem;
+    height: 50px;
+    margin: auto;
+    // 위, 오른쪽, 아래, 왼쪽
+    padding: 3rem 2rem 3rem 2rem;
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    display: flex;
 
-        h1{
-            // 폰트적용
-            font-family: "BMDOHYEON", "Pretendard";
-        }
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      // 폰트적용
+      font-family: 'BMDOHYEON', 'Pretendard';
     }
-    
+  }
 
-    // 메인메뉴
-    #main-nav{
-        ul{
-            display: flex;
-            gap: 40px;
+  // 메인메뉴
+  #main-nav {
+    ul {
+      display: flex;
+      gap: 40px;
 
-            li{
-                a{
-                    // 글자크기
-                    font-size: var(--font-large-size);
-                }
-            }
+      li {
+        a {
+          // 글자크기
+          font-size: var(--font-large-size);
         }
-        
+      }
     }
+  }
 
-    // 사용자 메뉴
-    #auth-menu{
-        ul{
-            display: flex;
-            gap: 20px;
-            li{
-                a{
-                    font-size: var(--font-small-size);
-                    color: gray;
-                }
-            }
+  // 사용자 메뉴
+  #auth-menu {
+    ul {
+      display: flex;
+      gap: 20px;
+      li {
+        a {
+          font-size: var(--font-small-size);
+          color: gray;
         }
-        
+      }
     }
+  }
+}
 
-
-
+.fixed {
+  position: fixed;
+  top: 0;
 }
 
 // 반응형

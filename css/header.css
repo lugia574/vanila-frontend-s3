@@ -1,28 +1,25 @@
 @charset "UTF-8";
 @font-face {
-  font-family: 'BMDOHYEON';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff')
-    format('woff');
+  font-family: "BMDOHYEON";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Pretendard';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
-    format('woff');
+  font-family: "Pretendard";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Pretendard';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
-    format('woff');
+  font-family: "Pretendard";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 :root {
   /* 색상코드 */
-  --color-backgrounfd: #f0f0f0;
+  --color-background: #f0f0f0;
   --color-sky: #a4d7ee;
   --color-ivory: #f9e3a3;
   --color-orange: #fc8d09;
@@ -45,13 +42,15 @@
 
 header {
   width: 100%;
-  box-shadow: 0 0 2rem 0 gray;
+  box-shadow: 0 0 0.25rem 0 gray;
+  background: white;
+  z-index: 9999;
+  min-width: 480px;
 }
 header .content-center {
   color: var(--font-basic-color);
-  background: white;
-  font-family: 'Pretendard', sans-serif;
-  width: 100%;
+  font-family: "Pretendard", sans-serif;
+  max-width: 1400px;
   height: 50px;
   margin: auto;
   padding: 3rem 2rem 3rem 2rem;
@@ -60,7 +59,7 @@ header .content-center {
   align-items: center;
 }
 header .content-center h1 {
-  font-family: 'BMDOHYEON', 'Pretendard';
+  font-family: "BMDOHYEON", "Pretendard";
 }
 header #main-nav ul {
   display: flex;
@@ -76,4 +75,9 @@ header #auth-menu ul {
 header #auth-menu ul li a {
   font-size: var(--font-small-size);
   color: gray;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
 }

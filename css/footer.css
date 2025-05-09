@@ -42,7 +42,6 @@ footer {
   padding: 2rem 0;
   font-size: 0.9rem;
   margin-top: auto;
-  width: 100%;
   /* 반응형 미디어 쿼리 */
 }
 footer .footer-top {
@@ -70,6 +69,11 @@ footer .footer-bottom .footer-links a:nth-child(2) {
 footer .footer-bottom .footer-copy {
   font-size: 0.8rem;
   opacity: 0.8;
+}
+footer .content-center {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
 }
 @media (max-width: 768px) {
   footer .footer-top,

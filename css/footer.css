@@ -70,6 +70,11 @@ footer .footer-bottom .footer-copy {
   font-size: 0.8rem;
   opacity: 0.8;
 }
+footer .content-center {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
 @media (max-width: 768px) {
   footer .footer-top,
   footer .footer-middle,

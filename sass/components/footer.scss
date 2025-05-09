@@ -43,6 +43,12 @@ footer {
     }
   }
 
+  .content-center {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
   /* 반응형 미디어 쿼리 */
   @media (max-width: 768px) {
     .footer-top,

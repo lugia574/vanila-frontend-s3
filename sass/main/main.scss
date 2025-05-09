@@ -8,6 +8,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 
 .main-wrap {
@@ -23,7 +24,7 @@ body {
 
   .main-section {
     position: relative;
-    width: 90%;
+    width: 100%;
 
     ul > li > a > img {
       width: 100%;
@@ -31,8 +32,6 @@ body {
   }
 
   .section {
-    max-width: 1400px;
-
     display: flex;
     align-items: center;
     justify-content: center;

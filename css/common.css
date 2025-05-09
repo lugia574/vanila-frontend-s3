@@ -14,7 +14,7 @@ body {
   color: var(--font-basic-color);
 }
 
-.main {
+main > .wrap {
   max-width: 1200px;
   padding: 1.5rem 2rem;
   margin: 0 auto;

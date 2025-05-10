@@ -1,0 +1,77 @@
+.contest-register-container {
+  background-color: rgb(255, 238, 241);
+}
+
+.contest-register {
+  margin: 100px 0 0 100px;
+}
+
+.contest-form {
+  margin: 10px 100px;
+}
+
+.contest-text-wrap {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input[type='text'] {
+  padding: 8px;
+  font-size: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.contest-info-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+// 깔끔하게 class 통일할까 고민
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.contest-info-wrap input[type='text'],
+input[type='date'],
+select {
+  width: 500px;
+  max-width: 25rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding-left: 5px;
+  color: rgb(200, 199, 199);
+  border: 1px solid rgb(200, 199, 199);
+  border-radius: 8px;
+}
+
+select option {
+  padding: 10px;
+  color: rgb(200, 199, 199);
+}
+
+.register-btn-wrab {
+  margin: 0 auto;
+  max-width: 1400px;
+  display: flex;
+  justify-content: end;
+  gap: 0.5rem;
+  button {
+    width: 4rem;
+    height: 2rem;
+    border: none;
+    border-radius: 8px;
+  }
+  .cancel-btn {
+    background: #f0f0f0;
+  }
+  .submit-btn {
+    background: #9abbff;
+  }
+}

@@ -49,17 +49,39 @@ body {
 .main-wrap {
   display: flex;
   flex-direction: column;
+  width: 100%;
   min-width: 480px;
   justify-content: center;
   align-items: center;
 }
 .main-wrap .main-banner {
-  margin-top: 90px;
+  margin-top: 100px;
   position: relative;
   width: 100%;
 }
-.main-wrap .main-banner ul > li > a > img {
+.main-wrap .main-banner .swiper.mainSwiper {
   width: 100%;
+}
+.main-wrap .main-banner .main-slide-list {
+  width: 100%;
+}
+.main-wrap .main-banner .main-slide-list li {
+  height: 700px;
+  padding: 4rem;
+  text-align: end;
+  box-sizing: border-box;
+}
+.main-wrap .main-banner .main-slide-list .frist:last-child {
+  background-color: white;
+}
+.main-wrap .main-banner .main-slide-list .sec {
+  background-color: pink;
+}
+.main-wrap .main-banner .main-slide-list .thrid {
+  background-color: skyblue;
+}
+.main-wrap .main-banner .main-slide-list .four {
+  background-color: rgb(196, 248, 231);
 }
 .main-wrap .main-banner .swiper-progressbar {
   top: auto !important;

@@ -1,7 +1,8 @@
-const main = new Swiper('.main-slide', {
+const main = new Swiper('.mainSwiper', {
+  slidesPerView: 1,
   loop: true,
   autoplay: {
-    delay: 3000,
+    delay: 5000,
   },
   navigation: {
     nextEl: '.swiper-button-next',

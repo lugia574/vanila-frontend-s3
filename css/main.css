@@ -124,10 +124,18 @@ body {
 .main-wrap .main-banner .text-slider .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: var(--font-basic-color);
 }
+.main-wrap .main-contents {
+  background: rgb(210, 255, 192);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 .main-wrap .main-contents .section {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: pink;
 }
 .main-wrap .main-contents .section .section-list {
   display: flex;

@@ -55,7 +55,7 @@ body {
   align-items: center;
 }
 .main-wrap .main-banner {
-  margin-top: 100px;
+  margin-top: 90px;
   position: relative;
   width: 100%;
 }
@@ -67,21 +67,21 @@ body {
 }
 .main-wrap .main-banner .main-slide-list li {
   height: 700px;
-  padding: 4rem;
+  padding: 4rem 4rem 0 4rem;
   text-align: end;
   box-sizing: border-box;
 }
-.main-wrap .main-banner .main-slide-list .frist:last-child {
+.main-wrap .main-banner .main-slide-list li img {
+  height: 100%;
+}
+.main-wrap .main-banner .main-slide-list .frist {
   background-color: white;
 }
 .main-wrap .main-banner .main-slide-list .sec {
   background-color: pink;
 }
 .main-wrap .main-banner .main-slide-list .thrid {
-  background-color: skyblue;
-}
-.main-wrap .main-banner .main-slide-list .four {
-  background-color: rgb(196, 248, 231);
+  background-color: #fff2ee;
 }
 .main-wrap .main-banner .swiper-progressbar {
   top: auto !important;

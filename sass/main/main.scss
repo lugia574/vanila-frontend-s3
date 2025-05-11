@@ -21,7 +21,7 @@ body {
   align-items: center;
 
   .main-banner {
-    margin-top: 100px;
+    margin-top: 90px;
     position: relative;
     width: 100%;
 
@@ -32,29 +32,23 @@ body {
     .main-slide-list {
       width: 100%;
       li {
-        // text-align: center;
-
         height: 700px;
-        // width: 100% !important;
-        padding: 4rem;
+        padding: 4rem 4rem 0 4rem;
         text-align: end;
         box-sizing: border-box;
-        // img {
-        //   background-size: 100%;
-        // }
+        img {
+          height: 100%;
+        }
       }
 
-      .frist:last-child {
+      .frist {
         background-color: white;
       }
       .sec {
         background-color: pink;
       }
       .thrid {
-        background-color: skyblue;
-      }
-      .four {
-        background-color: rgb(196, 248, 231);
+        background-color: #fff2ee;
       }
     }
 

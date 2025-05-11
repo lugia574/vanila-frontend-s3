@@ -9,7 +9,7 @@
 header {
   width: 100%;
   box-shadow: 0 0 0.25rem 0 gray;
-  background: white;
+  background: rgba(255, 255, 255, 0.1);
   z-index: 9999;
   min-width: 480px;
   position: fixed;
@@ -68,9 +68,8 @@ header {
   }
 }
 
-.fixed {
-  position: fixed;
-  top: 0;
+.header-white {
+  background-color: white;
 }
 
 // 반응형

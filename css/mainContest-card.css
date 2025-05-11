@@ -35,50 +35,25 @@
   --border-radius: 0.5rem;
 }
 
-:root {
-  color: var(--font-basic-color);
-  background: white;
-}
-
-header {
-  width: 100%;
-  box-shadow: 0 0 0.25rem 0 gray;
-  background: rgba(255, 255, 255, 0.1);
-  z-index: 9999;
-  min-width: 480px;
-  position: fixed;
-  top: 0;
-}
-header .content-center {
-  color: var(--font-basic-color);
-  font-family: "Pretendard", sans-serif;
-  max-width: 1400px;
-  height: 50px;
-  margin: auto;
-  padding: 3rem 2rem 3rem 2rem;
+.main-contest-card-wrap {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
+  width: 12em;
+  height: 12rem;
+  border-radius: 8px;
+  box-shadow: 0 0.025rem 0.5rem rgba(0, 0, 0, 0.25);
+  overflow: hidden;
 }
-header .content-center h1 {
-  font-family: "BMDOHYEON", "Pretendard";
-}
-header #main-nav ul {
-  display: flex;
-  gap: 40px;
-}
-header #main-nav ul li a {
-  font-size: var(--font-large-size);
-}
-header #auth-menu ul {
-  display: flex;
-  gap: 20px;
-}
-header #auth-menu ul li a {
+.main-contest-card-wrap .d-day-box {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 0.25rem 0.5rem;
+  color: var(--color-background);
+  background: var(--color-orange);
+  border-radius: 1rem;
   font-size: var(--font-small-size);
-  color: gray;
 }
-
-.header-white {
-  background-color: white;
+.main-contest-card-wrap .contest-img > img {
+  width: 100%;
 }

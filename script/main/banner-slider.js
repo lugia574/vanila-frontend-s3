@@ -1,7 +1,10 @@
-const main = new Swiper('.main-slide', {
+const textSlider = new Swiper('.text-slider', {
+  slidesPerView: 1,
+  // effect: 'fade',
+  // direction: 'vertical',
   loop: true,
   autoplay: {
-    delay: 3000,
+    delay: 5000,
   },
   navigation: {
     nextEl: '.swiper-button-next',
@@ -12,6 +15,13 @@ const main = new Swiper('.main-slide', {
     type: 'progressbar',
   },
 });
+
+const imageSlider = new Swiper('.image-slider', {
+  slidesPerView: 1,
+  loop: true,
+});
+
+textSlider.controller.control = imageSlider;
 
 // const contest = new Swiper('.contest-list', {
 //   slidesPerView: 3,

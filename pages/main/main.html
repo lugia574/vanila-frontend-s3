@@ -15,191 +15,209 @@
     <main class="main">
       <div class="main-wrap">
         <!-- 메인 배너 -->
-        <section class="main-section main-slide-wrap">
+        <div class="main-banner">
           <h2 class="blind">main slider</h2>
-          <div class="inner">
-            <div class="swiper main-slide">
-              <ul class="swiper-wrapper main-slide-list">
-                <li class="swiper-slide">
-                  <a href="#"
-                    ><img src="../../public/images/main/main-logo1.png" alt="메인배너1"
-                  /></a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="#"
-                    ><img src="../../public/images/main/main-logo2.png" alt="메인배너2"
-                  /></a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="#"
-                    ><img src="../../public/images/main/main-logo3.png" alt="메인배너3"
-                  /></a>
-                </li>
-              </ul>
-            </div>
-
+          <div class="swiper image-slider">
+            <ul class="swiper-wrapper image-slide-list">
+              <li class="swiper-slide image-slide first-img">
+                <img src="../../public/images/main/test/flower.png" alt="메인배너1" />
+              </li>
+              <li class="swiper-slide image-slide second-img">
+                <img src="../../public/images/main/test/marshmallows.png" alt="메인배너2" />
+              </li>
+              <li class="swiper-slide image-slide thrid-img">
+                <img src="../../public/images/main/test/plants.png" alt="메인배너3" />
+              </li>
+            </ul>
+          </div>
+          <div class="swiper text-slider">
+            <ul class="swiper-wrapper text-slide-list">
+              <li class="swiper-slide text-slide">
+                <div class="box_inner">
+                  <p class="duration">5.12 ~ 5.20</p>
+                  <p class="main-script">이것은 메인 스크립트</p>
+                  <p class="summary-script">이것은 배너인가 아닌가 오호호</p>
+                  <a href="#">지금바로가기</a>
+                </div>
+              </li>
+              <li class="swiper-slide text-slide">
+                <div class="box_inner">
+                  <p class="duration">5.12 ~ 5.20</p>
+                  <p class="main-script">이것은 메인 스크립트</p>
+                  <p class="summary-script">이것은 배너인가 아닌가 오호호</p>
+                  <a href="#">지금바로가기</a>
+                </div>
+              </li>
+              <li class="swiper-slide text-slide">
+                <div class="box_inner">
+                  <p class="duration">5.12 ~ 5.20</p>
+                  <p class="main-script">이것은 메인 스크립트</p>
+                  <p class="summary-script">이것은 배너인가 아닌가 오호호</p>
+                  <a href="#">지금바로가기</a>
+                </div>
+              </li>
+            </ul>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-progressbar"></div>
           </div>
-        </section>
-        <!-- 공모전 -->
-        <section class="contest-section section">
-          <div class="swiper section-list">
-            <div class="contest-intro section-intro">
-              <div class="contest-title">
-                <h2>
-                  <a href="#"> 공모전</a>
-                </h2>
-                <p>지금 참가할 수 있는 <br />공모전을 만나보세요.</p>
-              </div>
+        </div>
 
-              <ul class="section-btn">
-                <li class="next-btn">
-                  <a href="#"><div class="swiper-button-prev"></div></a>
+        <div class="main-contents wrap">
+          <!-- 공모전 -->
+          <section class="contest-section section">
+            <div class="swiper section-list">
+              <div class="contest-intro section-intro">
+                <div class="contest-title">
+                  <h2>
+                    <a href="#"> 공모전</a>
+                  </h2>
+                  <p>지금 참가할 수 있는 <br />공모전을 만나보세요.</p>
+                </div>
+
+                <ul class="section-btn">
+                  <li class="next-btn">
+                    <a href="#"><div class="swiper-button-prev"></div></a>
+                  </li>
+                  <li class="playStop-btn"><a href="#">멈춤</a></li>
+                  <li class="prev-btn">
+                    <a href="#"><div class="swiper-button-next"></div></a>
+                  </li>
+                </ul>
+              </div>
+              <ul class="section-slide">
+                <li class="">
+                  <main-contest-card
+                    day="5"
+                    src="../../public/images/main/contest-image1.png"
+                  ></main-contest-card>
                 </li>
-                <li class="playStop-btn"><a href="#">멈춤</a></li>
-                <li class="prev-btn">
-                  <a href="#"><div class="swiper-button-next"></div></a>
+                <li class="">
+                  <main-contest-card
+                    day="5"
+                    src="../../public/images/main/contest-image1.png"
+                  ></main-contest-card>
+                </li>
+
+                <li class="">
+                  <main-contest-card
+                    day="45"
+                    src="../../public/images/main/contest-image3.png"
+                  ></main-contest-card>
+                </li>
+                <li class="">
+                  <main-contest-card
+                    day="555"
+                    src="../../public/images/main/contest-image4.png"
+                  ></main-contest-card>
                 </li>
               </ul>
             </div>
-            <ul class="section-slide">
-              <li class="">
-                <main-contest-card
-                  day="5"
-                  src="../../public/images/main/contest-image1.png"
-                ></main-contest-card>
-              </li>
-              <li class="">
-                <main-contest-card
-                  day="110"
-                  src="../../public/images/main/contest-image2.png"
-                ></main-contest-card>
-              </li>
-              <li class="">
-                <main-contest-card
-                  day="45"
-                  src="../../public/images/main/contest-image3.png"
-                ></main-contest-card>
-              </li>
-              <li class="">
-                <main-contest-card
-                  day="555"
-                  src="../../public/images/main/contest-image4.png"
-                ></main-contest-card>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <!-- 청년정책 -->
-        <section class="policy-section section">
-          <div class="swiper section-list">
-            <div class="policy-intro section-intro">
-              <div class="policy-title">
-                <h2>
-                  <a href="#"> 정책</a>
-                </h2>
-                <p>지금 신청할 수 있는 <br />정책들을 만나보세요.</p>
-              </div>
+          </section>
+          <!-- 청년정책 -->
+          <section class="policy-section section">
+            <div class="swiper section-list">
+              <div class="policy-intro section-intro">
+                <div class="policy-title">
+                  <h2>
+                    <a href="#"> 정책</a>
+                  </h2>
+                  <p>지금 신청할 수 있는 <br />정책들을 만나보세요.</p>
+                </div>
 
-              <ul class="section-btn">
-                <li class="next-btn">
-                  <a href="#"><div class="swiper-button-prev"></div></a>
+                <ul class="section-btn">
+                  <li class="next-btn">
+                    <a href="#"><div class="swiper-button-prev"></div></a>
+                  </li>
+                  <li class="playStop-btn"><a href="#">멈춤</a></li>
+                  <li class="prev-btn">
+                    <a href="#"><div class="swiper-button-next"></div></a>
+                  </li>
+                </ul>
+              </div>
+              <ul class="section-slide">
+                <li class="">
+                  <main-contest-card
+                    day="110"
+                    src="../../public/images/main/contest-image2.png"
+                  ></main-contest-card>
                 </li>
-                <li class="playStop-btn"><a href="#">멈춤</a></li>
-                <li class="prev-btn">
-                  <a href="#"><div class="swiper-button-next"></div></a>
+                <li class="">
+                  <main-contest-card
+                    day="45"
+                    src="../../public/images/main/contest-image3.png"
+                  ></main-contest-card>
+                </li>
+                <li class="">
+                  <main-contest-card
+                    day="555"
+                    src="../../public/images/main/contest-image4.png"
+                  ></main-contest-card>
                 </li>
               </ul>
             </div>
-            <ul class="section-slide">
-              <li class="">
-                <main-contest-card
-                  day="5"
-                  src="../../public/images/main/contest-image1.png"
-                ></main-contest-card>
-              </li>
-              <li class="">
-                <main-contest-card
-                  day="110"
-                  src="../../public/images/main/contest-image2.png"
-                ></main-contest-card>
-              </li>
-              <li class="">
-                <main-contest-card
-                  day="45"
-                  src="../../public/images/main/contest-image3.png"
-                ></main-contest-card>
-              </li>
-              <li class="">
-                <main-contest-card
-                  day="555"
-                  src="../../public/images/main/contest-image4.png"
-                ></main-contest-card>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <!-- 자격증 -->
-        <section class="license-section section">
-          <div class="swiper section-list">
-            <div class="license-intro section-intro">
-              <div class="license-title">
-                <h2>
-                  <a href="#">자격증</a>
-                </h2>
-                <p>지금 신청할 수 있는 <br />자격증들을 만나보세요.</p>
-              </div>
+          </section>
+          <!-- 자격증 -->
+          <section class="license-section section">
+            <div class="swiper section-list">
+              <div class="license-intro section-intro">
+                <div class="license-title">
+                  <h2>
+                    <a href="#">자격증</a>
+                  </h2>
+                  <p>지금 신청할 수 있는 <br />자격증들을 만나보세요.</p>
+                </div>
 
-              <ul class="section-btn">
-                <li class="next-btn">
-                  <a href="#"><div class="swiper-button-prev"></div></a>
+                <ul class="section-btn">
+                  <li class="next-btn">
+                    <a href="#"><div class="swiper-button-prev"></div></a>
+                  </li>
+                  <li class="playStop-btn"><a href="#">멈춤</a></li>
+                  <li class="prev-btn">
+                    <a href="#"><div class="swiper-button-next"></div></a>
+                  </li>
+                </ul>
+              </div>
+              <ul class="section-slide">
+                <li class="">
+                  <license-card
+                    licenseTag1="역사"
+                    licenseTag2="전국"
+                    day="90"
+                    licenseName="한국사 능력검정"
+                    licenseSummary="한국사검정능력시험은 한국사에 대한 학습능력을 평가할 수 있는 지표..."
+                  ></license-card>
                 </li>
-                <li class="playStop-btn"><a href="#">멈춤</a></li>
-                <li class="prev-btn">
-                  <a href="#"><div class="swiper-button-next"></div></a>
+                <li class="">
+                  <license-card
+                    licenseTag1="역사"
+                    licenseTag2="전국"
+                    day="90"
+                    licenseName="한국사 능력검정"
+                    licenseSummary="한국사검정능력시험은 한국사에 대한 학습능력을 평가할 수 있는 지표..."
+                  ></license-card>
+                </li>
+                <li class="">
+                  <license-card
+                    licenseTag1="역사"
+                    licenseTag2="전국"
+                    day="90"
+                    licenseName="한국사 능력검정"
+                    licenseSummary="한국사검정능력시험은 한국사에 대한 학습능력을 평가할 수 있는 지표..."
+                  ></license-card>
                 </li>
               </ul>
             </div>
-            <ul class="section-slide">
-              <li class="">
-                <license-card
-                  licenseTag1="역사"
-                  licenseTag2="전국"
-                  day="90"
-                  licenseName="한국사 능력검정"
-                  licenseSummary="한국사검정능력시험은 한국사에 대한 학습능력을 평가할 수 있는 지표..."
-                ></license-card>
-              </li>
-              <li class="">
-                <license-card
-                  licenseTag1="역사"
-                  licenseTag2="전국"
-                  day="90"
-                  licenseName="한국사 능력검정"
-                  licenseSummary="한국사검정능력시험은 한국사에 대한 학습능력을 평가할 수 있는 지표..."
-                ></license-card>
-              </li>
-              <li class="">
-                <license-card
-                  licenseTag1="역사"
-                  licenseTag2="전국"
-                  day="90"
-                  licenseName="한국사 능력검정"
-                  licenseSummary="한국사검정능력시험은 한국사에 대한 학습능력을 평가할 수 있는 지표..."
-                ></license-card>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <!-- 커뮤니티 -->
-        <section class="community-section section">
-          <div class="section-title">
-            <h2>커뮤니티</h2>
-          </div>
-          <div class="section-list"></div>
-        </section>
+          </section>
+          <!-- 커뮤니티 -->
+          <section class="community-section section">
+            <div class="section-title">
+              <h2>커뮤니티</h2>
+            </div>
+            <div class="section-list"></div>
+          </section>
+        </div>
+
         <jean-footer></jean-footer>
       </div>
     </main>

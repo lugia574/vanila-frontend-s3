@@ -55,7 +55,6 @@ body {
   align-items: center;
 }
 .main-wrap .main-banner {
-  margin-top: 90px;
   position: relative;
   width: 100%;
 }
@@ -66,22 +65,26 @@ body {
   width: 100%;
 }
 .main-wrap .main-banner .main-slide-list li {
+  position: relative;
   height: 700px;
   padding: 4rem 4rem 0 4rem;
-  text-align: end;
+  display: flex;
+  justify-content: flex-end; /* 오른쪽 정렬 */
+  align-items: flex-end; /* 아래 정렬 */
   box-sizing: border-box;
 }
 .main-wrap .main-banner .main-slide-list li img {
-  height: 100%;
+  width: 25rem;
+  position: relative;
 }
-.main-wrap .main-banner .main-slide-list .frist {
-  background-color: white;
+.main-wrap .main-banner .main-slide-list .first-img {
+  background: linear-gradient(to bottom, transparent, white 30%, white 100%);
 }
-.main-wrap .main-banner .main-slide-list .sec {
-  background-color: pink;
+.main-wrap .main-banner .main-slide-list .second-img {
+  background: linear-gradient(to bottom, transparent, pink 30%, pink 100%);
 }
-.main-wrap .main-banner .main-slide-list .thrid {
-  background-color: #fff2ee;
+.main-wrap .main-banner .main-slide-list .thrid-img {
+  background: linear-gradient(to bottom, transparent, #fff2ee 30%, #fff2ee 100%);
 }
 .main-wrap .main-banner .swiper-progressbar {
   top: auto !important;

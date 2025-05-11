@@ -47,23 +47,24 @@ class JeanHeader extends HTMLElement {
       this.shadow.appendChild(header);
 
       // scroll 이벤트 등록 (render 완료 후)
-      // this.setupScrollListener();
+      this.setupScrollListener();
     } catch (error) {
       console.error('JeanHeader 로딩 실패:', error);
     }
   }
 
   // scroll 에 따라 fix 이벤트
-  // setupScrollListener() {
-  //   const nav = this.shadow.querySelector('#header');
-  //   if (!nav) return;
+  setupScrollListener() {
+    const nav = this.shadow.querySelector('#header');
+    if (!nav) return;
 
-  //   document.addEventListener('scroll', () => {
-  //     const sPos = document.documentElement.scrollTop;
-  //     if (sPos > 90) nav.classList.add('fixed');
-  //     else nav.classList.remove('fixed');
-  //   });
-  // }
+    document.addEventListener('scroll', () => {
+      const sPos = document.documentElement.scrollTop;
+      console.log(sPos);
+      if (sPos > 650) nav.classList.add('header-white');
+      else nav.classList.remove('header-white');
+    });
+  }
 }
 
 customElements.define('jean-header', JeanHeader);

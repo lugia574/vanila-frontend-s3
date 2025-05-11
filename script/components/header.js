@@ -57,11 +57,9 @@ class JeanHeader extends HTMLElement {
   setupScrollListener() {
     const nav = this.shadow.querySelector('#header');
     if (!nav) return;
-
     document.addEventListener('scroll', () => {
       const sPos = document.documentElement.scrollTop;
-      console.log(sPos);
-      if (sPos > 650) nav.classList.add('header-white');
+      if (sPos > 200) nav.classList.add('header-white');
       else nav.classList.remove('header-white');
     });
   }

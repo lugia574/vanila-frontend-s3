@@ -5,7 +5,23 @@ class JeanHeader extends HTMLElement {
     this.loadHeader();
   }
 
+  static get observedAttributes() {
+    return ['opacity'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (oldValue !== newValue) {
+      this.loadHeader();
+    }
+  }
+
+  connectedCallback() {
+    this.loadHeader();
+  }
+
   async loadHeader() {
+    const opacity = this.getAttribute('opacity') || 'false';
+
     try {
       // comm.css 불러오기
       const commRes = await fetch('../../css/common.css');
@@ -47,16 +63,20 @@ class JeanHeader extends HTMLElement {
       this.shadow.appendChild(header);
 
       // scroll 이벤트 등록 (render 완료 후)
-      this.setupScrollListener();
+      this.setupScrollListener(opacity);
     } catch (error) {
       console.error('JeanHeader 로딩 실패:', error);
     }
   }
 
   // scroll 에 따라 fix 이벤트
-  setupScrollListener() {
+  setupScrollListener(opacity) {
     const nav = this.shadow.querySelector('#header');
     if (!nav) return;
+    if (opacity === 'false') {
+      nav.classList.add('header-white');
+      return;
+    }
     document.addEventListener('scroll', () => {
       const sPos = document.documentElement.scrollTop;
       if (sPos > 200) nav.classList.add('header-white');

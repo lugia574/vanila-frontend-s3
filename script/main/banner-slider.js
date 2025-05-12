@@ -26,7 +26,6 @@ const textSlider = new Swiper('.text-slider', {
       const nextBtn = document.querySelector('.swiper-button-next');
       const prevBtn = document.querySelector('.swiper-button-prev');
       const progressbar = document.querySelector('.swiper-pagination-progressbar-fill');
-      console.log(progressbar);
 
       // 모든 관련 요소에서 이전 클래스 제거
       [nextBtn, prevBtn, progressbar].forEach(el => {

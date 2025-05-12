@@ -6,6 +6,7 @@
     <title>커뮤니티</title>
     <link rel="stylesheet" href="../../css/common.css">
     <link rel="stylesheet" href="../../css/postList.css">
+    <script defer src="../../script/community/postList.js"></script>
 </head>
 <body>
     <!-- main -->
@@ -42,10 +43,11 @@
                     <li><a href="#">종료임박순</a></li>
                 </ul>
     
-                <ul class="seach-conditions">
+                <ul class="search-conditions">
                     <!-- TODO : js 적용 -->
                     <li>적용된 검색조건</li>
-                    <i></i>
+                    <i class="filter-reset"></i>
+                    <!-- li a가 생성되면서 css 적용 -->
                 </ul>
     
                 <div class="search-wrap">
@@ -64,7 +66,6 @@
                     <li><a href="#">스터디</a></li>
                 </ul>
                 <ul class="view-type">
-                    <!-- 아이콘 넣기 -->
                     <li><a href="#"><i class="card-icon"></i></a></li>
                     <li><a href="#"><i class="list-icon"></i></a></li>
                 </ul>
@@ -282,7 +283,7 @@
             </nav>
         </section>
     
-        <input type="button" class="img-btn">
+        <input type="button" class="write-btn">
     </main>
 
     <script src="../../script/components/header.js"></script>

@@ -1,6 +1,7 @@
 @use "../../assets/fonts/font";
 @use "../common/variables";
 
+
 // filter-section
 .filter-section{
     margin-top: 7rem;
@@ -124,156 +125,115 @@
     width: 70%;
     max-width: 1400px;
     margin: 0 auto;
-    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .content-wrap{
+    flex: 0 1 calc(25% - 16px);
     display: flex;
-    flex-direction: column; /* 세로 방향 정렬 */
-    gap: 10px;
+    flex-direction: column;
+    gap: 0.5rem;
     width: 100%;
     max-width: 1400px;
     border-radius: 8px;
     border: 0.5px solid var(--color-background);
     margin: 0 auto 0.4rem;
     background-color: white;
+    padding: 1rem 1rem 1rem 1rem;
 
     .content-header{
         display: flex;
-        justify-content: space-between;
-        padding: 1rem 1rem 0 1rem;
-
-        .left-group, .right-group{
-            display: flex;
-            gap: 20px;
+ 
+        .field{
+            font-size: var(--font-small-size);
+            border: none;
+            border-radius: var(--border-radius);
+            text-align: center;
+            background-color: var(--default-border);
+            color: var(--color-background);
+            padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+            margin-right: 2.5rem;
+        }
+        .type{
+            font-size: var(--font-small-size);
+            border: none;
+            border-radius: var(--border-radius);
+            background-color: var(--color-background);
+            color: var(--default-border);
+            text-align: center;
+            padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+            margin-right: 0.5rem;
+        }
+        .d-day{
+            font-size: var(--font-small-size);
+            border: none;
+            border-radius: var(--border-radius);
+            background-color: var(--color-orange);
+            color: var(--color-background);
+            padding: 0.2rem 0.4rem 0.2rem 0.4rem;
         }
 
-        .left-group{
+        .content-title{
             .title{
-                font: var(--font-bold);
-                font-size: var(--font-large-size);
-            }
-            .field{
-                font-size: var(--font-small-size);
-                border: none;
-                border-radius: 8px;
-                background-color: var(--default-border);
-                color: var(--color-background);
-                padding: 2px 10px 2px 10px;
-            }
-        }
-
-        .right-group{
-            .type{
-                font-size: var(--font-small-size);
-                border: none;
-                border-radius: 8px;
-                background-color: var(--color-background);
-                color: var(--default-border);
-                padding: 2px 10px 2px 10px;
-            }
-            .d-day{
-                font-size: var(--font-small-size);
-                border: none;
-                border-radius: 8px;
-                background-color: var(--color-orange);
-                color: var(--color-background);
-                padding: 2px 10px 2px 10px;
+                font-size: var(--font-middle-size);
+                font-weight: var(--font-bold);
             }
         }
     }
+
     .content-summary{
-        display: flex;
-        justify-content: space-between;
-        font-size: var(--font-small-size);
-        padding: 0 1rem 0.5rem 1rem;
-        color: rgb(200, 199, 199);
+        p{
+            font-size: var(--font-small-size);
+        }
     }
 
     .content-footer{
+        width: 100%;
         display: flex;
-        justify-content: space-between;
-        padding: 0 1rem 0.5rem 1rem;
-        font-size: var(--font-small-size);
+        border-top: 1px solid var(--default-border);
+        padding-top: 0.5rem;
+        
         .left-group, .right-group{
             display: flex;
-            gap: 20px;
-
-            .writer{
-                color: rgb(200, 199, 199);
-            }
+            width: 50%;
+            font-size: var(--font-small-size);
         }
 
         .right-group{
-            .comment{
-                display: flex;
-                gap: 5px;
-                i{
-                    display: block;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: contain ;
-                    background-image: url(../../assets/icons/iconmonstr-speech-bubble-comment-thin.svg);
-                    width: 1rem;
-                    height: 1rem;
-                }
-            }
+            display: flex;
+            justify-content: right;
+            gap: 0.5rem;
+        }
 
-            .scrap{
-                display: flex;
-                gap: 5px;
-                i{
-                    display: block;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-image: url(../../assets/icons/iconmonstr-heart-lined.svg);
-                    width: 1rem;
-                    height: 1rem;
-                    cursor: pointer;
-                }
+        .comment{
+            display: flex;
+            justify-content: right;
+            gap: 5px;
+            i{
+                display: block;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain ;
+                background-image: url(../../assets/icons/iconmonstr-speech-bubble-comment-thin.svg);
+                width: 1rem;
+                height: 1rem;
             }
         }
 
-    }
-}
-
-// page section
-.page-num{
-        display: flex;
-        margin: 0 auto;
-        width: 70%;
-        max-width: 1400px;
-    ul{
-        display: flex;
-        gap: 10px;
-        margin: 0 auto;
-        flex-wrap: wrap;
-        i,li{
-            background-color: white;
-            width: 2rem;
-            height: 2rem;
-            border: 1px solid var(--color-background);
-            text-align: center;
-            line-height: 2rem;
-            margin-bottom: 40px;
-            cursor: pointer;
-        }
-
-        .left-arrow{
-            background-position: center;
-            background-repeat: no-repeat;
-            display: block;
-            background-image: url(../../assets/icons/iconmonstr-angel-left-thin.svg);
-            cursor: pointer;
-        }
-
-        .right-arrow{
-            background-position: center;
-            background-repeat: no-repeat;
-            display: block;
-            background-image: url(../../assets/icons/iconmonstr-angel-right-thin.svg);
-            align-items: center;
-            cursor: pointer;
+        .scrap{
+            display: flex;
+            gap: 5px;
+            i{
+                display: block;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: url(../../assets/icons/iconmonstr-heart-lined.svg);
+                width: 1rem;
+                height: 1rem;
+                cursor: pointer;
+            }
         }
     }
 }

@@ -131,24 +131,17 @@ body {
   flex-direction: column;
   gap: 2rem;
 }
-.main-wrap .main-contents .section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: pink;
-}
 .main-wrap .main-contents .section .section-list {
+  background: pink;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  flex-wrap: wrap;
+  padding: 1rem;
 }
 .main-wrap .main-contents .section .section-list .section-slide {
   display: flex;
   gap: 1rem;
-  padding: 1rem;
-  flex-wrap: wrap;
 }
 .main-wrap .main-contents .section .section-list .section-intro {
   display: flex;
@@ -157,8 +150,7 @@ body {
   justify-content: space-between;
   gap: 2rem;
   padding: 2rem;
-  width: 14em;
-  height: 14rem;
+  height: 100%;
   background: var(--font-basic-color);
   color: white;
 }
@@ -169,7 +161,7 @@ body {
   margin-bottom: 1rem;
 }
 .main-wrap .main-contents .section .section-list .section-intro > div p {
-  font-size: var(--font-large-size);
+  font-size: var(--font-small-size);
 }
 .main-wrap .main-contents .section .section-list .section-intro .section-btn {
   display: flex;
@@ -182,6 +174,7 @@ body {
 }
 .main-wrap .main-contents .section .section-list .section-intro .section-btn li .swiper-button-next,
 .main-wrap .main-contents .section .section-list .section-intro .section-btn li .swiper-button-prev {
+  width: 4rem;
   position: relative;
   color: white;
 }
@@ -190,4 +183,4 @@ body {
 }
 .main-wrap .main-contents .policy-section.section .section-list .section-slide {
   order: 0;
-}
+}/*# sourceMappingURL=main.css.map */

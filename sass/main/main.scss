@@ -108,22 +108,20 @@ body {
     flex-direction: column;
     gap: 2rem;
     .section {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: pink;
       .section-list {
+        background: pink;
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 2rem;
-        flex-wrap: wrap;
+        padding: 1rem;
+        // flex-wrap: wrap;
 
         .section-slide {
           display: flex;
           gap: 1rem;
-          padding: 1rem;
-          flex-wrap: wrap;
+
+          // flex-wrap: wrap;
         }
         .section-intro {
           display: flex;
@@ -132,8 +130,7 @@ body {
           justify-content: space-between;
           gap: 2rem;
           padding: 2rem;
-          width: 14em;
-          height: 14rem;
+          height: 100%;
           background: var(--font-basic-color);
           color: white;
           > div {
@@ -144,7 +141,7 @@ body {
               margin-bottom: 1rem;
             }
             p {
-              font-size: var(--font-large-size);
+              font-size: var(--font-small-size);
             }
           }
           .section-btn {
@@ -156,6 +153,7 @@ body {
               display: flex;
               .swiper-button-next,
               .swiper-button-prev {
+                width: 4rem;
                 position: relative;
                 color: white;
               }

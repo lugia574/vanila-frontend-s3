@@ -36,11 +36,12 @@
 }
 
 .sign-up-wrapper {
+  height: calc(100vh - 149px);
+  min-height: 1000px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
-  padding: 2rem 0;
+  padding: 1rem 0;
   background-color: #f8f9fa;
 }
 .sign-up-wrapper .sign-up-container {

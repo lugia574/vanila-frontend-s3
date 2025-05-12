@@ -7,14 +7,32 @@
 }
 @font-face {
   font-family: "Pretendard";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  src: url("./Pretendard-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Pretendard";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  src: url("./Pretendard-Medium.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("./Pretendard-SemiBold.woff") format("woff");
   font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("./Pretendard-Bold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("./Pretendard-ExtraBold.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 :root {
@@ -88,4 +106,4 @@ video {
 input:focus,
 a:focus {
   outline: none;
-}
+}/*# sourceMappingURL=common.css.map */

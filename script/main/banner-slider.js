@@ -1,6 +1,8 @@
 const textSlider = new Swiper('.text-slider', {
   slidesPerView: 1,
-  // effect: 'fade',
+  effect: 'fade',
+  speed: 1500,
+  fadeEffect: { crossFade: true },
   // direction: 'vertical',
   loop: true,
   autoplay: {
@@ -17,7 +19,6 @@ const textSlider = new Swiper('.text-slider', {
 });
 
 const imageSlider = new Swiper('.image-slider', {
-  effect: 'fade',
   slidesPerView: 1,
   loop: true,
 });

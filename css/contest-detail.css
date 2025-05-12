@@ -1,5 +1,58 @@
-@use "../../assets/fonts/font";
-@use "../common/variables";
+@charset "UTF-8";
+@font-face {
+  font-family: "BMDOHYEON";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("./Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("./Pretendard-Medium.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("./Pretendard-SemiBold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("./Pretendard-Bold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("./Pretendard-ExtraBold.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+:root {
+  /* 색상코드 */
+  --color-background: #f0f0f0;
+  --color-sky: #a4d7ee;
+  --color-ivory: #f9e3a3;
+  --color-orange: #fc8d09;
+  /* 폰트 */
+  --font-basic-color: #26424a;
+  --font-small-size: 0.875rem;
+  --font-middle-size: 1rem;
+  --font-large-size: 1.125rem;
+  --font-xlarge-size: 2rem;
+  --font-default: 400;
+  --font-bold: 700;
+  --default-border: #26424a;
+  --border-radius: 0.5rem;
+}
+
 /* main */
 .contest-detail-wrap {
   width: 1100px;
@@ -33,7 +86,6 @@
   padding: 10px 20px;
   gap: 30px;
 }
-
 .info-wrap img {
   width: 200px;
   margin-top: 10px;
@@ -43,7 +95,6 @@
 .info-left-wrap {
   padding: 20px;
 }
-
 .info-left-wrap h3 {
   padding: 15px 0px;
 }
@@ -51,7 +102,6 @@
 .activity-infomation-field {
   justify-content: center;
 }
-
 .activity-infomation-field dl {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -76,10 +126,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #b13c3c;
+  background-color: rgb(177, 60, 60);
   border-radius: 10px;
 }
-
 .contest-apply-btn a {
   font-size: 1.375rem;
   font-weight: 700;
@@ -118,7 +167,6 @@
   margin: 0 auto;
   background-color: skyblue;
 }
-
 .best-content-wrap a {
   display: block;
 }
@@ -131,4 +179,4 @@
 
 .best-content {
   padding: 10px 10px;
-}
+}/*# sourceMappingURL=contest-detail.css.map */

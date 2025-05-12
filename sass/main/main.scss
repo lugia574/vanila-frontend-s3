@@ -16,39 +16,64 @@ body {
   flex-direction: column;
   width: 100%;
   min-width: 480px;
-
   justify-content: center;
   align-items: center;
 
   .main-banner {
     position: relative;
     width: 100%;
+    margin-top: 95px;
     .image-slider {
       width: 100%;
       .image-slide-list {
         .image-slide {
           height: 700px;
-          padding: 4rem 4rem 0 4rem;
           display: flex;
-          justify-content: flex-end; /* 오른쪽 정렬 */
-          align-items: flex-end; /* 아래 정렬 */
+          justify-content: center;
+          align-items: center;
 
+          div {
+            // background-color: red;
+            width: 50%;
+            height: 100%;
+          }
           img {
-            width: 25rem;
-            // z-index: 1;
+            width: 100%;
+            // height: 100%;
+            // object-fit: contain;
           }
         }
 
+        .main-img {
+          img {
+            width: 30rem;
+          }
+          // background: linear-gradient(to bottom, transparent, white 10%, white 100%);
+          background: white;
+        }
+
         .first-img {
-          background: linear-gradient(to bottom, transparent, white 30%, white 100%);
+          img {
+            width: 40rem;
+          }
+          // background: linear-gradient(to bottom, transparent, #005eac 10%, #005eac 100%);
+          background: #005eac;
         }
 
         .second-img {
-          background: linear-gradient(to bottom, transparent, pink 30%, pink 100%);
+          img {
+            width: 30rem;
+          }
+          // background: linear-gradient(to bottom, transparent, #1b1b1b 10%, #1b1b1b 100%);
+          background: #1b1b1b;
         }
 
         .thrid-img {
-          background: linear-gradient(to bottom, transparent, #fff2ee 30%, #fff2ee 100%);
+          img {
+            width: 35rem;
+          }
+          // background: linear-gradient(to bottom, transparent, #3a5395 20%, #3a5395 100%);
+          background: #3a5395;
         }
       }
     }
@@ -61,31 +86,50 @@ body {
       height: 100%;
       display: flex;
       align-items: center;
-      justify-content: center;
-      .text-slide-list > .text-slide > .box_inner {
+      justify-content: flex-start;
+      .text-slide-list {
         width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: start;
-        flex-direction: column;
-        padding: 20rem;
-        gap: 1rem;
-        .duration {
-          color: gray;
-        }
-        .main-script {
-          font-size: var(--font-xlarge-size);
-        }
-        a {
-          color: gray;
-          text-decoration: underline;
+        .text-slide {
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          &.first-script > div {
+            color: var(--font-basic-color);
+          }
+          .box_inner {
+            width: 100%;
+            padding: 0 20%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 1rem;
+            color: white;
+            .duration {
+            }
+            .main-script {
+              font-size: 3.5rem;
+              font-weight: 600;
+            }
+            .summary-script {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              word-break: break-all;
+              width: 400px;
+              height: 50px;
+            }
+            a {
+              text-decoration: underline;
+            }
+          }
         }
       }
 
       .swiper-button-next,
       .swiper-button-prev {
-        color: var(--font-basic-color);
+        color: white;
         z-index: 2;
       }
 
@@ -111,6 +155,7 @@ body {
       .section-list {
         background: pink;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
         align-items: center;
         gap: 2rem;
@@ -126,19 +171,17 @@ body {
         .section-intro {
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: flex-start;
           justify-content: space-between;
-          gap: 2rem;
-          padding: 2rem;
-          height: 100%;
+          width: 100%;
           background: var(--font-basic-color);
           color: white;
           > div {
+            display: flex;
             h2 {
               color: var(--color-sky);
               font-weight: var(--font-xlarge-size);
               font-size: var(--font-xlarge-size);
-              margin-bottom: 1rem;
             }
             p {
               font-size: var(--font-small-size);

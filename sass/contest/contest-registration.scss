@@ -44,11 +44,14 @@ input[type='text'] {
   gap: 20rem;
 }
 
-// 깔끔하게 class 통일할까 고민
 .info-item {
   display: flex;
   flex-direction: column;
   padding: 10px 0;
+}
+
+.toast {
+  padding: 20px 0;
 }
 
 .contest-info-wrap input[type='text'],

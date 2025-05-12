@@ -44,6 +44,10 @@ input[type='text'] {
   padding: 10px 0;
 }
 
+.toast {
+  padding: 20px 0;
+}
+
 .contest-info-wrap input[type='text'],
 input[type='date'],
 select {

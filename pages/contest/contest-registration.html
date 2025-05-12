@@ -15,93 +15,109 @@
       <section class="contest-register-container wrap">
         <h2 class="contest-register">공모전 등록</h2>
         <form class="contest-form" action="#" method="POST" enctype="multipart/form-data">
-          <!-- 공모전명 -->
-          <div class="contest-text-wrap">
-            <label for="title">공모전명</label>
-            <input type="text" id="title" placeholder="공모전명을 입력해주세요." />
-          </div>
-          <!-- 홈페이지 -->
-          <div class="contest-text-wrap">
-            <label for="hompage">홈페이지</label>
-            <input type="text" id="hompage" placeholder="홈페이지 주소를 입력해주세요." />
-          </div>
-          <!-- 공모기간 -->
-          <div class="contest-info-wrap">
-            <div class="info-item start-date">
-              <label for="start-date">공모 시작일</label>
-              <input type="date" id="start-date" />
+          <div class="contest-top-wrap">
+            <h3>공모전 정보</h3>
+            <hr class="divider">
+            <!-- 공모전명 -->
+            <div class="contest-text-wrap">
+              <label for="title">공모명</label>
+              <input type="text" id="title" placeholder="공모전명을 입력해주세요." />
             </div>
-            <div class="info-item end-date">
-              <label for="end-date">공모 종료일</label>
-              <input type="date" id="end-date" />
+
+            <!-- 공모기간 -->
+            <div class="contest-info-wrap">
+              <div class="info-item start-date">
+                <label for="start-date">공모 시작일</label>
+                <input type="date" id="start-date" />
+              </div>
+              <div class="info-item end-date">
+                <label for="end-date">공모 종료일</label>
+                <input type="date" id="end-date" />
+              </div>
             </div>
-          </div>
-          <!-- 공모분야/대상 -->
-          <!-- 큰 디자인 필요 없을 거 같아서 select썼는데 ul 사용 고민-->
-          <div class="contest-info-wrap">
-            <div class="info-item category">
-              <label for="category">공모 분야</label>
-              <select id="category" name="category">
-                <option value="poster-webtoon-content">포스터/웹툰/콘텐츠</option>
-                <option value="photo-video-ucc">사진/영상/UCC</option>
-                <option value="idea-planning">아이디어/기획</option>
-                <option value="it-academic-paper">IT/학술/논문</option>
-                <option value="naming-slogan">네이밍/슬로건</option>
-                <option value="sports-music">스포츠/음악</option>
-                <option value="art-design-architecture">미술/디자인/건축</option>
-              </select>
+
+            <!-- 공모분야/대상 -->
+            <!-- 큰 디자인 필요 없을 거 같아서 select썼는데 ul 사용 고민-->
+            <div class="contest-info-wrap">
+              <div class="info-item category">
+                <label for="category">공모 분야</label>
+                <select id="category" name="category">
+                  <option value="poster-webtoon-content">포스터/웹툰/콘텐츠</option>
+                  <option value="photo-video-ucc">사진/영상/UCC</option>
+                  <option value="idea-planning">아이디어/기획</option>
+                  <option value="it-academic-paper">IT/학술/논문</option>
+                  <option value="naming-slogan">네이밍/슬로건</option>
+                  <option value="sports-music">스포츠/음악</option>
+                  <option value="art-design-architecture">미술/디자인/건축</option>
+                </select>
+              </div>
+              <div class="info-item target">
+                <label for="target">공모 대상</label>
+                <select id="target" name="target">
+                  <option value="university">대학생</option>
+                  <option value="general">일반인</option>
+                  <option value="no-limit">제한없음</option>
+                </select>
+              </div>
             </div>
-            <div class="info-item target">
-              <label for="target">공모 대상</label>
-              <select id="target" name="target">
-                <option value="university">대학생</option>
-                <option value="general">일반인</option>
-                <option value="no-limit">제한없음</option>
-              </select>
-            </div>
-          </div>
-          <!-- 주죄사(기업형태)/주관사 -->
-          <div class="contest-info-wrap">
-            <div class="info-item organizer">
-              <label for="host">주최사</label>
-              <input type="text" id="host" name="host" placeholder="예: 한국문화진흥원" />
-            </div>
-            <div class="info-item supervisor">
-              <label for="supervisor">주관사</label>
-              <input type="text" id="supervisor" name="supervisor" placeholder="예: ABC기획사" />
-            </div>
-          </div>
-          <!-- 시상규모/활동혜택 -->
-          <div class="contest-info-wrap">
-            <div class="info-item prize">
-              <label for="prize">시상 규모</label>
-              <select id="prize" name="prize">
-                <option value="under-1000">1천만 원 미만</option>
-                <option value="1000-3000">1천만 원 ~ 3천만 원</option>
-                <option value="3000-5000">3천만 원 ~ 5천만 원</option>
-                <option value="over-5000">5천만 원 이상</option>
-              </select>
-            </div>
-            <div class="info-item benefit">
-              <label for="benefit">활동 혜택</label>
-              <select id="benefit" name="benefit">
-                <option value="bonus">가산점</option>
-                <option value="internship">인턴십</option>
-                <option value="abroad">해외활동</option>
-                <option value="etc">기타</option>
-              </select>
+
+            <!-- 시상규모/활동혜택 -->
+            <div class="contest-info-wrap">
+              <div class="info-item prize">
+                <label for="prize">시상 규모</label>
+                <select id="prize" name="prize">
+                  <option value="under-1000">1천만 원 미만</option>
+                  <option value="1000-3000">1천만 원 ~ 3천만 원</option>
+                  <option value="3000-5000">3천만 원 ~ 5천만 원</option>
+                  <option value="over-5000">5천만 원 이상</option>
+                </select>
+              </div>
+              <div class="info-item benefit">
+                <label for="benefit">활동 혜택</label>
+                <select id="benefit" name="benefit">
+                  <option value="bonus">가산점</option>
+                  <option value="internship">인턴십</option>
+                  <option value="abroad">해외활동</option>
+                  <option value="etc">기타</option>
+                </select>
+              </div>
             </div>
           </div>
+
+          <div class="contest-center-wrap">
+            <h3>주최사 정보</h3>
+            <hr class="divider">
+            <!-- 홈페이지 -->
+            <div class="contest-text-wrap">
+              <label for="hompage">홈페이지</label>
+              <input type="text" id="hompage" placeholder="홈페이지 주소를 입력해주세요." />
+            </div>
+
+            <!-- 주죄사(기업형태)/주관사 -->
+            <div class="contest-info-wrap">
+              <div class="info-item organizer">
+                <label for="host">주최사</label>
+                <input type="text" id="host" name="host" placeholder="예: 한국문화진흥원" />
+              </div>
+              <div class="info-item supervisor">
+                <label for="supervisor">주관사</label>
+                <input type="text" id="supervisor" name="supervisor" placeholder="예: ABC기획사" />
+              </div>
+            </div>
+          </div>
+
           <!-- Toast -->
           <div class="info-item">
-            <label for="title">상세내용</label>
+            <h3 for="title">상세내용</h3>
             <div class="toast"></div>
           </div>
+
           <!-- 포스터 등록 -->
           <div class="info-item poster-upload">
             <label for="poster">포스터 등록</label>
             <input type="file" id="poster" name="poster" accept="image/*" />
           </div>
+
           <!-- 취소/등록 버튼 -->
           <div class="register-btn-wrab">
             <button type="button" class="cancel-btn">취소</button>
@@ -114,11 +130,11 @@
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
     <script>
       const editor = new toastui.Editor({
-        el: document.querySelector('.toast'), // 에디터를 적용할 요소 (컨테이너)
-        height: '500px', // 에디터 영역의 높이 값 (OOOpx || auto)
-        initialEditType: 'wysiwyg', // 최초로 보여줄 에디터 타입 (markdown || wysiwyg)
-        initialValue: '내용을 입력해 주세요.', // 내용의 초기 값으로, 반드시 마크다운 문자열 형태여야 함
-        previewStyle: 'vertical', // 마크다운 프리뷰 스타일 (tab || vertical)
+        el: document.querySelector('.toast'),
+        height: '500px',
+        initialEditType: 'wysiwyg',
+        initialValue: '내용을 입력해 주세요.',
+        previewStyle: 'vertical',
       });
     </script>
     <script src="/script/components/header.js"></script>

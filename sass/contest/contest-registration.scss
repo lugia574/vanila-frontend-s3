@@ -1,18 +1,29 @@
+@use "../../assets/fonts/font";
+@use "../common/variables";
+
 .contest-register-container {
-  background-color: rgb(255, 238, 241);
+  // background-color: rgb(255, 238, 241);
 }
 
 .contest-register {
-  margin: 100px 0 0 100px;
+  padding: 20px 20px;
 }
 
 .contest-form {
-  margin: 10px 100px;
+  padding: 20px 0px;
+}
+
+.contest-top-wrap {
+  padding: 10px 0;
+}
+
+.contest-center-wrap {
+  padding: 10px 0;
 }
 
 .contest-text-wrap {
   display: flex;
-  width: 70%;
+  width: 50%;
   flex-direction: column;
 }
 
@@ -29,13 +40,18 @@ input[type='text'] {
 
 .contest-info-wrap {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
+  gap: 20rem;
 }
 
-// 깔끔하게 class 통일할까 고민
 .info-item {
   display: flex;
   flex-direction: column;
+  padding: 10px 0;
+}
+
+.toast {
+  padding: 20px 0;
 }
 
 .contest-info-wrap input[type='text'],
@@ -46,14 +62,14 @@ select {
   height: 2rem;
   line-height: 2rem;
   padding-left: 5px;
-  color: rgb(200, 199, 199);
+  color: rgb(165, 165, 165);
   border: 1px solid rgb(200, 199, 199);
   border-radius: 8px;
 }
 
 select option {
   padding: 10px;
-  color: rgb(200, 199, 199);
+  color: rgb(164, 164, 164);
 }
 
 .register-btn-wrab {
@@ -69,9 +85,16 @@ select option {
     border-radius: 8px;
   }
   .cancel-btn {
-    background: #f0f0f0;
+    background: #d5d5d5;
   }
   .submit-btn {
     background: #9abbff;
   }
+}
+
+.divider {
+  margin : 10px 0;
+  background:#e8e8e8;
+  height:2px;
+  border:0;
 }

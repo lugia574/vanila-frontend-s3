@@ -71,6 +71,7 @@
   background-image: url(../../assets/icons/iconmonstr-reload-lined.svg);
   width: 1.2rem;
   height: 1.2rem;
+  cursor: pointer;
 }
 .filter-wrap div {
   padding: 10px;
@@ -127,6 +128,7 @@
   background-image: url(../../assets/icons/iconmonstr-layout-table-lined.svg);
   width: 1.5rem;
   height: 1.5rem;
+  cursor: pointer;
 }
 .division-wrap ul li a .list-icon {
   display: block;
@@ -135,6 +137,7 @@
   background-image: url(../../assets/icons/iconmonstr-list-lined.svg);
   width: 1.5rem;
   height: 1.5rem;
+  cursor: pointer;
 }
 
 .content-list {
@@ -235,6 +238,7 @@
   background-image: url(../../assets/icons/iconmonstr-heart-lined.svg);
   width: 1rem;
   height: 1rem;
+  cursor: pointer;
 }
 
 .page-num {
@@ -257,12 +261,14 @@
   text-align: center;
   line-height: 2rem;
   margin-bottom: 40px;
+  cursor: pointer;
 }
 .page-num ul .left-arrow {
   background-position: center;
   background-repeat: no-repeat;
   display: block;
   background-image: url(../../assets/icons/iconmonstr-angel-left-thin.svg);
+  cursor: pointer;
 }
 .page-num ul .right-arrow {
   background-position: center;
@@ -270,11 +276,12 @@
   display: block;
   background-image: url(../../assets/icons/iconmonstr-angel-right-thin.svg);
   align-items: center;
+  cursor: pointer;
 }
 
-.img-btn {
-  width: 4rem;
-  height: 4rem;
+.write-btn {
+  width: 4vw;
+  height: 4vw;
   position: fixed;
   bottom: 2rem;
   right: 2rem;
@@ -286,4 +293,21 @@
   border: none;
   border-radius: 8rem;
   z-index: 1000;
+  cursor: pointer;
 }
+
+.btn-active {
+  background-color: var(--color-orange) !important;
+  color: white;
+}
+
+.search-filter-active {
+  background-color: var(--color-orange) !important;
+  color: white;
+  font-size: var(--font-small-size);
+}
+
+.scrap-active {
+  background-image: url(../../assets/icons/iconizer-iconmonstr-heart-filled.svg) !important;
+  background-size: contain; /* 추가 */
+}/*# sourceMappingURL=post-list.css.map */

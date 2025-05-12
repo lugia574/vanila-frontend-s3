@@ -1,7 +1,6 @@
 @use "../../assets/fonts/font";
 @use "../common/variables";
 
-
 // filter-section
 .filter-section{
     margin-top: 7rem;
@@ -41,6 +40,7 @@
             background-image: url(../../assets/icons/iconmonstr-reload-lined.svg);
             width: 1.2rem;
             height: 1.2rem;
+            cursor : pointer;
         }
     }
 
@@ -103,6 +103,7 @@
                     background-image: url(../../assets/icons/iconmonstr-layout-table-lined.svg);
                     width: 1.5rem;
                     height: 1.5rem;
+                    cursor: pointer;
                 }
                 .list-icon{
                     display: block;
@@ -111,6 +112,7 @@
                     background-image: url(../../assets/icons/iconmonstr-list-lined.svg);
                     width: 1.5rem;
                     height: 1.5rem;
+                    cursor: pointer;
                 }
             }
         }
@@ -227,6 +229,7 @@
                     background-image: url(../../assets/icons/iconmonstr-heart-lined.svg);
                     width: 1rem;
                     height: 1rem;
+                    cursor: pointer;
                 }
             }
         }
@@ -253,6 +256,7 @@
             text-align: center;
             line-height: 2rem;
             margin-bottom: 40px;
+            cursor: pointer;
         }
 
         .left-arrow{
@@ -260,6 +264,7 @@
             background-repeat: no-repeat;
             display: block;
             background-image: url(../../assets/icons/iconmonstr-angel-left-thin.svg);
+            cursor: pointer;
         }
 
         .right-arrow{
@@ -268,14 +273,15 @@
             display: block;
             background-image: url(../../assets/icons/iconmonstr-angel-right-thin.svg);
             align-items: center;
+            cursor: pointer;
         }
     }
 }
 
 // 글작성 버튼
-.img-btn{
-    width: 4rem;
-    height: 4rem;
+.write-btn{
+    width: 4vw;
+    height: 4vw;
 
     position: fixed;
 
@@ -293,7 +299,24 @@
     
     z-index: 1000;
 
-    // cursor: pointer;
-    // transition: background-color 0.3s;
+    cursor: pointer;
 }
 
+// 필터 클릭시 강조
+.btn-active{
+    background-color: var(--color-orange) !important;
+    color: white;
+}
+
+// 필터 클릭시 추가되는 디자인
+.search-filter-active{
+    background-color: var(--color-orange) !important;
+    color: white;
+    font-size: var(--font-small-size);
+}
+
+// 스크랩 버튼
+.scrap-active{
+    background-image: url(../../assets/icons/iconizer-iconmonstr-heart-filled.svg) !important;
+    background-size: contain; /* 추가 */
+}

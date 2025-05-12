@@ -37,7 +37,8 @@
 
 /* 로그인 영역 */
 .login-wrap {
-  height: calc(100vh - 160px);
+  height: calc(100vh - 149px);
+  min-height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;

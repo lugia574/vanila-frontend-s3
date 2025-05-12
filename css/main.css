@@ -7,31 +7,31 @@
 }
 @font-face {
   font-family: "Pretendard";
-  src: url("./Pretendard-Regular.woff") format("woff");
+  src: url("/assets/fonts/Pretendard-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Pretendard";
-  src: url("./Pretendard-Medium.woff") format("woff");
+  src: url("/assets/fonts/Pretendard-Medium.woff") format("woff");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Pretendard";
-  src: url("./Pretendard-SemiBold.woff") format("woff");
+  src: url("/assets/fonts/Pretendard-SemiBold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Pretendard";
-  src: url("./Pretendard-Bold.woff") format("woff");
+  src: url("/assets/fonts/Pretendard-Bold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: "Pretendard";
-  src: url("./Pretendard-ExtraBold.woff") format("woff");
+  src: url("/assets/fonts/Pretendard-ExtraBold.woff") format("woff");
   font-weight: 900;
   font-style: normal;
 }
@@ -160,14 +160,24 @@ body {
   word-break: break-all;
   width: 400px;
   height: 50px;
+  font-size: var(--font-small-size);
+  font-weight: var(--font-default);
 }
 .main-wrap .main-banner .text-slider .text-slide-list .text-slide .box_inner a {
   text-decoration: underline;
 }
 .main-wrap .main-banner .text-slider .swiper-button-next,
 .main-wrap .main-banner .text-slider .swiper-button-prev {
-  color: white;
+  transition: color 0.3s ease;
   z-index: 2;
+}
+.main-wrap .main-banner .text-slider .swiper-button-next.white,
+.main-wrap .main-banner .text-slider .swiper-button-prev.white {
+  color: white;
+}
+.main-wrap .main-banner .text-slider .swiper-button-next.black,
+.main-wrap .main-banner .text-slider .swiper-button-prev.black {
+  color: var(--font-basic-color);
 }
 .main-wrap .main-banner .text-slider .swiper-progressbar {
   top: auto !important;
@@ -176,6 +186,12 @@ body {
   z-index: 2;
 }
 .main-wrap .main-banner .text-slider .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: var(--font-basic-color);
+}
+.main-wrap .main-banner .text-slider .swiper-pagination-progressbar .swiper-pagination-progressbar-fill.white {
+  background: white;
+}
+.main-wrap .main-banner .text-slider .swiper-pagination-progressbar .swiper-pagination-progressbar-fill.black {
   background: var(--font-basic-color);
 }
 .main-wrap .main-contents {
@@ -238,4 +254,4 @@ body {
 }
 .main-wrap .main-contents .policy-section.section .section-list .section-slide {
   order: 0;
-}/*# sourceMappingURL=main.css.map */
+}

@@ -4,7 +4,7 @@ const textSlider = new Swiper('.text-slider', {
   // direction: 'vertical',
   loop: true,
   autoplay: {
-    delay: 5000,
+    delay: 3000,
   },
   navigation: {
     nextEl: '.swiper-button-next',
@@ -17,6 +17,7 @@ const textSlider = new Swiper('.text-slider', {
 });
 
 const imageSlider = new Swiper('.image-slider', {
+  effect: 'fade',
   slidesPerView: 1,
   loop: true,
 });

@@ -168,13 +168,15 @@ body {
         align-items: center;
         gap: 2rem;
         padding: 1rem;
-        // flex-wrap: wrap;
+        overflow: hidden;
 
         .section-slide {
+          transition-timing-function: linear !important;
+          position: relative;
           display: flex;
-          gap: 1rem;
-
-          // flex-wrap: wrap;
+          gap: 4.5rem;
+          width: 300px; /* 원하는 카드 너비 */
+          flex-shrink: 0;
         }
         .section-intro {
           display: flex;

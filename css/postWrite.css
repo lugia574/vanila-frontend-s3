@@ -68,7 +68,7 @@
   max-width: 1400px;
   margin: 0 auto;
   text-align: left;
-  padding: 0 0 2rem 0;
+  padding: 0 0 1rem 0;
 }
 .basic-info-wrap .basic-title-wrap {
   font-weight: var(--font-bold);
@@ -79,52 +79,57 @@
 }
 .basic-info-wrap .type {
   border-top: 2px solid var(--color-background);
-  padding: 1rem 0 2rem 0;
+  padding: 1rem 0 1rem 0;
 }
 .basic-info-wrap .type form > input {
   width: 2rem;
-  height: 100%;
 }
 .basic-info-wrap .type-detail {
   display: flex;
   gap: 5rem;
+  padding-bottom: 0.5rem;
 }
 .basic-info-wrap .type-detail .main-type, .basic-info-wrap .type-detail .sub-type {
   width: 100%;
 }
-.basic-info-wrap .type-detail .main-type ul li:first-child, .basic-info-wrap .type-detail .sub-type ul li:first-child {
-  margin-bottom: 0.5rem;
+.basic-info-wrap .type-detail .main-type .main-type-main, .basic-info-wrap .type-detail .main-type .sub-type-main, .basic-info-wrap .type-detail .sub-type .main-type-main, .basic-info-wrap .type-detail .sub-type .sub-type-main {
   position: relative;
 }
-.basic-info-wrap .type-detail .main-type ul li:first-child a, .basic-info-wrap .type-detail .sub-type ul li:first-child a {
+.basic-info-wrap .type-detail .main-type .main-type-main .title, .basic-info-wrap .type-detail .main-type .sub-type-main .title, .basic-info-wrap .type-detail .sub-type .main-type-main .title, .basic-info-wrap .type-detail .sub-type .sub-type-main .title {
+  padding-bottom: 0.5rem;
+}
+.basic-info-wrap .type-detail .main-type .main-type-main li:first-child a, .basic-info-wrap .type-detail .main-type .sub-type-main li:first-child a, .basic-info-wrap .type-detail .sub-type .main-type-main li:first-child a, .basic-info-wrap .type-detail .sub-type .sub-type-main li:first-child a {
   color: black;
   font-weight: var(--font-bold);
 }
-.basic-info-wrap .type-detail .main-type ul li:nth-child(2), .basic-info-wrap .type-detail .sub-type ul li:nth-child(2) {
-  margin-bottom: 0.5rempx;
-  position: relative;
-}
-.basic-info-wrap .type-detail .main-type ul li:nth-child(2) a, .basic-info-wrap .type-detail .sub-type ul li:nth-child(2) a {
+.basic-info-wrap .type-detail .main-type .main-type-main li:nth-child(2) a, .basic-info-wrap .type-detail .main-type .sub-type-main li:nth-child(2) a, .basic-info-wrap .type-detail .sub-type .main-type-main li:nth-child(2) a, .basic-info-wrap .type-detail .sub-type .sub-type-main li:nth-child(2) a {
   display: block;
   width: 100%;
   max-width: 25rem;
   height: 2rem;
   line-height: 2rem;
-  padding-left: 5px;
+  padding-left: 0.5rem;
   border: 1px solid rgb(200, 199, 199);
   border-radius: 8px;
   font-size: var(--font-small-size);
-  color: var(--color-background);
+  color: rgb(200, 199, 199);
 }
-.basic-info-wrap .type-detail .main-type ul .main-type-sub, .basic-info-wrap .type-detail .main-type ul .sub-type-sub, .basic-info-wrap .type-detail .sub-type ul .main-type-sub, .basic-info-wrap .type-detail .sub-type ul .sub-type-sub {
-  display: none;
-  /* 부모사이즈에 관여X, 별도 분리 */
+.basic-info-wrap .type-detail .main-type .main-type-main .main-type-sub, .basic-info-wrap .type-detail .main-type .main-type-main .sub-type-sub, .basic-info-wrap .type-detail .main-type .sub-type-main .main-type-sub, .basic-info-wrap .type-detail .main-type .sub-type-main .sub-type-sub, .basic-info-wrap .type-detail .sub-type .main-type-main .main-type-sub, .basic-info-wrap .type-detail .sub-type .main-type-main .sub-type-sub, .basic-info-wrap .type-detail .sub-type .sub-type-main .main-type-sub, .basic-info-wrap .type-detail .sub-type .sub-type-main .sub-type-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   position: absolute;
   background: white;
-  padding: 20px;
-  left: 50%;
-  min-width: 16rem;
-  transform: translateX(-50%);
+  left: 0;
+  height: 10rem;
+  width: 100%;
+  border: 1px solid rgb(200, 199, 199);
+  border-radius: 8px;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  z-index: 100;
+  overflow-y: scroll;
+  cursor: pointer;
+  font-size: var(--font-small-size);
 }
 .basic-info-wrap .period-wrap {
   display: flex;
@@ -138,6 +143,8 @@
 }
 .basic-info-wrap .period-wrap .start-date-wrap label, .basic-info-wrap .period-wrap .end-date-wrap label {
   padding-bottom: 0.5rem;
+  color: black;
+  font-weight: var(--font-bold);
 }
 .basic-info-wrap .period-wrap .start-date-wrap input, .basic-info-wrap .period-wrap .end-date-wrap input {
   display: block;
@@ -154,14 +161,14 @@
 .recruitment-info-wrap {
   background-color: white;
   width: 70%;
+  max-width: 1400px;
   margin: 0 auto;
   text-align: left;
-  padding: 2rem 0 2rem 0;
+  padding: 1rem 0 1rem 0;
 }
 .recruitment-info-wrap .recruitment-title-wrap {
   background-color: white;
-  width: 70%;
-  max-width: 1400px;
+  width: 100%;
   text-align: left;
   padding: 0.5rem 0 0.5rem 0;
 }
@@ -186,6 +193,8 @@
 }
 .recruitment-info-wrap .recuritment-wrap .recruitment-end-wrap label, .recruitment-info-wrap .recuritment-wrap .recruitment-count-wrap label {
   padding-bottom: 0.5rem;
+  color: black;
+  font-weight: var(--font-bold);
 }
 .recruitment-info-wrap .recuritment-wrap .recruitment-end-wrap input, .recruitment-info-wrap .recuritment-wrap .recruitment-count-wrap input {
   display: block;
@@ -193,7 +202,7 @@
   max-width: 25rem;
   height: 2rem;
   line-height: 2rem;
-  padding-left: 5px;
+  padding-left: 0.5rem;
   color: rgb(200, 199, 199);
   border: 1px solid rgb(200, 199, 199);
   border-radius: 8px;
@@ -213,6 +222,8 @@
 }
 .recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role label, .recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count label {
   padding-bottom: 0.5rem;
+  color: black;
+  font-weight: var(--font-bold);
 }
 .recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role input, .recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count input {
   display: block;
@@ -220,7 +231,7 @@
   max-width: 25rem;
   height: 2rem;
   line-height: 2rem;
-  padding-left: 5px;
+  padding-left: 0.5rem;
   color: rgb(200, 199, 199);
   border: 1px solid rgb(200, 199, 199);
   border-radius: 8px;
@@ -248,13 +259,15 @@
 }
 .title-wrap span {
   padding-bottom: 0.5rem;
+  color: black;
+  font-weight: var(--font-bold);
 }
 .title-wrap input {
   display: block;
   width: 100%;
   height: 2rem;
   line-height: 2rem;
-  padding-left: 5px;
+  padding-left: 0.5rem;
   color: rgb(200, 199, 199);
   border: 1px solid var(--color-background);
   border-radius: 8px;
@@ -289,4 +302,18 @@
   height: 2rem;
   border: none;
   border-radius: 8px;
+}
+
+input[type=date] {
+  font-family: "Pretendard", sans-serif;
+  font-size: var(--font-small-size);
+  color: var(--color-background);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.choice {
+  color: var(--font-basic-color);
 }

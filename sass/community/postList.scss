@@ -150,7 +150,7 @@
 
         .left-group{
             .title{
-                font: var(--font-bold);
+                font-weight: var(--font-bold);
                 font-size: var(--font-large-size);
             }
             .field{
@@ -187,7 +187,7 @@
         justify-content: space-between;
         font-size: var(--font-small-size);
         padding: 0 1rem 0.5rem 1rem;
-        color: rgb(200, 199, 199);
+        color: var(--font-basic-color);
     }
 
     .content-footer{

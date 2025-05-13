@@ -18,7 +18,7 @@
     max-width: 1400px;
     margin: 0 auto;
     text-align: left;
-    padding: 0 0 2rem 0;
+    padding: 0 0 1rem 0;
 
     .basic-title-wrap{
         font-weight: var(--font-bold);
@@ -30,10 +30,10 @@
 
     .type{
         border-top: 2px solid var(--color-background);
-        padding: 1rem 0 2rem 0;
+        padding: 1rem 0 1rem 0;
         form>input{
             width: 2rem;
-            height: 100%;
+            // height: 100%;
         }
     }
 
@@ -41,13 +41,18 @@
     .type-detail{
         display: flex;
         gap: 5rem;
+        padding-bottom: 0.5rem;
 
         .main-type, .sub-type{
             width: 100%;
-            ul{
+
+            .main-type-main, .sub-type-main{
+                position: relative;  
+
+                .title{
+                    padding-bottom: 0.5rem;
+                }
                 li:first-child{
-                    margin-bottom: 0.5rem;
-                    position: relative;  
                     a{  
                         // 분야, 참여
                         color: black;
@@ -56,9 +61,6 @@
                 }
 
                 li:nth-child(2){
-                    margin-bottom: 0.5rempx;
-                    position: relative;  
-
                     a{
                         // 공모전 분야를 선택해주세요.
                         display: block;
@@ -68,27 +70,36 @@
 
                         height: 2rem;
                         line-height: 2rem;
-                        padding-left: 5px;
+                        padding-left: 0.5rem;
                     
                         border: 1px solid rgb(200, 199, 199);
                         border-radius: 8px;
                         
                         font-size: var(--font-small-size);
-                        color: var(--color-background);
+                        color: rgb(200, 199, 199);
                     }
                 }
 
-                //항목들(TODO : 클릭했을때 뜨도록 js)
                 .main-type-sub, .sub-type-sub{
-                    display: none;
-                    /* 부모사이즈에 관여X, 별도 분리 */
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
                     position: absolute;
                     background: white;
-                    padding: 20px;
-                    left: 50%;
-                    min-width: 16rem;
-                    transform: translateX(-50%);
+                    left: 0;	
+
+                    height: 10rem;
+                    width: 100%;		
+                    border: 1px solid rgb(200, 199, 199);
+                    border-radius: 8px;
+                    padding : 0.5rem 0.5rem 0.5rem 0.5rem;
+                    z-index: 100;
+                    overflow-y: scroll;
+                    cursor:pointer;
+
+                    font-size: var(--font-small-size);
                 }
+
             }
         }
     }
@@ -98,12 +109,18 @@
         display: flex;  
         gap: 5rem;
         padding-top: 0.5rem;
+
         .start-date-wrap, .end-date-wrap{
             width: 100%;
             display: flex;
             flex-direction: column;
+
             label{
                 padding-bottom: 0.5rem;
+                color: black;
+                font-weight: var(--font-bold);
+
+
             }
             input{
                 display: block;
@@ -124,14 +141,15 @@
 .recruitment-info-wrap{
     background-color: white;
     width: 70%;
+    max-width: 1400px;
     margin: 0 auto;
     text-align: left;
-    padding: 2rem 0 2rem 0;
+    padding: 1rem 0 1rem 0;
 
     .recruitment-title-wrap{
         background-color: white;
-        width: 70%;
-        max-width: 1400px;
+        width: 100%;
+        //max-width: 1400px;
         text-align: left;
         padding: 0.5rem 0 0.5rem 0;
 
@@ -157,6 +175,8 @@
             flex-direction: column;
             label{
                 padding-bottom: 0.5rem;
+                color: black;
+                font-weight: var(--font-bold);
             }
             input{
                 display: block;
@@ -164,7 +184,7 @@
                 max-width: 25rem;
                 height: 2rem;
                 line-height: 2rem;
-                padding-left: 5px;
+                padding-left: 0.5rem;
                 color: rgb(200, 199, 199);
                 border: 1px solid rgb(200, 199, 199);
                 border-radius: 8px;
@@ -186,6 +206,8 @@
                 }
                 label{
                     padding-bottom: 0.5rem;
+                    color: black;
+                    font-weight: var(--font-bold);
                 }
                 input{
                     display: block;
@@ -193,7 +215,7 @@
                     max-width: 25rem;
                     height: 2rem;
                     line-height: 2rem;
-                    padding-left: 5px;
+                    padding-left: 0.5rem;
                     color: rgb(200, 199, 199);
                     border: 1px solid rgb(200, 199, 199);
                     border-radius: 8px;
@@ -228,18 +250,20 @@
 
     span{
         padding-bottom: 0.5rem;
+        color: black;
+        font-weight: var(--font-bold);
+
     }
     input{
         display: block;
         width: 100%;
         height: 2rem;
         line-height: 2rem;
-        padding-left: 5px;
+        padding-left: 0.5rem;
         color: rgb(200, 199, 199);
         border: 1px solid var(--color-background);
         border-radius: 8px;
     }
-
 }
 
 // content
@@ -275,4 +299,20 @@
         border: none;
         border-radius: 8px;
     }
+}
+
+// 날짜선택 input 디자인
+input[type="date"] {
+    font-family: 'Pretendard', sans-serif;
+    font-size: var(--font-small-size);
+    color: var(--color-background);
+}
+
+.hidden{
+    display: none !important;
+}
+
+.choice{
+    // TODO : 추후 결정
+    color: var(--font-basic-color);
 }

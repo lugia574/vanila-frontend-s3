@@ -168,39 +168,8 @@ body {
         align-items: center;
         gap: 2rem;
         padding: 1rem;
-        overflow: hidden;
 
         .section-slide {
-        }
-        .section-intro {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          width: 100%;
-          background: var(--font-basic-color);
-          color: white;
-
-          h2 {
-            color: var(--color-sky);
-            font-weight: var(--font-xlarge-size);
-            font-size: var(--font-xlarge-size);
-          }
-
-          .section-btn {
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            align-items: center;
-            li {
-              display: flex;
-              .swiper-button-next,
-              .swiper-button-prev {
-                width: 4rem;
-                position: relative;
-                color: white;
-              }
-            }
-          }
         }
       }
     }

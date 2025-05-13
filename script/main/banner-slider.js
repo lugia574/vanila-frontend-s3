@@ -55,13 +55,12 @@ textSlider.controller.control = imageSlider;
 
 const contestSlider = new Swiper('.contest-swiper', {
   spaceBetween: 16,
-  centeredSlides: true,
   speed: 500,
   loop: true,
   slidesPerView: '4',
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.contest-button-next',
+    prevEl: '.contest-button-prev',
   },
 });
 

@@ -199,17 +199,33 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 .main-wrap .main-contents .section .section-list {
   background: pink;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  padding: 1rem;
+  gap: 0.5rem;
+  padding: 2rem;
 }
+.main-wrap .main-contents .section .section-list .section-top {
+  display: flex;
+  justify-content: space-between;
+}
+.main-wrap .main-contents .section .section-list .section-top .contest-nav {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+.main-wrap .main-contents .section .section-list .section-top .contest-nav .contest-button-next,
+.main-wrap .main-contents .section .section-list .section-top .contest-nav .contest-button-prev {
+  cursor: pointer;
+  width: 2rem;
+}
+.main-wrap .main-contents .section .section-list .section-top .contest-nav .contest-button-next {
+  transform: rotateY(180deg);
+}
+
 @media screen and (max-width: 767px) {
   .main-wrap .main-banner {
     margin-top: 6rem;

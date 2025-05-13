@@ -96,6 +96,35 @@ header {
 
   #mobile-menu {
     display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(120%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 9999;
+    padding: 2rem 1rem;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      li {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--color-background);
+        a {
+          font-size: var(--font-large-size);
+        }
+      }
+    }
+  }
+  // 활성화될 때
+  #mobile-menu.active {
+    transform: translateX(0);
   }
 }
 
@@ -110,7 +139,8 @@ header {
     #auth-menu {
       display: none;
     }
-    .mobile-button {
+    .mobile-button,
+    #mobile-menu {
       display: block;
     }
   }

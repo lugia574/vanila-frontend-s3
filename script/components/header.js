@@ -107,9 +107,10 @@ class JeanHeader extends HTMLElement {
   // 햄버거 애니메이션 이벤트
   hamburgerHandler() {
     const mobileBtn = this.shadow.querySelector('.mobile-button');
+    const mobileMenu = this.shadow.querySelector('#mobile-menu');
     mobileBtn.addEventListener('click', () => {
-      console.log('작동은 됨?');
       mobileBtn.classList.toggle('cross');
+      mobileMenu.classList.toggle('active');
     });
   }
 }

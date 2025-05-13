@@ -134,7 +134,7 @@
     flex: 0 1 calc(25% - 16px);
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
     width: 100%;
     max-width: 1400px;
     border-radius: 8px;
@@ -175,17 +175,19 @@
             padding: 0.2rem 0.4rem 0.2rem 0.4rem;
         }
 
-        .content-title{
-            .title{
-                font-size: var(--font-middle-size);
-                font-weight: var(--font-bold);
-            }
+    }
+
+    .content-title{
+        .title{
+            font-size: var(--font-middle-size);
+            font-weight: var(--font-bold);
         }
     }
 
     .content-summary{
         p{
             font-size: var(--font-small-size);
+            color: var(--font-basic-color);
         }
     }
 

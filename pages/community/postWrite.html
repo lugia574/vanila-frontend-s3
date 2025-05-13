@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="../../css/postWrite.css">
 
     <!-- TOAST UI Editor CSS -->
-  <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+    <script defer src="../../script/community/post-write.js"></script>
 </head>
 
 <body>
@@ -35,12 +36,12 @@
                     </form>
                 </div>
     
-                <div class="type-detail">
+                <div class="type-detail hidden">
                     <div class="main-type">
-                        <ul>
-                            <li><a href="#">분야</a></li>
-                            <li><a href="#">공모전 분야를 선택해주세요.</a></li>
-                            <ul class="main-type-sub">
+                        <ul class="main-type-main">
+                            <li class="title"><a href="#">분야</a></li>
+                            <li><a class="main-title" href="#">공모전 분야를 선택해주세요.</a></li>
+                            <ul class="main-type-sub hidden">
                                 <li>포스터/웹툰/콘텐츠</li>
                                 <li>사진/영상/UCC</li>
                                 <li>아이디어/기획</li>
@@ -53,10 +54,10 @@
                     </div>
             
                     <div class="sub-type">
-                        <ul>
-                            <li><a class="sub-type-title" href="#">참여</a></li>
-                            <li><a href="#">참여할 공모전을 선택해주세요.</a></li>
-                            <ul class="sub-type-sub">
+                        <ul class="sub-type-main">
+                            <li class="title"><a class="sub-type-title" href="#">참여</a></li>
+                            <li><a class="sub-title" href="#">참여할 공모전을 선택해주세요.</a></li>
+                            <ul class="sub-type-sub hidden">
                                 <li>AITHON 2025년 DKU 데이터</li>
                                 <li>AITHON 2025년 DKU 데이터</li>
                                 <li>AITHON 2025년 DKU 데이터</li>
@@ -72,7 +73,7 @@
                 <div class="period-wrap">
                     <div class="start-date-wrap">
                         <label for="start-date">시작일</label>
-                        <input type="date" id="start-date">
+                        <input type="date" id="start-date" >
                     </div>
                     <div class="end-date-wrap">
                         <label for="end-date">종료일</label>
@@ -114,8 +115,8 @@
                     </div>
                     
                     <div class="recruitment-count-detail-btn">
-                        <button>삭제</button>
-                        <button>추가</button>
+                        <button id="delBtn">삭제</button>
+                        <button id="addBtn">추가</button>
                     </div>
                 </div>
             </div>

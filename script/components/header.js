@@ -2,7 +2,6 @@ class JeanHeader extends HTMLElement {
   constructor() {
     super();
     this.shadow = this.attachShadow({ mode: 'open' });
-    this.loadHeader();
   }
 
   static get observedAttributes() {
@@ -41,6 +40,11 @@ class JeanHeader extends HTMLElement {
       header.innerHTML = `
         <div class="content-center">
           <h1 class="logo"><a href="#">청바지</a></h1>
+          <div class="mobile-button">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+          </div>
           <nav id="main-nav">
             <ul>
               <li><a href="#">공모전</a></li>
@@ -55,8 +59,21 @@ class JeanHeader extends HTMLElement {
               <li><a href="#">회원가입</a></li>
             </ul>
           </nav>
+          <nav id="mobile-menu">
+            <ul>
+              <li><a href="#">로그인</a></li>
+              <li><a href="#">회원가입</a></li>
+              <li><a href="#">공모전</a></li>
+              <li><a href="#">청년정책</a></li>
+              <li><a href="#">자격증</a></li>
+              <li><a href="#">커뮤니티</a></li>
+            </ul>
+          </nav>
         </div>
       `;
+
+      // ✅ 기존 shadow DOM 비우기
+      this.shadow.innerHTML = '';
 
       // Shadow DOM에 style과 header 삽입
       this.shadow.appendChild(style);
@@ -64,6 +81,8 @@ class JeanHeader extends HTMLElement {
 
       // scroll 이벤트 등록 (render 완료 후)
       this.setupScrollListener(opacity);
+      // 햄버거 애니메이션 이벤트
+      this.hamburgerHandler();
     } catch (error) {
       console.error('JeanHeader 로딩 실패:', error);
     }
@@ -72,6 +91,7 @@ class JeanHeader extends HTMLElement {
   // scroll 에 따라 fix 이벤트
   setupScrollListener(opacity) {
     const nav = this.shadow.querySelector('#header');
+
     if (!nav) return;
     if (opacity === 'false') {
       nav.classList.add('header-white');
@@ -81,6 +101,15 @@ class JeanHeader extends HTMLElement {
       const sPos = document.documentElement.scrollTop;
       if (sPos > 200) nav.classList.add('header-white');
       else nav.classList.remove('header-white');
+    });
+  }
+
+  // 햄버거 애니메이션 이벤트
+  hamburgerHandler() {
+    const mobileBtn = this.shadow.querySelector('.mobile-button');
+    mobileBtn.addEventListener('click', () => {
+      console.log('작동은 됨?');
+      mobileBtn.classList.toggle('cross');
     });
   }
 }

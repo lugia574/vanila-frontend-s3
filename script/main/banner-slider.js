@@ -55,13 +55,30 @@ textSlider.controller.control = imageSlider;
 
 const contestSlider = new Swiper('.contest-swiper', {
   spaceBetween: 16,
-  centeredSlides: true,
   speed: 500,
   loop: true,
-  slidesPerView: '4',
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.contest-button-next',
+    prevEl: '.contest-button-prev',
+  },
+  breakpoints: {
+    // 모바일 (0~767px)
+    0: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+    },
+    480: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+    },
+    768: {
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+    },
+    1024: {
+      slidesPerView: 4,
+      slidesPerGroup: 1,
+    },
   },
 });
 

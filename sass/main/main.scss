@@ -88,8 +88,14 @@ body {
           width: 100%;
           justify-content: center;
           align-items: center;
-          &.first-script > div {
+          &.first-script > a > div {
             color: var(--font-basic-color);
+          }
+          a {
+            display: flex;
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
           }
           .box-inner {
             width: 100%;
@@ -98,10 +104,9 @@ body {
             justify-content: center;
             align-items: flex-start;
             flex-direction: column;
-            gap: 1rem;
             color: white;
-            .duration {
-            }
+            gap: 1rem;
+
             .main-script {
               font-size: 3.5rem;
               font-weight: 600;
@@ -111,13 +116,10 @@ body {
               text-overflow: ellipsis;
               white-space: nowrap;
               word-break: break-all;
-              width: calc(40% - 30px);
+              width: 20rem;
               height: 50px;
               font-size: var(--font-small-size);
               font-weight: var(--font-default);
-            }
-            a {
-              text-decoration: underline;
             }
           }
         }
@@ -169,8 +171,7 @@ body {
         .section-top {
           display: flex;
           justify-content: space-between;
-          h2 {
-          }
+
           .contest-nav {
             display: flex;
             justify-content: end;
@@ -231,5 +232,14 @@ body {
         display: none;
       }
     }
+  }
+
+  .contest-section {
+    // .section-slide {
+    //   display: grid;
+    //   grid-template-columns: repeat(2, 1fr);
+    //   grid-template-rows: repeat(2, 1fr);
+    //   gap: 1rem;
+    // }
   }
 }

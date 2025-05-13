@@ -53,7 +53,19 @@ const imageSlider = new Swiper('.image-slider', {
 
 textSlider.controller.control = imageSlider;
 
-let currentbanner = document.querySelector('.main-img');
+const contestSlider = new Swiper('.contest-swiper', {
+  spaceBetween: 16,
+  centeredSlides: true,
+  speed: 500,
+  loop: true,
+  slidesPerView: '4',
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
+// let currentbanner = document.querySelector('.main-img');s
 // playStop.addEventListener('click', e => {
 //   if (!playStop.classList.contains('active')) {
 //     main.autoplay.stop();

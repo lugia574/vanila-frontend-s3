@@ -40,7 +40,7 @@
           <div class="swiper text-slider">
             <ul class="swiper-wrapper text-slide-list">
               <li class="swiper-slide text-slide first-script">
-                <div class="box_inner">
+                <div class="box-inner">
                   <p class="duration">2025-05-21~</p>
                   <p class="main-script">
                     청년들을 위한 취업 페이지 <br />
@@ -51,7 +51,7 @@
                 </div>
               </li>
               <li class="swiper-slide text-slide">
-                <div class="box_inner">
+                <div class="box-inner">
                   <p class="duration">4.12 ~ 6.01</p>
                   <p class="main-script">
                     제7회 서울교육 데이터 분석·활용 <br />
@@ -69,7 +69,7 @@
                 </div>
               </li>
               <li class="swiper-slide text-slide">
-                <div class="box_inner">
+                <div class="box-inner">
                   <p class="duration">04.28 ~ 8.29</p>
                   <p class="main-script">제 6회 부울경 ICT <br />아이디어 경진대회</p>
                   <p class="summary-script">
@@ -79,7 +79,7 @@
                 </div>
               </li>
               <li class="swiper-slide text-slide">
-                <div class="box_inner">
+                <div class="box-inner">
                   <p class="duration">5.12 ~ 5.20</p>
                   <p class="main-script">
                     로컬 특화 체험 <br />
@@ -102,18 +102,21 @@
         <div class="main-contents wrap">
           <!-- 공모전 -->
           <section class="contest-section section">
-            <div class="swiper section-list">
+            <div class="swiper section-list contest-swiper">
               <div class="contest-intro section-intro">
-                <div class="contest-title">
-                  <h2>
-                    <a href="#"> 이 공모전 어때요?</a>
-                  </h2>
+                <h2>
+                  <a href="#"> 이 공모전 어때요?</a>
+                </h2>
+
+                <div class="swiper-nav">
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
                 </div>
               </div>
-              <ul class="section-slide">
-                <li class="">
+              <ul class="swiper-wrapper section-slide">
+                <li class="swiper-slide">
                   <contest-card
-                    day="5"
+                    day="111"
                     contestImg="../../public/images/contest/img1.jpg"
                     contestTitle="[국민체육진흥공단]스포츠산업 창업 아이디어 공모전(도전!K-스타트업 예선)"
                     contestOrg="국민체육진흥공단"
@@ -121,9 +124,9 @@
                     contestLikes="0"
                   ></contest-card>
                 </li>
-                <li class="">
+                <li class="swiper-slide">
                   <contest-card
-                    day="5"
+                    day="222"
                     contestImg="../../public/images/contest/img1.jpg"
                     contestTitle="[국민체육진흥공단]스포츠산업 창업 아이디어 공모전(도전!K-스타트업 예선)"
                     contestOrg="국민체육진흥공단"
@@ -132,9 +135,9 @@
                   ></contest-card>
                 </li>
 
-                <li class="">
+                <li class="swiper-slide">
                   <contest-card
-                    day="45"
+                    day="333"
                     contestImg="../../public/images/contest/img1.jpg"
                     contestTitle="[국민체육진흥공단]스포츠산업 창업 아이디어 공모전(도전!K-스타트업 예선)"
                     contestOrg="국민체육진흥공단"
@@ -142,9 +145,49 @@
                     contestLikes="0"
                   ></contest-card>
                 </li>
-                <li class="">
+                <li class="swiper-slide">
+                  <contest-card
+                    day="444"
+                    contestImg="../../public/images/contest/img1.jpg"
+                    contestTitle="[국민체육진흥공단]스포츠산업 창업 아이디어 공모전(도전!K-스타트업 예선)"
+                    contestOrg="국민체육진흥공단"
+                    contestViews="5"
+                    contestLikes="0"
+                  ></contest-card>
+                </li>
+                <li class="swiper-slide">
                   <contest-card
                     day="555"
+                    contestImg="../../public/images/contest/img1.jpg"
+                    contestTitle="[국민체육진흥공단]스포츠산업 창업 아이디어 공모전(도전!K-스타트업 예선)"
+                    contestOrg="국민체육진흥공단"
+                    contestViews="5"
+                    contestLikes="0"
+                  ></contest-card>
+                </li>
+                <li class="swiper-slide">
+                  <contest-card
+                    day="555"
+                    contestImg="../../public/images/contest/img1.jpg"
+                    contestTitle="[국민체육진흥공단]스포츠산업 창업 아이디어 공모전(도전!K-스타트업 예선)"
+                    contestOrg="국민체육진흥공단"
+                    contestViews="5"
+                    contestLikes="0"
+                  ></contest-card>
+                </li>
+                <li class="swiper-slide">
+                  <contest-card
+                    day="666"
+                    contestImg="../../public/images/contest/img1.jpg"
+                    contestTitle="[국민체육진흥공단]스포츠산업 창업 아이디어 공모전(도전!K-스타트업 예선)"
+                    contestOrg="국민체육진흥공단"
+                    contestViews="5"
+                    contestLikes="0"
+                  ></contest-card>
+                </li>
+                <li class="swiper-slide">
+                  <contest-card
+                    day="777"
                     contestImg="../../public/images/contest/img1.jpg"
                     contestTitle="[국민체육진흥공단]스포츠산업 창업 아이디어 공모전(도전!K-스타트업 예선)"
                     contestOrg="국민체육진흥공단"
@@ -177,12 +220,6 @@
                   <main-contest-card
                     day="45"
                     src="../../public/images/main/contest-image3.png"
-                  ></main-contest-card>
-                </li>
-                <li class="">
-                  <main-contest-card
-                    day="555"
-                    src="../../public/images/main/contest-image4.png"
                   ></main-contest-card>
                 </li>
               </ul>

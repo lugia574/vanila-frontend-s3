@@ -171,13 +171,6 @@ body {
         overflow: hidden;
 
         .section-slide {
-          transition-timing-function: linear !important;
-          position: relative;
-          display: flex;
-          justify-content: center;
-          gap: 4.5rem;
-          width: 300px;
-          flex-shrink: 0;
         }
         .section-intro {
           display: flex;
@@ -191,11 +184,6 @@ body {
             color: var(--color-sky);
             font-weight: var(--font-xlarge-size);
             font-size: var(--font-xlarge-size);
-          }
-
-          .swiper-nav {
-            position: relative;
-            width: 30%;
           }
 
           .section-btn {
@@ -216,17 +204,6 @@ body {
         }
       }
     }
-    .policy-section.section {
-      .section-list {
-        .policy-intro {
-          order: 1;
-        }
-
-        .section-slide {
-          order: 0;
-        }
-      }
-    }
   }
 }
 
@@ -234,12 +211,10 @@ body {
 @media screen and (max-width: 767px) {
   .main-wrap {
     .main-banner {
-      height: 100vh;
-      margin: 6rem;
+      margin-top: 6rem;
       .image-slider {
         .image-slide-list {
           .image-slide {
-            height: 100vh;
             align-items: flex-start;
           }
         }
@@ -248,24 +223,28 @@ body {
       .text-slider {
         top: auto;
         bottom: 0;
-        .text-slide {
-          .box-inner {
-            align-items: end;
-            height: 100%;
-            .main-script {
-              font-size: var(--font-small-size);
-              font-weight: 600;
-            }
+        .text-slide-list {
+          .text-slide {
+            .box-inner {
+              bottom: 25%;
+              position: absolute;
+              align-items: flex-start;
+              .main-script {
+                font-size: var(--font-xlarge-size);
+                font-weight: 600;
+              }
 
-            .summary-script {
-              display: none;
+              .summary-script {
+                display: none;
+              }
             }
           }
         }
       }
 
       .swiper-button-next,
-      .swiper-button-prev {
+      .swiper-button-prev,
+      .swiper-pagination-progressbar {
         display: none;
       }
     }

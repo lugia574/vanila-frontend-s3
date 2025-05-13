@@ -60,3 +60,10 @@ input:focus,
 a:focus {
   outline: none;
 }
+
+// 모바일 폰트 조정
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+}

@@ -54,17 +54,15 @@ const imageSlider = new Swiper('.image-slider', {
 textSlider.controller.control = imageSlider;
 
 const contestSlider = new Swiper('.contest-swiper', {
-  spaceBetween: 32,
-  spaceBetween: 0,
+  spaceBetween: 16,
   centeredSlides: true,
-  speed: 6000,
-  autoplay: {
-    delay: 1,
-  },
+  speed: 500,
   loop: true,
-  slidesPerView: 'auto',
-  // allowTouchMove: false,
-  // disableOnInteraction: false,
+  slidesPerView: '4',
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 });
 
 // let currentbanner = document.querySelector('.main-img');s

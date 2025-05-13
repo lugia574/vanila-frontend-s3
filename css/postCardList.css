@@ -7,14 +7,32 @@
 }
 @font-face {
   font-family: "Pretendard";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  src: url("/assets/fonts/Pretendard-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Pretendard";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  src: url("/assets/fonts/Pretendard-Medium.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("/assets/fonts/Pretendard-SemiBold.woff") format("woff");
   font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("/assets/fonts/Pretendard-Bold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("/assets/fonts/Pretendard-ExtraBold.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 :root {
@@ -153,7 +171,7 @@
   flex: 0 1 calc(25% - 16px);
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
   width: 100%;
   max-width: 1400px;
   border-radius: 8px;
@@ -193,12 +211,13 @@
   color: var(--color-background);
   padding: 0.2rem 0.4rem 0.2rem 0.4rem;
 }
-.content-wrap .content-header .content-title .title {
+.content-wrap .content-title .title {
   font-size: var(--font-middle-size);
   font-weight: var(--font-bold);
 }
 .content-wrap .content-summary p {
   font-size: var(--font-small-size);
+  color: var(--font-basic-color);
 }
 .content-wrap .content-footer {
   width: 100%;
@@ -275,4 +294,4 @@
 .scrap-active {
   background-image: url(../../assets/icons/iconizer-iconmonstr-heart-filled.svg) !important;
   background-size: contain; /* 추가 */
-}/*# sourceMappingURL=post-card-list.css.map */
+}

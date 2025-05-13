@@ -7,32 +7,14 @@
 }
 @font-face {
   font-family: "Pretendard";
-  src: url("/assets/fonts/Pretendard-Regular.woff") format("woff");
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Pretendard";
-  src: url("/assets/fonts/Pretendard-Medium.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Pretendard";
-  src: url("/assets/fonts/Pretendard-SemiBold.woff") format("woff");
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
   font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Pretendard";
-  src: url("/assets/fonts/Pretendard-Bold.woff") format("woff");
-  font-weight: 800;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Pretendard";
-  src: url("/assets/fonts/Pretendard-ExtraBold.woff") format("woff");
-  font-weight: 900;
   font-style: normal;
 }
 :root {
@@ -162,81 +144,84 @@
   width: 70%;
   max-width: 1400px;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .content-wrap {
+  flex: 0 1 calc(25% - 16px);
   display: flex;
-  flex-direction: column; /* 세로 방향 정렬 */
-  gap: 10px;
+  flex-direction: column;
+  gap: 0.5rem;
   width: 100%;
   max-width: 1400px;
   border-radius: 8px;
   border: 0.5px solid var(--color-background);
   margin: 0 auto 0.4rem;
   background-color: white;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .content-wrap .content-header {
   display: flex;
-  justify-content: space-between;
-  padding: 1rem 1rem 0 1rem;
 }
-.content-wrap .content-header .left-group, .content-wrap .content-header .right-group {
-  display: flex;
-  gap: 20px;
-}
-.content-wrap .content-header .left-group .title {
-  font: var(--font-bold);
-  font-size: var(--font-large-size);
-}
-.content-wrap .content-header .left-group .field {
+.content-wrap .content-header .field {
   font-size: var(--font-small-size);
   border: none;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
+  text-align: center;
   background-color: var(--default-border);
   color: var(--color-background);
-  padding: 2px 10px 2px 10px;
+  padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+  margin-right: 2.5rem;
 }
-.content-wrap .content-header .right-group .type {
+.content-wrap .content-header .type {
   font-size: var(--font-small-size);
   border: none;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   background-color: var(--color-background);
   color: var(--default-border);
-  padding: 2px 10px 2px 10px;
+  text-align: center;
+  padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+  margin-right: 0.5rem;
 }
-.content-wrap .content-header .right-group .d-day {
+.content-wrap .content-header .d-day {
   font-size: var(--font-small-size);
   border: none;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   background-color: var(--color-orange);
   color: var(--color-background);
-  padding: 2px 10px 2px 10px;
+  padding: 0.2rem 0.4rem 0.2rem 0.4rem;
 }
-.content-wrap .content-summary {
-  display: flex;
-  justify-content: space-between;
+.content-wrap .content-header .content-title .title {
+  font-size: var(--font-middle-size);
+  font-weight: var(--font-bold);
+}
+.content-wrap .content-summary p {
   font-size: var(--font-small-size);
-  padding: 0 1rem 0.5rem 1rem;
-  color: rgb(200, 199, 199);
 }
 .content-wrap .content-footer {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  padding: 0 1rem 0.5rem 1rem;
-  font-size: var(--font-small-size);
+  border-top: 1px solid var(--default-border);
+  padding-top: 0.5rem;
 }
 .content-wrap .content-footer .left-group, .content-wrap .content-footer .right-group {
   display: flex;
-  gap: 20px;
+  width: 50%;
+  font-size: var(--font-small-size);
 }
-.content-wrap .content-footer .left-group .writer, .content-wrap .content-footer .right-group .writer {
-  color: rgb(200, 199, 199);
-}
-.content-wrap .content-footer .right-group .comment {
+.content-wrap .content-footer .right-group {
   display: flex;
+  justify-content: right;
+  gap: 0.5rem;
+}
+.content-wrap .content-footer .comment {
+  display: flex;
+  justify-content: right;
   gap: 5px;
 }
-.content-wrap .content-footer .right-group .comment i {
+.content-wrap .content-footer .comment i {
   display: block;
   background-position: center;
   background-repeat: no-repeat;
@@ -245,55 +230,17 @@
   width: 1rem;
   height: 1rem;
 }
-.content-wrap .content-footer .right-group .scrap {
+.content-wrap .content-footer .scrap {
   display: flex;
   gap: 5px;
 }
-.content-wrap .content-footer .right-group .scrap i {
+.content-wrap .content-footer .scrap i {
   display: block;
   background-position: center;
   background-repeat: no-repeat;
   background-image: url(../../assets/icons/iconmonstr-heart-lined.svg);
   width: 1rem;
   height: 1rem;
-  cursor: pointer;
-}
-
-.page-num {
-  display: flex;
-  margin: 0 auto;
-  width: 70%;
-  max-width: 1400px;
-}
-.page-num ul {
-  display: flex;
-  gap: 10px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
-.page-num ul i, .page-num ul li {
-  background-color: white;
-  width: 2rem;
-  height: 2rem;
-  border: 1px solid var(--color-background);
-  text-align: center;
-  line-height: 2rem;
-  margin-bottom: 40px;
-  cursor: pointer;
-}
-.page-num ul .left-arrow {
-  background-position: center;
-  background-repeat: no-repeat;
-  display: block;
-  background-image: url(../../assets/icons/iconmonstr-angel-left-thin.svg);
-  cursor: pointer;
-}
-.page-num ul .right-arrow {
-  background-position: center;
-  background-repeat: no-repeat;
-  display: block;
-  background-image: url(../../assets/icons/iconmonstr-angel-right-thin.svg);
-  align-items: center;
   cursor: pointer;
 }
 
@@ -328,4 +275,4 @@
 .scrap-active {
   background-image: url(../../assets/icons/iconizer-iconmonstr-heart-filled.svg) !important;
   background-size: contain; /* 추가 */
-}/*# sourceMappingURL=post-list.css.map */
+}/*# sourceMappingURL=post-card-list.css.map */

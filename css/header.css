@@ -97,13 +97,71 @@ header #auth-menu ul li a {
   font-size: var(--font-small-size);
   color: gray;
 }
+header .mobile-button {
+  cursor: pointer;
+  display: none;
+}
+header .mobile-button .bar {
+  display: block;
+  position: relative;
+  width: 2rem;
+  height: 0.313rem;
+  margin: 0.625rem auto;
+  border-radius: 10px;
+  transition: 0.3s;
+  background: var(--font-basic-color);
+}
+header .mobile-button.cross .bar:nth-of-type(1) {
+  transform: translateY(0.825rem) rotate(-45deg);
+}
+header .mobile-button.cross .bar:nth-of-type(2) {
+  opacity: 0;
+}
+header .mobile-button.cross .bar:nth-of-type(3) {
+  transform: translateY(-1.025rem) rotate(45deg);
+}
+header #mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 70%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transform: translateX(120%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 9999;
+  padding: 2rem 1rem;
+}
+header #mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+header #mobile-menu ul li {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-background);
+}
+header #mobile-menu ul li a {
+  font-size: var(--font-large-size);
+}
+header #mobile-menu.active {
+  transform: translateX(0);
+}
 
 .header-white {
   background-color: white;
 }
 
 @media screen and (max-width: 767px) {
-  header #main-nav {
+  header #main-nav,
+  header #auth-menu {
     display: none;
+  }
+  header .mobile-button,
+  header #mobile-menu {
+    display: block;
   }
 }

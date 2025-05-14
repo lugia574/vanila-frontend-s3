@@ -2,6 +2,10 @@ class JeanFooter extends HTMLElement {
   constructor() {
     super();
     this.shadow = this.attachShadow({ mode: 'open' });
+  }
+
+  connectedCallback() {
+    // DOM에 연결된 후 안전하게 fetch 가능
     this.loadFooter();
   }
 
@@ -41,6 +45,9 @@ class JeanFooter extends HTMLElement {
             </div>
         </div>
       `;
+
+      // ✅ 기존 shadow DOM 비우기
+      this.shadow.innerHTML = '';
 
       // Shadow DOM에 style과 footer 삽입
       this.shadow.appendChild(style);

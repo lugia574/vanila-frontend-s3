@@ -5,7 +5,7 @@ class CommunityCard extends HTMLElement {
   }
 
   static get observedAttributes(){
-    return ['communityField', 'communityDivision', 'day', 'communityTitle', 'communitySummary', 'communityWriter', 'communityComments', 'communityScraps'];
+    return ['communityField', 'communityType', 'day', 'communityTitle', 'communitySummary', 'communityWriter', 'communityComments', 'communityScraps'];
   }
   
   attributeChangedCallback(name, oldValue, newValue) {
@@ -20,7 +20,7 @@ class CommunityCard extends HTMLElement {
 
   async render() {
     const communityField = this.getAttribute('communityField') || '없음';
-    const communityDivision = this.getAttribute('communityDivision') || '없음';
+    const communityType = this.getAttribute('communityType') || '없음';
     const day = this.getAttribute('day') || '0';
     const communityTitle = this.getAttribute('communityTitle') || '없음';
     const communitySummary = this.getAttribute('communitySummary') || '없음';
@@ -44,14 +44,14 @@ class CommunityCard extends HTMLElement {
 
       const style = document.createElement('style');
       style.textContent = `${commCss}\n${CommunityCardCss}`;
-      console.log('postCardCss 내용:', CommunityCardCss);
+      console.log('CommunityCardCss 내용:', CommunityCardCss);
 
       const communityCard = document.createElement('content-wrap');
       communityCard.innerHTML = `
         <div class="content-wrap">
             <div class="content-header">
                 <div class="field">${communityField}</div>
-                <div class="type">${communityDivision}</div>
+                <div class="type">${communityType}</div>
                 <div class="d-day">D-${day}</div> 
             </div>
 

@@ -142,3 +142,9 @@
     }
   }
 }
+//반응형 스타일
+@media (max-width: 768px) {
+  .login-wrap {
+    padding: 1.5rem;
+  }
+}

@@ -1,24 +1,23 @@
 .contest-item {
   border: 1px solid #eaeaea;
   border-radius: 8px;
-  overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .contest-item-image {
   position: relative;
-
-  padding-bottom: 75%;
-  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  flex: 1;
 }
 
 .contest-item-image img {
-  position: absolute;
-  object-fit: cover;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .dday-wrap {
@@ -35,6 +34,7 @@
 
 .contest-item-info {
   padding: 12px;
+  height: 100%;
 }
 
 .contest-title {

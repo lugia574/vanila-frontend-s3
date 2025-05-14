@@ -1,8 +1,6 @@
 .license-wrap {
   display: flex;
   flex-direction: column;
-  width: 260px;
-  height: 160px;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
@@ -18,7 +16,7 @@
   align-items: center;
 }
 .license-wrap .license-top .lincensc-top-left,
-.license-wrap .license-top lincensc-top-right {
+.license-wrap .license-top .lincensc-top-right {
   display: flex;
   align-items: center;
   justify-content: center;

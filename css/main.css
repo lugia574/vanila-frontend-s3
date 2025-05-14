@@ -208,6 +208,7 @@ body {
   flex-direction: column;
   gap: 0.5rem;
   padding: 2rem;
+  overflow: hidden;
 }
 .main-wrap .main-contents .section .section-list .section-top {
   display: flex;
@@ -218,12 +219,12 @@ body {
   justify-content: end;
   gap: 1rem;
 }
-.main-wrap .main-contents .section .section-list .section-top .contest-nav .contest-button-next,
-.main-wrap .main-contents .section .section-list .section-top .contest-nav .contest-button-prev {
+.main-wrap .main-contents .section .section-list .section-top .contest-nav .nav-btn {
   cursor: pointer;
   width: 2rem;
 }
-.main-wrap .main-contents .section .section-list .section-top .contest-nav .contest-button-next {
+.main-wrap .main-contents .section .section-list .section-top .contest-nav .contest-button-next,
+.main-wrap .main-contents .section .section-list .section-top .contest-nav .license-button-next {
   transform: rotateY(180deg);
 }
 

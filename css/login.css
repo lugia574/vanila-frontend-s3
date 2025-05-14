@@ -177,3 +177,9 @@
 .personal-login .social-buttons .google-login {
   background-color: #4285f4;
 }
+
+@media (max-width: 768px) {
+  .login-wrap {
+    padding: 1.5rem;
+  }
+}

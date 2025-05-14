@@ -4,11 +4,37 @@ class CommunityCard extends HTMLElement {
     this.shadow = this.attachShadow({ mode: 'open' });
   }
 
-  connectedCallback() {
-    this.loadCommunityCard();
+  static get observedAttributes(){
+    return ['communityField', 'communityDivision', 'day', 'communityTitle', 'communitySummary', 'communityWriter', 'communityComments', 'communityScraps'];
+  }
+  
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (oldValue !== newValue) {
+      this.render();
+    }
   }
 
-  async loadCommunityCard() {
+  connectedCallback() {
+    this.render();
+  }
+
+  async render() {
+    const communityField = this.getAttribute('communityField') || '없음';
+    const communityDivision = this.getAttribute('communityDivision') || '없음';
+    const day = this.getAttribute('day') || '0';
+    const communityTitle = this.getAttribute('communityTitle') || '없음';
+    const communitySummary = this.getAttribute('communitySummary') || '없음';
+    const communityWriter = this.getAttribute('communityWriter') || '없음';
+    const communityComments = this.getAttribute('communityComments') || '0';
+    const communityScraps = this.getAttribute('communityScraps') || '0';
+
+    // 중복 렌더링 방지
+    if (this.renderingInProgress) return;
+    this.renderingInProgress = true;
+
+    this.shadow.innerHTML = ''; // 기존 내용 제거
+    // 
+
     try {
       const commRes = await fetch('../../css/common.css');
       const commCss = await commRes.text();
@@ -20,47 +46,41 @@ class CommunityCard extends HTMLElement {
       style.textContent = `${commCss}\n${CommunityCardCss}`;
       console.log('postCardCss 내용:', CommunityCardCss);
 
-      const communityCard = document.createElement('section'); // div로 수정
+      const communityCard = document.createElement('content-wrap');
       communityCard.innerHTML = `
-        <section class="content-section">    
-            <div class="content-list">
-                <div class="content-wrap">
-                    <div class="content-header">
-                        <div class="field">IT/학술/논문</div>
-                        <div class="type">공모전</div>
-                        <div class="d-day">D-7</div> 
-                    </div>
+        <div class="content-wrap">
+            <div class="content-header">
+                <div class="field">${communityField}</div>
+                <div class="type">${communityDivision}</div>
+                <div class="d-day">D-${day}</div> 
+            </div>
 
-                    <div class="content-title">
-                        <div class="title">AITHON 2025년 공모전 팀원...</div>
-                    </div>
+            <div class="content-title">
+                <div class="title">${communityTitle}</div>
+            </div>
 
-                    <div class="content-summary">
-                        <p>총 5명 모집합니다. 자세한 내용은 아래 내용 참고 부탁드립니다...</p>
+            <div class="content-summary">
+                <p>${communitySummary}</p>
+            </div>
+
+            <div class="content-footer">
+                <div class="left-group">
+                    <div class="writer">${communityWriter}</div>
+                </div>
+
+                <div class="right-group">
+                    <div class="comment">
+                        <i></i>
+                        <span>${communityComments}</span>
                     </div>
-        
-                    <div class="content-footer">
-                        <div class="left-group">
-                            <div class="writer">작성자</div>
-                        </div>
-        
-                        <div class="right-group">
-                            <div class="comment">
-                                <!-- 말풍선 아이콘 -->
-                                <i></i>
-                                <span>78</span>
-                            </div>
-                            
-                            <div class="scrap">
-                                <!-- 스크랩 아이콘 -->
-                                <i></i>
-                                <span>78</span>
-                            </div>
-                        </div>
+                    
+                    <div class="scrap">
+                        <i></i>
+                        <span>${communityScraps}</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
       `;
 
       this.shadow.appendChild(style);
@@ -69,6 +89,7 @@ class CommunityCard extends HTMLElement {
       console.error('communityCard 로딩 실패:', error);
     }
   }
+  
 }
 
 customElements.define('community-card', CommunityCard);

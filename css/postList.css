@@ -165,7 +165,7 @@
 
 .content-wrap {
   display: flex;
-  flex-direction: column; /* 세로 방향 정렬 */
+  flex-direction: column;
   gap: 0.5rem;
   width: 100%;
   max-width: 1400px;
@@ -186,8 +186,10 @@
   width: 80%;
 }
 .content-wrap .content-header .left-group .title {
+  margin-top: 0.1rem;
   font-weight: var(--font-bold);
   font-size: var(--font-large-size);
+  text-align: center;
   white-space: nowrap; /* 줄바꿈 안 함 */
   overflow: hidden; /* 넘친 부분 숨김 */
   text-overflow: ellipsis; /* ... 처리 */
@@ -200,9 +202,9 @@
   background-color: var(--default-border);
   color: var(--color-background);
   padding: 0.2rem 0.6rem 0.2rem 0.6rem;
-  white-space: nowrap; /* 줄바꿈 안 함 */
-  overflow: hidden; /* 넘친 부분 숨김 */
-  text-overflow: ellipsis; /* ... 처리 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .content-wrap .content-header .right-group {
   width: 20%;
@@ -230,9 +232,11 @@
   font-size: var(--font-small-size);
   padding: 0 1rem 0.5rem 1rem;
   color: var(--font-basic-color);
-  white-space: nowrap; /* 줄바꿈 안 함 */
-  overflow: hidden; /* 넘친 부분 숨김 */
-  text-overflow: ellipsis; /* ... 처리 */
+}
+.content-wrap .content-summary p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .content-wrap .content-footer {
   display: flex;
@@ -250,6 +254,7 @@
 .content-wrap .content-footer .right-group .comment {
   display: flex;
   gap: 0.4rem;
+  align-items: center;
 }
 .content-wrap .content-footer .right-group .comment i {
   display: block;
@@ -263,6 +268,7 @@
 .content-wrap .content-footer .right-group .scrap {
   display: flex;
   gap: 0.4rem;
+  align-items: center;
 }
 .content-wrap .content-footer .right-group .scrap i {
   display: block;
@@ -286,7 +292,17 @@
   margin: 0 auto;
   flex-wrap: wrap;
 }
-.page-num ul i, .page-num ul li {
+.page-num ul li {
+  background-color: white;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--color-background);
+  text-align: center;
+  line-height: 2rem;
+  margin-bottom: 2.5rem;
+  cursor: pointer;
+}
+.page-num ul li i {
   background-color: white;
   width: 2rem;
   height: 2rem;
@@ -312,21 +328,32 @@
   cursor: pointer;
 }
 
-.write-btn {
+.btn-wrap .write-btn, .btn-wrap .top-btn {
   width: 4vw;
   height: 4vw;
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  border: none;
+  border-radius: 8rem;
+  z-index: 1000;
+  cursor: pointer;
+}
+.btn-wrap .write-btn {
+  bottom: 7vw;
+  right: 2vw;
   background-color: var(--color-orange);
   background-image: url(../../assets/icons/iconizer-iconmonstr-pencil-lined.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 80%;
-  border: none;
-  border-radius: 8rem;
-  z-index: 1000;
-  cursor: pointer;
+}
+.btn-wrap .top-btn {
+  bottom: 2vw;
+  right: 2vw;
+  background-color: white;
+  background-image: url(../../assets/icons/iconmonstr-arrow-66-240.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
 }
 
 .btn-active {
@@ -345,12 +372,16 @@
   background-size: contain; /* 추가 */
 }
 
+.strong {
+  font-weight: var(--font-bold) !important;
+}
+
 @media screen and (max-width: 768px) {
   .filter-section {
     margin-top: 7rem;
   }
   .filter-wrap {
-    width: 100%;
+    width: 95%;
     padding: 1rem 0.5rem 1rem 0.5rem;
   }
   .filter-wrap ul {
@@ -365,7 +396,7 @@
     padding: 5px;
   }
   .filter-wrap div input {
-    width: 90%;
+    width: 95%;
     height: 40px;
   }
   .filter-wrap div i {
@@ -374,7 +405,7 @@
     height: 1.2rem;
   }
   .division-wrap {
-    width: 100%;
+    width: 95%;
     display: flex;
   }
   .division-wrap ul {
@@ -384,7 +415,7 @@
     display: none;
   }
   .content-list {
-    width: 100%;
+    width: 95%;
   }
   .content-wrap .content-header {
     display: flex;
@@ -394,10 +425,14 @@
     display: none;
   }
   .content-wrap .content-summary, .content-wrap .content-footer {
+    width: 95%;
     display: flex;
     gap: 0.3rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
     font-size: var(--font-xs-size);
+  }
+  .content-wrap .content-summary p, .content-wrap .content-footer p {
+    width: 100%;
   }
   .content-wrap .content-summary .left-group, .content-wrap .content-summary .right-group, .content-wrap .content-footer .left-group, .content-wrap .content-footer .right-group {
     flex-direction: row;
@@ -405,12 +440,19 @@
     gap: 0.6rem;
   }
   .page-num {
-    width: 100%;
+    width: 95%;
   }
   .page-num ul {
     gap: 0.4rem;
   }
-  .page-num ul i, .page-num ul li {
+  .page-num ul li {
+    width: 1.8rem;
+    height: 1.8rem;
+    text-align: center;
+    line-height: 1.8rem;
+    font-size: var(--font-xs-size);
+  }
+  .page-num ul li i {
     width: 1.8rem;
     height: 1.8rem;
     text-align: center;
@@ -418,8 +460,15 @@
     font-size: var(--font-xs-size);
   }
   .write-btn {
-    width: 10vw;
-    height: 10vw;
+    width: 7vw;
+    height: 7vw;
+    bottom: 6rem;
+    right: 1rem;
+    background-size: 70%;
+  }
+  .top-btn {
+    width: 7vw;
+    height: 7vw;
     bottom: 1rem;
     right: 1rem;
     background-size: 70%;

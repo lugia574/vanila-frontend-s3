@@ -6,7 +6,7 @@ const textSlider = new Swiper('.text-slider', {
   fadeEffect: { crossFade: true },
   loop: true,
   autoplay: {
-    delay: 3000,
+    delay: 2000,
   },
   navigation: {
     nextEl: '.swiper-button-next',

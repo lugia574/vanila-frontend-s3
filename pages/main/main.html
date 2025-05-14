@@ -86,7 +86,7 @@
                     <p class="duration">5.12 ~ 5.20</p>
                     <p class="main-script">
                       로컬 특화 체험 <br />
-                      관광 컨텐츠 공모전
+                      관광 콘텐츠 공모전
                     </p>
                     <p class="summary-script">
                       최우수 체험관광상품 시상금 총 3,000만원 지급, 활동비 지원, 체험관광상품 OTA
@@ -101,8 +101,143 @@
             <div class="swiper-progressbar"></div>
           </div>
         </div>
-        <!-- ../../public/common/arrowIcon.svg -->
+        <!-- 통합검색 -->
+        <div class="total-search-wrap wrap">
+          <div class="total-search-box">
+            <div class="title">
+              <strong>맞춤형 공모전</strong>
+            </div>
+            <form class="total-search-form" method="get">
+              <input type="hidden" name="key" />
+              <input type="hidden" id="sc_searchSe" name="sc_searchSe" />
+              <div class="select-box box">
+                <a href="#" class="select-btn" aria-expanded="false">
+                  <em>분야</em>
+                  <span class="btn-arrow"></span>
+                </a>
+                <ul class="select-list">
+                  <li>
+                    <input type="checkbox" id="allBtn" class="chk-st1" />
+                    <label for="allBtn" class="chk-st1">전체</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="poster" class="chk-st1" /><label
+                      for="poster"
+                      class="chk-st1"
+                      >포스터/웹툰/컨텐츠</label
+                    >
+                  </li>
+                  <li>
+                    <input type="checkbox" id="picture" class="chk-st1" /><label
+                      for="picture"
+                      class="chk-st1"
+                      >사진/영상</label
+                    >
+                  </li>
+                  <li>
+                    <input type="checkbox" id="idea" class="chk-st1" /><label
+                      for="picture"
+                      class="chk-st1"
+                      >아이디어/기획</label
+                    >
+                  </li>
+                  <li>
+                    <input type="checkbox" id="it" class="chk-st1" /><label for="it" class="chk-st1"
+                      >IT/학술/논문</label
+                    >
+                  </li>
+                  <li>
+                    <input type="checkbox" id="naming" class="chk-st1" /><label
+                      for="naming"
+                      class="chk-st1"
+                      >네이밍/슬로건</label
+                    >
+                  </li>
+                  <li>
+                    <input type="checkbox" id="essay" class="chk-st1" /><label
+                      for="essay"
+                      class="chk-st1"
+                      >에세이/수필/문학</label
+                    >
+                  </li>
+                  <li>
+                    <input type="checkbox" id="sport" class="chk-st1" /><label
+                      for="sport"
+                      class="chk-st1"
+                      >스포츠/음악</label
+                    >
+                  </li>
+                  <li>
+                    <input type="checkbox" id="art" class="chk-st1" /><label
+                      for="art"
+                      class="chk-st1"
+                      >미술/디자인/건축</label
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="check-box box">
+                <a href="#" class="select-btn">
+                  <em>연령대</em>
+                  <span class="btn-arrow"></span>
+                </a>
+                <ul class="select-list">
+                  <li>
+                    <input type="checkbox" id="University" class="chk-st1" /><label
+                      for="University"
+                      class="chk-st1"
+                      >대학생</label
+                    >
+                  </li>
+                  <li>
+                    <input type="checkbox" id="general" class="chk-st1" /><label
+                      for="general"
+                      class="chk-st1"
+                      >일반인</label
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="check-box box age">
+                <a href="#" class="select-btn">
+                  <em>시상규모</em>
+                  <span class="btn-arrow"></span>
+                </a>
+                <ul class="select-list">
+                  <li>
+                    <input type="checkbox" id="prize1" class="chk-st1" /><label
+                      for="prize1"
+                      class="chk-st1"
+                      >1천만원 ~ 3천만원</label
+                    >
+                  </li>
+                  <li>
+                    <input type="checkbox" id="prize2" class="chk-st1" /><label
+                      for="prize2"
+                      class="chk-st1"
+                      >3천만원 ~ 5천만원</label
+                    >
+                  </li>
+                  <li>
+                    <input type="checkbox" id="prize3" class="chk-st1" /><label
+                      for="prize3"
+                      class="chk-st1"
+                      >5천만원 이상</label
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="seach-bar">
+                <input type="text" />
+              </div>
+              <div class="btn-wrap">
+                <a href="#">검색</a>
+              </div>
+            </form>
+          </div>
+        </div>
 
+        <!-- 메인페이지 컨텐츠 -->
         <div class="main-contents wrap">
           <!-- 공모전 -->
           <section class="contest-section section">
@@ -314,6 +449,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../../script/main/banner-slider.js"></script>
+    <script src="../../script/main/total-search.js"></script>
     <script src="../../script/components/header.js"></script>
     <script src="../../script/components/contest.js"></script>
     <script src="../../script/components/license-card.js"></script>

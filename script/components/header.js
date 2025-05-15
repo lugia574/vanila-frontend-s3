@@ -39,7 +39,7 @@ class JeanHeader extends HTMLElement {
       header.id = "header";
       header.innerHTML = `
         <div class="content-center">
-          <h1 class="logo"><a href="#">청바지</a></h1>
+          <h1 class="logo"><a href="/pages/main/main.html">청바지</a></h1>
           <div class="mobile-button">
               <div class="bar"></div>
               <div class="bar"></div>
@@ -47,16 +47,16 @@ class JeanHeader extends HTMLElement {
           </div>
           <nav id="main-nav">
             <ul>
-              <li><a href="#">공모전</a></li>
-              <li><a href="#">청년정책</a></li>
+              <li><a href="/pages/contest/contest.html">공모전</a></li>
+              <li><a href="/pages/policy/policy-list.html">청년정책</a></li>
               <li><a href="#">자격증</a></li>
-              <li><a href="#">커뮤니티</a></li>
+              <li><a href="/pages/community/postList.html">커뮤니티</a></li>
             </ul>
           </nav>
           <nav id="auth-menu">
             <ul>
-              <li><a href="#">로그인</a></li>
-              <li><a href="#">회원가입</a></li>
+              <li><a href="/pages/login/login.html">로그인</a></li>
+              <li><a href="/pages/sign-up/sign-up.html">회원가입</a></li>
             </ul>
           </nav>
           <nav id="mobile-menu">

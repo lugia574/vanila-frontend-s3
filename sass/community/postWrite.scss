@@ -1,318 +1,319 @@
 @use "../../assets/fonts/font";
 @use "../common/variables";
 
-.wrap{
-    background-color: white;
+.wrap {
+  background-color: white;
 }
 
 // header가 겹치지 않도록
-.basic-info-section{
-    padding-top: 7rem;
-    background-color: white;
+.basic-info-section {
+  padding-top: 7rem;
+  background-color: white;
 }
 
 // basic info
-.basic-info-wrap{
-    background-color: white;
+.basic-info-wrap {
+  background-color: white;
+  width: 70%;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 0 0 1rem 0;
+
+  .basic-title-wrap {
+    font-weight: var(--font-bold);
+    font-size: var(--font-large-size);
+    padding: 0.5rem 0 0.5rem 0;
     width: 70%;
     max-width: 1400px;
-    margin: 0 auto;
-    text-align: left;
-    padding: 0 0 1rem 0;
+  }
 
-    .basic-title-wrap{
-        font-weight: var(--font-bold);
-        font-size: var(--font-large-size);
-        padding: 0.5rem 0 0.5rem 0;
-        width: 70%;
-        max-width: 1400px;
-    }
-
-    .type{
-        border-top: 2px solid var(--color-background);
-        padding: 1rem 0 1rem 0;
-        form>input{
-            width: 2rem;
-            // height: 100%;
-        }
-    }
-
-    // 공모전 main/sub 선택
-    .type-detail{
-        display: flex;
-        gap: 5rem;
-        padding-bottom: 0.5rem;
-
-        .main-type, .sub-type{
-            width: 100%;
-
-            .main-type-main, .sub-type-main{
-                position: relative;  
-
-                .title{
-                    padding-bottom: 0.5rem;
-                }
-                li:first-child{
-                    a{  
-                        // 분야, 참여
-                        color: black;
-                        font-weight: var(--font-bold);
-                    }
-                }
-
-                li:nth-child(2){
-                    a{
-                        // 공모전 분야를 선택해주세요.
-                        display: block;
-
-                        width: 100%;
-                        max-width: 25rem;
-
-                        height: 2rem;
-                        line-height: 2rem;
-                        padding-left: 0.5rem;
-                    
-                        border: 1px solid rgb(200, 199, 199);
-                        border-radius: 8px;
-                        
-                        font-size: var(--font-small-size);
-                        color: rgb(200, 199, 199);
-                    }
-                }
-
-                .main-type-sub, .sub-type-sub{
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.5rem;
-                    position: absolute;
-                    background: white;
-                    left: 0;	
-
-                    height: 10rem;
-                    width: 100%;		
-                    border: 1px solid rgb(200, 199, 199);
-                    border-radius: 8px;
-                    padding : 0.5rem 0.5rem 0.5rem 0.5rem;
-                    z-index: 100;
-                    overflow-y: scroll;
-                    cursor:pointer;
-
-                    font-size: var(--font-small-size);
-                }
-
-            }
-        }
-    }
-
-    // 시작일 종료일
-    .period-wrap{
-        display: flex;  
-        gap: 5rem;
-        padding-top: 0.5rem;
-
-        .start-date-wrap, .end-date-wrap{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-
-            label{
-                padding-bottom: 0.5rem;
-                color: black;
-                font-weight: var(--font-bold);
-
-
-            }
-            input{
-                display: block;
-                width: 100%;
-                max-width: 25rem;
-                height: 2rem;
-                line-height: 2rem;
-                padding-left: 5px;
-                color: rgb(200, 199, 199);
-                border: 1px solid rgb(200, 199, 199);
-                border-radius: 8px;
-            }
-        }
-    }
-}
-
-// recruitment info
-.recruitment-info-wrap{
-    background-color: white;
-    width: 70%;
-    max-width: 1400px;
-    margin: 0 auto;
-    text-align: left;
+  .type {
+    border-top: 2px solid var(--color-background);
     padding: 1rem 0 1rem 0;
-
-    .recruitment-title-wrap{
-        background-color: white;
-        width: 100%;
-        //max-width: 1400px;
-        text-align: left;
-        padding: 0.5rem 0 0.5rem 0;
-
-        .recruitment-title{
-            font-weight: var(--font-bold);
-            font-size: var(--font-large-size);
-            padding: 0.5rem 0 0.5rem 0;
-            width: 70%;
-            max-width: 1400px;
-        }
+    form > input {
+      width: 2rem;
+      // height: 100%;
     }
+  }
 
-    .recuritment-wrap{
-        width: 100%;
-        border-top: 2px solid var(--color-background);
-        padding: 10px 0 20px 0;
-        display: flex;
-        gap: 5rem;
-
-        .recruitment-end-wrap, .recruitment-count-wrap{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            label{
-                padding-bottom: 0.5rem;
-                color: black;
-                font-weight: var(--font-bold);
-            }
-            input{
-                display: block;
-                width: 100%;
-                max-width: 25rem;
-                height: 2rem;
-                line-height: 2rem;
-                padding-left: 0.5rem;
-                color: rgb(200, 199, 199);
-                border: 1px solid rgb(200, 199, 199);
-                border-radius: 8px;
-            }            
-        }
-    }
-
-    .recruitment-count-wrap{
-        .recruitment-count-detail-wrap{
-            display: flex;
-            gap: 5rem;
-            .recruitment-role, .recruitment-count{
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                padding-bottom: 0.5rem;
-                span{
-                    padding-bottom: 0.5rem;
-                }
-                label{
-                    padding-bottom: 0.5rem;
-                    color: black;
-                    font-weight: var(--font-bold);
-                }
-                input{
-                    display: block;
-                    width: 100%;
-                    max-width: 25rem;
-                    height: 2rem;
-                    line-height: 2rem;
-                    padding-left: 0.5rem;
-                    color: rgb(200, 199, 199);
-                    border: 1px solid rgb(200, 199, 199);
-                    border-radius: 8px;
-                }
-            }
-        }
-
-        .recruitment-count-detail-btn{
-            display: flex;
-            justify-content: right;
-            gap: 0.5rem;
-            button{
-                background: var(--color-background);
-                width: 4rem;
-                height: 2rem;
-                border: none;
-                border-radius: 8px;
-        
-            }
-        }
-    }
-}
-
-// content
-.title-wrap{
-    text-align: left;
+  // 공모전 main/sub 선택
+  .type-detail {
     display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    width: 70%;
-    max-width: 1400px;
+    gap: 5rem;
+    padding-bottom: 0.5rem;
 
-    span{
+    .main-type,
+    .sub-type {
+      width: 100%;
+
+      .main-type-main,
+      .sub-type-main {
+        position: relative;
+
+        .title {
+          padding-bottom: 0.5rem;
+        }
+        li:first-child {
+          a {
+            // 분야, 참여
+            color: black;
+            font-weight: var(--font-bold);
+          }
+        }
+
+        li:nth-child(2) {
+          a {
+            // 공모전 분야를 선택해주세요.
+            display: block;
+
+            width: 100%;
+            max-width: 25rem;
+
+            height: 2rem;
+            line-height: 2rem;
+            padding-left: 0.5rem;
+
+            border: 1px solid rgb(200, 199, 199);
+            border-radius: 8px;
+
+            font-size: var(--font-small-size);
+            color: rgb(200, 199, 199);
+          }
+        }
+
+        .main-type-sub,
+        .sub-type-sub {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          position: absolute;
+          background: white;
+          left: 0;
+
+          height: 10rem;
+          width: 100%;
+          border: 1px solid rgb(200, 199, 199);
+          border-radius: 8px;
+          padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+          z-index: 100;
+          overflow-y: scroll;
+          cursor: pointer;
+
+          font-size: var(--font-small-size);
+        }
+      }
+    }
+  }
+
+  // 시작일 종료일
+  .period-wrap {
+    display: flex;
+    gap: 5rem;
+    padding-top: 0.5rem;
+
+    .start-date-wrap,
+    .end-date-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      label {
         padding-bottom: 0.5rem;
         color: black;
         font-weight: var(--font-bold);
-
-    }
-    input{
+      }
+      input {
         display: block;
         width: 100%;
+        max-width: 25rem;
+        height: 2rem;
+        line-height: 2rem;
+        padding-left: 5px;
+        color: rgb(200, 199, 199);
+        border: 1px solid rgb(200, 199, 199);
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+// recruitment info
+.recruitment-info-wrap {
+  background-color: white;
+  width: 70%;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 1rem 0 1rem 0;
+
+  .recruitment-title-wrap {
+    background-color: white;
+    width: 100%;
+    //max-width: 1400px;
+    text-align: left;
+    padding: 0.5rem 0 0.5rem 0;
+
+    .recruitment-title {
+      font-weight: var(--font-bold);
+      font-size: var(--font-large-size);
+      padding: 0.5rem 0 0.5rem 0;
+      width: 70%;
+      max-width: 1400px;
+    }
+  }
+
+  .recuritment-wrap {
+    width: 100%;
+    border-top: 2px solid var(--color-background);
+    padding: 10px 0 20px 0;
+    display: flex;
+    gap: 5rem;
+
+    .recruitment-end-wrap,
+    .recruitment-count-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      label {
+        padding-bottom: 0.5rem;
+        color: black;
+        font-weight: var(--font-bold);
+      }
+      input {
+        display: block;
+        width: 100%;
+        max-width: 25rem;
         height: 2rem;
         line-height: 2rem;
         padding-left: 0.5rem;
         color: rgb(200, 199, 199);
-        border: 1px solid var(--color-background);
+        border: 1px solid rgb(200, 199, 199);
         border-radius: 8px;
+      }
     }
-}
+  }
 
-// content
-.content-wrap{
-    width: 70%;
-    max-width: 1400px;
-    margin: 0 auto;
-
-    #content{
+  .recruitment-count-wrap {
+    .recruitment-count-detail-wrap {
+      display: flex;
+      gap: 5rem;
+      .recruitment-role,
+      .recruitment-count {
         width: 100%;
-        max-width: 1400px;
-        margin: 0 auto;
-        text-align: left;
-        padding: 20px 0px 20px 0px;
         display: flex;
         flex-direction: column;
+        padding-bottom: 0.5rem;
+        span {
+          padding-bottom: 0.5rem;
+        }
+        label {
+          padding-bottom: 0.5rem;
+          color: black;
+          font-weight: var(--font-bold);
+        }
+        input {
+          display: block;
+          width: 100%;
+          max-width: 25rem;
+          height: 2rem;
+          line-height: 2rem;
+          padding-left: 0.5rem;
+          color: rgb(200, 199, 199);
+          border: 1px solid rgb(200, 199, 199);
+          border-radius: 8px;
+        }
+      }
     }
-}
 
-// 버튼
-.content-btn-wrap{
-    margin: 0 auto;
-    width: 70%;
-    max-width: 1400px;
-    display: flex;
-    justify-content: right;
-    gap: 0.5rem;
-
-    button{
+    .recruitment-count-detail-btn {
+      display: flex;
+      justify-content: right;
+      gap: 0.5rem;
+      button {
         background: var(--color-background);
         width: 4rem;
         height: 2rem;
         border: none;
         border-radius: 8px;
+      }
     }
+  }
+}
+
+// content
+.title-wrap {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 70%;
+  max-width: 1400px;
+
+  span {
+    padding-bottom: 0.5rem;
+    color: black;
+    font-weight: var(--font-bold);
+  }
+  input {
+    display: block;
+    width: 100%;
+    height: 2rem;
+    line-height: 2rem;
+    padding-left: 0.5rem;
+    color: rgb(200, 199, 199);
+    border: 1px solid var(--color-background);
+    border-radius: 8px;
+  }
+}
+
+// content
+.content-wrap {
+  width: 70%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  #content {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px 0px 20px 0px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// 버튼
+.content-btn-wrap {
+  margin: 0 auto;
+  width: 70%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: right;
+  gap: 0.5rem;
+
+  button {
+    background: var(--color-background);
+    width: 4rem;
+    height: 2rem;
+    border: none;
+    border-radius: 8px;
+  }
 }
 
 // 날짜선택 input 디자인
 input[type="date"] {
-    font-family: 'Pretendard', sans-serif;
-    font-size: var(--font-small-size);
-    color: var(--color-background);
+  font-family: "Pretendard", sans-serif;
+  font-size: var(--font-small-size);
+  color: var(--color-background);
 }
 
-.hidden{
-    display: none !important;
+.hidden {
+  display: none !important;
 }
 
-.choice{
-    // TODO : 추후 결정
-    color: var(--font-basic-color);
+.choice {
+  // TODO : 추후 결정
+  color: var(--font-basic-color);
 }

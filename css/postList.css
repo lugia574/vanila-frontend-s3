@@ -178,7 +178,8 @@
   display: flex;
   padding: 1rem 1rem 0 1rem;
 }
-.content-wrap .content-header .left-group, .content-wrap .content-header .right-group {
+.content-wrap .content-header .left-group,
+.content-wrap .content-header .right-group {
   display: flex;
   gap: 0.5rem;
 }
@@ -244,11 +245,13 @@
   padding: 0 1rem 0.5rem 1rem;
   font-size: var(--font-small-size);
 }
-.content-wrap .content-footer .left-group, .content-wrap .content-footer .right-group {
+.content-wrap .content-footer .left-group,
+.content-wrap .content-footer .right-group {
   display: flex;
   gap: 1.25rem;
 }
-.content-wrap .content-footer .left-group .writer, .content-wrap .content-footer .right-group .writer {
+.content-wrap .content-footer .left-group .writer,
+.content-wrap .content-footer .right-group .writer {
   color: rgb(200, 199, 199);
 }
 .content-wrap .content-footer .right-group .comment {
@@ -328,7 +331,8 @@
   cursor: pointer;
 }
 
-.btn-wrap .write-btn, .btn-wrap .top-btn {
+.btn-wrap .write-btn,
+.btn-wrap .top-btn {
   width: 4vw;
   height: 4vw;
   position: fixed;
@@ -411,7 +415,8 @@
   .division-wrap ul {
     flex-wrap: wrap;
   }
-  .division-wrap ul li a .card-icon, .division-wrap ul li a .list-icon {
+  .division-wrap ul li a .card-icon,
+  .division-wrap ul li a .list-icon {
     display: none;
   }
   .content-list {
@@ -421,20 +426,26 @@
     display: flex;
     gap: 1rem;
   }
-  .content-wrap .content-header .left-group .type, .content-wrap .content-header .right-group .type {
+  .content-wrap .content-header .left-group .type,
+  .content-wrap .content-header .right-group .type {
     display: none;
   }
-  .content-wrap .content-summary, .content-wrap .content-footer {
+  .content-wrap .content-summary,
+  .content-wrap .content-footer {
     width: 95%;
     display: flex;
     gap: 0.3rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
     font-size: var(--font-xs-size);
   }
-  .content-wrap .content-summary p, .content-wrap .content-footer p {
+  .content-wrap .content-summary p,
+  .content-wrap .content-footer p {
     width: 100%;
   }
-  .content-wrap .content-summary .left-group, .content-wrap .content-summary .right-group, .content-wrap .content-footer .left-group, .content-wrap .content-footer .right-group {
+  .content-wrap .content-summary .left-group,
+  .content-wrap .content-summary .right-group,
+  .content-wrap .content-footer .left-group,
+  .content-wrap .content-footer .right-group {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.6rem;

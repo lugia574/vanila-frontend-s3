@@ -104,19 +104,23 @@ body {
   gap: 15rem;
   padding: 20px 0 10px 0;
 }
-.recruitment-info-wrap .info-grid .info-left, .recruitment-info-wrap .info-grid .info-right {
+.recruitment-info-wrap .info-grid .info-left,
+.recruitment-info-wrap .info-grid .info-right {
   margin-left: 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.recruitment-info-wrap .info-grid .info-left span, .recruitment-info-wrap .info-grid .info-right span {
+.recruitment-info-wrap .info-grid .info-left span,
+.recruitment-info-wrap .info-grid .info-right span {
   margin-left: 1rem;
 }
-.recruitment-info-wrap .info-grid .info-left .division, .recruitment-info-wrap .info-grid .info-right .division {
+.recruitment-info-wrap .info-grid .info-left .division,
+.recruitment-info-wrap .info-grid .info-right .division {
   display: flex;
 }
-.recruitment-info-wrap .info-grid .info-left .division i, .recruitment-info-wrap .info-grid .info-right .division i {
+.recruitment-info-wrap .info-grid .info-left .division i,
+.recruitment-info-wrap .info-grid .info-right .division i {
   margin-left: 0.5rem; /* 텍스트와 간격 주기 */
   display: inline-block;
   background-image: url(../../assets/icons/iconmonstr-paperclip-thin-240.png);
@@ -126,7 +130,8 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
-.recruitment-info-wrap .info-grid .info-left .info-label, .recruitment-info-wrap .info-grid .info-right .info-label {
+.recruitment-info-wrap .info-grid .info-left .info-label,
+.recruitment-info-wrap .info-grid .info-right .info-label {
   display: inline-block;
   width: 3.75rem;
   text-align: center;
@@ -134,14 +139,16 @@ body {
   vertical-align: middle;
   font-weight: var(--font-bold);
 }
-.recruitment-info-wrap .info-grid .info-left .info-label::after, .recruitment-info-wrap .info-grid .info-right .info-label::after {
+.recruitment-info-wrap .info-grid .info-left .info-label::after,
+.recruitment-info-wrap .info-grid .info-right .info-label::after {
   display: inline-block;
   width: 3.75rem;
   text-align: justify;
   text-align-last: justify;
   vertical-align: middle;
 }
-.recruitment-info-wrap .info-grid .info-left .info-value, .recruitment-info-wrap .info-grid .info-right .info-value {
+.recruitment-info-wrap .info-grid .info-left .info-value,
+.recruitment-info-wrap .info-grid .info-right .info-value {
   text-align: center;
   vertical-align: middle;
 }
@@ -161,12 +168,14 @@ body {
   gap: 2rem;
   padding: 0.5rem 0.5rem 0.1rem 0.5rem;
 }
-.post-detail .recruitment-detail .recruitment-left, .post-detail .recruitment-detail .recruitment-right {
+.post-detail .recruitment-detail .recruitment-left,
+.post-detail .recruitment-detail .recruitment-right {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.post-detail .recruitment-detail .recruitment-left span, .post-detail .recruitment-detail .recruitment-right span {
+.post-detail .recruitment-detail .recruitment-left span,
+.post-detail .recruitment-detail .recruitment-right span {
   font-size: var(--font-small-size);
 }
 .post-detail .content-detail {
@@ -174,7 +183,8 @@ body {
   gap: 2rem;
   padding: 0.5rem 0.5rem 0.1rem 0.5rem;
 }
-.post-detail .content-detail .content-left, .post-detail .content-detail .content-right {
+.post-detail .content-detail .content-left,
+.post-detail .content-detail .content-right {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -230,14 +240,16 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.popular-posts-announcement-section .popular-posts-wrap .popular-posts-list .post-middle .post-middle-left, .popular-posts-announcement-section .popular-posts-wrap .popular-posts-list .post-middle .post-middle-right {
+.popular-posts-announcement-section .popular-posts-wrap .popular-posts-list .post-middle .post-middle-left,
+.popular-posts-announcement-section .popular-posts-wrap .popular-posts-list .post-middle .post-middle-right {
   width: 50%;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding: 0.5rem;
 }
-.popular-posts-announcement-section .popular-posts-wrap .popular-posts-list .post-middle .post-middle-left span, .popular-posts-announcement-section .popular-posts-wrap .popular-posts-list .post-middle .post-middle-right span {
+.popular-posts-announcement-section .popular-posts-wrap .popular-posts-list .post-middle .post-middle-left span,
+.popular-posts-announcement-section .popular-posts-wrap .popular-posts-list .post-middle .post-middle-right span {
   color: rgb(200, 199, 199);
 }
 .popular-posts-announcement-section .announcement-wrap {

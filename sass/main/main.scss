@@ -309,12 +309,19 @@ body {
             }
           }
         }
-        ul {
-          li {
-            cursor: pointer;
-            // transform: 1s;
-          }
+        .swiper-slide {
+          display: flex;
+          flex-direction: column;
+          height: auto; /* Swiper가 알아서 width 주니까 높이는 맞춰야 함 */
+        }
 
+        contest-card {
+          display: block;
+          height: 100%;
+          width: 100%;
+        }
+
+        ul {
           &.policy-list {
             display: flex;
             justify-content: center;

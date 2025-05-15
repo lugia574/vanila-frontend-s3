@@ -157,7 +157,7 @@ const contestSlider = async () => {
     },
     breakpoints: {
       0: { slidesPerView: 1, slidesPerGroup: 1 },
-      480: { slidesPerView: 2, slidesPerGroup: 2 },
+      480: { slidesPerView: 2, slidesPerGroup: 1 },
       768: { slidesPerView: 3, slidesPerGroup: 1 },
       1024: { slidesPerView: 4, slidesPerGroup: 1 },
     },

@@ -337,8 +337,15 @@ body {
 .main-wrap .main-contents .section .section-container .section-top .contest-nav .license-button-next {
   transform: rotateY(180deg);
 }
-.main-wrap .main-contents .section .section-container ul li {
-  cursor: pointer;
+.main-wrap .main-contents .section .section-container .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  height: auto; /* Swiper가 알아서 width 주니까 높이는 맞춰야 함 */
+}
+.main-wrap .main-contents .section .section-container contest-card {
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 .main-wrap .main-contents .section .section-container ul.policy-list {
   display: flex;

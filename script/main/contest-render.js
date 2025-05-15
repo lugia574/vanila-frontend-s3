@@ -148,7 +148,7 @@ const contestArr = [
 
 const contestSlider = async () => {
   await new Swiper(".contest-swiper", {
-    spaceBetween: 48,
+    spaceBetween: 30,
     speed: 500,
     loop: true,
     navigation: {

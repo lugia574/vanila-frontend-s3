@@ -128,11 +128,14 @@
                     <label for="allBtn" class="chk-st1">전체</label>
                   </li>
                   <li>
-                    <input type="checkbox" id="poster" class="chk-st1" value="poster" /><label
-                      for="poster"
+                    <input
+                      type="checkbox"
+                      name="category"
+                      id="poster"
                       class="chk-st1"
-                      >포스터/웹툰/컨텐츠</label
-                    >
+                      value="poster"
+                    />
+                    <label for="poster" class="chk-st1">포스터/웹툰/컨텐츠</label>
                   </li>
                   <li>
                     <input
@@ -141,7 +144,8 @@
                       id="picture"
                       class="chk-st1"
                       value="picture"
-                    /><label for="picture" class="chk-st1">사진/영상</label>
+                    />
+                    <label for="picture" class="chk-st1">사진/영상</label>
                   </li>
                   <li>
                     <input
@@ -263,9 +267,7 @@
               <div class="seach-bar">
                 <input type="text" />
               </div>
-              <div class="btn-wrap">
-                <button type="submit">검색</button>
-              </div>
+              <button class="btn-wrap" type="submit">검색</button>
             </form>
           </div>
         </div>

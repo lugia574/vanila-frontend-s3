@@ -298,16 +298,12 @@ body {
   padding: 1.5rem 0;
   display: flex;
   justify-content: center;
-  border-radius: 0 2rem 2rem 0;
-}
-.main-wrap .total-search-wrap .total-search-box .total-search-form .btn-wrap button {
-  background: inherit;
-  font-size: inherit;
-  font-weight: var(--font-bold);
   color: white;
+  border-radius: 0 2rem 2rem 0;
   transform: 0.5s;
+  font-weight: var(--font-bold);
 }
-.main-wrap .total-search-wrap .total-search-box .total-search-form .btn-wrap button:active {
+.main-wrap .total-search-wrap .total-search-box .total-search-form .btn-wrap:active {
   transform: scale(0.8);
 }
 .main-wrap .main-contents {

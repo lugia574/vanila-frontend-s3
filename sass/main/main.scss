@@ -266,15 +266,11 @@ body {
           display: flex;
           justify-content: center;
 
+          color: white;
           border-radius: 0 2rem 2rem 0;
-          button {
-            background: inherit;
-            font-size: inherit;
-            font-weight: var(--font-bold);
-            color: white;
-            transform: 0.5s;
-          }
-          button:active {
+          transform: 0.5s;
+          font-weight: var(--font-bold);
+          &:active {
             transform: scale(0.8);
           }
         }

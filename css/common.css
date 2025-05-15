@@ -62,7 +62,7 @@
 head,
 body {
   font-family: "Pretendard", "BMDOHYEON", sans-serif;
-  background-color: var(--color-background);
+  background-color: rgba(246, 246, 246, 0.9647058824);
   color: var(--font-basic-color);
 }
 

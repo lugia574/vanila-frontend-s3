@@ -242,8 +242,7 @@ body {
 .main-wrap .total-search-wrap .total-search-box .total-search-form .box a .btn-arrow {
   margin-left: 1rem;
   display: inline-block;
-  width: 1rem;
-  height: 1rem;
+  width: 0.75rem;
   background: url("../../assets/icons/iconmonstr-angel-left-thin.svg") no-repeat center;
   background-size: contain;
   transform: rotate(-90deg) translateX(-10%);
@@ -317,33 +316,82 @@ body {
   flex-direction: column;
   gap: 1rem;
 }
-.main-wrap .main-contents .section .section-list {
+.main-wrap .main-contents .section .section-container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding: 2rem;
   overflow: hidden;
 }
-.main-wrap .main-contents .section .section-list .section-top {
+.main-wrap .main-contents .section .section-container .section-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-.main-wrap .main-contents .section .section-list .section-top .contest-nav {
+.main-wrap .main-contents .section .section-container .section-top .contest-nav {
   display: flex;
   justify-content: end;
   gap: 1rem;
 }
-.main-wrap .main-contents .section .section-list .section-top .contest-nav .nav-btn {
+.main-wrap .main-contents .section .section-container .section-top .contest-nav .nav-btn {
   cursor: pointer;
   width: 2rem;
 }
-.main-wrap .main-contents .section .section-list .section-top .contest-nav .contest-button-next,
-.main-wrap .main-contents .section .section-list .section-top .contest-nav .license-button-next {
+.main-wrap .main-contents .section .section-container .section-top .contest-nav .contest-button-next,
+.main-wrap .main-contents .section .section-container .section-top .contest-nav .license-button-next {
   transform: rotateY(180deg);
 }
-.main-wrap .main-contents .section .section-list ul li {
+.main-wrap .main-contents .section .section-container ul li {
   cursor: pointer;
-  transform: 1s;
+}
+.main-wrap .main-contents .section .section-container ul.policy-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.main-wrap .main-contents .section .section-container ul.policy-list .policy-item {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+  max-width: calc(50% - 16px);
+  padding: 1rem;
+}
+.main-wrap .main-contents .section .section-container ul.policy-list .policy-item .policy-link {
+  display: flex;
+  gap: 1rem;
+  text-decoration: none;
+}
+.main-wrap .main-contents .section .section-container ul.policy-list .policy-item .policy-link img {
+  flex: 1;
+  width: 50%;
+  object-fit: cover;
+  aspect-ratio: 5/7;
+}
+.main-wrap .main-contents .section .section-container ul.policy-list .policy-item .policy-link .desc {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+.main-wrap .main-contents .section .section-container ul.policy-list .policy-item .policy-link .desc .desc-top .policy-loc {
+  margin-left: 0.2rem;
+  font-size: var(--font-large-size);
+  font-weight: var(--font-bold);
+  color: var(--color-orange);
+}
+.main-wrap .main-contents .section .section-container ul.policy-list .policy-item .policy-link .desc .desc-top .policy-title {
+  font-size: var(--font-xlarge-size);
+  font-weight: var(--font-bold);
+}
+.main-wrap .main-contents .section .section-container ul.policy-list .policy-item .policy-link .desc .policy-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  height: 100%;
+  padding: 1rem 0;
 }
 
 @media screen and (max-width: 767px) {
@@ -376,5 +424,20 @@ body {
   }
   .main-wrap .total-search-wrap {
     display: none;
+  }
+  .main-wrap .main-contents .policy-item {
+    max-width: 100%;
+  }
+  .main-wrap .main-contents .policy-item .policy-link {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-wrap .main-contents .policy-item .policy-link img {
+    width: 100% !important;
+    height: auto;
+  }
+  .main-wrap .main-contents .policy-item .policy-link .desc {
+    width: 100%;
   }
 }

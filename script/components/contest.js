@@ -19,12 +19,12 @@ class ContestCard extends HTMLElement {
   }
 
   async render() {
-    const day = this.getAttribute('day') || '0';
-    const contestImg = this.getAttribute('contestImg') || '0';
-    const contestTitle = this.getAttribute('contestTitle') || '없음';
-    const contestOrg = this.getAttribute('contestOrg') || '없음';
-    const contestViews = this.getAttribute('contestViews') || '없음';
-    const contestLikes = this.getAttribute('contestLikes') || '없음';
+    const day = this.getAttribute('dday');
+    const contestImg = this.getAttribute('contestImg');
+    const contestTitle = this.getAttribute('contestTitle');
+    const contestOrg = this.getAttribute('contestOrg');
+    const contestViews = this.getAttribute('contestViews');
+    const contestLikes = this.getAttribute('contestLikes');
 
     // 중복 렌더링 방지
     if (this.renderingInProgress) return;

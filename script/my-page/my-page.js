@@ -1,4 +1,3 @@
-// 마이페이지 관련 JavaScript
 document.addEventListener('DOMContentLoaded', function () {
   // 사용자 정보 (실제로는 서버에서 가져올 데이터)
   const userProfile = {
@@ -32,12 +31,225 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   ];
 
+  // 공모전 신청 현황 목록 데이터
+  const applications = [
+    {
+      id: 101,
+      title: '제 6회 부울경 ICT 아이디어 경진대회',
+      field: 'IT/학술/논문',
+      type: '공모전',
+      status: '신청완료',
+      statusClass: 'application',
+      summary: 'ICT에 관심을 가지고 있는 전국의 개인 또는 팀으로 공모 상세 별 조건 상이...',
+      applyDate: '2025-05-01',
+    },
+    {
+      id: 102,
+      title: '로컬 특화 체험 관광 컨텐츠 공모전',
+      field: '아이디어/기획',
+      type: '공모전',
+      status: '진행중',
+      statusClass: 'progress',
+      summary: '최우수 체험관광상품 시상금 총 3,000만원 지급, 활동비 지원, ...',
+      applyDate: '2025-05-10',
+    },
+  ];
+
+  // 내가 쓴 글 데이터 (실제로는 서버에서 가져올 데이터)
+  const myPosts = [
+    {
+      id: 201,
+      title: 'AITHON 2025년 공모전 팀원 모집',
+      field: 'IT/학술/논문',
+      type: '공모전',
+      dDay: 'D-7',
+      summary: '총 5명 모집합니다. 자세한 내용은 아래 내용 참고 부탁드립니다...',
+      date: '2025-05-08',
+      commentCount: 12,
+      scrapCount: 8,
+    },
+    {
+      id: 202,
+      title: 'IT 개발자를 위한 공모전 추천 목록 공유',
+      field: 'IT/학술/논문',
+      type: '일반',
+      summary: '요즘 IT 개발자들이 참여하기 좋은 공모전 목록을 공유합니다...',
+      date: '2025-05-05',
+      commentCount: 24,
+      scrapCount: 16,
+    },
+  ];
+
+  // 현재 활성화된 탭
+  let activeTab = 'bookmarks';
+
+  // 각 탭별 페이지 상태 관리 (페이지네이션 용)
+  const tabState = {
+    bookmarks: { page: 1, hasMore: true, loading: false },
+    applications: { page: 1, hasMore: true, loading: false },
+    myPosts: { page: 1, hasMore: true, loading: false },
+  };
+
+  // 탭 전환 이벤트 설정
+  function setupTabSwitching() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        // 기존 활성화된 탭 버튼과 컨텐츠 비활성화
+        document.querySelector('.tab-btn.active').classList.remove('active');
+        document.querySelector('.tab-pane.active').classList.remove('active');
+
+        // 새 탭 활성화
+        this.classList.add('active');
+        activeTab = this.getAttribute('data-tab');
+        document.getElementById(activeTab).classList.add('active');
+
+        // 선택된 탭 데이터 로드 (아직 로드되지 않은 경우)
+        loadTabContent(activeTab);
+      });
+    });
+  }
+
+  // 탭 컨텐츠 로드
+  function loadTabContent(tabName) {
+    switch (tabName) {
+      case 'bookmarks':
+        if (document.querySelector('#bookmark-list').children.length === 0) {
+          loadBookmarkedContests();
+        }
+        break;
+      case 'applications':
+        if (document.querySelector('#application-list').children.length === 0) {
+          loadApplications();
+        }
+        break;
+      case 'my-posts':
+        if (document.querySelector('#my-posts-list').children.length === 0) {
+          loadMyPosts();
+        }
+        break;
+    }
+  }
+
+  // 사용자 프로필 정보 로드
+  function loadUserProfile() {
+    document.querySelector('.user-name').textContent = userProfile.name;
+    document.querySelector('.user-email').textContent = userProfile.email;
+    document.querySelector('.user-location').textContent = userProfile.location;
+
+    const profileImg = document.querySelector('.profile-img img');
+    if (profileImg) {
+      profileImg.src = userProfile.profileImage;
+      profileImg.alt = `${userProfile.name}의 프로필 이미지`;
+    }
+  }
+
+  // 북마크한 공모전 목록 로드
+  function loadBookmarkedContests() {
+    const bookmarkList = document.querySelector('#bookmark-list');
+    if (!bookmarkList || tabState.bookmarks.loading) return;
+
+    tabState.bookmarks.loading = true;
+
+    // 실제 서비스에서는 여기서 API 호출하여 페이지별 데이터 로드
+    // 지금은 목데이터만 사용
+
+    bookmarkedContests.forEach(contest => {
+      const listItem = document.createElement('li');
+      listItem.className = 'content-wrap';
+      listItem.innerHTML = `
+        <div class="content-header">
+          <div class="left-group">
+            <div class="title">${contest.title}</div>
+            <div class="field">${contest.field}</div>
+          </div>
+          <div class="right-group">
+            <div class="type">${contest.type}</div>
+            <div class="d-day">${contest.dDay}</div>
+          </div>
+        </div>
+        <div class="content-summary">
+          <p>${contest.summary}</p>
+        </div>
+        <div class="content-footer">
+          <div class="left-group">
+            <div class="organizer">${contest.organizer}</div>
+          </div>
+          <div class="right-group">
+            <div class="bookmark">
+              <i class="bookmark-icon ${contest.isBookmarked ? 'scrap-active' : ''}" data-id="${
+        contest.id
+      }"></i>
+            </div>
+          </div>
+        </div>
+      `;
+      bookmarkList.appendChild(listItem);
+
+      // 북마크 아이콘에 이벤트 리스너 추가
+      const bookmarkIcon = listItem.querySelector('.bookmark-icon');
+      bookmarkIcon.addEventListener('click', function () {
+        toggleBookmark(parseInt(this.getAttribute('data-id')), this);
+      });
+    });
+
+    // 더 불러올 데이터가 없다면 '더 보기' 버튼 숨김
+    if (bookmarkedContests.length === 0) {
+      tabState.bookmarks.hasMore = false;
+      document.querySelector('#load-more-bookmarks').style.display = 'none';
+    }
+
+    tabState.bookmarks.loading = false;
+    tabState.bookmarks.page++;
+  }
+
+  // 북마크 상태 변경 함수
+  function toggleBookmark(contestId, bookmarkIcon) {
+    const contest = bookmarkedContests.find(item => item.id === contestId);
+    if (contest) {
+      contest.isBookmarked = !contest.isBookmarked;
+
+      if (contest.isBookmarked) {
+        bookmarkIcon.classList.add('scrap-active');
+      } else {
+        bookmarkIcon.classList.remove('scrap-active');
+        // 북마크 취소 시 애니메이션 효과와 함께 UI에서 항목 제거
+        const listItem = bookmarkIcon.closest('.content-wrap');
+        listItem.style.transition = 'opacity 0.5s';
+        listItem.style.opacity = '0';
+
+        setTimeout(() => {
+          listItem.style.display = 'none';
+
+          // 북마크 목록에서 항목 제거
+          const index = bookmarkedContests.findIndex(item => item.id === contestId);
+          if (index !== -1) {
+            bookmarkedContests.splice(index, 1);
+          }
+
+          // 목록이 비었는지 확인
+          if (
+            document.querySelectorAll(
+              '#bookmark-list .content-wrap[style="display: block;"], #bookmark-list .content-wrap:not([style])'
+            ).length === 0
+          ) {
+            document.querySelector('#bookmark-list').innerHTML =
+              '<div class="empty-state">북마크한 공모전이 없습니다.</div>';
+          }
+        }, 500);
+      }
+    }
+  }
+
   // 공모전 신청 현황 목록 로드
   function loadApplications() {
-    const applicationList = document.querySelector('.application-section .content-list');
-    if (!applicationList) return;
+    const applicationList = document.querySelector('#application-list');
+    if (!applicationList || tabState.applications.loading) return;
 
-    applicationList.innerHTML = ''; // 기존 목록 초기화
+    tabState.applications.loading = true;
+
+    // 실제 서비스에서는 여기서 API 호출하여 페이지별 데이터 로드
 
     applications.forEach(app => {
       const listItem = document.createElement('li');
@@ -74,6 +286,15 @@ document.addEventListener('DOMContentLoaded', function () {
         showApplicationDetail(applicationId);
       });
     });
+
+    // 더 불러올 데이터가 없다면 '더 보기' 버튼 숨김
+    if (applications.length === 0) {
+      tabState.applications.hasMore = false;
+      document.querySelector('#load-more-applications').style.display = 'none';
+    }
+
+    tabState.applications.loading = false;
+    tabState.applications.page++;
   }
 
   // 공모전 신청 상세 정보 표시
@@ -95,10 +316,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 내가 쓴 글 목록 로드
   function loadMyPosts() {
-    const myPostsList = document.querySelector('.my-posts-section .content-list');
-    if (!myPostsList) return;
+    const myPostsList = document.querySelector('#my-posts-list');
+    if (!myPostsList || tabState.myPosts.loading) return;
 
-    myPostsList.innerHTML = ''; // 기존 목록 초기화
+    tabState.myPosts.loading = true;
+
+    // 실제 서비스에서는 여기서 API 호출하여 페이지별 데이터 로드
 
     myPosts.forEach(post => {
       const listItem = document.createElement('li');
@@ -142,6 +365,15 @@ document.addEventListener('DOMContentLoaded', function () {
         viewPostDetail(post.id);
       });
     });
+
+    // 더 불러올 데이터가 없다면 '더 보기' 버튼 숨김
+    if (myPosts.length === 0) {
+      tabState.myPosts.hasMore = false;
+      document.querySelector('#load-more-posts').style.display = 'none';
+    }
+
+    tabState.myPosts.loading = false;
+    tabState.myPosts.page++;
   }
 
   // 글 상세 보기
@@ -151,7 +383,6 @@ document.addEventListener('DOMContentLoaded', function () {
       // 실제로는 페이지 이동 또는 모달 표시를 구현할 수 있음
       console.log('게시글 상세 보기:', post);
       // 예시: 게시글 상세 페이지로 이동
-      // window.location.href = `/post/${postId}`;
       alert(`게시글 "${post.title}" 상세 페이지로 이동합니다.`);
     }
   }
@@ -165,8 +396,6 @@ document.addEventListener('DOMContentLoaded', function () {
         alert('프로필 수정 페이지로 이동합니다.');
         // 실제로는 아래와 같이 구현할 수 있음
         // window.location.href = '/profile/edit';
-        // 또는 모달 창 표시
-        // showProfileEditModal();
       });
     }
   }
@@ -177,25 +406,71 @@ document.addEventListener('DOMContentLoaded', function () {
     viewAllButtons.forEach(button => {
       button.addEventListener('click', function (e) {
         e.preventDefault();
-        const sectionTitle = this.closest('.section-top').querySelector('h2 a').textContent;
+        // 현재 활성화된 탭 확인
+        const currentTab = document.querySelector('.tab-btn.active').getAttribute('data-tab');
 
-        // 각 섹션별 전체보기 페이지로 이동
-        switch (sectionTitle) {
-          case '북마크한 공모전':
+        // 각 탭별 전체보기 페이지로 이동
+        switch (currentTab) {
+          case 'bookmarks':
             alert('북마크한 공모전 전체 목록 페이지로 이동합니다.');
             // window.location.href = '/bookmarks';
             break;
-          case '공모전 신청 현황':
+          case 'applications':
             alert('공모전 신청 현황 전체 목록 페이지로 이동합니다.');
             // window.location.href = '/applications';
             break;
-          case '내가 쓴 글':
+          case 'my-posts':
             alert('내가 쓴 글 전체 목록 페이지로 이동합니다.');
             // window.location.href = '/my-posts';
             break;
         }
       });
     });
+  }
+
+  // '더 보기' 버튼 이벤트 설정
+  function setupLoadMoreButtons() {
+    // 북마크 더 보기
+    const loadMoreBookmarks = document.querySelector('#load-more-bookmarks');
+    if (loadMoreBookmarks) {
+      loadMoreBookmarks.addEventListener('click', function () {
+        if (!tabState.bookmarks.loading && tabState.bookmarks.hasMore) {
+          // 실제 서비스에서는 추가 데이터 로드
+          alert('추가 북마크 데이터를 로드합니다.');
+          // 모든 데이터를 이미 로드했으므로 더 보기 버튼 숨김 (데모용)
+          this.style.display = 'none';
+          tabState.bookmarks.hasMore = false;
+        }
+      });
+    }
+
+    // 신청 현황 더 보기
+    const loadMoreApplications = document.querySelector('#load-more-applications');
+    if (loadMoreApplications) {
+      loadMoreApplications.addEventListener('click', function () {
+        if (!tabState.applications.loading && tabState.applications.hasMore) {
+          // 실제 서비스에서는 추가 데이터 로드
+          alert('추가 신청 현황 데이터를 로드합니다.');
+          // 모든 데이터를 이미 로드했으므로 더 보기 버튼 숨김 (데모용)
+          this.style.display = 'none';
+          tabState.applications.hasMore = false;
+        }
+      });
+    }
+
+    // 내가 쓴 글 더 보기
+    const loadMorePosts = document.querySelector('#load-more-posts');
+    if (loadMorePosts) {
+      loadMorePosts.addEventListener('click', function () {
+        if (!tabState.myPosts.loading && tabState.myPosts.hasMore) {
+          // 실제 서비스에서는 추가 데이터 로드
+          alert('추가 게시글 데이터를 로드합니다.');
+          // 모든 데이터를 이미 로드했으므로 더 보기 버튼 숨김 (데모용)
+          this.style.display = 'none';
+          tabState.myPosts.hasMore = false;
+        }
+      });
+    }
   }
 
   // 날짜 포맷 함수 (YYYY-MM-DD 형식으로 변환)
@@ -227,165 +502,52 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // 데이터 갱신 함수 (예: 서버에서 최신 데이터를 가져와 UI 업데이트)
-  function refreshData() {
-    // 실제로는 서버 API 호출을 통해 최신 데이터를 가져옴
-    console.log('데이터 갱신 중...');
+  // 스크롤 감지 이벤트 설정 (무한 스크롤 구현시 사용)
+  function setupScrollEvents() {
+    const contentLists = document.querySelectorAll('.content-list');
 
-    // 모의 데이터를 갱신한 후 UI 업데이트
-    loadUserProfile();
-    loadBookmarkedContests();
-    loadApplications();
-    loadMyPosts();
+    contentLists.forEach(list => {
+      list.addEventListener('scroll', function () {
+        // 스크롤이 하단에 도달했는지 확인
+        if (this.scrollHeight - this.scrollTop - this.clientHeight < 50) {
+          const tabId = this.closest('.tab-pane').id;
 
-    console.log('데이터 갱신 완료');
+          // 탭에 따라 추가 데이터 로드
+          switch (tabId) {
+            case 'bookmarks':
+              if (tabState.bookmarks.hasMore && !tabState.bookmarks.loading) {
+                document.querySelector('#load-more-bookmarks').click();
+              }
+              break;
+            case 'applications':
+              if (tabState.applications.hasMore && !tabState.applications.loading) {
+                document.querySelector('#load-more-applications').click();
+              }
+              break;
+            case 'my-posts':
+              if (tabState.myPosts.hasMore && !tabState.myPosts.loading) {
+                document.querySelector('#load-more-posts').click();
+              }
+              break;
+          }
+        }
+      });
+    });
   }
 
   // 초기화 함수
   function init() {
     loadUserProfile();
-    loadBookmarkedContests();
-    loadApplications();
-    loadMyPosts();
+    setupTabSwitching();
     setupProfileEditButton();
     setupViewAllButtons();
+    setupLoadMoreButtons();
+    setupScrollEvents();
 
-    // 5분마다 데이터 갱신 (실제 서비스에서는 필요에 따라 조정)
-    // setInterval(refreshData, 5 * 60 * 1000);
+    // 첫 번째 탭 콘텐츠 로드
+    loadTabContent('bookmarks');
   }
 
   // 페이지 초기화
   init();
 });
-const applications = [
-  {
-    id: 101,
-    title: '제 6회 부울경 ICT 아이디어 경진대회',
-    field: 'IT/학술/논문',
-    type: '공모전',
-    status: '신청완료',
-    statusClass: 'application',
-    summary: 'ICT에 관심을 가지고 있는 전국의 개인 또는 팀으로 공모 상세 별 조건 상이...',
-    applyDate: '2025-05-01',
-  },
-  {
-    id: 102,
-    title: '로컬 특화 체험 관광 컨텐츠 공모전',
-    field: '아이디어/기획',
-    type: '공모전',
-    status: '진행중',
-    statusClass: 'progress',
-    summary: '최우수 체험관광상품 시상금 총 3,000만원 지급, 활동비 지원, ...',
-    applyDate: '2025-05-10',
-  },
-];
-
-// 내가 쓴 글 데이터 (실제로는 서버에서 가져올 데이터)
-const myPosts = [
-  {
-    id: 201,
-    title: 'AITHON 2025년 공모전 팀원 모집',
-    field: 'IT/학술/논문',
-    type: '공모전',
-    dDay: 'D-7',
-    summary: '총 5명 모집합니다. 자세한 내용은 아래 내용 참고 부탁드립니다...',
-    date: '2025-05-08',
-    commentCount: 12,
-    scrapCount: 8,
-  },
-  {
-    id: 202,
-    title: 'IT 개발자를 위한 공모전 추천 목록 공유',
-    field: 'IT/학술/논문',
-    type: '일반',
-    summary: '요즘 IT 개발자들이 참여하기 좋은 공모전 목록을 공유합니다...',
-    date: '2025-05-05',
-    commentCount: 24,
-    scrapCount: 16,
-  },
-];
-
-// 사용자 프로필 정보 로드
-function loadUserProfile() {
-  document.querySelector('.user-name').textContent = userProfile.name;
-  document.querySelector('.user-email').textContent = userProfile.email;
-  document.querySelector('.user-location').textContent = userProfile.location;
-
-  const profileImg = document.querySelector('.profile-img img');
-  if (profileImg) {
-    profileImg.src = userProfile.profileImage;
-    profileImg.alt = `${userProfile.name}의 프로필 이미지`;
-  }
-}
-
-// 북마크 상태 변경 함수
-function toggleBookmark(contestId, bookmarkIcon) {
-  const contest = bookmarkedContests.find(item => item.id === contestId);
-  if (contest) {
-    contest.isBookmarked = !contest.isBookmarked;
-
-    if (contest.isBookmarked) {
-      bookmarkIcon.classList.add('scrap-active');
-    } else {
-      bookmarkIcon.classList.remove('scrap-active');
-      // 북마크 취소 시 UI에서 항목 제거 (선택사항)
-      // 여기선 간단한 예시로 애니메이션 후 요소를 숨김
-      const listItem = bookmarkIcon.closest('.content-wrap');
-      listItem.style.transition = 'opacity 0.5s';
-      listItem.style.opacity = '0';
-
-      setTimeout(() => {
-        listItem.style.display = 'none';
-      }, 500);
-    }
-  }
-}
-
-// 북마크한 공모전 목록 로드
-function loadBookmarkedContests() {
-  const bookmarkList = document.querySelector('.bookmark-section .content-list');
-  if (!bookmarkList) return;
-
-  bookmarkList.innerHTML = ''; // 기존 목록 초기화
-
-  bookmarkedContests.forEach(contest => {
-    const listItem = document.createElement('li');
-    listItem.className = 'content-wrap';
-    listItem.innerHTML = `
-        <div class="content-header">
-          <div class="left-group">
-            <div class="title">${contest.title}</div>
-            <div class="field">${contest.field}</div>
-          </div>
-          <div class="right-group">
-            <div class="type">${contest.type}</div>
-            <div class="d-day">${contest.dDay}</div>
-          </div>
-        </div>
-        <div class="content-summary">
-          <p>${contest.summary}</p>
-        </div>
-        <div class="content-footer">
-          <div class="left-group">
-            <div class="organizer">${contest.organizer}</div>
-          </div>
-          <div class="right-group">
-            <div class="bookmark">
-              <i class="bookmark-icon ${contest.isBookmarked ? 'scrap-active' : ''}" data-id="${
-      contest.id
-    }"></i>
-            </div>
-          </div>
-        </div>
-      `;
-    bookmarkList.appendChild(listItem);
-
-    // 북마크 아이콘에 이벤트 리스너 추가
-    const bookmarkIcon = listItem.querySelector('.bookmark-icon');
-    bookmarkIcon.addEventListener('click', function () {
-      toggleBookmark(parseInt(this.getAttribute('data-id')), this);
-    });
-  });
-}
-
-// 공모전

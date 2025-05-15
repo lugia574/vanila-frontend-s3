@@ -1,5 +1,5 @@
-@use '../../assets/fonts/font';
-@use '../common/variables';
+@use "../../assets/fonts/font";
+@use "../common/variables";
 
 /* main */
 .contest-wrap {
@@ -17,9 +17,9 @@
   }
   .divider {
     margin: 0 20px 0 20px;
-    background:rgb(221, 220, 220);
-    height:1px;
-    border:0;
+    background: rgb(221, 220, 220);
+    height: 1px;
+    border: 0;
   }
 }
 
@@ -79,7 +79,7 @@
 }
 
 select {
-   width: 100px;
+  width: 100px;
   max-width: 25rem;
   height: 2rem;
   line-height: 2rem;
@@ -144,7 +144,8 @@ select {
   flex-wrap: wrap;
 }
 
-.page-num ul i, .page-num ul li {
+.page-num ul i,
+.page-num ul li {
   background-color: white;
   width: 2rem;
   height: 2rem;

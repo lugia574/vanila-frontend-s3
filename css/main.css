@@ -345,9 +345,6 @@ body {
   cursor: pointer;
   transform: 1s;
 }
-.main-wrap .main-contents .section .section-list ul li:hover {
-  transform: scale(1.05);
-}
 
 @media screen and (max-width: 767px) {
   .main-wrap .main-banner {

@@ -89,20 +89,33 @@
   gap: 5rem;
   padding-bottom: 0.5rem;
 }
-.basic-info-wrap .type-detail .main-type, .basic-info-wrap .type-detail .sub-type {
+.basic-info-wrap .type-detail .main-type,
+.basic-info-wrap .type-detail .sub-type {
   width: 100%;
 }
-.basic-info-wrap .type-detail .main-type .main-type-main, .basic-info-wrap .type-detail .main-type .sub-type-main, .basic-info-wrap .type-detail .sub-type .main-type-main, .basic-info-wrap .type-detail .sub-type .sub-type-main {
+.basic-info-wrap .type-detail .main-type .main-type-main,
+.basic-info-wrap .type-detail .main-type .sub-type-main,
+.basic-info-wrap .type-detail .sub-type .main-type-main,
+.basic-info-wrap .type-detail .sub-type .sub-type-main {
   position: relative;
 }
-.basic-info-wrap .type-detail .main-type .main-type-main .title, .basic-info-wrap .type-detail .main-type .sub-type-main .title, .basic-info-wrap .type-detail .sub-type .main-type-main .title, .basic-info-wrap .type-detail .sub-type .sub-type-main .title {
+.basic-info-wrap .type-detail .main-type .main-type-main .title,
+.basic-info-wrap .type-detail .main-type .sub-type-main .title,
+.basic-info-wrap .type-detail .sub-type .main-type-main .title,
+.basic-info-wrap .type-detail .sub-type .sub-type-main .title {
   padding-bottom: 0.5rem;
 }
-.basic-info-wrap .type-detail .main-type .main-type-main li:first-child a, .basic-info-wrap .type-detail .main-type .sub-type-main li:first-child a, .basic-info-wrap .type-detail .sub-type .main-type-main li:first-child a, .basic-info-wrap .type-detail .sub-type .sub-type-main li:first-child a {
+.basic-info-wrap .type-detail .main-type .main-type-main li:first-child a,
+.basic-info-wrap .type-detail .main-type .sub-type-main li:first-child a,
+.basic-info-wrap .type-detail .sub-type .main-type-main li:first-child a,
+.basic-info-wrap .type-detail .sub-type .sub-type-main li:first-child a {
   color: black;
   font-weight: var(--font-bold);
 }
-.basic-info-wrap .type-detail .main-type .main-type-main li:nth-child(2) a, .basic-info-wrap .type-detail .main-type .sub-type-main li:nth-child(2) a, .basic-info-wrap .type-detail .sub-type .main-type-main li:nth-child(2) a, .basic-info-wrap .type-detail .sub-type .sub-type-main li:nth-child(2) a {
+.basic-info-wrap .type-detail .main-type .main-type-main li:nth-child(2) a,
+.basic-info-wrap .type-detail .main-type .sub-type-main li:nth-child(2) a,
+.basic-info-wrap .type-detail .sub-type .main-type-main li:nth-child(2) a,
+.basic-info-wrap .type-detail .sub-type .sub-type-main li:nth-child(2) a {
   display: block;
   width: 100%;
   max-width: 25rem;
@@ -114,7 +127,14 @@
   font-size: var(--font-small-size);
   color: rgb(200, 199, 199);
 }
-.basic-info-wrap .type-detail .main-type .main-type-main .main-type-sub, .basic-info-wrap .type-detail .main-type .main-type-main .sub-type-sub, .basic-info-wrap .type-detail .main-type .sub-type-main .main-type-sub, .basic-info-wrap .type-detail .main-type .sub-type-main .sub-type-sub, .basic-info-wrap .type-detail .sub-type .main-type-main .main-type-sub, .basic-info-wrap .type-detail .sub-type .main-type-main .sub-type-sub, .basic-info-wrap .type-detail .sub-type .sub-type-main .main-type-sub, .basic-info-wrap .type-detail .sub-type .sub-type-main .sub-type-sub {
+.basic-info-wrap .type-detail .main-type .main-type-main .main-type-sub,
+.basic-info-wrap .type-detail .main-type .main-type-main .sub-type-sub,
+.basic-info-wrap .type-detail .main-type .sub-type-main .main-type-sub,
+.basic-info-wrap .type-detail .main-type .sub-type-main .sub-type-sub,
+.basic-info-wrap .type-detail .sub-type .main-type-main .main-type-sub,
+.basic-info-wrap .type-detail .sub-type .main-type-main .sub-type-sub,
+.basic-info-wrap .type-detail .sub-type .sub-type-main .main-type-sub,
+.basic-info-wrap .type-detail .sub-type .sub-type-main .sub-type-sub {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -136,17 +156,20 @@
   gap: 5rem;
   padding-top: 0.5rem;
 }
-.basic-info-wrap .period-wrap .start-date-wrap, .basic-info-wrap .period-wrap .end-date-wrap {
+.basic-info-wrap .period-wrap .start-date-wrap,
+.basic-info-wrap .period-wrap .end-date-wrap {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.basic-info-wrap .period-wrap .start-date-wrap label, .basic-info-wrap .period-wrap .end-date-wrap label {
+.basic-info-wrap .period-wrap .start-date-wrap label,
+.basic-info-wrap .period-wrap .end-date-wrap label {
   padding-bottom: 0.5rem;
   color: black;
   font-weight: var(--font-bold);
 }
-.basic-info-wrap .period-wrap .start-date-wrap input, .basic-info-wrap .period-wrap .end-date-wrap input {
+.basic-info-wrap .period-wrap .start-date-wrap input,
+.basic-info-wrap .period-wrap .end-date-wrap input {
   display: block;
   width: 100%;
   max-width: 25rem;
@@ -186,17 +209,20 @@
   display: flex;
   gap: 5rem;
 }
-.recruitment-info-wrap .recuritment-wrap .recruitment-end-wrap, .recruitment-info-wrap .recuritment-wrap .recruitment-count-wrap {
+.recruitment-info-wrap .recuritment-wrap .recruitment-end-wrap,
+.recruitment-info-wrap .recuritment-wrap .recruitment-count-wrap {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.recruitment-info-wrap .recuritment-wrap .recruitment-end-wrap label, .recruitment-info-wrap .recuritment-wrap .recruitment-count-wrap label {
+.recruitment-info-wrap .recuritment-wrap .recruitment-end-wrap label,
+.recruitment-info-wrap .recuritment-wrap .recruitment-count-wrap label {
   padding-bottom: 0.5rem;
   color: black;
   font-weight: var(--font-bold);
 }
-.recruitment-info-wrap .recuritment-wrap .recruitment-end-wrap input, .recruitment-info-wrap .recuritment-wrap .recruitment-count-wrap input {
+.recruitment-info-wrap .recuritment-wrap .recruitment-end-wrap input,
+.recruitment-info-wrap .recuritment-wrap .recruitment-count-wrap input {
   display: block;
   width: 100%;
   max-width: 25rem;
@@ -211,21 +237,25 @@
   display: flex;
   gap: 5rem;
 }
-.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role, .recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count {
+.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role,
+.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count {
   width: 100%;
   display: flex;
   flex-direction: column;
   padding-bottom: 0.5rem;
 }
-.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role span, .recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count span {
+.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role span,
+.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count span {
   padding-bottom: 0.5rem;
 }
-.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role label, .recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count label {
+.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role label,
+.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count label {
   padding-bottom: 0.5rem;
   color: black;
   font-weight: var(--font-bold);
 }
-.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role input, .recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count input {
+.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-role input,
+.recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap .recruitment-count input {
   display: block;
   width: 100%;
   max-width: 25rem;

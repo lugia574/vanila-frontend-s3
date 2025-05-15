@@ -1,5 +1,5 @@
-@use '../../assets/fonts/font';
-@use '../common/variables';
+@use "../../assets/fonts/font";
+@use "../common/variables";
 
 body {
   flex-direction: column;
@@ -200,7 +200,7 @@ body {
               display: inline-block;
               width: 1rem;
               height: 1rem;
-              background: url('../../assets/icons/iconmonstr-angel-left-thin.svg') no-repeat center;
+              background: url("../../assets/icons/iconmonstr-angel-left-thin.svg") no-repeat center;
               background-size: contain;
               transform: rotate(-90deg) translateX(-10%);
               transition: transform 0.3s ease;
@@ -319,9 +319,9 @@ body {
             cursor: pointer;
             transform: 1s;
           }
-          li:hover {
-            transform: scale(1.05);
-          }
+          // li:hover {
+          //   transform: scale(1.05);
+          // }
         }
       }
     }

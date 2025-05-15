@@ -113,6 +113,9 @@
   border-radius: 8px;
   font-size: var(--font-small-size);
   color: rgb(200, 199, 199);
+  white-space: nowrap; /* 줄바꿈 안 함 */
+  overflow: hidden; /* 넘친 부분 숨김 */
+  text-overflow: ellipsis; /* ... 처리 */
 }
 .basic-info-wrap .type-detail .main-type .main-type-main .main-type-sub, .basic-info-wrap .type-detail .main-type .main-type-main .sub-type-sub, .basic-info-wrap .type-detail .main-type .sub-type-main .main-type-sub, .basic-info-wrap .type-detail .main-type .sub-type-main .sub-type-sub, .basic-info-wrap .type-detail .sub-type .main-type-main .main-type-sub, .basic-info-wrap .type-detail .sub-type .main-type-main .sub-type-sub, .basic-info-wrap .type-detail .sub-type .sub-type-main .main-type-sub, .basic-info-wrap .type-detail .sub-type .sub-type-main .sub-type-sub {
   display: flex;
@@ -186,17 +189,17 @@
   display: flex;
   gap: 5rem;
 }
-.recruitment-info-wrap .recuritment-wrap .recruitment-end-wrap, .recruitment-info-wrap .recuritment-wrap .recruitment-count-wrap {
+.recruitment-info-wrap .recuritment-wrap .recruitment-end-wrap {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.recruitment-info-wrap .recuritment-wrap .recruitment-end-wrap label, .recruitment-info-wrap .recuritment-wrap .recruitment-count-wrap label {
+.recruitment-info-wrap .recuritment-wrap .recruitment-end-wrap label {
   padding-bottom: 0.5rem;
   color: black;
   font-weight: var(--font-bold);
 }
-.recruitment-info-wrap .recuritment-wrap .recruitment-end-wrap input, .recruitment-info-wrap .recuritment-wrap .recruitment-count-wrap input {
+.recruitment-info-wrap .recuritment-wrap .recruitment-end-wrap input {
   display: block;
   width: 100%;
   max-width: 25rem;
@@ -206,6 +209,55 @@
   color: rgb(200, 199, 199);
   border: 1px solid rgb(200, 199, 199);
   border-radius: 8px;
+  font-size: var(--font-small-size);
+}
+.recruitment-info-wrap .recuritment-wrap .recruitment-age-group-wrap {
+  display: flex;
+  gap: 5rem;
+  padding-bottom: 0.5rem;
+  width: 100%;
+}
+.recruitment-info-wrap .recuritment-wrap .recruitment-age-group-wrap .age-group-main {
+  width: 100%;
+  position: relative;
+}
+.recruitment-info-wrap .recuritment-wrap .recruitment-age-group-wrap .age-group-main .title {
+  padding-bottom: 0.5rem;
+}
+.recruitment-info-wrap .recuritment-wrap .recruitment-age-group-wrap .age-group-main li:first-child a {
+  color: black;
+  font-weight: var(--font-bold);
+}
+.recruitment-info-wrap .recuritment-wrap .recruitment-age-group-wrap .age-group-main li:nth-child(2) a {
+  display: block;
+  width: 100%;
+  max-width: 25rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding-left: 0.5rem;
+  border: 1px solid rgb(200, 199, 199);
+  border-radius: 8px;
+  font-size: var(--font-small-size);
+  color: rgb(200, 199, 199);
+  white-space: nowrap; /* 줄바꿈 안 함 */
+  overflow: hidden; /* 넘친 부분 숨김 */
+  text-overflow: ellipsis; /* ... 처리 */
+}
+.recruitment-info-wrap .recuritment-wrap .recruitment-age-group-wrap .age-group-main .age-group-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: absolute;
+  background: white;
+  left: 0;
+  width: 100%;
+  border: 1px solid rgb(200, 199, 199);
+  border-radius: 8px;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  z-index: 100;
+  overflow-y: scroll;
+  cursor: pointer;
+  font-size: var(--font-small-size);
 }
 .recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-wrap {
   display: flex;
@@ -235,6 +287,7 @@
   color: rgb(200, 199, 199);
   border: 1px solid rgb(200, 199, 199);
   border-radius: 8px;
+  font-size: var(--font-small-size);
 }
 .recruitment-info-wrap .recruitment-count-wrap .recruitment-count-detail-btn {
   display: flex;
@@ -295,6 +348,7 @@
   display: flex;
   justify-content: right;
   gap: 0.5rem;
+  padding-bottom: 2rem;
 }
 .content-btn-wrap button {
   background: var(--color-background);
@@ -316,4 +370,17 @@ input[type=date] {
 
 .choice {
   color: var(--font-basic-color);
+}
+
+@media screen and (max-width: 768px) {
+  .basic-info-wrap .type-detail, .basic-info-wrap .period-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .recruitment-info-wrap .recuritment-wrap, .recruitment-info-wrap .recruitment-count-detail-wrap {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+  }
 }

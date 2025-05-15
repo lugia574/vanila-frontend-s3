@@ -258,12 +258,18 @@ body {
           width: 10%;
           height: 100%;
           background: var(--font-basic-color);
-          color: white;
+
           padding: 1.5rem 0;
           display: flex;
           justify-content: center;
-          font-weight: var(--font-bold);
+
           border-radius: 0 2rem 2rem 0;
+          button {
+            background: inherit;
+            font-size: inherit;
+            font-weight: var(--font-bold);
+            color: white;
+          }
         }
       }
     }

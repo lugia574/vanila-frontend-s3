@@ -31,212 +31,71 @@
           </div>
         </section>
 
-        <!-- 마이페이지 콘텐츠 -->
+        <!-- 마이페이지 탭 컨테이너 -->
         <div class="mypage-contents wrap">
-          <!-- 북마크한 공모전 목록 -->
-          <section class="bookmark-section section">
-            <div class="section-list">
-              <div class="section-top">
-                <h2>
-                  <a href="#">북마크한 공모전</a>
-                </h2>
-                <div class="view-all">
-                  <a href="#">전체보기</a>
+          <div class="tab-container">
+            <div class="tab-header">
+              <div class="tab-btn active" data-tab="bookmarks">북마크한 공모전</div>
+              <div class="tab-btn" data-tab="applications">공모전 신청 현황</div>
+              <div class="tab-btn" data-tab="my-posts">내가 쓴 글</div>
+            </div>
+
+            <div class="tab-content">
+              <!-- 북마크한 공모전 탭 -->
+              <div class="tab-pane active" id="bookmarks">
+                <div class="section-top">
+                  <h2>북마크한 공모전</h2>
+                  <div class="view-all">
+                    <a href="#">전체보기</a>
+                  </div>
+                </div>
+                <div class="content-container">
+                  <ul class="content-list" id="bookmark-list">
+                    <!-- 북마크한 공모전 목록이 여기에 표시됩니다 -->
+                  </ul>
+                  <div class="load-more">
+                    <button id="load-more-bookmarks" class="load-more-btn">더 보기</button>
+                  </div>
                 </div>
               </div>
-              <ul class="content-list">
-                <li class="content-wrap">
-                  <div class="content-header">
-                    <div class="left-group">
-                      <div class="title">[국민체육진흥공단] 스포츠산업 창업 아이디어 공모전</div>
-                      <div class="field">스포츠/음악</div>
-                    </div>
-                    <div class="right-group">
-                      <div class="type">공모전</div>
-                      <div class="d-day">D-7</div>
-                    </div>
+
+              <!-- 공모전 신청 현황 탭 -->
+              <div class="tab-pane" id="applications">
+                <div class="section-top">
+                  <h2>공모전 신청 현황</h2>
+                  <div class="view-all">
+                    <a href="#">전체보기</a>
                   </div>
-                  <div class="content-summary">
-                    <p>국민체육진흥공단에서 스포츠산업 창업 아이디어를 모집합니다...</p>
+                </div>
+                <div class="content-container">
+                  <ul class="content-list" id="application-list">
+                    <!-- 공모전 신청 현황 목록이 여기에 표시됩니다 -->
+                  </ul>
+                  <div class="load-more">
+                    <button id="load-more-applications" class="load-more-btn">더 보기</button>
                   </div>
-                  <div class="content-footer">
-                    <div class="left-group">
-                      <div class="organizer">국민체육진흥공단</div>
-                    </div>
-                    <div class="right-group">
-                      <div class="bookmark">
-                        <i class="bookmark-icon scrap-active"></i>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="content-wrap">
-                  <div class="content-header">
-                    <div class="left-group">
-                      <div class="title">제7회 서울교육 데이터 분석·활용 아이디어 공모전</div>
-                      <div class="field">IT/학술/논문</div>
-                    </div>
-                    <div class="right-group">
-                      <div class="type">공모전</div>
-                      <div class="d-day">D-14</div>
-                    </div>
-                  </div>
-                  <div class="content-summary">
-                    <p>서울특별시교육청에서 서울교육 데이터 분석·활용 아이디어 발굴을 통해...</p>
-                  </div>
-                  <div class="content-footer">
-                    <div class="left-group">
-                      <div class="organizer">서울특별시교육청</div>
-                    </div>
-                    <div class="right-group">
-                      <div class="bookmark">
-                        <i class="bookmark-icon scrap-active"></i>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </section>
-          <hr />
-          <!-- 공모전 신청 현황 -->
-          <section class="application-section section">
-            <div class="section-list">
-              <div class="section-top">
-                <h2>
-                  <a href="#">공모전 신청 현황</a>
-                </h2>
-                <div class="view-all">
-                  <a href="#">전체보기</a>
                 </div>
               </div>
-              <ul class="content-list">
-                <li class="content-wrap">
-                  <div class="content-header">
-                    <div class="left-group">
-                      <div class="title">제 6회 부울경 ICT 아이디어 경진대회</div>
-                      <div class="field">IT/학술/논문</div>
-                    </div>
-                    <div class="right-group">
-                      <div class="type">공모전</div>
-                      <div class="status application">신청완료</div>
-                    </div>
+
+              <!-- 내가 쓴 글 탭 -->
+              <div class="tab-pane" id="my-posts">
+                <div class="section-top">
+                  <h2>내가 쓴 글</h2>
+                  <div class="view-all">
+                    <a href="#">전체보기</a>
                   </div>
-                  <div class="content-summary">
-                    <p>
-                      ICT에 관심을 가지고 있는 전국의 개인 또는 팀으로 공모 상세 별 조건 상이...
-                    </p>
+                </div>
+                <div class="content-container">
+                  <ul class="content-list" id="my-posts-list">
+                    <!-- 내가 쓴 글 목록이 여기에 표시됩니다 -->
+                  </ul>
+                  <div class="load-more">
+                    <button id="load-more-posts" class="load-more-btn">더 보기</button>
                   </div>
-                  <div class="content-footer">
-                    <div class="left-group">
-                      <div class="date">신청일: 2025-05-01</div>
-                    </div>
-                    <div class="right-group">
-                      <button class="detail-btn">상세보기</button>
-                    </div>
-                  </div>
-                </li>
-                <li class="content-wrap">
-                  <div class="content-header">
-                    <div class="left-group">
-                      <div class="title">로컬 특화 체험 관광 컨텐츠 공모전</div>
-                      <div class="field">아이디어/기획</div>
-                    </div>
-                    <div class="right-group">
-                      <div class="type">공모전</div>
-                      <div class="status progress">진행중</div>
-                    </div>
-                  </div>
-                  <div class="content-summary">
-                    <p>최우수 체험관광상품 시상금 총 3,000만원 지급, 활동비 지원, ...</p>
-                  </div>
-                  <div class="content-footer">
-                    <div class="left-group">
-                      <div class="date">신청일: 2025-05-10</div>
-                    </div>
-                    <div class="right-group">
-                      <button class="detail-btn">상세보기</button>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </section>
-          <hr />
-          <!-- 내가 쓴 글 리스트 -->
-          <section class="my-posts-section section">
-            <div class="section-list">
-              <div class="section-top">
-                <h2>
-                  <a href="#">내가 쓴 글</a>
-                </h2>
-                <div class="view-all">
-                  <a href="#">전체보기</a>
                 </div>
               </div>
-              <ul class="content-list">
-                <li class="content-wrap">
-                  <div class="content-header">
-                    <div class="left-group">
-                      <div class="title">AITHON 2025년 공모전 팀원 모집</div>
-                      <div class="field">IT/학술/논문</div>
-                    </div>
-                    <div class="right-group">
-                      <div class="type">공모전</div>
-                      <div class="d-day">D-7</div>
-                    </div>
-                  </div>
-                  <div class="content-summary">
-                    <p>총 5명 모집합니다. 자세한 내용은 아래 내용 참고 부탁드립니다...</p>
-                  </div>
-                  <div class="content-footer">
-                    <div class="left-group">
-                      <div class="date">작성일: 2025-05-08</div>
-                    </div>
-                    <div class="right-group">
-                      <div class="comment">
-                        <i class="comment-icon"></i>
-                        <span>12</span>
-                      </div>
-                      <div class="scrap">
-                        <i class="scrap-icon"></i>
-                        <span>8</span>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="content-wrap">
-                  <div class="content-header">
-                    <div class="left-group">
-                      <div class="title">IT 개발자를 위한 공모전 추천 목록 공유</div>
-                      <div class="field">IT/학술/논문</div>
-                    </div>
-                    <div class="right-group">
-                      <div class="type">일반</div>
-                    </div>
-                  </div>
-                  <div class="content-summary">
-                    <p>요즘 IT 개발자들이 참여하기 좋은 공모전 목록을 공유합니다...</p>
-                  </div>
-                  <div class="content-footer">
-                    <div class="left-group">
-                      <div class="date">작성일: 2025-05-05</div>
-                    </div>
-                    <div class="right-group">
-                      <div class="comment">
-                        <i class="comment-icon"></i>
-                        <span>24</span>
-                      </div>
-                      <div class="scrap">
-                        <i class="scrap-icon"></i>
-                        <span>16</span>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </main>

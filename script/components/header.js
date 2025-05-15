@@ -1,11 +1,11 @@
 class JeanHeader extends HTMLElement {
   constructor() {
     super();
-    this.shadow = this.attachShadow({ mode: 'open' });
+    this.shadow = this.attachShadow({ mode: "open" });
   }
 
   static get observedAttributes() {
-    return ['opacity'];
+    return ["opacity"];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -19,24 +19,24 @@ class JeanHeader extends HTMLElement {
   }
 
   async loadHeader() {
-    const opacity = this.getAttribute('opacity') || 'false';
+    const opacity = this.getAttribute("opacity") || "false";
 
     try {
       // comm.css 불러오기
-      const commRes = await fetch('../../css/common.css');
+      const commRes = await fetch("../../css/common.css");
       const commCss = await commRes.text();
 
       // header.css 불러오기
-      const headerRes = await fetch('../../css/header.css');
+      const headerRes = await fetch("../../css/header.css");
       const headerCss = await headerRes.text();
 
       // style 태그 생성 및 두 CSS를 결합
-      const style = document.createElement('style');
+      const style = document.createElement("style");
       style.textContent = `${commCss}\n${headerCss}`;
 
       // header 태그 생성 및 내용 삽입
-      const header = document.createElement('header');
-      header.id = 'header';
+      const header = document.createElement("header");
+      header.id = "header";
       header.innerHTML = `
         <div class="content-center">
           <h1 class="logo"><a href="#">청바지</a></h1>
@@ -73,7 +73,7 @@ class JeanHeader extends HTMLElement {
       `;
 
       // ✅ 기존 shadow DOM 비우기
-      this.shadow.innerHTML = '';
+      this.shadow.innerHTML = "";
 
       // Shadow DOM에 style과 header 삽입
       this.shadow.appendChild(style);
@@ -84,35 +84,35 @@ class JeanHeader extends HTMLElement {
       // 햄버거 애니메이션 이벤트
       this.hamburgerHandler();
     } catch (error) {
-      console.error('JeanHeader 로딩 실패:', error);
+      console.error("JeanHeader 로딩 실패:", error);
     }
   }
 
   // scroll 에 따라 fix 이벤트
   setupScrollListener(opacity) {
-    const nav = this.shadow.querySelector('#header');
+    const nav = this.shadow.querySelector("#header");
 
     if (!nav) return;
-    if (opacity === 'false') {
-      nav.classList.add('header-white');
+    if (opacity === "false") {
+      nav.classList.add("header-white");
       return;
     }
-    document.addEventListener('scroll', () => {
+    document.addEventListener("scroll", () => {
       const sPos = document.documentElement.scrollTop;
-      if (sPos > 200) nav.classList.add('header-white');
-      else nav.classList.remove('header-white');
+      if (sPos > 200) nav.classList.add("header-white");
+      else nav.classList.remove("header-white");
     });
   }
 
   // 햄버거 애니메이션 이벤트
   hamburgerHandler() {
-    const mobileBtn = this.shadow.querySelector('.mobile-button');
-    const mobileMenu = this.shadow.querySelector('#mobile-menu');
-    mobileBtn.addEventListener('click', () => {
-      mobileBtn.classList.toggle('cross');
-      mobileMenu.classList.toggle('active');
+    const mobileBtn = this.shadow.querySelector(".mobile-button");
+    const mobileMenu = this.shadow.querySelector("#mobile-menu");
+    mobileBtn.addEventListener("click", () => {
+      mobileBtn.classList.toggle("cross");
+      mobileMenu.classList.toggle("active");
     });
   }
 }
 
-customElements.define('jean-header', JeanHeader);
+customElements.define("jean-header", JeanHeader);

@@ -1,5 +1,5 @@
-@use '../../assets/fonts/font';
-@use '../common/variables';
+@use "../../assets/fonts/font";
+@use "../common/variables";
 
 .contest-register-container {
   // background-color: rgb(255, 238, 241);
@@ -39,7 +39,7 @@ label {
   margin-bottom: 10px;
 }
 
-input[type='text'] {
+input[type="text"] {
   padding: 8px;
   font-size: 0.8rem;
   border: 1px solid #ccc;
@@ -73,8 +73,8 @@ input[type='text'] {
   padding: 20px 0;
 }
 
-.contest-info-wrap input[type='text'],
-input[type='date'],
+.contest-info-wrap input[type="text"],
+input[type="date"],
 select {
   width: 500px;
   max-width: 25rem;

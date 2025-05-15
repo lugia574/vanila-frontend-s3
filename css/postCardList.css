@@ -243,7 +243,8 @@
   border-top: 1px solid var(--default-border);
   padding-top: 0.5rem;
 }
-.content-wrap .content-footer .left-group, .content-wrap .content-footer .right-group {
+.content-wrap .content-footer .left-group,
+.content-wrap .content-footer .right-group {
   display: flex;
   flex-wrap: wrap;
   width: 50%;

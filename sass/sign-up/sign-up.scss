@@ -1,5 +1,5 @@
-@use '../../assets/fonts/font';
-@use '../common/variables';
+@use "../../assets/fonts/font";
+@use "../common/variables";
 
 // 회원가입 페이지 스타일
 .sign-up-wrapper {
@@ -121,7 +121,7 @@
           display: flex;
           align-items: center;
 
-          input[type='checkbox'] {
+          input[type="checkbox"] {
             margin-right: 0.5rem;
             width: auto;
           }

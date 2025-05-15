@@ -272,6 +272,9 @@ body {
   gap: 0.5rem;
   padding: 1rem;
 }
+.main-wrap .total-search-wrap .total-search-box .total-search-form .box .select-list > li label {
+  flex: 1;
+}
 .main-wrap .total-search-wrap .total-search-box .total-search-form .box .select-list > li:first-child {
   margin-top: 1rem;
 }
@@ -303,6 +306,10 @@ body {
   font-size: inherit;
   font-weight: var(--font-bold);
   color: white;
+  transform: 0.5s;
+}
+.main-wrap .total-search-wrap .total-search-box .total-search-form .btn-wrap button:active {
+  transform: scale(0.8);
 }
 .main-wrap .main-contents {
   width: 100%;
@@ -333,6 +340,13 @@ body {
 .main-wrap .main-contents .section .section-list .section-top .contest-nav .contest-button-next,
 .main-wrap .main-contents .section .section-list .section-top .contest-nav .license-button-next {
   transform: rotateY(180deg);
+}
+.main-wrap .main-contents .section .section-list ul li {
+  cursor: pointer;
+  transform: 1s;
+}
+.main-wrap .main-contents .section .section-list ul li:hover {
+  transform: scale(1.05);
 }
 
 @media screen and (max-width: 767px) {

@@ -227,6 +227,9 @@ body {
               display: flex;
               gap: 0.5rem;
               padding: 1rem;
+              label {
+                flex: 1;
+              }
             }
             > li:first-child {
               margin-top: 1rem;
@@ -269,6 +272,10 @@ body {
             font-size: inherit;
             font-weight: var(--font-bold);
             color: white;
+            transform: 0.5s;
+          }
+          button:active {
+            transform: scale(0.8);
           }
         }
       }
@@ -305,6 +312,15 @@ body {
             .license-button-next {
               transform: rotateY(180deg);
             }
+          }
+        }
+        ul {
+          li {
+            cursor: pointer;
+            transform: 1s;
+          }
+          li:hover {
+            transform: scale(1.05);
           }
         }
       }

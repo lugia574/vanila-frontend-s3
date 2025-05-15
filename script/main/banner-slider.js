@@ -57,7 +57,7 @@ textSlider.controller.control = imageSlider;
 
 // 공모전 슬라이드
 const contestSlider = new Swiper('.contest-swiper', {
-  spaceBetween: 16,
+  spaceBetween: 48,
   speed: 500,
   loop: true,
   navigation: {

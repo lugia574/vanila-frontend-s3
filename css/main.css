@@ -1,8 +1,7 @@
 @charset "UTF-8";
 @font-face {
   font-family: "BMDOHYEON";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff")
-    format("woff");
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -189,25 +188,13 @@ body {
   position: absolute;
   z-index: 2;
 }
-.main-wrap
-  .main-banner
-  .text-slider
-  .swiper-pagination-progressbar
-  .swiper-pagination-progressbar-fill {
+.main-wrap .main-banner .text-slider .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: var(--font-basic-color);
 }
-.main-wrap
-  .main-banner
-  .text-slider
-  .swiper-pagination-progressbar
-  .swiper-pagination-progressbar-fill.white {
+.main-wrap .main-banner .text-slider .swiper-pagination-progressbar .swiper-pagination-progressbar-fill.white {
   background: white;
 }
-.main-wrap
-  .main-banner
-  .text-slider
-  .swiper-pagination-progressbar
-  .swiper-pagination-progressbar-fill.black {
+.main-wrap .main-banner .text-slider .swiper-pagination-progressbar .swiper-pagination-progressbar-fill.black {
   background: var(--font-basic-color);
 }
 .main-wrap .total-search-wrap {
@@ -289,13 +276,7 @@ body {
 .main-wrap .total-search-wrap .total-search-box .total-search-form .box .select-list > li label {
   flex: 1;
 }
-.main-wrap
-  .total-search-wrap
-  .total-search-box
-  .total-search-form
-  .box
-  .select-list
-  > li:first-child {
+.main-wrap .total-search-wrap .total-search-box .total-search-form .box .select-list > li:first-child {
   margin-top: 1rem;
 }
 .main-wrap .total-search-wrap .total-search-box .total-search-form .box.open .select-list {
@@ -355,20 +336,8 @@ body {
   cursor: pointer;
   width: 2rem;
 }
-.main-wrap
-  .main-contents
-  .section
-  .section-container
-  .section-top
-  .contest-nav
-  .contest-button-next,
-.main-wrap
-  .main-contents
-  .section
-  .section-container
-  .section-top
-  .contest-nav
-  .license-button-next {
+.main-wrap .main-contents .section .section-container .section-top .contest-nav .contest-button-next,
+.main-wrap .main-contents .section .section-container .section-top .contest-nav .license-button-next {
   transform: rotateY(180deg);
 }
 .main-wrap .main-contents .section .section-container .swiper-slide {
@@ -405,69 +374,28 @@ body {
   object-fit: cover;
   aspect-ratio: 5/7;
 }
-.main-wrap
-  .main-contents
-  .section
-  .section-container
-  ul.policy-list
-  .policy-item
-  .policy-link
-  .desc {
+.main-wrap .main-contents .section .section-container ul.policy-list .policy-item .policy-link .desc {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-.main-wrap
-  .main-contents
-  .section
-  .section-container
-  ul.policy-list
-  .policy-item
-  .policy-link
-  .desc
-  .desc-top {
+.main-wrap .main-contents .section .section-container ul.policy-list .policy-item .policy-link .desc .desc-top {
   flex: 0.5;
 }
-.main-wrap
-  .main-contents
-  .section
-  .section-container
-  ul.policy-list
-  .policy-item
-  .policy-link
-  .desc
-  .desc-top
-  .policy-loc {
+.main-wrap .main-contents .section .section-container ul.policy-list .policy-item .policy-link .desc .desc-top .policy-loc {
   margin-left: 0.2rem;
   font-size: var(--font-large-size);
   font-weight: var(--font-bold);
   color: var(--color-orange);
 }
-.main-wrap
-  .main-contents
-  .section
-  .section-container
-  ul.policy-list
-  .policy-item
-  .policy-link
-  .desc
-  .desc-top
-  .policy-title {
+.main-wrap .main-contents .section .section-container ul.policy-list .policy-item .policy-link .desc .desc-top .policy-title {
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: var(--font-xlarge-size);
   font-weight: var(--font-bold);
 }
-.main-wrap
-  .main-contents
-  .section
-  .section-container
-  ul.policy-list
-  .policy-item
-  .policy-link
-  .desc
-  .policy-summary {
+.main-wrap .main-contents .section .section-container ul.policy-list .policy-item .policy-link .desc .policy-summary {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -480,8 +408,6 @@ body {
 @media screen and (max-width: 767px) {
   .main-wrap .main-banner {
     margin-top: 7rem;
-
-    height: 600px;
   }
   .main-wrap .main-banner .image-slider .image-slide-list .image-slide {
     height: 600px;
@@ -496,7 +422,7 @@ body {
     position: absolute;
     align-items: flex-start;
     justify-content: flex-start;
-    min-height: 220px;
+    min-height: 160px;
   }
   .main-wrap .main-banner .text-slider .text-slide-list .text-slide .box-inner .main-script {
     font-size: var(--font-xlarge-size);

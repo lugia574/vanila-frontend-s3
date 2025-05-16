@@ -23,7 +23,7 @@ body {
   .main-banner {
     position: relative;
     width: 100%;
-    margin-top: 95px;
+    margin-top: 6rem;
     .image-slider {
       width: 100%;
       .image-slide-list {
@@ -404,10 +404,11 @@ body {
   .main-wrap {
     // 메인 배너너
     .main-banner {
-      margin-top: 6rem;
+      margin-top: 7rem;
       .image-slider {
         .image-slide-list {
           .image-slide {
+            height: 600px;
             align-items: flex-start;
           }
         }
@@ -419,9 +420,11 @@ body {
         .text-slide-list {
           .text-slide {
             .box-inner {
-              bottom: 25%;
+              bottom: 15%;
               position: absolute;
               align-items: flex-start;
+              justify-content: flex-start;
+              min-height: 160px;
               .main-script {
                 font-size: var(--font-xlarge-size);
                 font-weight: 600;

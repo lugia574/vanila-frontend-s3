@@ -75,7 +75,7 @@ body {
 .main-wrap .main-banner {
   position: relative;
   width: 100%;
-  margin-top: 95px;
+  margin-top: 6rem;
 }
 .main-wrap .main-banner .image-slider {
   width: 100%;
@@ -407,9 +407,10 @@ body {
 
 @media screen and (max-width: 767px) {
   .main-wrap .main-banner {
-    margin-top: 6rem;
+    margin-top: 7rem;
   }
   .main-wrap .main-banner .image-slider .image-slide-list .image-slide {
+    height: 600px;
     align-items: flex-start;
   }
   .main-wrap .main-banner .text-slider {
@@ -417,9 +418,11 @@ body {
     bottom: 0;
   }
   .main-wrap .main-banner .text-slider .text-slide-list .text-slide .box-inner {
-    bottom: 25%;
+    bottom: 15%;
     position: absolute;
     align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 160px;
   }
   .main-wrap .main-banner .text-slider .text-slide-list .text-slide .box-inner .main-script {
     font-size: var(--font-xlarge-size);

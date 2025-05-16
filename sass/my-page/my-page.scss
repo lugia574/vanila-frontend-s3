@@ -1,6 +1,10 @@
 @use "../../assets/fonts/font";
 @use "../common/variables";
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -134,6 +138,7 @@ body {
 
         .tab-pane {
           display: none;
+          min-height: 300px;
 
           &.active {
             display: block;
@@ -157,6 +162,7 @@ body {
               max-height: 60vh;
               overflow-y: auto;
               padding-right: 1rem;
+              scrollbar-gutter: stable;
 
               /* 스크롤바 스타일링 */
               &::-webkit-scrollbar {
@@ -406,6 +412,7 @@ body {
     }
 
     .mypage-contents {
+      flex-grow: 1;
       .tab-container {
         width: 90%;
 

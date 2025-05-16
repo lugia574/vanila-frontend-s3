@@ -53,6 +53,10 @@
   --border-radius: 0.5rem;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -167,6 +171,7 @@ body {
 }
 .main-wrap .mypage-contents .tab-container .tab-content .tab-pane {
   display: none;
+  min-height: 300px;
 }
 .main-wrap .mypage-contents .tab-container .tab-content .tab-pane.active {
   display: block;
@@ -188,6 +193,7 @@ body {
   max-height: 60vh;
   overflow-y: auto;
   padding-right: 1rem;
+  scrollbar-gutter: stable;
   /* 스크롤바 스타일링 */
 }
 .main-wrap .mypage-contents .tab-container .tab-content .tab-pane .content-container .content-list::-webkit-scrollbar {
@@ -389,6 +395,9 @@ body {
   .main-wrap .profile-section .profile-wrap .profile-info {
     flex-direction: column;
     text-align: center;
+  }
+  .main-wrap .mypage-contents {
+    flex-grow: 1;
   }
   .main-wrap .mypage-contents .tab-container {
     width: 90%;

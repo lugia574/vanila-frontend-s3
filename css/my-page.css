@@ -54,6 +54,7 @@
 }
 
 body {
+  display: flex;
   flex-direction: column;
 }
 
@@ -70,14 +71,13 @@ body {
   flex-direction: column;
   width: 100%;
   min-width: 240px;
-  justify-content: center;
-  align-items: center;
 }
 .main-wrap .profile-section {
+  position: sticky;
   width: 100%;
   margin-top: 95px;
   background-color: var(--color-background);
-  padding: 3rem 0;
+  padding: 2rem 0;
 }
 .main-wrap .profile-section .profile-wrap {
   width: 70%;

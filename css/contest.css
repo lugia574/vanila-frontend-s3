@@ -60,7 +60,6 @@
 }
 
 .contest-content-wrap {
-  padding: 20px;
   margin: 0 auto;
   /* margin-top: 100px; */
   /* border-color: #0044ff; */
@@ -165,6 +164,9 @@ select {
   /* background-color: #c7ffee; */
   justify-content: center;
 }
+.img_banner img {
+  width: 100%;
+}
 
 /* contest item */
 .contest-list-wrap {
@@ -177,7 +179,11 @@ select {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  padding: 30px;
+}
+.contest-grid contest-card {
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 /* page */

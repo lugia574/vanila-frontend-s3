@@ -5,7 +5,7 @@ class LicenseCard extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ["licenseTag1", "licenseTag2", "day", "licenseName", "licenseSummary"];
+    return ["licenseTag1", "day", "licenseName", "licenseSummary"];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -20,7 +20,6 @@ class LicenseCard extends HTMLElement {
 
   async render() {
     const licenseTag1 = this.getAttribute("licenseTag1") || "없음";
-    const licenseTag2 = this.getAttribute("licenseTag2") || "없음";
     const day = this.getAttribute("day") || "0";
     const licenseName = this.getAttribute("licenseName") || "없음";
     const licenseSummary = this.getAttribute("licenseSummary") || "없음";
@@ -50,7 +49,6 @@ class LicenseCard extends HTMLElement {
             <div class="license-top">
             <div class="license-top-left">
             <a href="#" class="tag-box">${licenseTag1}</a>
-            <a href="#" class="tag-box">${licenseTag2}</a>
             </div>
             <div class="lincensc-top-right">
             <div class="d-day-box">D-${day}</div>

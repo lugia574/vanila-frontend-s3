@@ -30,7 +30,7 @@
   font-size: 16px;
 }
 .license-wrap .license-top .tag-box {
-  background: gray;
+  background: var(--font-basic-color);
   color: var(--color-background);
 }
 .license-wrap .license-top .d-day-box {

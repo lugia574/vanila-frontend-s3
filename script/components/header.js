@@ -49,7 +49,7 @@ class JeanHeader extends HTMLElement {
             <ul>
               <li><a href="/pages/contest/contest.html">공모전</a></li>
               <li><a href="/pages/policy/policy-list.html">청년정책</a></li>
-              <li><a href="#">자격증</a></li>
+              <li><a href="/pages/license/license.html">자격증</a></li>
               <li><a href="/pages/community/postList.html">커뮤니티</a></li>
             </ul>
           </nav>

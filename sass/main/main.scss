@@ -164,10 +164,12 @@ body {
       padding: 0 1rem;
       display: flex;
       font-size: var(--font-large-size);
+      border: 1px solid #ccc;
+      border-radius: 2rem 0 0 2rem;
+      overflow: hidden;
 
       .title {
-        border-radius: 2rem 0 0 2rem;
-        box-shadow: 0 0 0.25rem 0 gray;
+        // box-shadow: 0 0 0.25rem 0 gray;
         width: 20%;
         background: var(--font-basic-color);
         color: white;
@@ -178,7 +180,7 @@ body {
       }
 
       .total-search-form {
-        box-shadow: 0 0 0.25rem 0 gray;
+        // box-shadow: 0 0 0.25rem 0 gray;
         display: flex;
         background: white;
         width: 100%;

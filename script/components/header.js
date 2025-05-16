@@ -55,18 +55,20 @@ class JeanHeader extends HTMLElement {
           </nav>
           <nav id="auth-menu">
             <ul>
-              <li><a href="/pages/login/login.html">로그인</a></li>
-              <li><a href="/pages/sign-up/sign-up.html">회원가입</a></li>
+              <li class="li-auth"><a href="/pages/login/login.html">로그인</a></li>
+              <li class="li-auth"><a href="/pages/sign-up/sign-up.html">회원가입</a></li>
+              <li class="li-user"><a href="/pages/my-page/my-page.html">마이페이지</a></li>
             </ul>
           </nav>
           <nav id="mobile-menu">
             <ul>
-              <li><a href="#">로그인</a></li>
-              <li><a href="#">회원가입</a></li>
-              <li><a href="#">공모전</a></li>
-              <li><a href="#">청년정책</a></li>
+              <li class="li-auth"><a href="/pages/login/login.html">로그인</a></li>
+              <li class="li-auth"><a href="/pages/sign-up/sign-up.html">회원가입</a></li>
+              <li class="li-user"><a href="/pages/my-page/my-page.html">마이페이지</a></li>
+              <li><a href="/pages/contest/contest.html">공모전</a></li>
+              <li><a href="/pages/policy/policy-list.html">청년정책</a></li>
               <li><a href="#">자격증</a></li>
-              <li><a href="#">커뮤니티</a></li>
+              <li><a href="/pages/community/postList.html">커뮤니티</a></li>
             </ul>
           </nav>
         </div>
@@ -83,6 +85,8 @@ class JeanHeader extends HTMLElement {
       this.setupScrollListener(opacity);
       // 햄버거 애니메이션 이벤트
       this.hamburgerHandler();
+      // 로그인 유무
+      this.authHandler();
     } catch (error) {
       console.error("JeanHeader 로딩 실패:", error);
     }
@@ -112,6 +116,10 @@ class JeanHeader extends HTMLElement {
       mobileBtn.classList.toggle("cross");
       mobileMenu.classList.toggle("active");
     });
+  }
+
+  authHandler() {
+    console.log("로그인 유무 확인 핸들러");
   }
 }
 

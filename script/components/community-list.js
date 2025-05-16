@@ -53,7 +53,6 @@ class CommunityList extends HTMLElement {
 
       const style = document.createElement("style");
       style.textContent = `${commCss}\n${CommunityListCss}`;
-      console.log("CommunityListCss 내용:", CommunityListCss);
 
       const communityList = document.createElement("content-wrap");
       communityList.innerHTML = `

@@ -23,7 +23,7 @@ body {
   .main-banner {
     position: relative;
     width: 100%;
-    margin-top: 95px;
+    margin-top: 6rem;
     .image-slider {
       width: 100%;
       .image-slide-list {
@@ -409,6 +409,7 @@ body {
       .image-slider {
         .image-slide-list {
           .image-slide {
+            height: 600px;
             align-items: flex-start;
           }
         }

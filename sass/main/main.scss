@@ -405,7 +405,7 @@ body {
     // 메인 배너너
     .main-banner {
       margin-top: 7rem;
-      height: 600px;
+
       .image-slider {
         .image-slide-list {
           .image-slide {
@@ -424,7 +424,7 @@ body {
               position: absolute;
               align-items: flex-start;
               justify-content: flex-start;
-              min-height: 160px;
+              min-height: 220px;
               .main-script {
                 font-size: var(--font-xlarge-size);
                 font-weight: 600;

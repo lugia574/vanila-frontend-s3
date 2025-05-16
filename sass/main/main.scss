@@ -19,6 +19,7 @@ body {
   justify-content: center;
   align-items: center;
 
+  // 메인 배너
   .main-banner {
     position: relative;
     width: 100%;
@@ -88,7 +89,7 @@ body {
           width: 100%;
           justify-content: center;
           align-items: center;
-          &.first-script > a > div {
+          &.dark-script > a > div {
             color: var(--font-basic-color);
           }
           a {
@@ -279,6 +280,7 @@ body {
     }
   }
 
+  // 메인페이지 컨텐츠
   .main-contents {
     // background: rgb(210, 255, 192);
     width: 100%;

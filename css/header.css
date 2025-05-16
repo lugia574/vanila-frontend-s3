@@ -80,6 +80,9 @@ header .content-center {
 header .content-center h1 {
   font-family: "BMDOHYEON", "Pretendard";
 }
+header .content-center h1:hover {
+  color: var(--color-sky);
+}
 header #main-nav {
   display: flex;
   width: 100%;
@@ -90,14 +93,17 @@ header #main-nav {
 header #main-nav ul {
   display: flex;
   gap: 1.5rem;
-  width: 35%;
+  width: 60%;
 }
 header #main-nav ul li {
-  height: 100%;
-  width: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  font-size: var(--font-large-size);
 }
 header #main-nav ul li a {
-  font-size: var(--font-large-size);
+  text-align: center;
+  width: 100%;
 }
 header #main-nav ul li:hover {
   transform: scale(1.08);

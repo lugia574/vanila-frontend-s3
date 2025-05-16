@@ -35,6 +35,9 @@ header {
       // 폰트적용
       font-family: "BMDOHYEON", "Pretendard";
     }
+    h1:hover {
+      color: var(--color-sky);
+    }
   }
 
   // 메인메뉴
@@ -47,13 +50,15 @@ header {
     ul {
       display: flex;
       gap: 1.5rem;
-      width: 35%;
+      width: 60%;
       li {
-        height: 100%;
-        width: 100%;
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        font-size: var(--font-large-size);
         a {
-          // 글자크기
-          font-size: var(--font-large-size);
+          text-align: center;
+          width: 100%;
         }
       }
       li:hover {

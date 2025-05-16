@@ -57,14 +57,14 @@ class JeanHeader extends HTMLElement {
             <ul>
               <li class="li-auth"><a href="/pages/login/login.html">로그인</a></li>
               <li class="li-auth"><a href="/pages/sign-up/sign-up.html">회원가입</a></li>
-              <li class="li-user"><a href="/pages/sign-up/sign-up.html">마이페이지</a></li>
+              <li class="li-user"><a href="/pages/my-page/my-page.html">마이페이지</a></li>
             </ul>
           </nav>
           <nav id="mobile-menu">
             <ul>
               <li class="li-auth"><a href="/pages/login/login.html">로그인</a></li>
               <li class="li-auth"><a href="/pages/sign-up/sign-up.html">회원가입</a></li>
-              <li class="li-user"><a href="/pages/sign-up/sign-up.html">마이페이지</a></li>
+              <li class="li-user"><a href="/pages/my-page/my-page.html">마이페이지</a></li>
               <li><a href="/pages/contest/contest.html">공모전</a></li>
               <li><a href="/pages/policy/policy-list.html">청년정책</a></li>
               <li><a href="#">자격증</a></li>

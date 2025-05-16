@@ -136,7 +136,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.main-wrap .main-banner .text-slider .text-slide-list .text-slide.first-script > a > div {
+.main-wrap .main-banner .text-slider .text-slide-list .text-slide.dark-script > a > div {
   color: var(--font-basic-color);
 }
 .main-wrap .main-banner .text-slider .text-slide-list .text-slide a {

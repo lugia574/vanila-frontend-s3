@@ -21,10 +21,10 @@ header {
     font-family: "Pretendard", sans-serif;
     max-width: 1400px;
 
-    height: 50px;
+    height: 100%;
     margin: auto;
     // 위, 오른쪽, 아래, 왼쪽
-    padding: 3rem 2rem;
+    padding: 1.75rem 2rem;
 
     display: flex;
 
@@ -39,15 +39,26 @@ header {
 
   // 메인메뉴
   #main-nav {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
     ul {
       display: flex;
       gap: 1.5rem;
-
+      width: 35%;
       li {
+        height: 100%;
+        width: 100%;
         a {
           // 글자크기
           font-size: var(--font-large-size);
         }
+      }
+      li:hover {
+        transform: scale(1.08);
+        color: var(--color-orange);
       }
     }
   }
@@ -58,10 +69,12 @@ header {
       display: flex;
       gap: 1.5rem;
       li {
-        a {
-          font-size: var(--font-small-size);
-          color: gray;
-        }
+        color: gray;
+        font-size: var(--font-small-size);
+      }
+      li:hover {
+        transform: scale(1.08);
+        color: var(--color-orange);
       }
     }
   }

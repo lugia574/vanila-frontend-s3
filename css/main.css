@@ -112,7 +112,7 @@ body {
   width: 30rem;
 }
 .main-wrap .main-banner .image-slider .image-slide-list .thrid-img {
-  background: #3a5395;
+  background: #0f93fe;
 }
 .main-wrap .main-banner .image-slider .image-slide-list .thrid-img img {
   width: 35rem;
@@ -291,7 +291,7 @@ body {
   border: 1px solid #dddddd;
   border-radius: 8px;
 }
-.main-wrap .total-search-wrap .total-search-box .total-search-form .btn-wrap {
+.main-wrap .total-search-wrap .total-search-box .total-search-form .search-btn {
   width: 10%;
   height: 100%;
   background: var(--font-basic-color);
@@ -303,8 +303,8 @@ body {
   transform: 0.5s;
   font-weight: var(--font-bold);
 }
-.main-wrap .total-search-wrap .total-search-box .total-search-form .btn-wrap:active {
-  transform: scale(0.8);
+.main-wrap .total-search-wrap .total-search-box .total-search-form .search-btn:active {
+  transform: scale(0.9);
 }
 .main-wrap .main-contents {
   width: 100%;
@@ -323,6 +323,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1rem;
 }
 .main-wrap .main-contents .section .section-container .section-top .contest-nav {
   display: flex;
@@ -376,7 +377,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 2rem;
+}
+.main-wrap .main-contents .section .section-container ul.policy-list .policy-item .policy-link .desc .desc-top {
+  flex: 0.5;
 }
 .main-wrap .main-contents .section .section-container ul.policy-list .policy-item .policy-link .desc .desc-top .policy-loc {
   margin-left: 0.2rem;
@@ -385,6 +388,8 @@ body {
   color: var(--color-orange);
 }
 .main-wrap .main-contents .section .section-container ul.policy-list .policy-item .policy-link .desc .desc-top .policy-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: var(--font-xlarge-size);
   font-weight: var(--font-bold);
 }
@@ -395,6 +400,7 @@ body {
   gap: 0.5rem;
   height: 100%;
   padding: 1rem 0;
+  flex: 1;
 }
 
 @media screen and (max-width: 767px) {

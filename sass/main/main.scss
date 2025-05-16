@@ -67,7 +67,7 @@ body {
           img {
             width: 35rem;
           }
-          background: #3a5395;
+          background: #0f93fe;
         }
       }
     }
@@ -257,7 +257,7 @@ body {
           }
         }
 
-        .btn-wrap {
+        .search-btn {
           width: 10%;
           height: 100%;
           background: var(--font-basic-color);
@@ -271,7 +271,8 @@ body {
           transform: 0.5s;
           font-weight: var(--font-bold);
           &:active {
-            transform: scale(0.8);
+            transform: scale(0.9);
+            // color: var(--color-orange);
           }
         }
       }
@@ -295,6 +296,7 @@ body {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          margin-bottom: 1rem;
           .contest-nav {
             display: flex;
             justify-content: end;
@@ -352,9 +354,9 @@ body {
                   display: flex;
                   flex-direction: column;
                   justify-content: flex-start;
-                  gap: 2rem;
 
                   .desc-top {
+                    flex: 0.5;
                     .policy-loc {
                       margin-left: 0.2rem;
                       font-size: var(--font-large-size);
@@ -363,6 +365,8 @@ body {
                     }
 
                     .policy-title {
+                      overflow: hidden;
+                      text-overflow: ellipsis;
                       font-size: var(--font-xlarge-size);
                       font-weight: var(--font-bold);
                     }
@@ -375,6 +379,7 @@ body {
                     gap: 0.5rem;
                     height: 100%;
                     padding: 1rem 0;
+                    flex: 1;
                   }
                 }
               }

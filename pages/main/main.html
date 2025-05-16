@@ -101,178 +101,178 @@
             <div class="swiper-progressbar"></div>
           </div>
         </div>
-        <!-- 통합검색 -->
-        <div class="total-search-wrap wrap">
-          <div class="total-search-box">
-            <div class="title">
-              <strong>맞춤형 공모전</strong>
-            </div>
-            <form class="total-search-form" method="get">
-              <input type="hidden" name="key" />
-              <input type="hidden" id="sc_searchSe" name="sc_searchSe" />
-              <div class="select-box box">
-                <a href="#" class="select-btn" aria-expanded="false">
-                  <em>분야</em>
-                  <span class="btn-arrow"></span>
-                </a>
-                <ul class="select-list">
-                  <li>
-                    <input
-                      type="checkbox"
-                      name="category"
-                      id="allBtn"
-                      class="chk-st1"
-                      value="allBtn"
-                    />
-                    <label for="allBtn" class="chk-st1">전체</label>
-                  </li>
-                  <li>
-                    <input
-                      type="checkbox"
-                      name="category"
-                      id="poster"
-                      class="chk-st1"
-                      value="poster"
-                    />
-                    <label for="poster" class="chk-st1">포스터/웹툰/컨텐츠</label>
-                  </li>
-                  <li>
-                    <input
-                      type="checkbox"
-                      name="category"
-                      id="picture"
-                      class="chk-st1"
-                      value="picture"
-                    />
-                    <label for="picture" class="chk-st1">사진/영상</label>
-                  </li>
-                  <li>
-                    <input
-                      type="checkbox"
-                      name="category"
-                      id="idea"
-                      class="chk-st1"
-                      value="idea"
-                    /><label for="idea" class="chk-st1" value="idea">아이디어/기획</label>
-                  </li>
-                  <li>
-                    <input
-                      type="checkbox"
-                      name="category"
-                      id="it"
-                      class="chk-st1"
-                      value="it"
-                    /><label for="it" class="chk-st1">IT/학술/논문</label>
-                  </li>
-                  <li>
-                    <input
-                      type="checkbox"
-                      name="category"
-                      id="naming"
-                      class="chk-st1"
-                      value="naming"
-                    /><label for="naming" class="chk-st1">네이밍/슬로건</label>
-                  </li>
-                  <li>
-                    <input
-                      type="checkbox"
-                      name="category"
-                      id="essay"
-                      class="chk-st1"
-                      value="essay"
-                    /><label for="essay" class="chk-st1">에세이/수필/문학</label>
-                  </li>
-                  <li>
-                    <input
-                      type="checkbox"
-                      name="category"
-                      id="sport"
-                      class="chk-st1"
-                      value="sport"
-                    /><label for="sport" class="chk-st1">스포츠/음악</label>
-                  </li>
-                  <li>
-                    <input
-                      type="checkbox"
-                      name="category"
-                      id="art"
-                      class="chk-st1"
-                      value="art"
-                    /><label for="art" class="chk-st1">미술/디자인/건축</label>
-                  </li>
-                </ul>
-              </div>
-              <div class="check-box box">
-                <a href="#" class="select-btn">
-                  <em>연령대</em>
-                  <span class="btn-arrow"></span>
-                </a>
-                <ul class="select-list">
-                  <li>
-                    <input
-                      type="checkbox"
-                      name="age"
-                      id="university"
-                      class="chk-st1"
-                      value="university"
-                    /><label for="university" class="chk-st1">대학생</label>
-                  </li>
-                  <li>
-                    <input
-                      type="checkbox"
-                      name="age"
-                      id="general"
-                      class="chk-st1"
-                      value="general"
-                    /><label for="general" class="chk-st1">일반인</label>
-                  </li>
-                </ul>
-              </div>
-              <div class="check-box box age">
-                <a href="#" class="select-btn">
-                  <em>시상규모</em>
-                  <span class="btn-arrow"></span>
-                </a>
-                <ul class="select-list">
-                  <li>
-                    <input
-                      type="checkbox"
-                      name="prize"
-                      id="prize1"
-                      class="chk-st1"
-                      value="prize1"
-                    /><label for="prize1" class="chk-st1">1천만원 ~ 3천만원</label>
-                  </li>
-                  <li>
-                    <input
-                      type="checkbox"
-                      name="prize"
-                      id="prize2"
-                      class="chk-st1"
-                      value="prize2"
-                    /><label for="prize2" class="chk-st1">3천만원 ~ 5천만원</label>
-                  </li>
-                  <li>
-                    <input
-                      type="checkbox"
-                      name="prize"
-                      id="prize3"
-                      class="chk-st1"
-                      value="prize3"
-                    /><label for="prize3" class="chk-st1">5천만원 이상</label>
-                  </li>
-                </ul>
-              </div>
-              <div class="seach-bar">
-                <input type="text" />
-              </div>
-              <button class="search-btn" type="submit">검색</button>
-            </form>
-          </div>
-        </div>
 
         <!-- 메인페이지 컨텐츠 -->
         <div class="main-contents wrap">
+          <!-- 통합검색 -->
+          <div class="total-search-wrap">
+            <div class="total-search-box">
+              <div class="title">
+                <strong>맞춤형 공모전</strong>
+              </div>
+              <form class="total-search-form" method="get">
+                <input type="hidden" name="key" />
+                <input type="hidden" id="sc_searchSe" name="sc_searchSe" />
+                <div class="select-box box">
+                  <a href="#" class="select-btn" aria-expanded="false">
+                    <em>분야</em>
+                    <span class="btn-arrow"></span>
+                  </a>
+                  <ul class="select-list">
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="category"
+                        id="allBtn"
+                        class="chk-st1"
+                        value="allBtn"
+                      />
+                      <label for="allBtn" class="chk-st1">전체</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="category"
+                        id="poster"
+                        class="chk-st1"
+                        value="poster"
+                      />
+                      <label for="poster" class="chk-st1">포스터/웹툰/컨텐츠</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="category"
+                        id="picture"
+                        class="chk-st1"
+                        value="picture"
+                      />
+                      <label for="picture" class="chk-st1">사진/영상</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="category"
+                        id="idea"
+                        class="chk-st1"
+                        value="idea"
+                      /><label for="idea" class="chk-st1" value="idea">아이디어/기획</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="category"
+                        id="it"
+                        class="chk-st1"
+                        value="it"
+                      /><label for="it" class="chk-st1">IT/학술/논문</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="category"
+                        id="naming"
+                        class="chk-st1"
+                        value="naming"
+                      /><label for="naming" class="chk-st1">네이밍/슬로건</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="category"
+                        id="essay"
+                        class="chk-st1"
+                        value="essay"
+                      /><label for="essay" class="chk-st1">에세이/수필/문학</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="category"
+                        id="sport"
+                        class="chk-st1"
+                        value="sport"
+                      /><label for="sport" class="chk-st1">스포츠/음악</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="category"
+                        id="art"
+                        class="chk-st1"
+                        value="art"
+                      /><label for="art" class="chk-st1">미술/디자인/건축</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="check-box box">
+                  <a href="#" class="select-btn">
+                    <em>연령대</em>
+                    <span class="btn-arrow"></span>
+                  </a>
+                  <ul class="select-list">
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="age"
+                        id="university"
+                        class="chk-st1"
+                        value="university"
+                      /><label for="university" class="chk-st1">대학생</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="age"
+                        id="general"
+                        class="chk-st1"
+                        value="general"
+                      /><label for="general" class="chk-st1">일반인</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="check-box box age">
+                  <a href="#" class="select-btn">
+                    <em>시상규모</em>
+                    <span class="btn-arrow"></span>
+                  </a>
+                  <ul class="select-list">
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="prize"
+                        id="prize1"
+                        class="chk-st1"
+                        value="prize1"
+                      /><label for="prize1" class="chk-st1">1천만원 ~ 3천만원</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="prize"
+                        id="prize2"
+                        class="chk-st1"
+                        value="prize2"
+                      /><label for="prize2" class="chk-st1">3천만원 ~ 5천만원</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="prize"
+                        id="prize3"
+                        class="chk-st1"
+                        value="prize3"
+                      /><label for="prize3" class="chk-st1">5천만원 이상</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="seach-bar">
+                  <input type="text" />
+                </div>
+                <button class="search-btn" type="submit">검색</button>
+              </form>
+            </div>
+          </div>
           <!-- 공모전 -->
           <section class="contest-section section" data-aos="fade-up">
             <div class="swiper section-container contest-swiper">

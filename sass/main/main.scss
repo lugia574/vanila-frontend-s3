@@ -161,15 +161,12 @@ body {
     margin-top: 2rem;
     max-width: 1400px;
     .total-search-box {
-      padding: 0 1rem;
       display: flex;
       font-size: var(--font-large-size);
-      border: 1px solid #ccc;
-      border-radius: 2rem 0 0 2rem;
-      overflow: hidden;
 
       .title {
-        // box-shadow: 0 0 0.25rem 0 gray;
+        border-radius: 2rem 0 0 2rem;
+        border: 1px solid #ccc;
         width: 20%;
         background: var(--font-basic-color);
         color: white;
@@ -180,7 +177,8 @@ body {
       }
 
       .total-search-form {
-        // box-shadow: 0 0 0.25rem 0 gray;
+        border-radius: 2rem 0 0 2rem;
+        border: 1px solid #ccc;
         display: flex;
         background: white;
         width: 100%;
@@ -296,7 +294,7 @@ body {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        padding: 2rem;
+        padding: 2rem 0;
         overflow: hidden;
         .section-top {
           display: flex;

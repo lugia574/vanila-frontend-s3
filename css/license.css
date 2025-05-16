@@ -1,0 +1,32 @@
+.license-wrap {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 149px);
+}
+.license-wrap .license-list-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  gap: 1rem;
+}
+.license-wrap .license-list-wrap h2 {
+  font-size: 3rem;
+}
+.license-wrap .license-list-wrap .page-descript {
+  font-size: var(--font-large-size);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .license-wrap {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .license-wrap .license-list-wrap h2 {
+    font-size: var(--font-xlarge-size);
+  }
+}

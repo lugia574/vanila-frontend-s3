@@ -65,6 +65,7 @@ body {
 }
 
 .main-wrap {
+  min-height: calc(100vh - 149px);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -121,17 +122,10 @@ body {
   color: var(--font-basic-color);
 }
 .main-wrap .profile-section .profile-wrap .profile-edit .edit-btn {
-  padding: 0.7rem 1.5rem;
-  background-color: var(--color-orange);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: var(--font-medium-size);
+  padding: 0;
+  color: var(--font-basic-color);
+  font-size: var(--font-small-size);
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.main-wrap .profile-section .profile-wrap .profile-edit .edit-btn:hover {
-  background-color: #ff8510;
 }
 .main-wrap .mypage-contents {
   width: 100%;
@@ -179,21 +173,9 @@ body {
 }
 .main-wrap .mypage-contents .tab-container .tab-content .tab-pane .section-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: 1.5rem;
-}
-.main-wrap .mypage-contents .tab-container .tab-content .tab-pane .section-top h2 {
-  font-size: var(--font-xlarge-size);
-  font-weight: var(--font-bold);
-  color: var(--font-basic-color);
-}
-.main-wrap .mypage-contents .tab-container .tab-content .tab-pane .section-top .view-all a {
-  color: var(--color-orange);
-  font-size: var(--font-medium-size);
-}
-.main-wrap .mypage-contents .tab-container .tab-content .tab-pane .section-top .view-all a:hover {
-  text-decoration: underline;
 }
 .main-wrap .mypage-contents .tab-container .tab-content .tab-pane .content-container {
   display: flex;

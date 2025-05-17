@@ -128,5 +128,5 @@ scrapBtns.forEach(btn => {
 
 // 글쓰기 페이지 이동
 postWriteBtn.addEventListener("click", () => {
-  location.href = "./postWrite.html";
+  location.href = "./communtiy-write.html";
 });

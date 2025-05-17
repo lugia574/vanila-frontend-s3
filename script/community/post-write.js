@@ -1,9 +1,10 @@
 
 // 전역 변수
 // 모집인원 추가 버튼
-const addBtn = document.querySelectorAll("#addBtn");
+const addBtn = document.querySelector("#addBtn");
+console.log(addBtn);
 // 모집인원 삭제 버튼
-const delBtn = document.querySelectorAll("#delBtn");
+const delBtn = document.querySelector("#delBtn");
 // 라디오 박스 옵션 체크 여부1 : 공모전
 const optionOne = document.querySelector("#option1");
 // 라디오 박스 옵션 체크 여부2 : 스터디
@@ -116,12 +117,74 @@ cancleBtn.addEventListener("click", ()=>{
 });
 
 
+// 추가 제거 버튼
+
+let blockId = 1;
 // 버튼 클릭시 인원 추가/제거 : 같은 위치에 있느 ㄴdiv 삭제
 // 아래에 생성
-// addBtn.addEventListener("click", ()=>{
+// addBtn.addEventListener("click", (e)=>{
+//     // 부모 찾아서 복사
+//     const parent = e.target.closest(".recruitment-count-wrap");
+//     const clone = parent.cloneNode(true);
+//     console.log(clone);
 
+//     clone.querySelectorAll("input").forEach(input => input.value = "");
+
+//     // 고유 번호 증가 및 부여
+//     blockId++;
+//     clone.setAttribute("data-id", blockId);
+    
+//     const recruitmentContainer = document.querySelector(".recruitment-container") 
+//     recruitmentContainer.appendChild(clone);
 // });
 
+
+//let blockId = 1; // 예시용 고유 번호
+
+//const addBtn = document.querySelector(".add-btn");
+
+addBtn.addEventListener("click", (e) => {
+  // 부모 찾아서 복사
+  const parent = e.target.closest(".recruitment-count-wrap");
+  const clone = parent.cloneNode(true);
+
+  // input 초기화
+  clone.querySelectorAll("input").forEach(input => input.value = "");
+
+  // 고유 번호 증가 및 부여
+  blockId++;
+  clone.setAttribute("data-id", blockId);
+  console.log(clone);  
+  // 새롭게 복사된 블록 내부의 add-btn 가져오기
+  const newAddBtn = clone.querySelector("#addBtn");
+  console.log("newAddBtn", newAddBtn);
+  if (newAddBtn) {
+    newAddBtn.addEventListener("click", (e) => {
+      // 재귀 호출처럼 동일한 동작 실행
+      const parent = e.target.closest(".recruitment-count-wrap");
+      const clone = parent.cloneNode(true);
+      clone.querySelectorAll("input").forEach(input => input.value = "");
+      blockId++;
+      clone.setAttribute("data-id", blockId);
+
+      // 또 복사된 블록의 버튼에도 다시 이벤트 붙이기
+      const innerAddBtn = clone.querySelector(".add-btn");
+      if (innerAddBtn) {
+        innerAddBtn.addEventListener("click", arguments.callee); // 자기 자신 재등록
+      }
+
+      const recruitmentContainer = document.querySelector(".recruitment-container");
+      recruitmentContainer.appendChild(clone);
+    });
+  }
+
+  // 복제된 블록을 DOM에 추가
+  const recruitmentContainer = document.querySelector(".recruitment-container");
+  recruitmentContainer.appendChild(clone);
+});
+
+
+// 삭제
 // let blockId = 1; // 고유 번호 초기값
 
 // document.addEventListener("click", function (e) {

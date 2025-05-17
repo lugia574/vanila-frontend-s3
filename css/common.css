@@ -77,6 +77,10 @@ body {
   top: -9999px;
 }
 
+.hidden {
+  display: none;
+}
+
 a {
   text-decoration: none;
   color: inherit;

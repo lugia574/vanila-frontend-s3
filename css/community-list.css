@@ -1,8 +1,7 @@
 @charset "UTF-8";
 @font-face {
   font-family: "BMDOHYEON";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff")
-    format("woff");
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -68,7 +67,6 @@ body {
   margin: 1rem auto;
   padding: 1rem;
   border-radius: var(--border-radius);
-
   border: 1px solid gray;
   background-color: white;
   z-index: 10;
@@ -178,7 +176,6 @@ body {
   width: 100%;
   max-width: 1400px;
   border-radius: var(--border-radius);
-
   border: 0.5px solid gray;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 0 auto 0.4rem;
@@ -201,7 +198,6 @@ body {
   font-weight: var(--font-bold);
   font-size: var(--font-large-size);
   text-align: center;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -218,7 +214,6 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .content-link .content-wrap .content-header .right-group {
   width: 20%;
   justify-content: flex-end;
@@ -245,7 +240,6 @@ body {
   background-color: var(--color-orange);
   color: var(--color-background);
   padding: 0.2rem 0.6rem 0.2rem 0.6rem;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -262,14 +256,12 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .content-link .content-wrap .content-footer {
   display: flex;
   justify-content: space-between;
   padding: 0 1rem 0.5rem 1rem;
   font-size: var(--font-small-size);
 }
-
 .content-link .content-wrap .content-footer .left-group,
 .content-link .content-wrap .content-footer .right-group {
   display: flex;
@@ -293,7 +285,6 @@ body {
   gap: 0.4rem;
   align-items: center;
 }
-
 .content-link .content-wrap .content-footer .right-group .comment i {
   display: block;
   background-position: center;
@@ -309,7 +300,6 @@ body {
   gap: 0.4rem;
   align-items: center;
 }
-
 .content-link .content-wrap .content-footer .right-group .scrap i {
   display: block;
   background-position: center;
@@ -483,7 +473,6 @@ body {
   .content-wrap .content-footer p {
     width: 100%;
   }
-
   .content-wrap .content-summary .left-group,
   .content-wrap .content-summary .right-group,
   .content-wrap .content-footer .left-group,

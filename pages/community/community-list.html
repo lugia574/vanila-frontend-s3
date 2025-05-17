@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티</title>
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/community-list.css">
+</head>
+
+<body>
+    <!-- header -->
+    <jean-header></jean-header>
+
+    <!-- main -->
+    <main class="main">
+        <div class="wrap">        
+
+            <!-- filter -->
+            <section class="filter-section">
+                <div class="filter-wrap">
+                    <ul class="field">
+                        <li><strong>분야</strong></li>
+                        <li><a href="#">포스터/웹툰/콘텐츠</a></li>
+                        <li><a href="#">사진/영상/UCC</a></li>
+                        <li><a href="#">아이디어/기획</a></li>
+                        <li><a href="#">IT/학술/논문</a></li>
+                        <li><a href="#">네이밍/슬로건</a></li>
+                        <li><a href="#">스포츠/음악</a></li>
+                        <li><a href="#">미술/디자인/건축</a></li>
+                    </ul>
+                    <ul class="age-range">
+                        <li><strong>연령</strong></li>
+                        <li><a href="#">대학생</a></li>
+                        <li><a href="#">일반인</a></li>
+                        <li><a href="#">제한없음</a></li>
+                    </ul>
+        
+                    <ul class="array">
+                        <li><strong>정렬</strong></li>
+                        <li><a href="#">최신순</a></li>
+                        <li><a href="#">인기순</a></li>
+                        <li><a href="#">스크랩순</a></li>
+                        <li><a href="#">종료임박순</a></li>
+                    </ul>
+        
+                    <ul class="search-conditions">
+                        <!-- TODO : js 적용 -->
+                        <li><strong>적용된 검색조건</strong></li>
+                        <i class="filter-reset"></i>
+                        <!-- li a가 생성되면서 css 적용 -->
+                    </ul>
+        
+                    <div class="search-wrap">
+                        <input type="text" placeholder="검색어를 입력해주세요" />
+                        <i></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- division -->
+            <section class="division-section">
+                <div class="division-wrap">
+                    <ul class="division-type">
+                        <li><a href="#">전체</a></li>
+                        <li><a href="#">공모전</a></li>
+                        <li><a href="#">스터디</a></li>
+                    </ul>
+                    <ul class="view-type">
+                        <li><a href="#"><i class="card-icon"></i></a></li>
+                        <li><a href="#"><i class="list-icon"></i></a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- content -->
+            <section class="content-section">
+                <div class="content-list">
+                    <!-- 동적 생성 -->
+                </div>                    
+            </section>
+            
+
+            <!-- 페이징 -->
+            <section class="page-section">
+                <nav class="page-num">
+                    <ul class="pagination">
+                       <!-- 동적 생성 -->
+                    </ul>
+                </nav>
+            </section>
+            
+            <div class="btn-wrap">
+                <input type="button" class="write-btn">
+                <input type="button" class="top-btn">
+            </div>
+
+        </div>    
+    </main>
+    <jean-footer></jean-footer>
+
+    <script src="../../script/components/header.js"></script>
+    <script src="../../script/components/Footer.js"></script>
+    <script type="module" src="/script/community/community-list-render.js"></script>
+    <script defer src="../../script/community/community-list.js"></script>
+
+</body>
+</html>

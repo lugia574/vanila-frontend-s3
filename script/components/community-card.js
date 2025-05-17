@@ -57,6 +57,7 @@ class CommunityCard extends HTMLElement {
 
       const communityCard = document.createElement("content-wrap");
       communityCard.innerHTML = `
+      <a class="content-link">
         <div class="content-wrap">
             <div class="content-header">
                 <div class="field">${communityField}</div>
@@ -90,6 +91,7 @@ class CommunityCard extends HTMLElement {
                 </div>
             </div>
         </div>
+      </a>  
       `;
 
       this.shadow.appendChild(style);

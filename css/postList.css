@@ -331,8 +331,7 @@
   cursor: pointer;
 }
 
-.btn-wrap .write-btn,
-.btn-wrap .top-btn {
+.btn-wrap .write-btn {
   width: 4vw;
   height: 4vw;
   position: fixed;
@@ -346,15 +345,6 @@
   right: 2vw;
   background-color: var(--color-orange);
   background-image: url(../../assets/icons/iconizer-iconmonstr-pencil-lined.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 80%;
-}
-.btn-wrap .top-btn {
-  bottom: 2vw;
-  right: 2vw;
-  background-color: white;
-  background-image: url(../../assets/icons/iconmonstr-arrow-66-240.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 80%;
@@ -474,13 +464,6 @@
     width: 7vw;
     height: 7vw;
     bottom: 6rem;
-    right: 1rem;
-    background-size: 70%;
-  }
-  .top-btn {
-    width: 7vw;
-    height: 7vw;
-    bottom: 1rem;
     right: 1rem;
     background-size: 70%;
   }

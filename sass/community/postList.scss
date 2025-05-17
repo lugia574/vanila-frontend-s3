@@ -314,8 +314,7 @@
 // 글작성 버튼, 위로가기 버튼
 
 .btn-wrap {
-  .write-btn,
-  .top-btn {
+  .write-btn {
     width: 4vw;
     height: 4vw;
 
@@ -337,15 +336,15 @@
     background-repeat: no-repeat;
     background-size: 80%;
   }
-  .top-btn {
-    bottom: 2vw;
-    right: 2vw;
-    background-color: white;
-    background-image: url(../../assets/icons/iconmonstr-arrow-66-240.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 80%;
-  }
+  // .top-btn {
+  //   bottom: 2vw;
+  //   right: 2vw;
+  //   background-color: white;
+  //   background-image: url(../../assets/icons/iconmonstr-arrow-66-240.png);
+  //   background-position: center;
+  //   background-repeat: no-repeat;
+  //   background-size: 80%;
+  // }
 }
 
 // 필터 클릭시 강조
@@ -505,11 +504,11 @@
     background-size: 70%;
   }
 
-  .top-btn {
-    width: 7vw;
-    height: 7vw;
-    bottom: 1rem;
-    right: 1rem;
-    background-size: 70%;
-  }
+  // .top-btn {
+  //   width: 7vw;
+  //   height: 7vw;
+  //   bottom: 1rem;
+  //   right: 1rem;
+  //   background-size: 70%;
+  // }
 }

@@ -130,8 +130,3 @@ scrapBtns.forEach(btn => {
 postWriteBtn.addEventListener("click", () => {
   location.href = "./postWrite.html";
 });
-
-// 위로가기
-topBtn.addEventListener("click", () => {
-  window.scrollTo(0, 0);
-});

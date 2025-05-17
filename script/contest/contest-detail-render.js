@@ -49,4 +49,4 @@ infoField.innerHTML = `
 `;
 
 // 6. 상세내용
-contents.textContent = contest.contents;
+contents.innerHTML = contest.contents;

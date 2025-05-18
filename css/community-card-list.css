@@ -58,7 +58,7 @@
 }
 
 .filter-wrap {
-  width: 70%;
+  width: 100%;
   max-width: 1400px;
   margin: 10px auto;
   padding: 10px;
@@ -123,7 +123,7 @@
 }
 
 .division-wrap {
-  width: 70%;
+  width: 100%;
   max-width: 1400px;
   display: flex;
   justify-content: space-between;
@@ -159,7 +159,7 @@
 }
 
 .content-list {
-  width: 70%;
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
@@ -169,22 +169,26 @@
   justify-content: flex-start;
 }
 
-.content-wrap {
+.card-content-link {
+  cursor: pointer;
+  width: 100%;
   flex: 0 1 calc(25% - 16px);
   max-width: calc(25% - 16px);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   border-radius: 8px;
   border: 0.5px solid var(--color-background);
   background-color: white;
   padding: 1rem 1rem 1rem 1rem;
 }
-.content-wrap .content-header {
+.card-content-link .content-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.card-content-link .content-wrap .content-header {
   display: flex;
   flex-wrap: wrap;
 }
-.content-wrap .content-header .field {
+.card-content-link .content-wrap .content-header .field {
   font-size: var(--font-small-size);
   border: none;
   border-radius: var(--border-radius);
@@ -197,7 +201,7 @@
   overflow: hidden; /* 넘친 부분 숨김 */
   text-overflow: ellipsis; /* ... 처리 */
 }
-.content-wrap .content-header .type {
+.card-content-link .content-wrap .content-header .type {
   display: flex;
   justify-content: flex-end;
   font-size: var(--font-small-size);
@@ -212,7 +216,7 @@
   overflow: hidden; /* 넘친 부분 숨김 */
   text-overflow: ellipsis; /* ... 처리 */
 }
-.content-wrap .content-header .d-day {
+.card-content-link .content-wrap .content-header .d-day {
   font-size: var(--font-small-size);
   border: none;
   border-radius: var(--border-radius);
@@ -223,44 +227,44 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.content-wrap .content-title .title {
+.card-content-link .content-wrap .content-title .title {
   font-size: var(--font-middle-size);
   font-weight: var(--font-bold);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.content-wrap .content-summary p {
+.card-content-link .content-wrap .content-summary p {
   font-size: var(--font-small-size);
   color: var(--font-basic-color);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.content-wrap .content-footer {
+.card-content-link .content-wrap .content-footer {
   width: 100%;
   display: flex;
   border-top: 1px solid var(--default-border);
   padding-top: 0.5rem;
 }
-.content-wrap .content-footer .left-group,
-.content-wrap .content-footer .right-group {
+.card-content-link .content-wrap .content-footer .left-group,
+.card-content-link .content-wrap .content-footer .right-group {
   display: flex;
   flex-wrap: wrap;
   width: 50%;
   font-size: var(--font-small-size);
 }
-.content-wrap .content-footer .right-group {
+.card-content-link .content-wrap .content-footer .right-group {
   display: flex;
   justify-content: right;
   gap: 0.5rem;
 }
-.content-wrap .content-footer .comment {
+.card-content-link .content-wrap .content-footer .comment {
   display: flex;
   justify-content: right;
   gap: 5px;
 }
-.content-wrap .content-footer .comment i {
+.card-content-link .content-wrap .content-footer .comment i {
   display: block;
   background-position: center;
   background-repeat: no-repeat;
@@ -269,11 +273,11 @@
   width: 1rem;
   height: 1rem;
 }
-.content-wrap .content-footer .scrap {
+.card-content-link .content-wrap .content-footer .scrap {
   display: flex;
   gap: 5px;
 }
-.content-wrap .content-footer .scrap i {
+.card-content-link .content-wrap .content-footer .scrap i {
   display: block;
   background-position: center;
   background-repeat: no-repeat;

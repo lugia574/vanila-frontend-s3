@@ -5,48 +5,41 @@ const searchConditions = document.querySelector(".search-conditions");
 // 필터 초기화
 const filterReset = document.querySelector(".filter-reset");
 // 글작성 버튼
-const postWriteBtn = document.querySelector(".write-btn");
+const writeBtn = document.querySelector(".write-btn");
 // 위로 가기 버튼
 const topBtn = document.querySelector(".top-btn");
 // 스크랩
 const scrapBtns = document.querySelectorAll(".scrap i");
 // 분류 타입
 const divisionTypes = document.querySelectorAll(".division-type li a");
+// content 
+const contentLinks = document.querySelectorAll(".content-link");
+// 글 상세 이동
+const contentClicks = document.querySelectorAll(".content-link");
 
-// 최초에 페이지 번호 렌더링
-renderPagination();
-// 페이지번호 렌더링 함수
-function renderPagination() {
-  const isMobile = window.innerWidth <= 768;
-  const maxPages = isMobile ? 5 : 10;
+// 목록 컴포넌트 클릭시 이동
+contentClicks.forEach(content=>{
+  content.addEventListener("click", ()=>{
+    // TODO : 추후 배열로 구현
+    location.href="./postContent.html";
+  })
+})
 
-  const pagination = document.querySelector(".pagination");
+// 필터 mouse over 이벤트 
+// filterBtns.forEach(btn => {
+//   btn.addEventListener('mouseover', () => {
+//     btn.classList.add("btn-active");
+//   });
 
-  pagination.innerHTML = "";
+//   btn.addEventListener('mouseout', () => {
+//     btn.classList.remove("btn-active");
+//   });
 
-  const leftLi = document.createElement("li");
-  const leftI = document.createElement("i");
-  leftI.classList.add("left-arrow");
-  leftLi.appendChild(leftI);
-  pagination.append(leftLi);
+// });
 
-  for (let i = 1; i <= maxPages; i++) {
-    const li = document.createElement("li");
-    li.textContent = i;
-    pagination.appendChild(li);
-  }
 
-  const rightLi = document.createElement("li");
-  const rightI = document.createElement("i");
-  rightI.classList.add("right-arrow");
-  rightLi.appendChild(rightI);
-  pagination.append(rightLi);
-}
-
-// 윈도우 리사이즈에 따라 다시 렌더링
-window.addEventListener("resize", renderPagination);
-
-// 필터 이벤트
+// 필터 클릭시 이벤트(style)
+// TODO : 실제 적용 필요
 filterBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     const filterName = btn.textContent.trim();
@@ -119,19 +112,21 @@ divisionTypes.forEach(type => {
   });
 });
 
-// 스크랩
-scrapBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    btn.classList.toggle("scrap-active");
-  });
-});
 
 // 글쓰기 페이지 이동
-postWriteBtn.addEventListener("click", () => {
-  location.href = "./postWrite.html";
+writeBtn.addEventListener("click", () => {
+  location.href = "./community-write.html";
 });
 
 // 위로가기
 topBtn.addEventListener("click", () => {
   window.scrollTo(0, 0);
+});
+
+// 처음에 시작할때 전체 선택 및 디자인 적용
+divisionTypes.forEach(type => {
+  if(type.textContent==="전체"){
+    type.classList.add("strong");
+
+  }
 });

@@ -48,13 +48,14 @@ class CommunityList extends HTMLElement {
       const commRes = await fetch("../../css/common.css");
       const commCss = await commRes.text();
 
-      const CommunityListRes = await fetch("../../css/postList.css", { cache: "no-store" }); // 확장자 누락 주의
+      const CommunityListRes = await fetch("../../css/community-list.css", { cache: "no-store" }); // 확장자 누락 주의
       const CommunityListCss = await CommunityListRes.text();
 
       const style = document.createElement("style");
       style.textContent = `${commCss}\n${CommunityListCss}`;
 
-      const communityList = document.createElement("content-wrap");
+      const communityList = document.createElement("a");
+      communityList.className = "content-link";
       communityList.innerHTML = `
         <div class="content-wrap">
           <div class="content-header">
@@ -89,7 +90,7 @@ class CommunityList extends HTMLElement {
                   </div>
               </div>
           </div>
-        </div>
+        </div>  
       `;
 
       this.shadow.appendChild(style);

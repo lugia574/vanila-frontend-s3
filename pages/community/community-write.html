@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티</title>
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/community-write.css">
+
+    <!-- TOAST UI Editor CSS -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+    <script defer src="../../script/community/community-write.js"></script>
+</head>
+
+<body>
+            
+    <!-- header -->
+    <jean-header></jean-header>
+
+    <!-- main -->
+    <main class="main">
+        <form id="communityForm">
+            <div class="wrap">
+                <!-- basic info -->
+                <section class="basic-info-section">
+                    <div class="basic-info-wrap">
+                        <div class="basic-title-wrap">
+                            <span class="basic-title-">기본 정보를 입력해주세요.</span>
+                        </div>
+
+                        <div class="type">
+                            <input type="radio" id="option1" name="option" value="1">
+                            <label for="option1">공모전</label>
+                            <input type="radio" id="option2" name="option" value="2">
+                            <label for="option2">스터디</label>
+                        </div>
+            
+                        <div class="type-detail hidden">
+                            <div class="main-type">
+                                <ul class="main-type-main">
+                                    <li class="title"><a href="#">분야</a></li>
+                                    <li><a class="main-title" href="#">공모전 분야를 선택해주세요.</a></li>
+                                    <ul class="main-type-sub hidden">
+                                        <li>포스터/웹툰/콘텐츠</li>
+                                        <li>사진/영상/UCC</li>
+                                        <li>아이디어/기획</li>
+                                        <li>IT/학술/논문</li>
+                                        <li>네이밍/슬로건</li>
+                                        <li>스포츠/음악</li>
+                                        <li>미술/디자인/건축</li>
+                                    </ul>
+                                </ul>
+                            </div>
+                    
+                            <div class="sub-type">
+                                <ul class="sub-type-main">
+                                    <li class="title"><a class="sub-type-title" href="#">참여</a></li>
+                                    <li><a class="sub-title" href="#">참여할 공모전을 선택해주세요.</a></li>
+                                    <ul class="sub-type-sub hidden">
+                                        <li>AITHON 2025년 DKU 데이터</li>
+                                        <li>AITHON 2025년 DKU 데이터</li>
+                                        <li>AITHON 2025년 DKU 데이터</li>
+                                        <li>AITHON 2025년 DKU 데이터</li>
+                                        <li>AITHON 2025년 DKU 데이터</li>
+                                        <li>AITHON 2025년 DKU 데이터</li>
+                                        <li>AITHON 2025년 DKU 데이터</li>
+                                    </ul>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="period-wrap">
+                            <div class="start-date-wrap">
+                                <label for="start-date">시작일</label>
+                                <input type="date" id="start-date" >
+                            </div>
+                            <div class="end-date-wrap">
+                                <label for="end-date">종료일</label>
+                                <input type="date" id="end-date">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- recruitment info -->
+                <section class="recruitment-info-section">
+                    <div class="recruitment-info-wrap">
+                        <div class="recruitment-title-wrap">
+                            <span class="recruitment-title">모집정보를 입력해주세요.</span>
+                        </div>
+                        <div class="recuritment-wrap">
+                            <div class="recruitment-end-wrap">
+                                <label for="recruitment-end-date">모집종료일</label>
+                                <input type="date" id="recruitment-end-date">
+                            </div>
+
+                            <div class="recruitment-age-group-wrap">
+                                <ul class="age-group-main">
+                                    <li class="title"><a href="#">모집 연령</a></li>
+                                    <li><a class="age-title" href="#">모집 연령을 선택해주세요.</a></li>
+                                    <ul class="age-group-sub hidden">
+                                        <li>대학생</li>
+                                        <li>일반인</li>
+                                        <li>제한없음</li>
+                                    </ul>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="recruitment-container">
+                            <div class="recruitment-count-wrap" data-id="1">
+                                <div class="recruitment-count-detail-wrap">
+                                    <div class="recruitment-role">
+                                        <label for="role">모집역할</label>
+                                        <input type="text" id="role" placeholder="역할을 입력해주세요.">
+                                    </div>
+                        
+                                    <div class="recruitment-count">
+                                        <label for="count">모집인원</label>
+                                        <input type="number" id="count" placeholder="인원을 입력해주세요.">
+                                    </div>
+                                </div>
+                            
+                                <div class="recruitment-count-detail-btn">
+                                    <button id="delBtn">삭제</button>
+                                    <button id="addBtn">추가</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- content -->
+                <section class="content-section">
+                    <!-- title -->
+                    <div class="title-wrap">
+                        <span>제목</span>
+                        <input type="text" placeholder="제목을 입력해주세요.">
+                    </div>
+
+                    <!-- editor  -->
+                    <div class="content-wrap">
+                        <div id="content">
+                    
+                        </div>
+                    </div>
+
+                    <!-- 버튼 -->
+                    <div class="content-btn-wrap">
+                        <button class="canale-btn">취소</button>
+                        <button class="register-btn">등록</button>
+                    </div>
+                </section>  
+            </div>
+        </form>
+
+    </main>
+
+    <!-- footer -->
+    <jean-footer></jean-footer>
+
+    <!-- 에디터 -->
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <script>
+        const editor = new toastui.Editor({
+            el: document.querySelector('#content'), // 에디터를 적용할 요소 (컨테이너)
+            height: '500px',                        // 에디터 영역의 높이 값 (OOOpx || auto)
+            initialEditType: 'wysiwyg',             // 최초로 보여줄 에디터 타입 (markdown || wysiwyg)
+            initialValue: '내용을 입력해 주세요.',     // 내용의 초기 값으로, 반드시 마크다운 문자열 형태여야 함
+            previewStyle: 'vertical'                // 마크다운 프리뷰 스타일 (tab || vertical)
+        });
+    </script>
+
+
+    <script src="../../script/components/header.js"></script>
+    <script src="../../script/components/Footer.js"></script>
+</body>
+</html>

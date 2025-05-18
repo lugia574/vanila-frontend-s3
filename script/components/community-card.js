@@ -6,21 +6,21 @@ class CommunityCard extends HTMLElement {
 
   static get observedAttributes() {
     return [
-      "communityField",
-      "communityType",
+      "communityfield",
+      "communitytype",
       "day",
-      "communityTitle",
-      "communitySummary",
-      "communityWriter",
-      "communityComments",
-      "communityScraps",
+      "communitytitle",
+      "communitysummary",
+      "communitywriter",
+      "communitycomments",
+      "communityscraps",
     ];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    if (oldValue !== newValue) {
-      this.render();
-    }
+    if (oldValue !== newValue && this.isConnected) {
+    this.render();
+  }
   }
 
   connectedCallback() {
@@ -28,34 +28,35 @@ class CommunityCard extends HTMLElement {
   }
 
   async render() {
-    const communityField = this.getAttribute("communityField") || "없음";
-    const communityType = this.getAttribute("communityType") || "없음";
+    const communityField = this.getAttribute("communityfield") || "없음";
+    const communityType = this.getAttribute("communitytype") || "없음";
     const day = this.getAttribute("day") || "0";
-    const communityTitle = this.getAttribute("communityTitle") || "없음";
-    const communitySummary = this.getAttribute("communitySummary") || "없음";
-    const communityWriter = this.getAttribute("communityWriter") || "없음";
-    const communityComments = this.getAttribute("communityComments") || "0";
-    const communityScraps = this.getAttribute("communityScraps") || "0";
+    const communityTitle = this.getAttribute("communitytitle") || "없음";
+    const communitySummary = this.getAttribute("communitysummary") || "없음";
+    const communityWriter = this.getAttribute("communitywriter") || "없음";
+    const communityComments = this.getAttribute("communitycomments") || "0";
+    const communityScraps = this.getAttribute("communityscraps") || "0";
 
     // 중복 렌더링 방지
     if (this.renderingInProgress) return;
     this.renderingInProgress = true;
 
     this.shadow.innerHTML = ""; // 기존 내용 제거
-    //
 
     try {
       const commRes = await fetch("../../css/common.css");
       const commCss = await commRes.text();
 
-      const CommunityCardRes = await fetch("../../css/postCardList.css", { cache: "no-store" }); // 확장자 누락 주의
+      const CommunityCardRes = await fetch("../../css/community-List.css", { cache: "no-store" }); // 확장자 누락 주의
       const CommunityCardCss = await CommunityCardRes.text();
 
       const style = document.createElement("style");
       style.textContent = `${commCss}\n${CommunityCardCss}`;
       console.log("CommunityCardCss 내용:", CommunityCardCss);
 
-      const communityCard = document.createElement("content-wrap");
+  
+      const communityCard = document.createElement("a");
+      communityCard.className = "card-content-link";
       communityCard.innerHTML = `
         <div class="content-wrap">
             <div class="content-header">
@@ -101,5 +102,3 @@ class CommunityCard extends HTMLElement {
 }
 
 customElements.define("community-card", CommunityCard);
-
-const s = "111";

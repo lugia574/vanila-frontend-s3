@@ -1,0 +1,689 @@
+@use "../../assets/fonts/font";
+@use "../common/variables";
+
+body{
+  background: white;
+}
+
+// filter-section
+.filter-section {
+  margin-top: 7rem;
+}
+
+.filter-wrap {
+  width: 100%;
+  max-width: 1400px;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  // TODO 색 확인
+  border: 1px solid gray;
+  background-color: white;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  ul {
+    display: flex;
+    gap: 0.8rem;
+    padding: 0.5rem;
+    flex-wrap: wrap;
+
+    li {
+      a {
+        width: auto;
+        height: auto;
+        //border: none;
+        border-radius: var(--border-radius);
+        padding: 0.25rem 0.6rem 0.25rem 0.6rem;
+        //background-color: var(--color-background);
+        font-size: var(--font-small-size);
+      }
+    }
+    i {
+      display: block;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url(../../assets/icons/iconmonstr-reload-lined.svg);
+      width: 1.2rem;
+      height: 1.2rem;
+      cursor: pointer;
+    }
+  }
+
+  div {
+    padding: 0.5rem;
+    position: relative;
+
+    input {
+      display: flex;
+      margin: 0 auto;
+      width: 60%;
+      border: none;
+      border-radius: var(--border-radius);
+      background: var(--color-background);
+      padding: 0.5rem 1rem;
+      position: relative;
+    }
+    i {
+      position: absolute;
+      display: block;
+      background-position: center; /* 배경 이미지 중앙 정렬 */
+      background-repeat: no-repeat; /* 배경 이미지 반복 방지 */
+      background-image: url(../../assets/icons/iconmonstr-magnifier-lined.svg);
+      width: 1.4rem;
+      height: 1.4rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      // 위치 조정
+      top: 50%; /* 세로 중앙에서 시작 */
+      right: calc(20% + 1.5rem); /* 오른쪽 여백 조정 */
+      transform: translateY(-50%); /* 정확한 세로 중앙 정렬 */
+    }
+  }
+}
+
+// division section
+.division-wrap {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 auto;
+
+  ul {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    li {
+      button {
+        font: var(--font-bold);
+        font-size: var(--font-large-size);
+        .card-icon, .list-icon{
+          background: white;
+          display: block;
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        .card-icon {
+          background-image: url(../../assets/icons/iconmonstr-layout-table-lined.svg);
+        }
+        .list-icon {
+          background-image: url(../../assets/icons/iconmonstr-list-lined.svg);
+        }
+      }
+    }
+  }
+}
+
+// content-section
+.content-list {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.content-link{
+  cursor: pointer;
+
+    .content-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 1400px;
+    border-radius: var(--border-radius);
+    border: 0.5px solid gray;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 0.4rem;
+    background-color: white;
+
+    .content-header {
+      display: flex;
+      padding: 1rem 1rem 0 1rem;
+
+      .left-group,.right-group {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .left-group {
+        width: 80%;
+
+        .title {
+          margin-top: 0.1rem;
+          font-weight: var(--font-bold);
+          font-size: var(--font-large-size);
+          text-align: center;
+
+          white-space: nowrap; 
+          overflow: hidden; 
+          text-overflow: ellipsis;
+        }
+        .field {
+          flex-wrap: wrap;
+          font-size: var(--font-small-size);
+          border: none;
+          border-radius: var(--border-radius);
+          background-color: var(--default-border);
+          color: var(--color-background);
+          padding: 0.2rem 0.6rem 0.2rem 0.6rem;
+
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .right-group {
+        width: 20%;
+        justify-content: flex-end;
+
+        .type {
+          width: 35%;
+          text-align: center;
+          font-size: var(--font-small-size);
+          border: none;
+          border-radius: var(--border-radius);
+          background-color: var(--color-background);
+          color: var(--default-border);
+          padding: 0.2rem 0.6rem 0.2rem 0.6rem;
+
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .d-day {
+          width: 35%;
+          text-align: center;
+
+          font-size: var(--font-small-size);
+          border: none;
+          border-radius: 8px;
+          background-color: var(--color-orange);
+          color: var(--color-background);
+          padding: 0.2rem 0.6rem 0.2rem 0.6rem;
+
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    .content-summary {
+      display: flex;
+      justify-content: space-between;
+      font-size: var(--font-small-size);
+      padding: 0 1rem 0.5rem 1rem;
+      color: var(--font-basic-color);
+
+      p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .content-footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem 0.5rem 1rem;
+      font-size: var(--font-small-size);
+
+      .left-group, .right-group {
+        display: flex;
+        gap: 1.25rem;
+
+        .writer {
+          color: rgb(200, 199, 199);
+        }
+      }
+
+      .left-group{
+        width: 50%;
+      }
+      .right-group {
+        width: 50%;
+        display: flex;
+        justify-content: right;
+
+        .comment {
+          width: 10%;
+          display: flex;
+          gap: 0.4rem;
+          align-items: center;
+
+          i {
+            display: block;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url(../../assets/icons/iconmonstr-speech-bubble-comment-thin.svg);
+            width: 1rem;
+            height: 1rem;
+          }
+        }
+
+        .scrap {
+          width: 10%;
+          display: flex;
+          gap: 0.4rem;
+          align-items: center;
+          i {
+            display: block;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(../../assets/icons/iconmonstr-heart-lined.svg);
+            width: 1rem;
+            height: 1rem;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+// page section
+.page-num {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1400px;
+  ul {
+    display: flex;
+    gap: 0.8rem;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    li {
+      background-color: white;
+      width: 2rem;
+      height: 2rem;
+      border: 1px solid var(--color-background);
+      text-align: center;
+      line-height: 2rem;
+      margin-bottom: 2.5rem;
+      cursor: pointer;
+
+      i {
+        background-color: white;
+        width: 2rem;
+        height: 2rem;
+        border: 1px solid var(--color-background);
+        text-align: center;
+        line-height: 2rem;
+        margin-bottom: 2.5rem;
+        cursor: pointer;
+      }
+    }
+
+    .left-arrow {
+      background-position: center;
+      background-repeat: no-repeat;
+      display: block;
+      background-image: url(../../assets/icons/iconmonstr-angel-left-thin.svg);
+      cursor: pointer;
+    }
+
+    .right-arrow {
+      background-position: center;
+      background-repeat: no-repeat;
+      display: block;
+      background-image: url(../../assets/icons/iconmonstr-angel-right-thin.svg);
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+}
+
+// 글작성 버튼, 위로가기 버튼
+
+.btn-wrap {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* 버튼 간 간격 */
+  z-index: 1000;
+  
+  .write-btn,.top-btn {
+    width: 4rem;
+    height: 4rem;
+
+    border: none;
+    border-radius: 8rem;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+
+    cursor: pointer;
+  }
+  .write-btn {
+    background-color: var(--color-orange);
+    background-image: url(../../assets/icons/iconizer-iconmonstr-pencil-lined.svg);
+   
+  }
+  .top-btn {
+    background-color: white;
+    background-image: url(../../assets/icons/iconmonstr-arrow-66-240.png);
+  }
+}
+
+// 필터 클릭시 강조
+.btn-active {
+  background-color: var(--color-orange) !important;
+  color: white;
+}
+
+// 필터 클릭시 추가되는 디자인
+.search-filter-active {
+  background-color: var(--color-orange) !important;
+  color: white;
+  font-size: var(--font-small-size);
+}
+
+// 스크랩 버튼
+.scrap-active {
+  background-image: url(../../assets/icons/iconizer-iconmonstr-heart-filled.svg) !important;
+  background-size: contain; /* 추가 */
+}
+
+// 강조
+.strong {
+  font-weight: var(--font-bold) !important;
+}
+
+// 색 변경
+.point{
+  color: var(--color-orange);
+}
+
+// 카드형
+.card-view {
+  width: 100%;
+  max-width: 1400px; 
+  margin: 0 auto;
+  display: grid;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.card-content-link{
+    display: block;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 0.5px solid var(--color-background);
+    background-color: white;
+    padding: 1rem 1rem 1rem 1rem;
+  
+  .content-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .content-header {
+      display: flex;
+      flex-wrap: wrap;
+
+      .field {
+        font-size: var(--font-small-size);
+        border: none;
+        border-radius: var(--border-radius);
+        text-align: center;
+        background-color: var(--default-border);
+        color: var(--color-background);
+        padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+        margin-right: 0.5rem;
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+      }
+      .type {
+        display: flex;
+        justify-content: flex-end;
+        font-size: var(--font-small-size);
+        border: none;
+        border-radius: var(--border-radius);
+        background-color: var(--color-background);
+        color: var(--default-border);
+        text-align: center;
+        padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+        margin-right: 0.2rem;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .d-day {
+        font-size: var(--font-small-size);
+        border: none;
+        border-radius: var(--border-radius);
+        background-color: var(--color-orange);
+        color: var(--color-background);
+        padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .content-title {
+      .title {
+        width: 100%;
+        font-size: var(--font-middle-size);
+        font-weight: var(--font-bold);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .content-summary {
+      p {
+        font-size: var(--font-small-size);
+        color: var(--font-basic-color);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .content-footer {
+      width: 100%;
+      display: flex;
+      border-top: 1px solid var(--default-border);
+      padding-top: 0.5rem;
+
+      .left-group,
+      .right-group {
+        display: flex;
+        flex-wrap: wrap;
+
+        width: 50%;
+        font-size: var(--font-small-size);
+      }
+
+      .left-group{
+        .writer{
+          width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .right-group {
+        display: flex;
+        justify-content: right;
+        gap: 0.5rem;
+      }
+
+      .comment {
+        display: flex;
+        justify-content: right;
+        gap: 5px;
+        i {
+          display: block;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-image: url(../../assets/icons/iconmonstr-speech-bubble-comment-thin.svg);
+          width: 1rem;
+          height: 1rem;
+        }
+      }
+
+      .scrap {
+        display: flex;
+        gap: 5px;
+        i {
+          display: block;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-image: url(../../assets/icons/iconmonstr-heart-lined.svg);
+          width: 1rem;
+          height: 1rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+/////////////////////////////////
+// 모바일
+@media screen and (max-width: 768px) {
+  // filter-section
+  .filter-section {
+    margin-top: 7rem;
+  }
+
+  .filter-wrap {
+    width: 100%;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+
+    ul {
+      gap: 1rem;
+      padding: 0.5rem;
+
+      li {
+        a {
+        }
+      }
+
+      i {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    div {
+      padding: 5px;
+
+      input {
+        width: 95%;
+        height: 40px;
+      }
+
+      i {
+        right: 10%;
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+  }
+
+  // division section
+  .division-wrap {
+    width: 100%;
+    display: flex;
+
+    ul {
+      flex-wrap: wrap;
+
+      li {
+        button {
+          .card-icon,
+          .list-icon {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  // content section
+  .content-list {
+    width: 95%;
+  }
+
+  .content-wrap {
+    .content-header {
+      display: flex;
+      gap: 1rem;
+
+      .left-group,
+      .right-group {
+        .title {
+        }
+
+        .type {
+          display: none;
+        }
+      }
+    }
+
+    .content-summary,
+    .content-footer {
+      width: 95%;
+      display: flex;
+      gap: 0.3rem;
+      padding: 0.5rem 1rem 0.5rem 1rem;
+      font-size: var(--font-xs-size);
+
+      p {
+        width: 100%;
+      }
+
+      .left-group, .right-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+
+      }
+    }
+  }
+
+  // page section
+  .page-num {
+    width: 95%;
+    ul {
+      gap: 0.4rem;
+
+      li {
+        width: 1.8rem;
+        height: 1.8rem;
+        text-align: center;
+        line-height: 1.8rem;
+        font-size: var(--font-xs-size);
+        i {
+          width: 1.8rem;
+          height: 1.8rem;
+          text-align: center;
+          line-height: 1.8rem;
+          font-size: var(--font-xs-size);
+        }
+      }
+    }
+  }
+}

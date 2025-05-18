@@ -50,25 +50,27 @@ class JeanHeader extends HTMLElement {
               <li><a href="/pages/contest/contest.html">공모전</a></li>
               <li><a href="/pages/policy/policy-list.html">청년정책</a></li>
               <li><a href="/pages/license/license.html">자격증</a></li>
-              <li><a href="/pages/community/postList.html">커뮤니티</a></li>
+              <li><a href="/pages/community/community-list.html">커뮤니티</a></li>
             </ul>
           </nav>
           <nav id="auth-menu">
             <ul>
-              <li class="li-auth"><a href="/pages/login/login.html">로그인</a></li>
-              <li class="li-auth"><a href="/pages/sign-up/sign-up.html">회원가입</a></li>
-              <li class="li-user"><a href="/pages/my-page/my-page.html">마이페이지</a></li>
+              <li class="nav-guest"><a href="/pages/login/login.html">로그인</a></li>
+              <li class="nav-guest"><a href="/pages/sign-up/sign-up.html">회원가입</a></li>
+              <li class="nav-user"><a href="/pages/my-page/my-page.html">마이페이지</a></li>
+              <li class="nav-user logout"><a href="#">로그아웃</a></li>
             </ul>
           </nav>
           <nav id="mobile-menu">
             <ul>
-              <li class="li-auth"><a href="/pages/login/login.html">로그인</a></li>
-              <li class="li-auth"><a href="/pages/sign-up/sign-up.html">회원가입</a></li>
-              <li class="li-user"><a href="/pages/my-page/my-page.html">마이페이지</a></li>
+              <li class="nav-guest"><a href="/pages/login/login.html">로그인</a></li>
+              <li class="nav-guest"><a href="/pages/sign-up/sign-up.html">회원가입</a></li>
+              <li class="nav-user"><a href="/pages/my-page/my-page.html">마이페이지</a></li>
               <li><a href="/pages/contest/contest.html">공모전</a></li>
               <li><a href="/pages/policy/policy-list.html">청년정책</a></li>
               <li><a href="#">자격증</a></li>
-              <li><a href="/pages/community/postList.html">커뮤니티</a></li>
+              <li><a href="/pages/community/community-list.html">커뮤니티</a></li>
+              <li class="nav-user logout"><a href="#">로그아웃</a></li>
             </ul>
           </nav>
         </div>
@@ -86,7 +88,9 @@ class JeanHeader extends HTMLElement {
       // 햄버거 애니메이션 이벤트
       this.hamburgerHandler();
       // 로그인 유무
-      this.authHandler();
+      this.loginHandler();
+      // 로그아웃
+      this.logoutHandler();
     } catch (error) {
       console.error("JeanHeader 로딩 실패:", error);
     }
@@ -118,8 +122,26 @@ class JeanHeader extends HTMLElement {
     });
   }
 
-  authHandler() {
-    console.log("로그인 유무 확인 핸들러");
+  loginHandler() {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const userLis = this.shadow.querySelectorAll(".nav-user");
+    const guestLis = this.shadow.querySelectorAll(".nav-guest");
+
+    userLis.forEach(el => el.classList.toggle("hidden", !isLoggedIn));
+    guestLis.forEach(el => el.classList.toggle("hidden", isLoggedIn));
+  }
+
+  logoutHandler() {
+    const logoutLis = this.shadow.querySelectorAll(".logout");
+    logoutLis.forEach(el => {
+      el.addEventListener("click", e => {
+        e.preventDefault();
+        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("loginProvider");
+        localStorage.removeItem("userType");
+        this.loginHandler();
+      });
+    });
   }
 }
 

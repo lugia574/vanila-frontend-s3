@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/common.css" />
     <link rel="stylesheet" href="/css/contest.css" />
     <link rel="stylesheet" href="/css/contest-card.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </head>
   <body>
     <jean-header></jean-header>
@@ -26,7 +27,7 @@
                   <span>분야</span>
                 </div>
                 <div class="filter-list">
-                  <button class="filter-item">포스터/웹툰/콘텐츠</button>
+                  <button class="filter-item btn-active">포스터/웹툰/콘텐츠</button>
                   <button class="filter-item">사진/영상</button>
                   <button class="filter-item">아이디어/기획</button>
                   <button class="filter-item">IT/학술/논문</button>
@@ -42,7 +43,6 @@
                 </div>
                 <div class="filter-list">
                   <button class="filter-item">대학생</button>
-                  <button class="filter-item">일반인</button>
                   <button class="filter-item">제한없음</button>
                 </div>
               </div>
@@ -58,7 +58,12 @@
                 </div>
               </div>
               <!-- 적용된 검색조건 -->
-              <div class="active-filter-wrap"></div>
+              <div class="active-filter-wrap">
+                <ul>
+                  <li class="">적용된 검색조건</li>
+                  <li class="filter-reset">초기화</li>
+                </ul>
+              </div>
             </div>
           </div>
           <hr class="divider" />
@@ -83,58 +88,63 @@
             </div>
           </div>
           <!-- 배너 -->
-          <div class="img_banner"><img src="/public/images/contest/banner.png" alt="배너" /></div>
+          <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+          <div class="swiper img_banner">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <img src="/public/images/contest/banner.png" alt="배너" />
+              </li>
+              <li class="swiper-slide">
+                <img src="/public/images/contest/banner2.png" alt="배너" />
+              </li>
+              <li class="swiper-slide">
+                <img src="/public/images/contest/banner3.png" alt="배너" />
+              </li>
+            </ul>
+          </div>
           <!-- 공모전 리스트 -->
           <div class="contest-list-wrap">
             <div class="contest-grid"></div>
           </div>
         </div>
-      </section>
 
-      <!-- 페이징 -->
-      <section class="page-section">
-        <nav class="page-num">
-          <ul>
-            <i class="left-arrow"></i>
-            <li>
-              <a href="#"><span>1</span></a>
-            </li>
-            <li>
-              <a href="#"><span>2</span></a>
-            </li>
-            <li>
-              <a href="#"><span>3</span></a>
-            </li>
-            <li>
-              <a href="#"><span>4</span></a>
-            </li>
-            <li>
-              <a href="#"><span>5</span></a>
-            </li>
-            <li>
-              <a href="#"><span>6</span></a>
-            </li>
-            <li>
-              <a href="#"><span>7</span></a>
-            </li>
-            <li>
-              <a href="#"><span>8</span></a>
-            </li>
-            <li>
-              <a href="#"><span>9</span></a>
-            </li>
-            <li>
-              <a href="#"><span>10</span></a>
-            </li>
-            <i class="right-arrow"></i>
-          </ul>
-        </nav>
+        <!-- 페이징 -->
+        <div class="page-section">
+          <nav class="page-num">
+            <ul>
+              <i class="left-arrow"></i>
+              <li>
+                <a href="#"><span>1</span></a>
+              </li>
+              <li>
+                <a href="#"><span>2</span></a>
+              </li>
+              <li>
+                <a href="#"><span>3</span></a>
+              </li>
+              <li>
+                <a href="#"><span>4</span></a>
+              </li>
+              <li>
+                <a href="#"><span>5</span></a>
+              </li>
+              <i class="right-arrow"></i>
+            </ul>
+          </nav>
+        </div>
       </section>
     </main>
 
+    <jean-footer></jean-footer>
     <script src="/script/components/header.js"></script>
     <script src="/script/components/contest.js"></script>
     <script type="module" src="/script/data/contest-text.js"></script>
     <script type="module" src="/script/contest/contest-list-render.js"></script>
+    <script src="/script/components/filter.js"></script>
+    <!-- <script type="module" src="/script/contest/contest-slide.js"></script> -->
+    <script>
+      var swiper = new Swiper(".img_banner", {});
+    </script>
+    <script src="/script/components/Footer.js"></script>
   </body>
 </html>

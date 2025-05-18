@@ -1,6 +1,10 @@
 @use "../../assets/fonts/font";
 @use "../common/variables";
 
+.main {
+  margin-top: 5rem;
+}
+
 .contest-register-container {
   // background-color: rgb(255, 238, 241);
 }
@@ -14,14 +18,14 @@
 }
 
 .contest-top-wrap {
-  padding: 10px 2rem;
+  padding: 1rem 0;
   margin: 0 auto;
 }
 
 .contest-center-wrap {
   display: flex;
   flex-direction: column;
-  padding: 10px 2rem;
+  padding: 1rem 0;
   flex-wrap: wrap;
   .info-item {
     width: 50%;

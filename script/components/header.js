@@ -50,7 +50,7 @@ class JeanHeader extends HTMLElement {
               <li><a href="/pages/contest/contest.html">공모전</a></li>
               <li><a href="/pages/policy/policy-list.html">청년정책</a></li>
               <li><a href="/pages/license/license.html">자격증</a></li>
-              <li><a href="/pages/community/postList.html">커뮤니티</a></li>
+              <li><a href="/pages/community/community-list.html">커뮤니티</a></li>
             </ul>
           </nav>
           <nav id="auth-menu">
@@ -69,7 +69,7 @@ class JeanHeader extends HTMLElement {
               <li><a href="/pages/contest/contest.html">공모전</a></li>
               <li><a href="/pages/policy/policy-list.html">청년정책</a></li>
               <li><a href="#">자격증</a></li>
-              <li><a href="/pages/community/postList.html">커뮤니티</a></li>
+              <li><a href="/pages/community/community-list.html">커뮤니티</a></li>
               <li class="nav-user logout"><a href="#">로그아웃</a></li>
             </ul>
           </nav>

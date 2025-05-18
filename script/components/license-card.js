@@ -2,15 +2,16 @@ class LicenseCard extends HTMLElement {
   constructor() {
     super();
     this.shadow = this.attachShadow({ mode: "open" });
+    this.needsRender = false; // 렌더 플래그
   }
 
   static get observedAttributes() {
-    return ["licenseTag1", "day", "licenseName", "licenseSummary"];
+    return ["licenseSrc", "licenseTag", "dday", "licenseName", "licenseSummary"];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue !== newValue) {
-      this.render();
+      this.needsRender = true; // 값이 바뀌면 렌더 필요 표시
     }
   }
 
@@ -19,19 +20,19 @@ class LicenseCard extends HTMLElement {
   }
 
   async render() {
-    const licenseTag1 = this.getAttribute("licenseTag1") || "없음";
-    const day = this.getAttribute("day") || "0";
-    const licenseName = this.getAttribute("licenseName") || "없음";
-    const licenseSummary = this.getAttribute("licenseSummary") || "없음";
-
-    // 중복 렌더링 방지
-    if (this.renderingInProgress) return;
+    if (this.renderingInProgress || !this.needsRender) return;
     this.renderingInProgress = true;
+    this.needsRender = false;
 
-    this.shadow.innerHTML = ""; // 기존 내용 제거
+    const licenseSrc = this.getAttribute("licenseSrc");
+    const licenseTag = this.getAttribute("licenseTag");
+    const dday = this.getAttribute("dday");
+    const licenseName = this.getAttribute("licenseName");
+    const licenseSummary = this.getAttribute("licenseSummary");
+
+    this.shadow.innerHTML = "";
 
     try {
-      // comm.css와 mainContestCard.css 비동기로 불러오기
       const [commRes, cardRes] = await Promise.all([
         fetch("../../css/common.css"),
         fetch("../../css/license-card.css"),
@@ -44,25 +45,27 @@ class LicenseCard extends HTMLElement {
       style.textContent = `${commCss}\n${cardCss}`;
 
       const wrapper = document.createElement("div");
-      wrapper.className = "license-wrap";
+      wrapper.className = "license-card";
       wrapper.innerHTML = `
-            <div class="license-top">
+        <a href="${licenseSrc}">
+          <div class="license-top">
             <div class="license-top-left">
-            <a href="#" class="tag-box">${licenseTag1}</a>
+              <span class="tag-box">${licenseTag}</span>
             </div>
             <div class="lincensc-top-right">
-            <div class="d-day-box">D-${day}</div>
+              <div class="d-day-box">D-${dday}</div>
             </div>
-        </div>
-        <div class="license-bottom">
+          </div>
+          <div class="license-bottom">
             <div class="license-title">
-            <h3 class="card-title">${licenseName}</h3>
+              <h3 class="card-title">${licenseName}</h3>
             </div>
             <div class="license-summary">
-            <p>${licenseSummary}</p>
+              <p>${licenseSummary}</p>
             </div>
-        </div>
-        `;
+          </div>
+        </a>
+      `;
 
       this.shadow.appendChild(style);
       this.shadow.appendChild(wrapper);

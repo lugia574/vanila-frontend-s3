@@ -1,4 +1,4 @@
-import { contestArr } from "../text/contest-text.js";
+import { contestArr } from "../data/contest-text.js";
 
 const postId = parseInt(new URLSearchParams(location.search).get("id"));
 

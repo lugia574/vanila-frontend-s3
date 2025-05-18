@@ -14,7 +14,7 @@
 // basic info
 .basic-info-wrap{
     background-color: white;
-    width: 70%;
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
     text-align: left;
@@ -24,7 +24,7 @@
         font-weight: var(--font-bold);
         font-size: var(--font-large-size);
         padding: 0.5rem 0 0.5rem 0;
-        width: 70%;
+        width: 100%;
         max-width: 1400px;
     }
 
@@ -144,7 +144,7 @@
 // recruitment info
 .recruitment-info-wrap{
     background-color: white;
-    width: 70%;
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
     text-align: left;
@@ -160,7 +160,7 @@
             font-weight: var(--font-bold);
             font-size: var(--font-large-size);
             padding: 0.5rem 0 0.5rem 0;
-            width: 70%;
+            width: 100%;
             max-width: 1400px;
         }
     }
@@ -319,7 +319,7 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    width: 70%;
+    width: 100%;
     max-width: 1400px;
 
     span{
@@ -342,7 +342,7 @@
 
 // content
 .content-wrap{
-    width: 70%;
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
 
@@ -360,7 +360,7 @@
 // 버튼
 .content-btn-wrap{
     margin: 0 auto;
-    width: 70%;
+    width: 100%;
     max-width: 1400px;
     display: flex;
     justify-content: right;

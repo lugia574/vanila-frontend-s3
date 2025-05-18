@@ -39,26 +39,24 @@ class CommentContent extends HTMLElement {
 
       const CommunityContentRes = await fetch("../../css/community-content.css", { cache: "no-store" }); // 확장자 누락 주의
       const CommunityContentCss = await CommunityContentRes.text();
-      console.log(CommunityContentCss);
       const style = document.createElement("style");
       style.textContent = `${commCss}\n${CommunityContentCss}`;
 
-      const commentContent = document.createElement("comment-detail");
+      const commentContent = document.createElement("div");
+      commentContent.className="comment-detail";
       commentContent.innerHTML = `
-        <div class="comment-detail">
-            <div class="comment-left">
-                <i class="profile-icon"></i>
-            </div>
-            
-            <div class="comment-right">
-                <span class="user-name">${userName}</span>
-                <div class="comment-content">
-                    ${commentDetail}
-                </div>
-                <span class="write-date">${writeDate}</span>
-                <button class="reply-btn">답글</button>
-            </div>
-        </div>
+          <div class="comment-left">
+              <i class="profile-icon"></i>
+          </div>
+          
+          <div class="comment-right">
+              <span class="user-name">${userName}</span>
+              <div class="comment-content">
+                  ${commentDetail}
+              </div>
+              <span class="write-date">${writeDate}</span>
+              <button class="reply-btn">답글</button>
+          </div>
       `;
 
       this.shadow.appendChild(style);

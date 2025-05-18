@@ -1,64 +1,136 @@
+
 import { communityArr } from "../text/community-text.js";
+import '../components/community-card.js';
+
+// 전역 변수
+const cardBtn = document.getElementById("card-btn");
+const listBtn = document.getElementById("list-btn");
+
+let currentViewType = 'list'; // 기본값: 리스트형
+
+
+listBtn.addEventListener("click", ()=>{
+  currentViewType = 'list';
+  renderCommunityList(1);
+  renderPagination(1);
+});
+
+cardBtn.addEventListener("click", ()=>{
+  currentViewType = 'card';
+  renderCommunityList(1);
+});
 
 // 페이지 목록 렌더링 
 // 동적 생성 별 기능 추가
 function renderCommunityList(page = 1) {
-  const container = document.querySelector(".content-list");
-  console.log(container);
+  const container = document.getElementById("contnet-view");
+  const pagination = document.querySelector(".pagination");
   if (!container) return;
 
-  const itemsPerPage = 10;
-  const startIndex = (page - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const pageItems = communityArr.slice(startIndex, endIndex);
-
+  // 초기화
   container.innerHTML = "";
+  pagination.innerHTML = "";
 
-  pageItems.forEach(item => {
-    const aTag = document.createElement("a");
-    aTag.classList.add("content-link");
+  if(currentViewType === 'list'){
+    const itemsPerPage = 10;
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const pageItems = communityArr.slice(startIndex, endIndex);
 
-    aTag.innerHTML = `
-      <div class="content-wrap">
-        <div class="content-header">
-          <div class="left-group">
-            <div class="title">${item.title}</div>
-            <div class="field">${item.field || ""}</div>
+    // TODO : 컴포넌트로 교체
+    pageItems.forEach(item => {
+      const aTag = document.createElement("a");
+      aTag.classList.add("content-link");
+
+        aTag.innerHTML = `
+        <div class="content-wrap">
+          <div class="content-header">
+            <div class="left-group">
+              <div class="title">${item.title}</div>
+              <div class="field">${item.field || ""}</div>
+            </div>
+            <div class="right-group">
+              <div class="type">${item.type}</div>
+              <div class="d-day">D-${item.dDay}</div>
+            </div>
           </div>
-          <div class="right-group">
-            <div class="type">${item.type}</div>
-            <div class="d-day">D-${item.dDay}</div>
+          <div class="content-summary">
+            <p>${item.content}</p>
+          </div>
+          <div class="content-footer">
+            <div class="left-group">
+              <div class="writer">${item.writer}</div>
+            </div>
+            <div class="right-group">
+              <div class="comment"><i></i><span>${item.comment}</span></div>
+              <div class="scrap"><i></i><span>${item.scrap}</span></div>
+            </div>
           </div>
         </div>
-        <div class="content-summary">
-          <p>${item.content}</p>
-        </div>
-        <div class="content-footer">
-          <div class="left-group">
-            <div class="writer">${item.writer}</div>
-          </div>
-          <div class="right-group">
-            <div class="comment"><i></i><span>${item.comment}</span></div>
-            <div class="scrap"><i></i><span>${item.scrap}</span></div>
-          </div>
-        </div>
-      </div>
-    `;
+      `;
 
-    // 마우스 커서 이벤트
-    titlePoint(aTag);
+      // 마우스 커서 이벤트
+      titlePoint(aTag);
 
-    // 스크랩 이벤트
-    scrap(aTag);
+      // 스크랩 이벤트
+      scrap(aTag);
 
-    container.appendChild(aTag);
-  });
+      container.appendChild(aTag);
+    })
+
+    chanageViewCss(container);
+  }else{
+    // 카드형인경우
+    communityArr.forEach(item =>{      
+
+      console.log(item);
+
+      console.log("속성값:", 
+      item.title
+    );
+      // 웹 컴포넌트 생성 및 속성 설정
+      const communityCard = document.createElement('community-card');      
+      communityCard.setAttribute('communityfield', item.field);
+      communityCard.setAttribute('communitytype', item.type);
+      communityCard.setAttribute('day', item.dDay);
+      communityCard.setAttribute("communitytitle", item.title);
+      communityCard.setAttribute('communitysummary', item.content);
+      communityCard.setAttribute('communitywriter', item.writer);
+      communityCard.setAttribute('communitycomments', item.comment);
+      communityCard.setAttribute('communityscraps', item.scrap);
+      
+      container.appendChild(communityCard);
+
+
+      const observer = new MutationObserver(() => {
+      const aTag = communityCard.shadowRoot?.querySelector('.card-content-link');
+      if (aTag) {
+        scrap(aTag);
+        titlePoint(aTag);
+        observer.disconnect();
+          }
+      });
+
+      observer.observe(communityCard.shadowRoot, { childList: true, subtree: true });
+
+    });
+    chanageViewCss(container);
+  }
 }
-
+  
+function chanageViewCss(container){
+  if(currentViewType === "list"){
+      container.classList.remove("card-view");
+      container.classList.add("content-list");
+  }else{
+      container.classList.remove("content-list");
+      container.classList.add("card-view");
+  }
+}
+     
 // 스크랩 이벤트
 function scrap(aTag){
     const scrap = aTag.querySelector(".scrap i");
-    console.log("scrap", scrap);
     scrap.addEventListener("click", () => {
         scrap.classList.toggle("scrap-active");
     });
@@ -74,6 +146,9 @@ function titlePoint(aTag){
       title.classList.remove("point");
     });
 }
+
+// 뷰 이벤트
+
 
 
 // 페이징 렌더링

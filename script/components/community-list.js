@@ -54,9 +54,10 @@ class CommunityList extends HTMLElement {
       const style = document.createElement("style");
       style.textContent = `${commCss}\n${CommunityListCss}`;
 
-      const communityList = document.createElement("div");
-      communityList.className = "content-wrap";
+      const communityList = document.createElement("a");
+      communityList.className = "content-link";
       communityList.innerHTML = `
+        <div class="content-wrap">
           <div class="content-header">
               <div class="left-group">
                   <div class="title">${communityTitle}</div>
@@ -89,6 +90,7 @@ class CommunityList extends HTMLElement {
                   </div>
               </div>
           </div>
+        </div>  
       `;
 
       this.shadow.appendChild(style);

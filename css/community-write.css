@@ -64,7 +64,7 @@
 
 .basic-info-wrap {
   background-color: white;
-  width: 70%;
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   text-align: left;
@@ -74,7 +74,7 @@
   font-weight: var(--font-bold);
   font-size: var(--font-large-size);
   padding: 0.5rem 0 0.5rem 0;
-  width: 70%;
+  width: 100%;
   max-width: 1400px;
 }
 .basic-info-wrap .type {
@@ -163,7 +163,7 @@
 
 .recruitment-info-wrap {
   background-color: white;
-  width: 70%;
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   text-align: left;
@@ -179,7 +179,7 @@
   font-weight: var(--font-bold);
   font-size: var(--font-large-size);
   padding: 0.5rem 0 0.5rem 0;
-  width: 70%;
+  width: 100%;
   max-width: 1400px;
 }
 .recruitment-info-wrap .recuritment-wrap {
@@ -307,7 +307,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 70%;
+  width: 100%;
   max-width: 1400px;
 }
 .title-wrap span {
@@ -327,7 +327,7 @@
 }
 
 .content-wrap {
-  width: 70%;
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -343,7 +343,7 @@
 
 .content-btn-wrap {
   margin: 0 auto;
-  width: 70%;
+  width: 100%;
   max-width: 1400px;
   display: flex;
   justify-content: right;

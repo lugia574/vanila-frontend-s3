@@ -4,7 +4,7 @@ const contestSlider = () => {
   new Swiper(".contest-swiper", {
     spaceBetween: 30,
     speed: 500,
-    loop: false,
+    loop: true,
     navigation: {
       nextEl: ".contest-button-next",
       prevEl: ".contest-button-prev",
@@ -18,10 +18,8 @@ const contestSlider = () => {
   });
 };
 
-contestSlider(); // 필요없음
-
 const listEl = document.querySelector(".contest-swiper>ul"); // .contest-list-wrap으로 잡으셈
-contestArr.forEach(async item => {
+contestArr.forEach(item => {
   const li = document.createElement("li"); // div로 하고
   li.className = "swiper-slide"; // contest-grid로 하면 될꺼임
 
@@ -37,5 +35,6 @@ contestArr.forEach(async item => {
 
   li.appendChild(card);
   listEl.appendChild(li);
-  await contestSlider(); // 유리님은 필요없음
 });
+
+contestSlider(); // 유리님은 필요없음

@@ -81,7 +81,7 @@
   border-top: 2px solid var(--color-background);
   padding: 1rem 0 1rem 0;
 }
-.basic-info-wrap .type form > input {
+.basic-info-wrap .type input {
   width: 2rem;
 }
 .basic-info-wrap .type-detail {

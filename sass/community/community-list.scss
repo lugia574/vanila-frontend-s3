@@ -1,7 +1,7 @@
 @use "../../assets/fonts/font";
 @use "../common/variables";
 
-body {
+body{
   background: white;
 }
 
@@ -98,26 +98,23 @@ body {
     gap: 1rem;
     padding: 1rem;
     li {
-      a {
+      button {
         font: var(--font-bold);
         font-size: var(--font-large-size);
-        .card-icon {
+        .card-icon, .list-icon{
+          background: white;
           display: block;
           background-position: center;
           background-repeat: no-repeat;
-          background-image: url(../../assets/icons/iconmonstr-layout-table-lined.svg);
           width: 1.5rem;
           height: 1.5rem;
-          cursor: pointer;
+        }
+
+        .card-icon {
+          background-image: url(../../assets/icons/iconmonstr-layout-table-lined.svg);
         }
         .list-icon {
-          display: block;
-          background-position: center;
-          background-repeat: no-repeat;
           background-image: url(../../assets/icons/iconmonstr-list-lined.svg);
-          width: 1.5rem;
-          height: 1.5rem;
-          cursor: pointer;
         }
       }
     }
@@ -130,10 +127,10 @@ body {
   max-width: 1400px;
   margin: 0 auto;
 }
-.content-link {
+.content-link{
   cursor: pointer;
 
-  .content-wrap {
+    .content-wrap {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -149,8 +146,7 @@ body {
       display: flex;
       padding: 1rem 1rem 0 1rem;
 
-      .left-group,
-      .right-group {
+      .left-group,.right-group {
         display: flex;
         gap: 0.5rem;
       }
@@ -164,8 +160,8 @@ body {
           font-size: var(--font-large-size);
           text-align: center;
 
-          white-space: nowrap;
-          overflow: hidden;
+          white-space: nowrap; 
+          overflow: hidden; 
           text-overflow: ellipsis;
         }
         .field {
@@ -238,8 +234,7 @@ body {
       padding: 0 1rem 0.5rem 1rem;
       font-size: var(--font-small-size);
 
-      .left-group,
-      .right-group {
+      .left-group, .right-group {
         display: flex;
         gap: 1.25rem;
 
@@ -248,7 +243,7 @@ body {
         }
       }
 
-      .left-group {
+      .left-group{
         width: 50%;
       }
       .right-group {
@@ -291,7 +286,9 @@ body {
       }
     }
   }
+
 }
+
 
 // page section
 .page-num {
@@ -355,9 +352,8 @@ body {
   flex-direction: column;
   gap: 0.5rem; /* 버튼 간 간격 */
   z-index: 1000;
-
-  .write-btn,
-  .top-btn {
+  
+  .write-btn,.top-btn {
     width: 4rem;
     height: 4rem;
 
@@ -371,14 +367,11 @@ body {
     cursor: pointer;
   }
   .write-btn {
-    // bottom: 7vw;
-    // right: 2vw;
     background-color: var(--color-orange);
     background-image: url(../../assets/icons/iconizer-iconmonstr-pencil-lined.svg);
+   
   }
   .top-btn {
-    // bottom: 2vw;
-    // right: 2vw;
     background-color: white;
     background-image: url(../../assets/icons/iconmonstr-arrow-66-240.png);
   }
@@ -409,10 +402,165 @@ body {
 }
 
 // 색 변경
-.point {
+.point{
   color: var(--color-orange);
 }
 
+// 카드형
+.card-view {
+  width: 100%;
+  max-width: 1400px; 
+  margin: 0 auto;
+  display: grid;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.card-content-link{
+    display: block;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 0.5px solid var(--color-background);
+    background-color: white;
+    padding: 1rem 1rem 1rem 1rem;
+  
+  .content-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .content-header {
+      display: flex;
+      flex-wrap: wrap;
+
+      .field {
+        font-size: var(--font-small-size);
+        border: none;
+        border-radius: var(--border-radius);
+        text-align: center;
+        background-color: var(--default-border);
+        color: var(--color-background);
+        padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+        margin-right: 0.5rem;
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+      }
+      .type {
+        display: flex;
+        justify-content: flex-end;
+        font-size: var(--font-small-size);
+        border: none;
+        border-radius: var(--border-radius);
+        background-color: var(--color-background);
+        color: var(--default-border);
+        text-align: center;
+        padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+        margin-right: 0.2rem;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .d-day {
+        font-size: var(--font-small-size);
+        border: none;
+        border-radius: var(--border-radius);
+        background-color: var(--color-orange);
+        color: var(--color-background);
+        padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .content-title {
+      .title {
+        width: 100%;
+        font-size: var(--font-middle-size);
+        font-weight: var(--font-bold);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .content-summary {
+      p {
+        font-size: var(--font-small-size);
+        color: var(--font-basic-color);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .content-footer {
+      width: 100%;
+      display: flex;
+      border-top: 1px solid var(--default-border);
+      padding-top: 0.5rem;
+
+      .left-group,
+      .right-group {
+        display: flex;
+        flex-wrap: wrap;
+
+        width: 50%;
+        font-size: var(--font-small-size);
+      }
+
+      .left-group{
+        .writer{
+          width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .right-group {
+        display: flex;
+        justify-content: right;
+        gap: 0.5rem;
+      }
+
+      .comment {
+        display: flex;
+        justify-content: right;
+        gap: 5px;
+        i {
+          display: block;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-image: url(../../assets/icons/iconmonstr-speech-bubble-comment-thin.svg);
+          width: 1rem;
+          height: 1rem;
+        }
+      }
+
+      .scrap {
+        display: flex;
+        gap: 5px;
+        i {
+          display: block;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-image: url(../../assets/icons/iconmonstr-heart-lined.svg);
+          width: 1rem;
+          height: 1rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+/////////////////////////////////
 // 모바일
 @media screen and (max-width: 768px) {
   // filter-section
@@ -464,7 +612,7 @@ body {
       flex-wrap: wrap;
 
       li {
-        a {
+        button {
           .card-icon,
           .list-icon {
             display: none;
@@ -507,11 +655,11 @@ body {
         width: 100%;
       }
 
-      .left-group,
-      .right-group {
+      .left-group, .right-group {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 0.6rem;
+
       }
     }
   }

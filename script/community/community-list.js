@@ -5,7 +5,7 @@ const searchConditions = document.querySelector(".search-conditions");
 // 필터 초기화
 const filterReset = document.querySelector(".filter-reset");
 // 글작성 버튼
-const postWriteBtn = document.querySelector(".write-btn");
+const writeBtn = document.querySelector(".write-btn");
 // 위로 가기 버튼
 const topBtn = document.querySelector(".top-btn");
 // 스크랩
@@ -114,8 +114,8 @@ divisionTypes.forEach(type => {
 
 
 // 글쓰기 페이지 이동
-postWriteBtn.addEventListener("click", () => {
-  location.href = "./postWrite.html";
+writeBtn.addEventListener("click", () => {
+  location.href = "./community-write.html";
 });
 
 // 위로가기

@@ -43,6 +43,7 @@ class CommunityList extends HTMLElement {
 
     this.shadow.innerHTML = ""; // 기존 내용 제거
     //
+
     try {
       const commRes = await fetch("../../css/common.css");
       const commCss = await commRes.text();
@@ -53,11 +54,9 @@ class CommunityList extends HTMLElement {
       const style = document.createElement("style");
       style.textContent = `${commCss}\n${CommunityListCss}`;
 
-      const communityList = document.createElement("div");
-      communityList.className = "content-wrap";
+      const communityList = document.createElement("a");
+      communityList.className = "content-link";
       communityList.innerHTML = `
-
-      <a class="content-link">
         <div class="content-wrap">
           <div class="content-header">
               <div class="left-group">
@@ -91,9 +90,9 @@ class CommunityList extends HTMLElement {
                   </div>
               </div>
           </div>
-        </div>
-      </a>  
+        </div>  
       `;
+
       this.shadow.appendChild(style);
       this.shadow.appendChild(communityList);
     } catch (error) {

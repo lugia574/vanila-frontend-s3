@@ -67,20 +67,19 @@
                         <li><a href="#">스터디</a></li>
                     </ul>
                     <ul class="view-type">
-                        <li><a href="#"><i class="card-icon"></i></a></li>
-                        <li><a href="#"><i class="list-icon"></i></a></li>
+                        <li><button id="card-btn"><i class="card-icon"></i></button></li>
+                        <li><button id="list-btn"><i class="list-icon"></i></button></li>
                     </ul>
                 </div>
             </section>
 
             <!-- content -->
             <section class="content-section">
-                <div class="content-list">
+                <div id="contnet-view" class="content-list">
                     <!-- 동적 생성 -->
                 </div>                    
             </section>
             
-
             <!-- 페이징 -->
             <section class="page-section">
                 <nav class="page-num">
@@ -91,8 +90,8 @@
             </section>
             
             <div class="btn-wrap">
-                <input type="button" class="write-btn">
-                <input type="button" class="top-btn">
+                <a class="write-btn"></a>
+                <a class="top-btn"></a>
             </div>
 
         </div>    

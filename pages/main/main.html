@@ -416,49 +416,7 @@
                   </div>
                 </div>
               </div>
-
-              <ul class="swiper-wrapper">
-                <li class="swiper-slide">
-                  <license-card
-                    licenseTag1="역사"
-                    day="90"
-                    licenseName="한국사 능력검정"
-                    licenseSummary="한국사검정능력시험은 한국사에 대한 학습능력을 평가할 수 있는 지표..."
-                  ></license-card>
-                </li>
-                <li class="swiper-slide">
-                  <license-card
-                    licenseTag1="역사"
-                    day="90"
-                    licenseName="한국사 능력검정"
-                    licenseSummary="한국사검정능력시험은 한국사에 대한 학습능력을 평가할 수 있는 지표..."
-                  ></license-card>
-                </li>
-                <li class="swiper-slide">
-                  <license-card
-                    licenseTag1="역사"
-                    day="90"
-                    licenseName="한국사 능력검정"
-                    licenseSummary="한국사검정능력시험은 한국사에 대한 학습능력을 평가할 수 있는 지표..."
-                  ></license-card>
-                </li>
-                <li class="swiper-slide">
-                  <license-card
-                    licenseTag1="역사"
-                    day="90"
-                    licenseName="한국사 능력검정"
-                    licenseSummary="한국사검정능력시험은 한국사에 대한 학습능력을 평가할 수 있는 지표..."
-                  ></license-card>
-                </li>
-                <li class="swiper-slide">
-                  <license-card
-                    licenseTag1="역사"
-                    day="90"
-                    licenseName="한국사 능력검정"
-                    licenseSummary="한국사검정능력시험은 한국사에 대한 학습능력을 평가할 수 있는 지표..."
-                  ></license-card>
-                </li>
-              </ul>
+              <ul class="swiper-wrapper"></ul>
             </div>
           </section>
           <hr />
@@ -499,14 +457,19 @@
     <jean-footer></jean-footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module" src="../../script/common/calculate-dday.js"></script>
     <script src="../../script/main/banner-slider.js"></script>
     <script src="../../script/main/total-search.js"></script>
     <script src="../../script/components/header.js"></script>
     <script src="../../script/components/contest.js"></script>
-    <script type="module" src="/script/data/contest-text.js"></script>
-    <script type="module" src="../../script/main/contest-render.js"></script>
-    <script src="../../script/components/license-card.js"></script>
-    <script src="../../script/main/license-slider.js"></script>
+
+    <script type="module" src="/script/text/contest-text.js"></script>
+    <script type="module" src="/script/main/contest-render.js"></script>
+    <!-- 자격증 데이터 -->
+    <script type="module" src="/script/data/license-text.js"></script>
+    <script type="module" src="/script/components/license-card.js"></script>
+    <script type="module" src="/script/main/license-slider.js"></script>
+    <script type="module" src="/script/license/license-slider-render.js"></script>
     <script src="../../script/components/community-list.js"></script>
     <script src="../../script/components/Footer.js"></script>
     <script>

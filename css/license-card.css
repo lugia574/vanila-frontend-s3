@@ -1,4 +1,4 @@
-.license-wrap {
+.license-card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,38 +8,52 @@
   border: 1px solid gray;
   box-shadow: 2px 6px 4px 0px rgba(0, 0, 0, 0.25);
 }
-.license-wrap .license-top {
+.license-card .license-top {
   display: flex;
   width: 100%;
   height: 100%;
   justify-content: space-between;
   align-items: center;
 }
-.license-wrap .license-top .lincensc-top-left,
-.license-wrap .license-top .lincensc-top-right {
+.license-card .license-top .lincensc-top-left,
+.license-card .license-top .lincensc-top-right {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
-.license-wrap .license-top .tag-box,
-.license-wrap .license-top .d-day-box {
+.license-card .license-top .tag-box,
+.license-card .license-top .d-day-box {
   top: 0;
   border-radius: 8px;
   padding: 0.25rem 0.5rem;
   font-size: 16px;
 }
-.license-wrap .license-top .tag-box {
+.license-card .license-top .tag-box {
   background: var(--font-basic-color);
   color: var(--color-background);
 }
-.license-wrap .license-top .d-day-box {
+.license-card .license-top .d-day-box {
   right: 0;
   color: var(--color-background);
   background: var(--color-orange);
 }
-.license-wrap .license-bottom .license-title > h3 {
+.license-card .license-bottom {
+  width: 100%;
+  height: 7rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.license-card .license-bottom .license-title > h3 {
   font-weight: 700;
   font-size: 1.25rem;
   padding: 1rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+.license-card .license-bottom .license-summary {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

@@ -4,7 +4,7 @@ const contestSlider = () => {
   new Swiper(".contest-swiper", {
     spaceBetween: 30,
     speed: 500,
-    loop: false,
+    loop: true,
     navigation: {
       nextEl: ".contest-button-next",
       prevEl: ".contest-button-prev",
@@ -17,8 +17,6 @@ const contestSlider = () => {
     },
   });
 };
-
-contestSlider(); // 필요없음
 
 const listEl = document.querySelector(".contest-swiper>ul"); // .contest-list-wrap으로 잡으셈
 contestArr.forEach(item => {
@@ -37,5 +35,6 @@ contestArr.forEach(item => {
 
   li.appendChild(card);
   listEl.appendChild(li);
-  contestSlider(); // 유리님은 필요없음
 });
+
+contestSlider(); // 유리님은 필요없음

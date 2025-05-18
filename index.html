@@ -4,6 +4,518 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
-  <body></body>
+  <body>
+    <jean-header></jean-header>
+
+    <main class="main">
+      <div class="main-wrap">
+        <!-- 메인 배너 -->
+        <div class="main-banner">
+          <h2 class="blind">main slider</h2>
+          <div class="swiper image-slider">
+            <ul class="swiper-wrapper image-slide-list">
+              <li class="swiper-slide image-slide main-img">
+                <div></div>
+                <img src="../../public/images/main/main-logo.png" alt="메인페이지 로고" />
+              </li>
+              <li class="swiper-slide image-slide first-img">
+                <div></div>
+                <img src="../../public/images/main/main-logo1.png" alt="데이터 분석 활용 공모전" />
+              </li>
+              <li class="swiper-slide image-slide second-img">
+                <div></div>
+                <img src="../../public/images/main/main-logo2.jpg" alt="메인배너2" />
+              </li>
+              <li class="swiper-slide image-slide thrid-img">
+                <div></div>
+                <img src="../../public/images/main/main-logo-4.png" alt="메인배너4" />
+              </li>
+            </ul>
+          </div>
+          <div class="swiper text-slider">
+            <ul class="swiper-wrapper text-slide-list">
+              <li class="swiper-slide text-slide dark-script">
+                <a href="/pages/main/main.html">
+                  <div class="box-inner">
+                    <p class="duration">2025-05-21 ~</p>
+                    <p class="main-script">
+                      청년들을 위한 <br />통합 페이지 <br />
+                      청바지
+                    </p>
+                    <p class="summary-script">안녕하세요 반가워요</p>
+                  </div>
+                </a>
+              </li>
+              <li class="swiper-slide text-slide">
+                <a href="/pages/contest/contest-detail.html?id=3">
+                  <div class="box-inner">
+                    <p class="duration">4.12 ~ 6.01</p>
+                    <p class="main-script">
+                      제7회 서울교육<br />
+                      데이터 분석·활용 <br />
+                      아이디어 공모전
+                    </p>
+                    <p class="summary-script">
+                      서울특별시교육청에서는 서울교육 데이터 분석·활용 아이디어 발굴을 통해
+                      공공데이터 활용을 촉진하고, 시민 누구나 교육정책에 참여하는 기회 제공을 통한
+                      수요자 중심의 정책 구현을 위하여 다음과 같이 공모전을 개최하니 서울교육에 관심
+                      있는 분들의 많은 참여를 바랍니다.
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li class="swiper-slide text-slide">
+                <a href="/pages/contest/contest-detail.html?id=1">
+                  <div class="box-inner">
+                    <p class="duration">04.28 ~ 8.29</p>
+                    <p class="main-script">제 6회 부울경 ICT <br />아이디어 경진대회</p>
+                    <p class="summary-script">
+                      ICT에 관심을 가지고 있는 전국의 개인 또는 팀으로 공모 상세 별 조건 상이
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li class="swiper-slide text-slide">
+                <a href="/pages/contest/contest-detail.html?id=4">
+                  <div class="box-inner">
+                    <p class="duration">5.12 ~ 5.20</p>
+                    <p class="main-script">
+                      [WASHZ 캐릭터 활용 공모전] <br />
+                      Hello WASHZ
+                    </p>
+                    <p class="summary-script">
+                      WASHZ 캐릭터를 활용한 디자인 굿즈(상품)제품 3개 이상 (견본 3D렌더링 등 목업
+                      이미지)
+                    </p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-progressbar"></div>
+          </div>
+        </div>
+
+        <!-- 메인페이지 컨텐츠 -->
+        <div class="main-contents wrap">
+          <!-- 통합검색 -->
+          <div class="total-search-wrap">
+            <div class="total-search-box">
+              <div class="title">
+                <strong>맞춤형 공모전</strong>
+              </div>
+              <form class="total-search-form" method="get">
+                <input type="hidden" name="key" />
+                <input type="hidden" id="sc_searchSe" name="sc_searchSe" />
+                <div class="select-box box">
+                  <a href="#" class="select-btn" aria-expanded="false">
+                    <em>분야</em>
+                    <span class="btn-arrow"></span>
+                  </a>
+                  <ul class="select-list">
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="category"
+                        id="allBtn"
+                        class="chk-st1"
+                        value="allBtn"
+                      />
+                      <label for="allBtn" class="chk-st1">전체</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="category"
+                        id="poster"
+                        class="chk-st1"
+                        value="poster"
+                      />
+                      <label for="poster" class="chk-st1">포스터/웹툰/컨텐츠</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="category"
+                        id="picture"
+                        class="chk-st1"
+                        value="picture"
+                      />
+                      <label for="picture" class="chk-st1">사진/영상</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="category"
+                        id="idea"
+                        class="chk-st1"
+                        value="idea"
+                      /><label for="idea" class="chk-st1" value="idea">아이디어/기획</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="category"
+                        id="it"
+                        class="chk-st1"
+                        value="it"
+                      /><label for="it" class="chk-st1">IT/학술/논문</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="category"
+                        id="naming"
+                        class="chk-st1"
+                        value="naming"
+                      /><label for="naming" class="chk-st1">네이밍/슬로건</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="category"
+                        id="essay"
+                        class="chk-st1"
+                        value="essay"
+                      /><label for="essay" class="chk-st1">에세이/수필/문학</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="category"
+                        id="sport"
+                        class="chk-st1"
+                        value="sport"
+                      /><label for="sport" class="chk-st1">스포츠/음악</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="category"
+                        id="art"
+                        class="chk-st1"
+                        value="art"
+                      /><label for="art" class="chk-st1">미술/디자인/건축</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="check-box box">
+                  <a href="#" class="select-btn">
+                    <em>연령대</em>
+                    <span class="btn-arrow"></span>
+                  </a>
+                  <ul class="select-list">
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="age"
+                        id="university"
+                        class="chk-st1"
+                        value="university"
+                      /><label for="university" class="chk-st1">대학생</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="age"
+                        id="general"
+                        class="chk-st1"
+                        value="general"
+                      /><label for="general" class="chk-st1">일반인</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="check-box box age">
+                  <a href="#" class="select-btn">
+                    <em>시상규모</em>
+                    <span class="btn-arrow"></span>
+                  </a>
+                  <ul class="select-list">
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="prize"
+                        id="prize1"
+                        class="chk-st1"
+                        value="prize1"
+                      /><label for="prize1" class="chk-st1">1천만원 ~ 3천만원</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="prize"
+                        id="prize2"
+                        class="chk-st1"
+                        value="prize2"
+                      /><label for="prize2" class="chk-st1">3천만원 ~ 5천만원</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="prize"
+                        id="prize3"
+                        class="chk-st1"
+                        value="prize3"
+                      /><label for="prize3" class="chk-st1">5천만원 이상</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="seach-bar">
+                  <input type="text" />
+                </div>
+                <button class="search-btn" type="submit">검색</button>
+              </form>
+            </div>
+          </div>
+          <!-- 공모전 -->
+          <section class="contest-section section" data-aos="fade-up">
+            <div class="swiper section-container contest-swiper">
+              <div class="section-top">
+                <h2>
+                  <a href="#"> 이 공모전 어때요?</a>
+                </h2>
+                <div class="contest-nav">
+                  <div class="contest-button-prev nav-btn">
+                    <img src="../../assets/icons/arrowIcon.svg" alt="화살표" />
+                  </div>
+                  <div class="contest-button-next nav-btn">
+                    <img src="../../assets/icons/arrowIcon.svg" alt="화살표" />
+                  </div>
+                </div>
+              </div>
+              <!-- 공모전 list ul -->
+              <ul class="swiper-wrapper"></ul>
+            </div>
+          </section>
+          <hr />
+          <!-- 청년정책 -->
+          <section class="policy-section section">
+            <div class="section-container">
+              <div class="section-top">
+                <h2>
+                  <a href="/pages/policy/policy-list.html">지금 지원 할 수 있는 정책!</a>
+                </h2>
+                <a href="/pages/policy/policy-list.html">바로가기</a>
+              </div>
+
+              <ul class="policy-list">
+                <li class="policy-item" data-aos="flip-left">
+                  <a
+                    href="https://youth.seoul.go.kr/infoData/sprtInfo/view.do?key=2309130006&sprtInfoId=57644"
+                    class="policy-link"
+                  >
+                    <img
+                      src="/public/images/policy/policy-4.png"
+                      alt="서울시 <2025년 서울청년정책네트워크 위원> 참여 안내"
+                    />
+                    <div class="desc">
+                      <div class="desc-top">
+                        <div class="policy-loc">서울시</div>
+                        <div class="policy-title">
+                          서울시 <2025년 서울청년정책네트워크 위원> 참여 안내
+                        </div>
+                      </div>
+                      <div class="policy-summary">
+                        <p>모집대상 : 서울시 거주 및 생활권으로 하는 만 19~39세 청년</p>
+                        <p>
+                          활동내용 : 분과 토론 과정을 통한 정책제안, 예산(청년자율예산) 심의 활동
+                        </p>
+                        <p>지원내용 : 활동증명서 및 서울청년정책네트워크 위원 ID 카드 발급</p>
+                        <p>모집기간 : 2024.12.16 ~ 2025.1.12</p>
+                        <p>신청방법 : 온라인 신청</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="policy-item" data-aos="flip-left">
+                  <a
+                    href="https://news.seoul.go.kr/gov/archives/567007?listPage=1"
+                    class="policy-link"
+                  >
+                    <img
+                      src="/public/images/policy/policy-3.png"
+                      alt="2025년 서울시 청년해외봉사단 3기 단원 모집"
+                    />
+                    <div class="desc">
+                      <div class="desc-top">
+                        <div class="policy-loc">서울시</div>
+                        <div class="policy-title">2025년 서울시 청년해외봉사단 3기 단원 모집</div>
+                      </div>
+                      <div class="policy-summary">
+                        <p>모집대상 : 서울시 거주 만 19세~39세 청년 130명</p>
+                        <p>활동내용 : 파견지역 내 환경개선중심 노력봉사 수행</p>
+                        <p>
+                          지원내용 : 왕복항공권, 체재비(주거비, 생활비), 예방접종 및 의료보안 지원
+                          서비스 등 *자기부담금 없음
+                        </p>
+                        <p>모집기간 : 2025. 5. 1 ~ 2025. 5. 20</p>
+                        <p>신청방법 : 온라인 신청</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="policy-item" data-aos="flip-left">
+                  <a href="https://hope.welfareinfo.or.kr/ntcn/prmtDetail.do" class="policy-link">
+                    <img src="/public/images/policy/policy-2.png" alt="서울 동아리 정책" />
+                    <div class="desc">
+                      <div class="desc-top">
+                        <div class="policy-loc">보건복지부</div>
+                        <div class="policy-title">청년내일저축계좌 신규 모집</div>
+                      </div>
+                      <div class="policy-summary">
+                        <p>모집대상 : 만 19 ~ 34세 이하 청년</p>
+                        <p>활동내용 : 저소득층 청년들의 안정자산 형성 지원</p>
+                        <p>지원내용 : 월 10만씩 (정액지원)</p>
+                        <p>모집기간 : 2025. 5. 2 ~ 5. 21</p>
+                        <p>신청방법 : 온라인, 행정복지센터 오프라인 지원</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="policy-item" data-aos="flip-left">
+                  <a href="https://news.seoul.go.kr/gov/archives/566450" class="policy-link">
+                    <img src="/public/images/policy/policy-1.png" alt="서울 동아리 정책" />
+                    <div class="desc">
+                      <div class="desc-top">
+                        <div class="policy-loc">서울시</div>
+                        <div class="policy-title">서울 동아리ON</div>
+                      </div>
+                      <div class="policy-summary">
+                        <p>모집대상 : 서울 소재 대학 소속 동아리</p>
+                        <p>활동내용 : 서울 시정가치와 연계된 사회 기여 활동</p>
+                        <p>지원내용 : 동아리 활동비 최대 200만원</p>
+                        <p>모집기간 : 2025. 3. 12. ~ 4. 25</p>
+                        <p>신청방법 : 이메일 접수</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <hr />
+          <!-- 자격증 -->
+          <section class="license-section section">
+            <div class="section-container license-swiper">
+              <div class="section-top">
+                <h2>
+                  <a href="#">자격증</a>
+                </h2>
+                <div class="contest-nav">
+                  <div class="license-button-prev nav-btn">
+                    <img src="../../assets/icons/arrowIcon.svg" alt="화살표" />
+                  </div>
+                  <div class="license-button-next nav-btn">
+                    <img src="../../assets/icons/arrowIcon.svg" alt="화살표" />
+                  </div>
+                </div>
+              </div>
+
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                  <license-card
+                    licenseTag1="역사"
+                    day="90"
+                    licenseName="한국사 능력검정"
+                    licenseSummary="한국사검정능력시험은 한국사에 대한 학습능력을 평가할 수 있는 지표..."
+                  ></license-card>
+                </li>
+                <li class="swiper-slide">
+                  <license-card
+                    licenseTag1="역사"
+                    day="90"
+                    licenseName="한국사 능력검정"
+                    licenseSummary="한국사검정능력시험은 한국사에 대한 학습능력을 평가할 수 있는 지표..."
+                  ></license-card>
+                </li>
+                <li class="swiper-slide">
+                  <license-card
+                    licenseTag1="역사"
+                    day="90"
+                    licenseName="한국사 능력검정"
+                    licenseSummary="한국사검정능력시험은 한국사에 대한 학습능력을 평가할 수 있는 지표..."
+                  ></license-card>
+                </li>
+                <li class="swiper-slide">
+                  <license-card
+                    licenseTag1="역사"
+                    day="90"
+                    licenseName="한국사 능력검정"
+                    licenseSummary="한국사검정능력시험은 한국사에 대한 학습능력을 평가할 수 있는 지표..."
+                  ></license-card>
+                </li>
+                <li class="swiper-slide">
+                  <license-card
+                    licenseTag1="역사"
+                    day="90"
+                    licenseName="한국사 능력검정"
+                    licenseSummary="한국사검정능력시험은 한국사에 대한 학습능력을 평가할 수 있는 지표..."
+                  ></license-card>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <hr />
+          <!-- 커뮤니티 -->
+          <section class="community-section section" data-aos="fade-up">
+            <div class="section-container">
+              <div class="section-top">
+                <h2>인기글</h2>
+              </div>
+              <ul class="community-list">
+                <li>
+                  <community-list></community-list>
+                </li>
+                <li>
+                  <community-list></community-list>
+                </li>
+                <li>
+                  <community-list></community-list>
+                </li>
+                <li>
+                  <community-list></community-list>
+                </li>
+                <li>
+                  <community-list></community-list>
+                </li>
+                <li>
+                  <community-list></community-list>
+                </li>
+                <li>
+                  <community-list></community-list>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <jean-footer></jean-footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../../script/main/banner-slider.js"></script>
+    <script src="../../script/main/total-search.js"></script>
+    <script src="../../script/components/header.js"></script>
+    <script src="../../script/components/contest.js"></script>
+    <script type="module" src="/script/text/contest-text.js"></script>
+    <script type="module" src="../../script/main/contest-render.js"></script>
+    <script src="../../script/components/license-card.js"></script>
+    <script src="../../script/main/license-slider.js"></script>
+    <script src="../../script/components/community-list.js"></script>
+    <script src="../../script/components/Footer.js"></script>
+    <script>
+      window.addEventListener("load", () => {
+        AOS.init({
+          once: false,
+          duration: 800,
+        });
+      });
+    </script>
+  </body>
 </html>

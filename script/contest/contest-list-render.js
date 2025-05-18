@@ -1,4 +1,4 @@
-import { contestArr } from "../text/contest-text.js";
+import { contestArr } from "../data/contest-text.js";
 
 const contestGrid = document.querySelector(".contest-grid"); // .contest-list-wrap으로 잡으셈
 contestArr.forEach(item => {

@@ -1,4 +1,4 @@
-import { contestArr } from "../text/contest-text.js";
+import { contestArr } from "../data/contest-text.js";
 
 const postId = parseInt(new URLSearchParams(location.search).get("id"));
 
@@ -49,4 +49,4 @@ infoField.innerHTML = `
 `;
 
 // 6. 상세내용
-contents.textContent = contest.contents;
+contents.innerHTML = contest.contents;

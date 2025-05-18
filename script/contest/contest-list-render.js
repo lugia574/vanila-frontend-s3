@@ -3,7 +3,9 @@ import { contestArr } from "../text/contest-text.js";
 const contestGrid = document.querySelector(".contest-grid"); // .contest-list-wrap으로 잡으셈
 contestArr.forEach(item => {
   const card = document.createElement("contest-card");
+  const src = `/pages/contest/contest-detail.html?id=${item.id}`;
   // JS
+  card.setAttribute("contestSrc", src);
   card.setAttribute("dday", item.day);
   card.setAttribute("contestImg", item.img);
   card.setAttribute("contestTitle", item.title);

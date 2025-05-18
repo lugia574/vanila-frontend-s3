@@ -5,7 +5,15 @@ class ContestCard extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ["day", "contestImg", "contestTitle", "contestOrg", "contestViews", "contestLikes"];
+    return [
+      "contestSrc",
+      "day",
+      "contestImg",
+      "contestTitle",
+      "contestOrg",
+      "contestViews",
+      "contestLikes",
+    ];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -19,6 +27,7 @@ class ContestCard extends HTMLElement {
   }
 
   async render() {
+    const contestSrc = this.getAttribute("contestSrc");
     const day = this.getAttribute("dday");
     const contestImg = this.getAttribute("contestImg");
     const contestTitle = this.getAttribute("contestTitle");
@@ -48,6 +57,7 @@ class ContestCard extends HTMLElement {
       const wrapper = document.createElement("div");
       wrapper.className = "contest-item";
       wrapper.innerHTML = `
+        <a href=${contestSrc}>
         <div class="contest-item-image">
             <div class="dday-wrap">D-${day}</div>
             <img src="${contestImg}" alt="${contestTitle} 이미지" />
@@ -62,6 +72,7 @@ class ContestCard extends HTMLElement {
             <div>찜 ${contestLikes}</div>
             </div>
         </div>
+        </a>
         `;
 
       this.shadow.appendChild(style);

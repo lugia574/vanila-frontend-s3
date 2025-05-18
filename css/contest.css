@@ -56,16 +56,17 @@
 /* main */
 .contest-wrap {
   height: 1800px;
+  margin-top: 5rem;
   /* background-color: #ffdada; */
 }
 
 .contest-content-wrap {
-  margin: 5rem auto 0;
+  margin: 0 auto;
   /* margin-top: 100px; */
   /* border-color: #0044ff; */
 }
 .contest-content-wrap .title {
-  padding: 30px;
+  padding: 2rem 0;
 }
 .contest-content-wrap .divider {
   margin: 0 20px 0 20px;
@@ -75,12 +76,12 @@
 }
 
 .contest-filter-wrap {
-  padding: 10px;
+  padding: 0.625rem 0;
   /* background-color: #ffb700; */
 }
 
 .filter-list-wrap {
-  padding: 10px;
+  padding: 0.625rem 0;
   display: flex;
   align-items: center;
   /* background-color: #ff7575; */
@@ -90,7 +91,7 @@
   display: inline-block;
   text-align: left;
   min-width: 100px;
-  padding: 10px;
+  padding: 0.625rem 0;
   font-weight: 700;
   /* background-color: #9679b3; */
 }
@@ -121,7 +122,7 @@
 
 .search-drop-wrap {
   display: flex;
-  padding: 30px;
+  padding: 1.5rem 0;
   /* background-color: #fdffca; */
   justify-content: space-between;
 }
@@ -160,7 +161,7 @@ select {
 
 .img_banner {
   display: flex;
-  padding: 20px;
+  padding: 1rem 0;
   /* background-color: #c7ffee; */
   justify-content: center;
 }
@@ -171,7 +172,7 @@ select {
 /* contest item */
 .contest-list-wrap {
   margin: 0 auto;
-  padding: 10px;
+  padding: 2rem 0;
   /* background-color: #deedff; */
 }
 

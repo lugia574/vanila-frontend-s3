@@ -1,10 +1,13 @@
-import { contestArr } from "../data/contest-text.js";
+// import { contestArr } from "../data/contest-text.js";
 import { contestRender } from "../contest/contest-list-render.js";
 
-const contestPaging = () => {
+const contestPaging = async () => {
   // 버튼을 click 이벤트를 주고
   const btns = document.querySelectorAll(".page-btn");
   const grigContents = document.querySelector(".contest-grid");
+  const jsonData = await fetch("/script/data/contest-data.json");
+  const contents = await jsonData.json();
+  // console.log(contents[0].접수기간.slice(11));
 
   btns.forEach(item => {
     const btn = item.querySelector("button");
@@ -19,7 +22,7 @@ const contestPaging = () => {
 
       const startNum = (currentPage - 1) * itemsPerPage;
       const endNum = startNum + itemsPerPage;
-      const pagingArr = contestArr.slice(startNum, endNum);
+      const pagingArr = contents.slice(startNum, endNum);
       // 렌더 함수
       contestRender(pagingArr);
     });

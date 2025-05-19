@@ -19,6 +19,22 @@ const contestDetail = async () => {
   const image = contestWrap.querySelector(".contest-image img");
   const infoField = contestWrap.querySelector(".activity-infomation-field");
   const contents = contestWrap.querySelector(".activity-contents");
+  const bookmarkBtn = document.querySelector(".contest-bookmark");
+  const bookmarkImg = document.querySelector(".contest-bookmark img");
+
+  let isBookmark = false;
+
+  // 북마크 버튼
+
+  bookmarkBtn.addEventListener("click", () => {
+    isBookmark = !isBookmark;
+
+    if (isBookmark) {
+      bookmarkImg.src = "/assets/icons/heart-red.svg";
+    } else {
+      bookmarkImg.src = "/assets/icons/iconmonstr-heart-lined.svg";
+    }
+  });
 
   const dday = document.createElement("strong");
   dday.textContent = `D-${contest.day}`;

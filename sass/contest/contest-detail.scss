@@ -89,7 +89,6 @@ main {
 }
 
 .activity-detail-wrap {
-  height: 1000px;
   padding: 1.5rem 0;
   font-weight: 700;
   // background-color: blueviolet;
@@ -109,7 +108,7 @@ main {
 }
 
 .team-wrap {
-  height: 300px;
+  min-height: 300px;
   // background-color: green;
 }
 

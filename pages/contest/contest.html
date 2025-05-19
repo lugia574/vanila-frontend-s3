@@ -113,20 +113,20 @@
           <nav class="page-num">
             <ul>
               <i class="left-arrow"></i>
-              <li>
-                <a href="#"><span>1</span></a>
+              <li class="page-btn">
+                <button><span>1</span></button>
               </li>
-              <li>
-                <a href="#"><span>2</span></a>
+              <li class="page-btn">
+                <button><span>2</span></button>
               </li>
-              <li>
-                <a href="#"><span>3</span></a>
+              <li class="page-btn">
+                <button><span>3</span></button>
               </li>
-              <li>
-                <a href="#"><span>4</span></a>
+              <li class="page-btn">
+                <button><span>4</span></button>
               </li>
-              <li>
-                <a href="#"><span>5</span></a>
+              <li class="page-btn">
+                <button><span>5</span></button>
               </li>
               <i class="right-arrow"></i>
             </ul>
@@ -141,8 +141,13 @@
     <script type="module" src="/script/data/contest-text.js"></script>
     <script type="module" src="/script/contest/contest-list-render.js"></script>
     <script src="/script/components/filter.js"></script>
+    <script type="module" src="/script/contest/contest-paging.js"></script>
     <!-- <script type="module" src="/script/contest/contest-slide.js"></script> -->
-    <script>
+    <script type="module">
+      import { contestArr } from "/script/data/contest-text.js";
+      import { contestRender } from "/script/contest/contest-list-render.js";
+
+      contestRender(contestArr);
       var swiper = new Swiper(".img_banner", {});
     </script>
     <script src="/script/components/Footer.js"></script>

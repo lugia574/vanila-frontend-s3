@@ -3,7 +3,7 @@
 
 /* main */
 .contest-wrap {
-  height: 1800px;
+  // height: 1800px;
   margin-top: 5rem;
   /* background-color: #ffdada; */
 }
@@ -92,12 +92,13 @@
 select {
   width: 100px;
   max-width: 25rem;
-  height: 2rem;
+  height: 3rem;
   line-height: 2rem;
-  padding-left: 5px;
+  padding: 0.5rem;
   // color: #535353;
   border: 1px solid #c8c7c7;
   border-radius: 8px;
+  font-size: 1rem;
 }
 
 .search-wrap {

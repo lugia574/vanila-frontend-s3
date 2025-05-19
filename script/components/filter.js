@@ -7,9 +7,6 @@ const filterReset = document.querySelector(".filter-reset");
 // 스크랩
 const scrapBtns = document.querySelectorAll(".scrap i");
 
-console.log(filterBtns);
-console.log(filterReset);
-
 // 필터 클릭시 이벤트(style)
 // TODO : 실제 적용 필요
 filterBtns.forEach(btn => {
@@ -61,7 +58,6 @@ filterBtns.forEach(btn => {
 
 // 초기화
 filterReset.addEventListener("click", () => {
-  console.log("ihih");
   while (searchConditions.children.length > 2) {
     searchConditions.removeChild(searchConditions.lastElementChild);
   }

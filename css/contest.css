@@ -55,18 +55,14 @@
 
 /* main */
 .contest-wrap {
-  height: 1800px;
-  margin-top: 5rem;
-  /* background-color: #ffdada; */
+  margin-top: 7rem;
 }
 
 .contest-content-wrap {
   margin: 0 auto;
-  /* margin-top: 100px; */
-  /* border-color: #0044ff; */
 }
 .contest-content-wrap .title {
-  padding: 2rem 0;
+  padding-bottom: 2rem;
 }
 .contest-content-wrap .divider {
   margin: 0 20px 0 20px;
@@ -78,13 +74,15 @@
 .contest-filter-wrap {
   padding: 0.625rem 0;
   font-size: large;
+  border-top: 1px solid var(--font-basic-color);
+  border-bottom: 1px solid var(--font-basic-color);
   /* background-color: #ffb700; */
 }
 
 .filter-list-wrap {
   padding: 0.625rem 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   /* background-color: #ff7575; */
 }
 
@@ -143,20 +141,22 @@
 select {
   width: 100px;
   max-width: 25rem;
-  height: 2rem;
+  height: 3rem;
   line-height: 2rem;
-  padding-left: 5px;
+  padding: 0.5rem;
   border: 1px solid #c8c7c7;
   border-radius: 8px;
+  font-size: 1rem;
 }
 
 .search-wrap {
   display: flex;
   gap: 1rem;
+  width: 100%;
 }
 
 .search-text {
-  width: 40rem;
+  width: 60%;
   height: 3rem;
   padding: 15px;
   border: 1px solid rgb(221, 221, 221);
@@ -171,6 +171,9 @@ select {
   padding: 0.5rem 1rem;
 }
 
+.img_banner {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 .img_banner img {
   width: 100%;
 }
@@ -205,18 +208,25 @@ select {
   display: flex;
   gap: 10px;
   margin: 0 auto;
-  flex-wrap: wrap;
+  align-items: center;
 }
 
 .page-num ul i,
 .page-num ul li {
   background-color: white;
-  width: 2rem;
-  height: 2rem;
-  border: 1px solid var(--color-background);
+  width: 1rem;
+  height: 1rem;
   text-align: center;
-  line-height: 2rem;
-  margin-bottom: 40px;
+  line-height: 1rem;
+}
+.page-num ul i span,
+.page-num ul li span {
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+.page-num ul i button,
+.page-num ul li button {
+  background-color: inherit;
 }
 
 .page-num ul .left-arrow {
@@ -232,4 +242,17 @@ select {
   display: block;
   background-image: url(../../assets/icons/iconmonstr-angel-right-thin.svg);
   align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .contest-wrap {
+    margin-top: 4rem;
+  }
+  .contest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .filter-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

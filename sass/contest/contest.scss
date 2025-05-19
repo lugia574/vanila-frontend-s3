@@ -50,13 +50,11 @@
 
 .filter-item,
 .search-filter-active {
-  padding: 0.5rem 0.5rem;
-  min-width: 100px;
+  padding: 0.25rem 0.5rem;
   height: auto;
   box-sizing: border-box;
   border-radius: var(--border-radius);
   font-size: 1rem;
-  align-items: start;
   background-color: #fff;
   color: #202020;
 }
@@ -74,7 +72,7 @@
 .active-filter-wrap ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 1rem;
   align-items: center;
 }
 

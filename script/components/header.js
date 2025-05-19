@@ -140,6 +140,7 @@ class JeanHeader extends HTMLElement {
         localStorage.removeItem("loginProvider");
         localStorage.removeItem("userType");
         this.loginHandler();
+        window.location.href = "/pages/main/main.html";
       });
     });
   }

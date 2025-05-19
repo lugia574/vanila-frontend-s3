@@ -14,7 +14,21 @@ export const communityArr =[
     title: "부울경 공모전 지역아이디어 부분 팀 모집",
     content:"부울경 ICT 아이디어 경진대회 - 지역 아이디어 부분 팀 모집합니다.",
     comment:20,
-    scrap:20
+    scrap:20,
+    startDate: "2025-05-20",
+    endDate: "2025-06-20",
+    recruitmentEndDate:"2025-05-19",
+    recruitmentAge : "대학생",
+    recruitmentDetail:[
+	    {
+        role : "프론트엔드",
+        count : 1
+        },
+	    {
+        role : "백엔드",
+        count : 1
+        }
+    ]
     },
     {
     id: 2,
@@ -28,7 +42,21 @@ export const communityArr =[
     title: "부울경 ICT",
     content:"부울경 ICT 아이디어 경진대회 - BM모델 전공 대학생 모집",
     comment:10,
-    scrap:3
+    scrap:3,
+    startDate: "2025-05-20",
+    endDate: "2025-06-20",
+    recruitmentEndDate:"2025-05-19",
+    recruitmentAge : "대학생",
+    recruitmentDetail:[
+	    {
+        role : "프론트엔드",
+        count : 2
+        },
+	    {
+        role : "백엔드",
+        count : 1
+        }
+    ]
     },
     {
     id: 3,
@@ -42,7 +70,21 @@ export const communityArr =[
     title: "신문부 모두 모여라",
     content:"대학언론 상금 500만원을 목표로하는 팀원 구인",
     comment:20,
-    scrap:12
+    scrap:12,
+    startDate: "2025-05-20",
+    endDate: "2025-06-20",
+    recruitmentEndDate:"2025-05-19",
+    recruitmentAge : "대학생",
+    recruitmentDetail:[
+	    {
+        role : "프론트엔드",
+        count : 1
+        },
+	    {
+        role : "백엔드",
+        count : 2
+        }
+    ]
     },
     {
     id: 4,
@@ -56,7 +98,21 @@ export const communityArr =[
     title: "서울 교육 데이터 분석, 활용",
     content:"일반 부문, 빅데이터 관련 처리 가능하신 분 모집합니다",
     comment:0,
-    scrap:0
+    scrap:0,
+    startDate: "2025-05-20",
+    endDate: "2025-06-20",
+    recruitmentEndDate:"2025-05-19",
+    recruitmentAge : "대학생",
+    recruitmentDetail:[
+	    {
+        role : "프론트엔드",
+        count : 1
+        },
+	    {
+        role : "백엔드",
+        count : 1
+        }
+    ]
     },
     {
     id: 5,
@@ -70,90 +126,20 @@ export const communityArr =[
     title: "교육 데이터 분석 공모전 - 학생 부문",
     content:"팀원 2명 모집합니다. 현재 2명 대기중",
     comment:1,
-    scrap:0
-    },
-    {
-    id: 6,
-    contestId:null,
-    field: "필터미적용이슈",
-    ageGroup: "제한없음", 
-    type:"스터디",
-    dDay:7,
-    writeDate:"2025-05-16",
-    writer:"체베베",
-    title: "매일 알고리즘 공부하실 분",
-    content:"매일 저녁 디코로 함께 알고리즘 스터디하실 분 구합니다",
-    comment:0,
-    scrap:0
-    },
-    {
-    id: 7,
-    contestId:1,
-    field: "필터미적용이슈",
-    ageGroup: "대학생", 
-    type:"스터디",
-    dDay:15,
-    writeDate:"2025-05-15",
-    writer:"짱이될거야야",
-    title: "대학만화최강자전 - 함께 작업하실분",
-    content:"작업 윗 미..!",
-    comment:0,
-    scrap:5
-    },
-    {
-    id: 8,
-    contestId:null,
-    field: "필터미적용이슈",
-    ageGroup: "제한없음", 
-    type:"스터디",
-    dDay:30,
-    writeDate:"2025-05-01",
-    writer:"영희와철수",
-    title: "NCS 스터디원 모집",
-    content:"스터디원 중 한분이 취직에 성공하여 추가 모집합니다 ^^",
-    comment:2,
-    scrap:5
-    },
-    {
-    id: 9,
-    contestId:null,
-    field: "필터미적용이슈",
-    ageGroup: "제한없음", 
-    type:"스터디",
-    dDay:20,
-    writeDate:"2025-05-02",
-    writer:"키키키키",
-    title: "면접 스터디",
-    content:"매주 강남역 부근에서 면접 스터디할 분 구합니다.",
-    comment:1,
-    scrap:0
-    },
-    {
-    id: 10,
-    contestId:null,
-    field: "필터미적용이슈",
-    ageGroup: "제한없음", 
-    type:"스터디",
-    dDay:7,
-    writeDate:"2025-05-05",
-    writer:"붙여주세요요",
-    title: "공무원 면접 스터디",
-    content:"함께 면접 준비하실 분 구합니다. 지역 : 경기도",
-    comment:1,
-    scrap:2
-    },
-    {
-    id: 11,
-    contestId:null,
-    field: "필터미적용이슈",
-    ageGroup: "제한없음", 
-    type:"스터디",
-    dDay:2,
-    writeDate:"2025-05-07",
-    writer:"베리입니다",
-    title: "공기업, 공공기관 스터디",
-    content:"대면 스터디원 구합니다다",
-    comment:1,
-    scrap:1
+    scrap:0,
+    startDate: "2025-05-20",
+    endDate: "2025-06-20",
+    recruitmentEndDate:"2025-05-19",
+    recruitmentAge : "대학생",
+    recruitmentDetail:[
+	    {
+        role : "프론트엔드",
+        count : 1
+        },
+	    {
+        role : "백엔드",
+        count : 1
+        }
+    ]
     }
 ]

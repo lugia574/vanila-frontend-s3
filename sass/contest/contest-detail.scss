@@ -7,73 +7,64 @@ main {
 }
 
 .contest-detail-wrap {
-  // width: 1100px;
   display: flex;
   margin: 0 auto;
-  // background-color: red;
-}
-
-.left-section {
-  // min-width: 970px;
-  // background-color: blue;
-}
-
-.activity-detail-content {
-  // height: 500px;
-  // background-color: skyblue;
 }
 
 .title-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // background-color: red;
+}
 
-  .title-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  .title-left > strong {
-    background-color: var(--color-orange);
-    color: white;
-    padding: 0 0.5rem;
-    border-radius: 10px;
-  }
+.title-wrap .title-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.title-wrap .title-left > strong {
+  background-color: var(--color-orange);
+  color: white;
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--border-radius);
 }
 
 .info-wrap {
   display: flex;
   padding: 1rem 0;
   gap: 1rem;
+}
 
-  .info-right-wrap {
-    width: 20%;
-  }
-  img {
-    width: 100%;
-    margin-top: 10px;
-    object-fit: contain;
-  }
+.info-wrap .info-right-wrap {
+  width: 20%;
+}
+
+.info-wrap img {
+  width: 100%;
+  margin-top: 10px;
+  object-fit: contain;
 }
 
 .info-left-wrap {
   padding: 20px;
-  h3 {
-    padding: 10px 0px;
-  }
+}
+
+.info-left-wrap h3 {
+  padding: 10px 0px;
 }
 
 .activity-infomation-field {
   justify-content: center;
-  dl {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    grid-template-rows: repeat(2, 1fr);
-  }
+}
+
+.activity-infomation-field dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .contest-apply-wrap {
@@ -96,17 +87,24 @@ main {
   align-items: center;
   background-color: rgb(88, 120, 195);
   border-radius: 10px;
-  a {
-    font-size: 1.375rem;
-    font-weight: 700;
-    color: white;
-  }
+}
+
+.contest-apply-btn a {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: white;
 }
 
 .activity-detail-wrap {
   padding: 1.5rem 0;
   font-weight: 700;
-  // background-color: blueviolet;
+  min-height: 25rem;
+}
+
+.detail-title {
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid gray;
 }
 
 .share-wrap {
@@ -125,31 +123,27 @@ main {
 
 .team-wrap {
   min-height: 300px;
-  // background-color: green;
 }
 
 .team {
-  border: 1px solid rgb(218, 218, 218);
+  padding: 1rem 0;
 }
 
 .right-section {
   display: flex;
   width: 100%;
-  // background-color: yellow;
 }
 
 .best-content-wrap {
   width: 90%;
-  // height: 300px;
   margin: 0 auto;
   border: 1px solid rgb(213, 213, 213);
   border-radius: 10px;
+}
 
-  // background-color: skyblue;
-  a {
-    display: block;
-    margin: 5px 0 5px;
-  }
+.best-content-wrap a {
+  display: block;
+  margin: 5px 0 5px;
 }
 
 .best-title {
@@ -159,18 +153,10 @@ main {
   padding: 30px 20px 0;
 }
 
-.divider {
-  margin: 10px;
-  background: rgb(221, 220, 220);
-  height: 1px;
-  border: 0;
-}
-
 .best-content {
   padding: 20px 20px 0;
 }
 
-// 모바일 폰트 조정
 @media screen and (max-width: 767px) {
   main {
     margin-top: 4rem;
@@ -179,26 +165,19 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .info-right-wrap {
-      width: 100%;
-    }
   }
-
+  .info-wrap .info-right-wrap {
+    width: 100%;
+  }
   .info-left-wrap {
     width: 100%;
     padding: 20px 0;
   }
-  .activity-infomation-field {
-    dl {
-      grid-template-columns: 1fr 2fr;
-      dt {
-        font-weight: var(--font-bold);
-        // grid-column: 0/1;
-      }
-      dd {
-        // grid-column: 2/3;
-      }
-    }
+  .activity-infomation-field dl {
+    grid-template-columns: 1fr 2fr;
+  }
+  .activity-infomation-field dl dt {
+    font-weight: var(--font-bold);
   }
   .filter-list {
     display: grid;

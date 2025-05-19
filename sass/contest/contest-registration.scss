@@ -28,7 +28,7 @@
   padding: 1rem 0;
   flex-wrap: wrap;
   .info-item {
-    width: 50%;
+    width: 40%;
     padding: 10px 0;
   }
 }
@@ -62,6 +62,7 @@ input[type="text"] {
   display: flex;
   flex-direction: column;
   padding: 10px 0;
+  width: 40%;
 }
 
 .supervisor {
@@ -80,8 +81,8 @@ input[type="text"] {
 .contest-info-wrap input[type="text"],
 input[type="date"],
 select {
-  width: 500px;
-  max-width: 25rem;
+  // width: 100%;
+  // max-width: 25rem;
   height: 2rem;
   line-height: 2rem;
   padding-left: 5px;
@@ -135,6 +136,7 @@ select option {
 
   .contest-text-wrap {
     margin: 0 auto;
+    width: 100%;
   }
 
   .contest-center-wrap {

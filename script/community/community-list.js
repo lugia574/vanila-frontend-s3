@@ -1,6 +1,4 @@
 
-// 필터 초기화
-const filterReset = document.querySelector(".filter-reset");
 // 글작성 버튼
 const writeBtn = document.querySelector(".write-btn");
 // 위로 가기 버튼
@@ -11,20 +9,10 @@ const scrapBtns = document.querySelectorAll(".scrap i");
 const divisionTypes = document.querySelectorAll(".division-type li a");
 // content 
 const contentLinks = document.querySelectorAll(".content-link");
+const searchConditions = document.querySelector(".search-conditions");
 
 
-// 초기화
-filterReset.addEventListener("click", () => {
-  while (searchConditions.children.length > 2) {
-    searchConditions.removeChild(searchConditions.lastElementChild);
-  }
 
-  filterBtns.forEach(btn => {
-    if (btn.classList.contains("btn-active")) {
-      btn.classList.remove("btn-active");
-    }
-  });
-});
 
 // 전체, 공모전, 스터디
 divisionTypes.forEach(type => {

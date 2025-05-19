@@ -1,3 +1,4 @@
+
 // 필터
 const filterBtns = document.querySelectorAll(".filter-wrap a");
 // 검색 조건
@@ -14,16 +15,7 @@ const scrapBtns = document.querySelectorAll(".scrap i");
 const divisionTypes = document.querySelectorAll(".division-type li a");
 // content 
 const contentLinks = document.querySelectorAll(".content-link");
-// 글 상세 이동
-const contentClicks = document.querySelectorAll(".content-link");
 
-// 목록 컴포넌트 클릭시 이동
-contentClicks.forEach(content=>{
-  content.addEventListener("click", ()=>{
-    // TODO : 추후 배열로 구현
-    location.href="./postContent.html";
-  })
-})
 
 // 필터 mouse over 이벤트 
 // filterBtns.forEach(btn => {

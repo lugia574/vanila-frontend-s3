@@ -75,6 +75,9 @@ function renderCommunityList(page = 1) {
       // 스크랩 이벤트
       scrap(aTag);
 
+      // 페이지 이동 이벤트
+      moveContent(aTag, item);
+
       container.appendChild(aTag);
     })
 
@@ -148,6 +151,18 @@ function titlePoint(aTag){
 }
 
 // 뷰 이벤트
+
+// 페이지 이동 이벤트
+// 글 상세 이동
+
+// 목록 컴포넌트 클릭시 이동
+function moveContent(aTag, item){
+  aTag.addEventListener("click", (e)=>{
+    console.log(`${item.id}`);
+    e.preventDefault(); 
+    window.location.href=`./community-content.html?id=${item.id}`;
+  })
+}
 
 
 

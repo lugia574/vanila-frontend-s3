@@ -139,6 +139,7 @@
     <script src="/script/components/header.js"></script>
     <script src="/script/components/contest.js"></script>
     <script type="module" src="/script/data/contest-text.js"></script>
+    <!-- <script type="module" src="/script/data/contest-data.json"></script> -->
     <script type="module" src="/script/contest/contest-list-render.js"></script>
     <script src="/script/components/filter.js"></script>
     <script type="module" src="/script/contest/contest-paging.js"></script>
@@ -146,8 +147,11 @@
     <script type="module">
       import { contestArr } from "/script/data/contest-text.js";
       import { contestRender } from "/script/contest/contest-list-render.js";
+      const jsonData = await fetch("/script/data/contest-data.json");
+      const contents = await jsonData.json();
+      const sliceContents = contents.slice(0, 12);
 
-      contestRender(contestArr);
+      contestRender(sliceContents);
       var swiper = new Swiper(".img_banner", {
         spaceBetween: 16,
         speed: 500,

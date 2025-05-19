@@ -129,6 +129,9 @@ select option {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
+    .info-item {
+      width: 100%;
+    }
   }
   h3 {
     text-align: center;

@@ -11,6 +11,8 @@ const listBtn = document.getElementById("list-btn");
 const filterBtns = document.querySelectorAll(".filter-wrap a");
 const searchConditions = document.querySelector(".search-conditions");
 
+// 필터 초기화
+const filterReset = document.querySelector(".filter-reset");
 
 // 리스트 화면 전환
 listBtn.addEventListener("click", ()=>{
@@ -24,6 +26,24 @@ cardBtn.addEventListener("click", ()=>{
 });
 
 //--------------- 필터 관련 함수 ----------------//
+// 필터 초기화
+// 초기화
+filterReset.addEventListener("click", () => {
+  while (searchConditions.children.length > 2) {
+    searchConditions.removeChild(searchConditions.lastElementChild);
+  }
+
+  filterBtns.forEach(btn => {
+    if (btn.classList.contains("btn-active")) {
+      btn.classList.remove("btn-active");
+    }
+  });
+
+  renderCommunityList(1);
+  renderPagination(1);
+});
+
+
 function getFilteredCommunityList() {
   const filters = getSelectedFilters();
 

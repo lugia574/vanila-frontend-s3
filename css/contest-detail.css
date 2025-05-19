@@ -68,6 +68,7 @@ main {
   align-items: center;
   justify-content: space-between;
 }
+
 .title-wrap .title-left {
   display: flex;
   flex-direction: column;
@@ -75,11 +76,12 @@ main {
   align-items: flex-start;
   gap: 0.5rem;
 }
+
 .title-wrap .title-left > strong {
   background-color: var(--color-orange);
   color: white;
-  padding: 0 0.5rem;
-  border-radius: 10px;
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--border-radius);
 }
 
 .info-wrap {
@@ -87,9 +89,11 @@ main {
   padding: 1rem 0;
   gap: 1rem;
 }
+
 .info-wrap .info-right-wrap {
   width: 20%;
 }
+
 .info-wrap img {
   width: 100%;
   margin-top: 10px;
@@ -99,6 +103,7 @@ main {
 .info-left-wrap {
   padding: 20px;
 }
+
 .info-left-wrap h3 {
   padding: 10px 0px;
 }
@@ -106,6 +111,7 @@ main {
 .activity-infomation-field {
   justify-content: center;
 }
+
 .activity-infomation-field dl {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -134,6 +140,7 @@ main {
   background-color: rgb(88, 120, 195);
   border-radius: 10px;
 }
+
 .contest-apply-btn a {
   font-size: 1.375rem;
   font-weight: 700;
@@ -143,6 +150,13 @@ main {
 .activity-detail-wrap {
   padding: 1.5rem 0;
   font-weight: 700;
+  min-height: 25rem;
+}
+
+.detail-title {
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid gray;
 }
 
 .share-wrap {
@@ -164,7 +178,7 @@ main {
 }
 
 .team {
-  border: 1px solid rgb(218, 218, 218);
+  padding: 1rem 0;
 }
 
 .right-section {
@@ -178,6 +192,7 @@ main {
   border: 1px solid rgb(213, 213, 213);
   border-radius: 10px;
 }
+
 .best-content-wrap a {
   display: block;
   margin: 5px 0 5px;
@@ -188,13 +203,6 @@ main {
   font-size: 1.2rem;
   font-weight: 700;
   padding: 30px 20px 0;
-}
-
-.divider {
-  margin: 10px;
-  background: rgb(221, 220, 220);
-  height: 1px;
-  border: 0;
 }
 
 .best-content {

@@ -19,7 +19,8 @@ class CommunityList extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue !== newValue) {
-      this.render();
+      clearTimeout(this._renderTimeout);
+      this._renderTimeout = setTimeout(() => this.render(), 0); // debounce
     }
   }
 
@@ -28,6 +29,7 @@ class CommunityList extends HTMLElement {
   }
 
   async render() {
+    const communityId = this.getAttribute("id") || 0;
     const communityField = this.getAttribute("communityField") || "없음";
     const communityType = this.getAttribute("communityType") || "없음";
     const day = this.getAttribute("day") || "0";
@@ -57,6 +59,7 @@ class CommunityList extends HTMLElement {
       const communityList = document.createElement("a");
       communityList.className = "content-link";
       communityList.innerHTML = `
+      <a href="/pages/community/community-content.html?id=${communityId}">
         <div class="content-wrap">
           <div class="content-header">
               <div class="left-group">
@@ -90,7 +93,8 @@ class CommunityList extends HTMLElement {
                   </div>
               </div>
           </div>
-        </div>  
+        </div>
+      </a>
       `;
 
       this.shadow.appendChild(style);

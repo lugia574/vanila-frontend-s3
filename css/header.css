@@ -133,20 +133,20 @@ header .mobile-button .bar {
   display: block;
   position: relative;
   width: 2rem;
-  height: 5px;
-  margin: 0.625rem auto;
+  height: 3px;
+  margin: 0.4rem auto;
   border-radius: 10px;
   transition: 0.3s;
   background: var(--font-basic-color);
 }
 header .mobile-button.cross .bar:nth-of-type(1) {
-  transform: translateY(1rem) rotate(-45deg);
+  transform: translateY(0.5rem) rotate(-45deg);
 }
 header .mobile-button.cross .bar:nth-of-type(2) {
   opacity: 0;
 }
 header .mobile-button.cross .bar:nth-of-type(3) {
-  transform: translateY(-1rem) rotate(45deg);
+  transform: translateY(-0.5rem) rotate(45deg);
 }
 header #mobile-menu {
   display: none;
@@ -184,6 +184,12 @@ header #mobile-menu.active {
 }
 
 @media screen and (max-width: 767px) {
+  header .content-center {
+    height: 60px;
+  }
+  header .logo {
+    font-size: 1.7rem;
+  }
   header #main-nav,
   header #auth-menu {
     display: none;

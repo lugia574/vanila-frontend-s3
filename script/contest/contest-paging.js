@@ -5,7 +5,6 @@ const contestPaging = () => {
   // 버튼을 click 이벤트를 주고
   const btns = document.querySelectorAll(".page-btn");
   const grigContents = document.querySelector(".contest-grid");
-  console.log(contestRender);
 
   btns.forEach(item => {
     const btn = item.querySelector("button");

@@ -419,9 +419,10 @@ body {
   display: block;
   cursor: pointer;
   border-radius: 8px;
-  border: 0.5px solid var(--color-background);
+  border: 0.5px solid gray;
   background-color: white;
   padding: 1rem 1rem 1rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .card-content-link .content-wrap {
   display: flex;
@@ -467,7 +468,6 @@ body {
   background-color: var(--color-orange);
   color: var(--color-background);
   padding: 0.2rem 0.4rem 0.2rem 0.4rem;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -489,7 +489,7 @@ body {
 .card-content-link .content-wrap .content-footer {
   width: 100%;
   display: flex;
-  border-top: 1px solid var(--default-border);
+  border-top: 1px solid var(--color-background);
   padding-top: 0.5rem;
 }
 .card-content-link .content-wrap .content-footer .left-group,
@@ -582,11 +582,21 @@ body {
   }
   .content-wrap .content-header {
     display: flex;
-    gap: 1rem;
   }
-  .content-wrap .content-header .left-group .type,
+  .content-wrap .content-header .left-group {
+    width: 70% !important;
+  }
+  .content-wrap .content-header .right-group {
+    width: 30% !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+  }
   .content-wrap .content-header .right-group .type {
     display: none;
+  }
+  .content-wrap .content-header .right-group .d-day {
+    width: 60% !important;
+    display: inline-block;
   }
   .content-wrap .content-summary,
   .content-wrap .content-footer {

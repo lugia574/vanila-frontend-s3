@@ -47,7 +47,7 @@ class CommunityCard extends HTMLElement {
       const commRes = await fetch("../../css/common.css");
       const commCss = await commRes.text();
 
-      const CommunityCardRes = await fetch("../../css/community-List.css", { cache: "no-store" }); // 확장자 누락 주의
+      const CommunityCardRes = await fetch("../../css/community-list.css", { cache: "no-store" }); // 확장자 누락 주의
       const CommunityCardCss = await CommunityCardRes.text();
 
       const style = document.createElement("style");

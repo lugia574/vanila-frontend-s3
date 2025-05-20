@@ -1,8 +1,10 @@
 import { contestRender } from "/script/contest/contest-list-render.js";
+// import { getQueryParams } from "/script/common/get-query-params.js";
 
 const filterBtns = document.querySelectorAll(".filter-list > button");
 const searchConditions = document.querySelector(".active-filter-wrap> ul");
 const filterReset = document.querySelector(".filter-reset");
+
 
 let contestArr = [];
 
@@ -17,6 +19,18 @@ fetch("/script/data/contest-data.json")
 function applyFilters() {
   const activeFilters = document.querySelectorAll(".btn-active");
   const selectedFilters = Array.from(activeFilters).map(el => el.textContent.trim());
+
+// 검색 버튼
+// const searchBtn = document.querySelector(".search-btn");
+
+
+
+// 메인에서 GET 으로 온거
+// const query = getQueryParams();
+// console.log(query);
+
+// 검색 펑션 혜미 하시면 바로 훔치기 !@!!!!!!!!!!
+
 
   if (selectedFilters === 0) {
     contestRender(contestArr.slice(0, 12));
@@ -114,6 +128,7 @@ filterReset.addEventListener("click", () => {
   }
 
   filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {});
     if (btn.classList.contains("btn-active")) {
       btn.classList.remove("btn-active");
     }

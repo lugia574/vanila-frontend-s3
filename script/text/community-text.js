@@ -17,7 +17,7 @@ export const communityArr =[
     scrap:20,
     startDate: "2025-05-20",
     endDate: "2025-06-20",
-    recruitmentEndDate:"2025-05-19",
+    recruitmentEndDate:"2025-05-25",
     recruitmentAge : "대학생",
     recruitmentDetail:[
 	    {

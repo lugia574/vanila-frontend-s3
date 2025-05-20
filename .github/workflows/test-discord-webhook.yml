@@ -1,0 +1,18 @@
+# .github/workflows/test-discord-webhook.yml
+name: Discord Webhook Test
+
+on:
+  workflow_dispatch:  # 수동 실행 가능
+
+jobs:
+  send-discord:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send test message to Discord
+        run: |
+          MESSAGE="✅ 테스트 메시지입니다!\n- 워크플로우 이름: $GITHUB_WORKFLOW\n- 트리거: $GITHUB_EVENT_NAME\n- 작성자: $GITHUB_ACTOR"
+          
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "{\"content\": \"$MESSAGE\"}" \
+               ${{ secrets.DISCORD_WEBHOOK_URL_VANILA }}

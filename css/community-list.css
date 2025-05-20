@@ -728,10 +728,10 @@ body {
     line-height: 1.8rem;
     font-size: var(--font-xs-size);
   }
-  .search-conditions li {
+  .selected-conditions {
     padding: 0.3rem;
   }
-  .search-conditions li .reset-wrap {
+  .selected-conditions .reset-wrap {
     background: white !important;
   }
 }

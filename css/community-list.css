@@ -88,6 +88,7 @@ body {
   flex-wrap: wrap;
 }
 .filter-wrap ul li a {
+  display: block;
   width: auto;
   height: auto;
   border-radius: var(--border-radius);
@@ -420,6 +421,7 @@ body {
   background-color: var(--color-orange) !important;
   color: white;
   font-size: var(--font-small-size);
+  border-color: var(--color-orange) !important;
 }
 
 .scrap-active {
@@ -620,12 +622,14 @@ body {
     width: 100%;
     text-align: center;
     background-color: var(--color-background);
-    padding: 0.25rem 0.5rem;
     border-radius: var(--border-radius);
     font-size: 1rem;
   }
   .filter-wrap ul li a {
     padding: 0.25rem 0.4rem 0.25rem 0.4rem !important;
+  }
+  .filter-wrap ul .reset-wrap {
+    background-color: white;
   }
   .filter-wrap ul i {
     width: 1rem;
@@ -723,5 +727,11 @@ body {
     text-align: center;
     line-height: 1.8rem;
     font-size: var(--font-xs-size);
+  }
+  .search-conditions li {
+    padding: 0.3rem;
+  }
+  .search-conditions li .reset-wrap {
+    background: white !important;
   }
 }

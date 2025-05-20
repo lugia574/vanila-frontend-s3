@@ -44,6 +44,6 @@ jobs:
         curl -H "Content-Type: application/json" \
         -X POST \
         -d '{
-              "content": "🚀 **배포 결과**:\n- 상태: ${{ steps.set_status.outputs.status }}\n- 브랜치: `${{ github.ref_name }}`\n- 커밋: `${{ github.event.head_commit.message }}`\n- 작성자: `${{ github.actor }}`"
+              "content": "🚀 **배포 결과**:\n- 상태: ${{ job.status }}\n- 브랜치: `${{ github.ref_name }}`\n- 커밋: `${{ github.event.head_commit.message }}`\n- 작성자: `${{ github.actor }}`"
             }' \
         ${{ secrets.DISCORD_WEBHOOK_URL_VANILA }}

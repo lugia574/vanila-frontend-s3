@@ -5,17 +5,11 @@ import "../components/community-card.js";
 let currentViewType = "list"; // 기본값 : 리스트형
 const cardBtn = document.getElementById("card-btn");
 const listBtn = document.getElementById("list-btn");
-
 // filter
 const filterBtns = document.querySelectorAll(".filter-wrap a");
 const searchConditions = document.querySelector(".search-conditions");
-
 // 필터 초기화
 const filterReset = document.querySelector(".filter-reset");
-
-// 현재 array
-let currentArray = [];
-
 // 검색 버튼 
 const searchBtn = document.querySelector(".search-btn");
 
@@ -33,7 +27,7 @@ cardBtn.addEventListener("click", () => {
 // 검색 버튼
 searchBtn.addEventListener("click", ()=>{
   // 필터가 적용되어 있으면서 검색이 되는 글을 가져오면 됨
-
+  // 필터 적용 가져오기
 
   // input 에서 text 가져오기
   const searchText = document.querySelector(".search-wrap input");
@@ -257,9 +251,6 @@ function renderCommunityList(page = 1) {
     pagination.innerHTML = "";
     return;
   }
-
-  // test 중
-  currentArray = sortedArr;
 
   if (currentViewType === "list") {
     // 리스트형 그리기

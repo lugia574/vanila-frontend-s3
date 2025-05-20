@@ -73,21 +73,45 @@ body {
             font-size: 2rem;
             font-weight: var(--font-bold);
           }
-
-          .user-email,
-          .user-location {
+          .user-email {
             font-size: var(--font-medium-size);
             color: var(--font-basic-color);
+          }
+
+          .user-extra {
+            display: flex;
+            gap: 1rem;
+            font-size: var(--font-medium-size);
+            color: var(--font-basic-color);
+
+            .user-location,
+            .user-company {
+              margin: 0;
+            }
           }
         }
       }
 
       .profile-edit {
+        display: flex;
+
         .edit-btn {
-          padding: 0;
-          color: var(--font-basic-color);
+          padding: 2px 10px;
+          border: none;
+          border-radius: 8px;
           font-size: var(--font-small-size);
           cursor: pointer;
+
+          & + .edit-btn {
+            margin-left: 0.5rem;
+          }
+        }
+
+        .my-post {
+          &:hover {
+            background-color: orange;
+            color: white;
+          }
         }
       }
     }
@@ -262,8 +286,6 @@ body {
         font-size: var(--font-small-size);
         border: none;
         border-radius: 8px;
-        background-color: var(--default-border);
-        color: var(--color-background);
         padding: 2px 10px;
         display: flex;
         align-items: center;
@@ -275,8 +297,6 @@ body {
         font-size: var(--font-small-size);
         border: none;
         border-radius: 8px;
-        background-color: var(--color-background);
-        color: var(--default-border);
         padding: 2px 10px;
         display: flex;
         align-items: center;

@@ -1,20 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>커뮤니티</title>
-    <link rel="stylesheet" href="../../css/common.css">
-    <link rel="stylesheet" href="../../css/community-list.css">
-</head>
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/community-list.css" />
+  </head>
 
-<body>
+  <body>
     <!-- header -->
     <jean-header></jean-header>
 
     <!-- main -->
     <main class="main">
-        <div class="wrap">        
+      <div class="wrap">
+        <!-- filter -->
+        <section class="filter-section">
+          <div class="filter-wrap">
+            <div>
+              <div class="tag-title">
+                <strong>분야</strong>
+              </div>
+              <ul class="field">
+                <li><a href="#">포스터/웹툰/콘텐츠</a></li>
+                <li><a href="#">사진/영상/UCC</a></li>
+                <li><a href="#">아이디어/기획</a></li>
+                <li><a href="#">IT/학술/논문</a></li>
+                <li><a href="#">네이밍/슬로건</a></li>
+                <li><a href="#">스포츠/음악</a></li>
+                <li><a href="#">미술/디자인/건축</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="tag-title">
+                <strong>연령</strong>
+              </div>
+              <ul class="age-range">
+                <li><a href="#">대학생</a></li>
+                <li><a href="#">일반인</a></li>
+                <li><a href="#">제한없음</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="tag-title">
+                <strong>정렬</strong>
+              </div>
+              <ul class="array">
+                <li><a href="#">최신순</a></li>
+                <li><a href="#">인기순</a></li>
+                <li><a href="#">스크랩순</a></li>
+                <li><a href="#">종료임박순</a></li>
+              </ul>
+            </div>
+
 
             <!-- filter -->
             <section class="filter-section">
@@ -58,43 +97,47 @@
                 </div>
             </section>
 
-            <!-- division -->
-            <section class="division-section">
-                <div class="division-wrap">
-                    <!-- <ul class="division-type">
+
+        <!-- division -->
+        <section class="division-section">
+          <div class="division-wrap">
+            <!-- <ul class="division-type">
                         <li><a href="#">전체</a></li>
                         <li><a href="#">공모전</a></li>
                         <li><a href="#">스터디</a></li>
                     </ul> -->
-                    <ul class="view-type">
-                        <li><button id="card-btn"><i class="card-icon"></i></button></li>
-                        <li><button id="list-btn"><i class="list-icon"></i></button></li>
-                    </ul>
-                </div>
-            </section>
+            <ul class="view-type">
+              <li>
+                <button id="card-btn"><i class="card-icon"></i></button>
+              </li>
+              <li>
+                <button id="list-btn"><i class="list-icon"></i></button>
+              </li>
+            </ul>
+          </div>
+        </section>
 
-            <!-- content -->
-            <section class="content-section">
-                <div id="contnet-view" class="content-list">
-                    <!-- 동적 생성 -->
-                </div>                    
-            </section>
-            
-            <!-- 페이징 -->
-            <section class="page-section">
-                <nav class="page-num">
-                    <ul class="pagination">
-                       <!-- 동적 생성 -->
-                    </ul>
-                </nav>
-            </section>
-            
-            <div class="btn-wrap">
-                <a class="write-btn"></a>
-                <a class="top-btn"></a>
-            </div>
+        <!-- content -->
+        <section class="content-section">
+          <div id="contnet-view" class="content-list">
+            <!-- 동적 생성 -->
+          </div>
+        </section>
 
-        </div>    
+        <!-- 페이징 -->
+        <section class="page-section">
+          <nav class="page-num">
+            <ul class="pagination">
+              <!-- 동적 생성 -->
+            </ul>
+          </nav>
+        </section>
+
+        <div class="btn-wrap">
+          <a class="write-btn"></a>
+          <a class="top-btn"></a>
+        </div>
+      </div>
     </main>
     <jean-footer></jean-footer>
 
@@ -102,8 +145,7 @@
     <script src="../../script/components/Footer.js"></script>
 
     <script type="module" src="/script/community/community-list-render.js"></script>
-    
-    <script defer src="../../script/community/community-list.js"></script>
 
-</body>
+    <script defer src="../../script/community/community-list.js"></script>
+  </body>
 </html>

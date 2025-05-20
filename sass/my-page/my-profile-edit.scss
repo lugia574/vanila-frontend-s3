@@ -1,0 +1,133 @@
+@use "../../assets/fonts/font";
+@use "../common/variables";
+
+.profile-edit-wrapper {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 1rem 1rem;
+
+  .profile-edit-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 2.5rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #26424a;
+      font-weight: 600;
+    }
+
+    .profile-edit-form {
+      .input-group {
+        margin-bottom: 1.5rem;
+
+        label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-weight: 500;
+          color: #333;
+        }
+
+        input {
+          width: 100%;
+          padding: 0.75rem;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          font-size: 1rem;
+
+          &:focus {
+            outline: none;
+            border-color: #26424a;
+          }
+        }
+      }
+
+      .image-upload-group {
+        margin-bottom: 2rem;
+
+        label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-weight: 500;
+          color: #333;
+        }
+
+        .preview-img-wrapper {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+          }
+
+          input[type="file"] {
+            flex: 1;
+          }
+        }
+      }
+
+      .btn-group {
+        margin-top: 2rem;
+
+        .save-btn {
+          width: 100%;
+          padding: 0.85rem;
+          background-color: #fc8d09;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background-color 0.2s;
+
+          &:hover {
+            background-color: #e87d00;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 반응형 스타일
+@media (max-width: 768px) {
+  .profile-edit-wrapper {
+    padding: 80px 1rem 60px;
+
+    .profile-edit-container {
+      padding: 1.5rem;
+
+      .profile-edit-form {
+        .input-group {
+          label {
+            font-size: 0.95rem;
+          }
+
+          input {
+            font-size: 0.95rem;
+            padding: 0.7rem;
+          }
+        }
+
+        .btn-group {
+          .edit-btn {
+            font-size: 1rem;
+            padding: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+}

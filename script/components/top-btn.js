@@ -23,6 +23,7 @@ class TopBtn extends HTMLElement {
 
       const btn = document.createElement("button");
       btn.className = "top-btn";
+      btn.classList.add("hidden");
       this.shadow.appendChild(style);
       this.shadow.appendChild(btn);
 

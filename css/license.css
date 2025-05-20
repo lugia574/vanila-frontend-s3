@@ -25,9 +25,15 @@
   .license-wrap {
     margin-top: 7rem;
     flex-direction: column;
+  }
+  .license-wrap .license-list-wrap {
+    padding: 1.5rem;
     gap: 1rem;
   }
   .license-wrap .license-list-wrap h2 {
     font-size: var(--font-xlarge-size);
+  }
+  .license-wrap .license-list-wrap .page-descript {
+    word-break: keep-all;
   }
 }

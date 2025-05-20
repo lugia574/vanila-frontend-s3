@@ -74,6 +74,13 @@ body {
   background-color: white;
   z-index: 10;
 }
+.filter-wrap > div {
+  display: flex;
+  align-items: center;
+}
+.filter-wrap .tag-title strong {
+  font-size: 1.25rem;
+}
 .filter-wrap ul {
   display: flex;
   gap: 0.8rem;
@@ -86,6 +93,7 @@ body {
   border-radius: var(--border-radius);
   padding: 0.25rem 0.6rem 0.25rem 0.6rem;
   font-size: var(--font-middle-size);
+  background-color: var(--color-background);
 }
 .filter-wrap ul i {
   display: block;
@@ -145,7 +153,8 @@ body {
   font: var(--font-bold);
   font-size: var(--font-large-size);
 }
-.division-wrap ul li button .card-icon, .division-wrap ul li button .list-icon {
+.division-wrap ul li button .card-icon,
+.division-wrap ul li button .list-icon {
   background: white;
   display: block;
   background-position: center;
@@ -185,7 +194,8 @@ body {
   display: flex;
   padding: 1rem 1rem 0 1rem;
 }
-.content-link .content-wrap .content-header .left-group, .content-link .content-wrap .content-header .right-group {
+.content-link .content-wrap .content-header .left-group,
+.content-link .content-wrap .content-header .right-group {
   display: flex;
   gap: 0.5rem;
 }
@@ -203,7 +213,7 @@ body {
 }
 .content-link .content-wrap .content-header .left-group .field {
   flex-wrap: wrap;
-  font-size: var(--font-small-size);
+  font-size: var(--font-middle-size);
   border: none;
   border-radius: var(--border-radius);
   background-color: var(--default-border);
@@ -261,11 +271,13 @@ body {
   padding: 0 1rem 0.5rem 1rem;
   font-size: var(--font-small-size);
 }
-.content-link .content-wrap .content-footer .left-group, .content-link .content-wrap .content-footer .right-group {
+.content-link .content-wrap .content-footer .left-group,
+.content-link .content-wrap .content-footer .right-group {
   display: flex;
   gap: 1.25rem;
 }
-.content-link .content-wrap .content-footer .left-group .writer, .content-link .content-wrap .content-footer .right-group .writer {
+.content-link .content-wrap .content-footer .left-group .writer,
+.content-link .content-wrap .content-footer .right-group .writer {
   color: rgb(200, 199, 199);
 }
 .content-link .content-wrap .content-footer .left-group {
@@ -276,7 +288,8 @@ body {
   display: flex;
   justify-content: right;
 }
-.content-link .content-wrap .content-footer .right-group .comment, .content-link .content-wrap .content-footer .right-group .scrap {
+.content-link .content-wrap .content-footer .right-group .comment,
+.content-link .content-wrap .content-footer .right-group .scrap {
   min-width: 2.5rem; /* 최소 너비 확보 */
   flex-shrink: 0; /* 너무 작아지지 않도록 */
   display: flex;
@@ -370,7 +383,8 @@ body {
   gap: 0.5rem; /* 버튼 간 간격 */
   z-index: 1000;
 }
-.btn-wrap .write-btn, .btn-wrap .top-btn {
+.btn-wrap .write-btn,
+.btn-wrap .top-btn {
   width: 4rem;
   height: 4rem;
   border: none;
@@ -525,7 +539,8 @@ body {
   justify-content: right;
   gap: 0.5rem;
 }
-.card-content-link .content-wrap .content-footer .right-group i, .card-content-link .content-wrap .content-footer .right-group span {
+.card-content-link .content-wrap .content-footer .right-group i,
+.card-content-link .content-wrap .content-footer .right-group span {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -566,8 +581,26 @@ body {
     width: 100%;
     padding: 1rem 0.5rem 1rem 0.5rem;
   }
+  .filter-wrap > div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .filter-wrap .tag-title strong {
+    font-size: 1rem;
+  }
   .filter-wrap ul {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.7rem;
+  }
+  .filter-wrap ul li {
+    width: 100%;
+    text-align: center;
+    background-color: var(--color-background);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
   }
   .filter-wrap ul li a {
     padding: 0.25rem 0.4rem 0.25rem 0.4rem !important;
@@ -593,9 +626,11 @@ body {
     display: none;
   }
   .division-wrap ul {
+    display: grid;
     flex-wrap: wrap;
   }
-  .division-wrap ul li button .card-icon, .division-wrap ul li button .list-icon {
+  .division-wrap ul li button .card-icon,
+  .division-wrap ul li button .list-icon {
     display: none;
   }
   .content-list {
@@ -619,17 +654,22 @@ body {
     width: 60% !important;
     display: inline-block;
   }
-  .content-wrap .content-summary, .content-wrap .content-footer {
+  .content-wrap .content-summary,
+  .content-wrap .content-footer {
     width: 95%;
     display: flex;
     gap: 0.3rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
     font-size: var(--font-xs-size);
   }
-  .content-wrap .content-summary p, .content-wrap .content-footer p {
+  .content-wrap .content-summary p,
+  .content-wrap .content-footer p {
     width: 100%;
   }
-  .content-wrap .content-summary .left-group, .content-wrap .content-summary .right-group, .content-wrap .content-footer .left-group, .content-wrap .content-footer .right-group {
+  .content-wrap .content-summary .left-group,
+  .content-wrap .content-summary .right-group,
+  .content-wrap .content-footer .left-group,
+  .content-wrap .content-footer .right-group {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.6rem;

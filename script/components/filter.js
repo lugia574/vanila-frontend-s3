@@ -1,3 +1,4 @@
+import { getQueryParams } from "/script/common/get-query-params.js";
 // 필터
 const filterBtns = document.querySelectorAll(".filter-list > button");
 // 검색 조건
@@ -6,6 +7,10 @@ const searchConditions = document.querySelector(".active-filter-wrap> ul");
 const filterReset = document.querySelector(".filter-reset");
 // 스크랩
 const scrapBtns = document.querySelectorAll(".scrap i");
+
+// 메인에서 GET 으로 온거
+const query = getQueryParams();
+console.log(query);
 
 // 필터 클릭시 이벤트(style)
 // 기존 filterBtns 반복 제거하고, 부모에 이벤트 위임

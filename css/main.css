@@ -358,7 +358,7 @@ body {
   gap: 2rem;
 }
 .main-wrap .main-contents .section .section-container ul.policy-list .policy-item {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
   min-width: 300px;
   max-width: calc(50% - 16px);
   padding: 1rem;

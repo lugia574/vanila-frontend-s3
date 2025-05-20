@@ -16,8 +16,9 @@ const filterReset = document.querySelector(".filter-reset");
 // 현재 array
 let currentArray = [];
 
-// 검색 버튼 
+// 검색 버튼
 const searchBtn = document.querySelector(".search-btn");
+console.log(searchBtn);
 
 // 리스트 화면 전환
 listBtn.addEventListener("click", () => {
@@ -31,19 +32,20 @@ cardBtn.addEventListener("click", () => {
 });
 
 // 검색 버튼
-searchBtn.addEventListener("click", ()=>{
+searchBtn.addEventListener("click", () => {
   // 필터가 적용되어 있으면서 검색이 되는 글을 가져오면 됨
-
 
   // input 에서 text 가져오기
   const searchText = document.querySelector(".search-wrap input");
 
-  if(searchText.vaue === null){
+  if (searchText.vaue === null) {
     return;
   }
 
-  let searchArray = currentArray.filter((item)=>item.title && item.title.toLowerCase().includes(searchText.value));
-  
+  let searchArray = currentArray.filter(
+    item => item.title && item.title.toLowerCase().includes(searchText.value)
+  );
+
   // 해당 되는 값 찾아서 화면에 뿌리기
   // 어떻게 처리할지 고민 필요
 });
@@ -105,22 +107,22 @@ function getCurrentSortType() {
 
 // 정렬 조건 처리
 function filterAndSort(array, filterType) {
-  if(filterType === null){
+  if (filterType === null) {
     return array.slice().sort((a, b) => b.id - a.id);
   }
-  
+
   switch (filterType) {
-    case '최신순': // writeDate가 빠른 순 (즉, 최신이 먼저면 내림차순)
+    case "최신순": // writeDate가 빠른 순 (즉, 최신이 먼저면 내림차순)
       array.sort((a, b) => new Date(b.writeDate) - new Date(a.writeDate));
       break;
-    case '인기순': // comment 많은 순 (내림차순)
+    case "인기순": // comment 많은 순 (내림차순)
       array.sort((a, b) => b.comment - a.comment);
       break;
-    case '스크랩순': // scrap 많은 순 (내림차순)
+    case "스크랩순": // scrap 많은 순 (내림차순)
       array.sort((a, b) => b.scrap - a.scrap);
       console.log("스크랩순", array);
       break;
-    case '종료임박순': // recruitmentEndDate가 가까운 순 (오름차순)
+    case "종료임박순": // recruitmentEndDate가 가까운 순 (오름차순)
       array.sort((a, b) => new Date(a.recruitmentEndDate) - new Date(b.recruitmentEndDate));
       break;
     default:
@@ -130,7 +132,6 @@ function filterAndSort(array, filterType) {
 
   return array;
 }
-
 
 // 필터 요소별 style
 filterBtns.forEach(btn => {
@@ -241,7 +242,7 @@ function renderCommunityList(page = 1) {
   const useArr = filteredArr && filteredArr.length > 0 ? filteredArr : communityArr;
   const filters = getSelectedFilters();
   const isFilterActive = Object.keys(filters).length > 0;
-  
+
   // 정렬 필터 정보 조회
   const sortedFilter = getCurrentSortType();
   const sortedArr = filterAndSort(useArr, sortedFilter);
@@ -302,10 +303,10 @@ function renderCommunityList(page = 1) {
   } else {
     // 카드형 그리기
     sortedArr.forEach(item => {
-      const communityCard = document.createElement('community-card');
-      communityCard.setAttribute('communityfield', item.field);
-      communityCard.setAttribute('communitytype', item.type);
-      communityCard.setAttribute('day', item.dDay);
+      const communityCard = document.createElement("community-card");
+      communityCard.setAttribute("communityfield", item.field);
+      communityCard.setAttribute("communitytype", item.type);
+      communityCard.setAttribute("day", item.dDay);
 
       communityCard.setAttribute("communitytitle", item.title);
       communityCard.setAttribute("communitysummary", item.content);

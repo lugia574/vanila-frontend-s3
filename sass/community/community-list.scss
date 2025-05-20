@@ -1,14 +1,14 @@
 @use "../../assets/fonts/font";
 @use "../common/variables";
 
-body{
+body {
   background: white;
 }
 
 // filter-section
 .filter-section {
   margin-top: 7rem;
-  .title{
+  .title {
     padding-bottom: 1rem;
   }
 }
@@ -22,6 +22,17 @@ body{
   border-bottom: 1px solid gray;
   background-color: white;
   z-index: 10;
+  // display: flex;
+
+  > div {
+    display: flex;
+    align-items: center;
+  }
+  .tag-title {
+    strong {
+      font-size: 1.25rem;
+    }
+  }
 
   ul {
     display: flex;
@@ -36,6 +47,7 @@ body{
         border-radius: var(--border-radius);
         padding: 0.25rem 0.6rem 0.25rem 0.6rem;
         font-size: var(--font-middle-size);
+        background-color: var(--color-background);
       }
     }
     i {
@@ -67,8 +79,8 @@ body{
     i {
       position: absolute;
       display: block;
-      background-position: center; 
-      background-repeat: no-repeat; 
+      background-position: center;
+      background-repeat: no-repeat;
       background-image: url(../../assets/icons/iconmonstr-magnifier-lined.svg);
       width: 1.4rem;
       height: 1.4rem;
@@ -77,7 +89,7 @@ body{
       background-position: center;
 
       // 위치 조정
-      top: 50%; 
+      top: 50%;
       right: calc(20% + 1.5rem);
       transform: translateY(-50%);
 
@@ -103,7 +115,8 @@ body{
       button {
         font: var(--font-bold);
         font-size: var(--font-large-size);
-        .card-icon, .list-icon{
+        .card-icon,
+        .list-icon {
           background: white;
           display: block;
           background-position: center;
@@ -129,10 +142,10 @@ body{
   max-width: 1400px;
   margin: 0 auto;
 }
-.content-link{
+.content-link {
   cursor: pointer;
 
-    .content-wrap {
+  .content-wrap {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -148,7 +161,8 @@ body{
       display: flex;
       padding: 1rem 1rem 0 1rem;
 
-      .left-group,.right-group {
+      .left-group,
+      .right-group {
         display: flex;
         gap: 0.5rem;
       }
@@ -162,13 +176,13 @@ body{
           font-size: var(--font-large-size);
           text-align: center;
 
-          white-space: nowrap; 
-          overflow: hidden; 
+          white-space: nowrap;
+          overflow: hidden;
           text-overflow: ellipsis;
         }
         .field {
           flex-wrap: wrap;
-          font-size: var(--font-small-size);
+          font-size: var(--font-middle-size);
           border: none;
           border-radius: var(--border-radius);
           background-color: var(--default-border);
@@ -236,7 +250,8 @@ body{
       padding: 0 1rem 0.5rem 1rem;
       font-size: var(--font-small-size);
 
-      .left-group, .right-group {
+      .left-group,
+      .right-group {
         display: flex;
         gap: 1.25rem;
 
@@ -245,7 +260,7 @@ body{
         }
       }
 
-      .left-group{
+      .left-group {
         width: 50%;
       }
       .right-group {
@@ -253,15 +268,15 @@ body{
         display: flex;
         justify-content: right;
 
-        .comment, .scrap {
+        .comment,
+        .scrap {
           min-width: 2.5rem; /* 최소 너비 확보 */
-          flex-shrink: 0;    /* 너무 작아지지 않도록 */
+          flex-shrink: 0; /* 너무 작아지지 않도록 */
           display: flex;
           justify-content: flex-end;
           gap: 0.4rem;
           align-items: center;
         }
-
 
         .comment {
           width: 20%;
@@ -296,9 +311,7 @@ body{
       }
     }
   }
-
 }
-
 
 // page section
 .page-num {
@@ -362,8 +375,9 @@ body{
   flex-direction: column;
   gap: 0.5rem; /* 버튼 간 간격 */
   z-index: 1000;
-  
-  .write-btn,.top-btn {
+
+  .write-btn,
+  .top-btn {
     width: 4rem;
     height: 4rem;
 
@@ -379,7 +393,6 @@ body{
   .write-btn {
     background-color: var(--color-orange);
     background-image: url(../../assets/icons/iconizer-iconmonstr-pencil-lined.svg);
-   
   }
   .top-btn {
     background-color: #26424a;
@@ -412,14 +425,14 @@ body{
 }
 
 // 색 변경
-.point{
+.point {
   color: var(--color-orange);
 }
 
 // 카드형
 .card-view {
   width: 100%;
-  max-width: 1400px; 
+  max-width: 1400px;
   margin: 0 auto;
   display: grid;
   flex-wrap: wrap;
@@ -429,16 +442,16 @@ body{
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.card-content-link{
-    display: block;
-    cursor: pointer;
-    border-radius: 8px;
-    border: 0.5px solid gray;
-    background-color: white;
-    padding: 1rem 1rem 1rem 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 10rem;
-  
+.card-content-link {
+  display: block;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 0.5px solid gray;
+  background-color: white;
+  padding: 1rem 1rem 1rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 10rem;
+
   .content-wrap {
     display: flex;
     flex-direction: column;
@@ -460,9 +473,9 @@ body{
         background-color: var(--default-border);
         color: var(--color-background);
         padding: 0.2rem 0.4rem 0.2rem 0.4rem;
-        white-space: nowrap; 
-        overflow: hidden; 
-        text-overflow: ellipsis; 
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       .type {
         width: 20%;
@@ -475,7 +488,7 @@ body{
         color: var(--default-border);
         text-align: center;
         padding: 0.2rem 0.4rem 0.2rem 0.4rem;
-        white-space: nowrap; 
+        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
       }
@@ -530,8 +543,8 @@ body{
         font-size: var(--font-small-size);
       }
 
-      .left-group{
-        .writer{
+      .left-group {
+        .writer {
           width: 100%;
           white-space: nowrap;
           overflow: hidden;
@@ -543,9 +556,10 @@ body{
         display: flex;
         justify-content: right;
         gap: 0.5rem;
-        
+
         // TODO 조절 필요
-        i, span{
+        i,
+        span {
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -595,11 +609,29 @@ body{
   .filter-wrap {
     width: 100%;
     padding: 1rem 0.5rem 1rem 0.5rem;
+    > div {
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
+    .tag-title {
+      strong {
+        font-size: 1rem;
+      }
+    }
     ul {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 0.7rem;
 
       li {
+        width: 100%;
+        text-align: center;
+        background-color: var(--color-background);
+        padding: 0.25rem 0.5rem;
+        border-radius: var(--border-radius);
+        font-size: 1rem;
         a {
           padding: 0.25rem 0.4rem 0.25rem 0.4rem !important;
         }
@@ -633,11 +665,14 @@ body{
     display: none;
 
     ul {
+      display: grid;
+
       flex-wrap: wrap;
 
       li {
         button {
-          .card-icon, .list-icon {
+          .card-icon,
+          .list-icon {
             display: none;
           }
         }
@@ -655,7 +690,7 @@ body{
       display: flex;
       //gap: 0.5rem;
 
-      .left-group{
+      .left-group {
         width: 70% !important;
       }
       .right-group {
@@ -665,14 +700,15 @@ body{
         .type {
           display: none;
         }
-        .d-day{
+        .d-day {
           width: 60% !important;
-          display: inline-block
+          display: inline-block;
         }
       }
     }
 
-    .content-summary, .content-footer {
+    .content-summary,
+    .content-footer {
       width: 95%;
       display: flex;
       gap: 0.3rem;
@@ -683,24 +719,23 @@ body{
         width: 100%;
       }
 
-      .left-group, .right-group {
+      .left-group,
+      .right-group {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 0.6rem;
-
       }
     }
 
-    .content-footer{
-      .comment i{
+    .content-footer {
+      .comment i {
         width: 0.875rem !important;
         height: 0.875rem !important;
       }
-      .scrap i{
+      .scrap i {
         width: 0.875rem;
         height: 0.875rem;
       }
-
     }
   }
 

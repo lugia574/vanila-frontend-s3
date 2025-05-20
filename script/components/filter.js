@@ -1,30 +1,45 @@
-// import { getQueryParams } from "/script/common/get-query-params.js";
-// 필터
+import { contestRender } from "/script/contest/contest-list-render.js";
+
 const filterBtns = document.querySelectorAll(".filter-list > button");
-// 검색 조건
 const searchConditions = document.querySelector(".active-filter-wrap> ul");
-// 필터 초기화
 const filterReset = document.querySelector(".filter-reset");
-// 검색 버튼
-const searchBtn = document.querySelector(".search-btn");
 
-// 현재 array
-let currentArray = [];
+let contestArr = [];
 
-// 메인에서 GET 으로 온거
-// const query = getQueryParams();
-// console.log(query);
+fetch("/script/data/contest-data.json")
+  .then(res => res.json())
+  .then(data => {
+    contestArr = data;
+  });
 
-// 검색 펑션 혜미 하시면 바로 훔치기 !@!!!!!!!!!!
+// 필터 적용 함수
+function applyFilters() {
+  const activeFilters = document.querySelectorAll(".filter-item");
+  const selectedFilters = Array.from(activeFilters).map(el => el.textContent.trim());
 
-// 필터 클릭시 이벤트(style)
-// 기존 filterBtns 반복 제거하고, 부모에 이벤트 위임
+  if (selectedFilters === 0) {
+    contestRender(contestArr.slice(0, 12));
+    return;
+  }
+
+  const filtered = contestArr.filter(item => {
+    return selectedFilters.every(filter => {
+      return (
+        (item["공모분야"] && item["공모분야"].includes(filter)) ||
+        (item["참여대상"] && item["참여대상"].includes(filter)) ||
+        (item["시상규모"] && item["시상규모"].includes(filter))
+      );
+    });
+  });
+  contestRender(filtered.slice(0, 12));
+}
+
+// 필터 클릭 이벤트
 document.addEventListener("click", e => {
   if (!e.target.classList.contains("filter-item")) return;
 
   const btn = e.target;
   const filterName = btn.textContent.trim();
-  const searchConditions = document.querySelector(".active-filter-wrap > ul");
 
   // 이미 필터 적용된 상태 확인
   const matchedFilter = Array.from(searchConditions.children).find(
@@ -52,6 +67,8 @@ document.addEventListener("click", e => {
         }
       });
     });
+
+    applyFilters();
   } else {
     btn.classList.add("btn-active");
 
@@ -75,7 +92,11 @@ document.addEventListener("click", e => {
             filter.classList.remove("btn-active");
           }
         });
+
+        applyFilters();
       });
+
+      applyFilters();
     }
   }
 });
@@ -93,9 +114,7 @@ filterReset.addEventListener("click", () => {
     }
   });
 
-  // 청년 정책 상세 필터 제거
-  const detailList = document.querySelector(".detail-list");
-  detailList.innerHTML = "";
+  applyFilters();
 });
 
 // 필터 가져오기

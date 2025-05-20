@@ -13,6 +13,12 @@ const searchConditions = document.querySelector(".search-conditions");
 // 필터 초기화
 const filterReset = document.querySelector(".filter-reset");
 
+// 현재 array
+let currentArray = [];
+
+// 검색 버튼 
+const searchBtn = document.querySelector(".search-btn");
+
 // 리스트 화면 전환
 listBtn.addEventListener("click", () => {
   currentViewType = "list";
@@ -22,6 +28,24 @@ listBtn.addEventListener("click", () => {
 cardBtn.addEventListener("click", () => {
   currentViewType = "card";
   renderCommunityList(1);
+});
+
+// 검색 버튼
+searchBtn.addEventListener("click", ()=>{
+  // 필터가 적용되어 있으면서 검색이 되는 글을 가져오면 됨
+
+
+  // input 에서 text 가져오기
+  const searchText = document.querySelector(".search-wrap input");
+
+  if(searchText.vaue === null){
+    return;
+  }
+
+  let searchArray = currentArray.filter((item)=>item.title && item.title.toLowerCase().includes(searchText.value));
+  
+  // 해당 되는 값 찾아서 화면에 뿌리기
+  // 어떻게 처리할지 고민 필요
 });
 
 //--------------- 필터 관련 함수 ----------------//
@@ -82,7 +106,7 @@ function getCurrentSortType() {
 // 정렬 조건 처리
 function filterAndSort(array, filterType) {
   if(filterType === null){
-    return array;
+    return array.slice().sort((a, b) => b.id - a.id);
   }
   
   switch (filterType) {
@@ -109,7 +133,6 @@ function filterAndSort(array, filterType) {
 
 
 // 필터 요소별 style
-// TODO : 코드 정리 필요
 filterBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     const filterName = btn.textContent.trim();
@@ -202,7 +225,6 @@ filterBtns.forEach(btn => {
 });
 
 // 리스트 화면 렌더링
-// TODO : 정렬 조건에 따른 분기 처리 필요
 function renderCommunityList(page = 1) {
   const container = document.getElementById("contnet-view");
   const pagination = document.querySelector(".pagination");
@@ -223,9 +245,6 @@ function renderCommunityList(page = 1) {
   // 정렬 필터 정보 조회
   const sortedFilter = getCurrentSortType();
   const sortedArr = filterAndSort(useArr, sortedFilter);
-  console.log("sortedArr", sortedArr);
-
-
 
   const itemsPerPage = 10;
   const startIndex = (page - 1) * itemsPerPage;
@@ -238,6 +257,9 @@ function renderCommunityList(page = 1) {
     pagination.innerHTML = "";
     return;
   }
+
+  // test 중
+  currentArray = sortedArr;
 
   if (currentViewType === "list") {
     // 리스트형 그리기

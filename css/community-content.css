@@ -86,8 +86,9 @@ body {
   text-align: center;
   height: 1.5rem;
   line-height: 1.5rem;
-  font-size: var(--font-large-size);
+  font-size: 1.25rem;
   font-weight: var(--font-bold);
+  word-break: keep-all;
   white-space: nowrap; /* 줄바꿈 안 함 */
   overflow: hidden; /* 넘친 부분 숨김 */
   text-overflow: ellipsis; /* ... 처리 */
@@ -112,6 +113,7 @@ body {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   padding: 20px 0 10px 0;
   gap: 0.5rem;
 }
@@ -160,7 +162,7 @@ body {
   overflow: hidden; /* 넘친 부분 숨김 */
   text-overflow: ellipsis; /* ... 처리 */
 }
-.recruitment-info-wrap .info-grid .info-left .period, .recruitment-info-wrap .info-grid .info-left .dead-line, .recruitment-info-wrap .info-grid .info-right .period, .recruitment-info-wrap .info-grid .info-right .dead-line {
+.recruitment-info-wrap .info-grid .info-left .division, .recruitment-info-wrap .info-grid .info-left .recruitment-age, .recruitment-info-wrap .info-grid .info-left .period, .recruitment-info-wrap .info-grid .info-left .dead-line, .recruitment-info-wrap .info-grid .info-right .division, .recruitment-info-wrap .info-grid .info-right .recruitment-age, .recruitment-info-wrap .info-grid .info-right .period, .recruitment-info-wrap .info-grid .info-right .dead-line {
   display: flex;
   flex-wrap: wrap;
 }
@@ -178,6 +180,7 @@ body {
 }
 .post-detail .recruitment-detail {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   padding: 0.5rem 0.5rem 0.1rem 0.5rem;
 }
@@ -186,6 +189,7 @@ body {
 }
 .post-detail .recruitment-detail .detail-right {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 .post-detail .recruitment-detail .recruitment-left, .post-detail .recruitment-detail .recruitment-right {
@@ -199,12 +203,14 @@ body {
 }
 .post-detail .content-detail {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   padding: 0.5rem 0.5rem 0.1rem 0.5rem;
 }
 .post-detail .content-detail .content-left, .post-detail .content-detail .content-right {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 .post-detail .content-detail .content-left {
   font-weight: var(--font-bold);
@@ -340,6 +346,7 @@ body {
     align-items: stretch; /* 자식이 너비/높이에 맞게 */
     height: auto;
     min-width: 0; /* flex item의 자식들이 줄바꿈 허용하도록 */
+    gap: 0.5rem;
   }
   .post-header .title-wrap {
     display: flex;
@@ -375,11 +382,8 @@ body {
     flex-direction: column;
   }
   .post-detail .content-detail .content-left {
-    width: 10%;
+    gap: 0;
     font-weight: var(--font-bold);
-  }
-  .post-detail .content-detail .content-right {
-    width: 90%;
   }
   .comment-section .comment-form {
     height: 12rem;

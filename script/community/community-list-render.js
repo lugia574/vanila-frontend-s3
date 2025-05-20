@@ -343,6 +343,7 @@ function renderCommunityList(page = 1, filteredArr) {
         if (aTag) {
           scrap(aTag);
           titlePoint(aTag);
+          moveContent(aTag, item);
           observer.disconnect();
         }
       });

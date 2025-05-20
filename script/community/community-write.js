@@ -1,43 +1,39 @@
 
-// 전역 변수
-
-// 모집인원 추가 버튼
+// 모집인원 추가/삭제
 const addBtn = document.querySelector(".add-btn");
-// 모집인원 삭제 버튼
 const delBtn = document.querySelector(".del-btn");
-// 라디오 박스 옵션 체크 여부1 : 공모전
+// 라디오 박스 옵션 체크 여부 : 공모전/스터디
 const optionOne = document.querySelector("#option1");
-// 라디오 박스 옵션 체크 여부2 : 스터디
 const optionTwo = document.querySelector("#option2");
 // type 
 const typeBox = document.querySelector(".type-detail");
 
-// main Type box
+// main/sub/age Type box
 const mainBox = document.querySelector(".main-type-main");
-// sub Type box
 const subBox = document.querySelector(".sub-type-main");
-// age group box
 const ageBox = document.querySelector(".age-group-main");
 
-// main category
+// main/sub/age category
 const mainCategory = document.querySelector(".main-type-sub");
-// sub category
 const subCategory = document.querySelector(".sub-type-sub");
-// age category
 const ageCategory = document.querySelector(".age-group-sub");
 
-// mainCategoryList
+// main/sub/age CategoryList
 const mainCategoryList = document.querySelectorAll(".main-type-sub li");
-// subCategoryList
 const subCategoryList = document.querySelectorAll(".sub-type-sub li");
-// ageCategoryList
 const ageCategoryList = document.querySelectorAll(".age-group-sub li");
 
-// cancle btn
-const cancleBtn = document.querySelector(".canale-btn");
+// register-btn
+const regBtn = document.querySelector(".register-btn");
+
+// 글 등록
+regBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+})
 
 
-// 날짜 박스안에 오늘 날짜 설정
+
+// 날짜 입력 : toDay 값 설정
 document.addEventListener("DOMContentLoaded", () =>{
     // 오늘 년, 월, 일 구하기
     const today = new Date();
@@ -54,19 +50,13 @@ document.addEventListener("DOMContentLoaded", () =>{
     })
 })
 
-// radio 박스 선택
-// 공모전이면 보이게
+// radio 박스
 optionOne.addEventListener("click", ()=>{
-    // hidden 제거 
     typeBox.classList.remove("hidden");
 });
-
-//스터디면 안보이게
 optionTwo.addEventListener("click", ()=>{
-    // hidden 추가
     typeBox.classList.add("hidden");
 });
-
 
 // 메인분야/서브분야 선택시 목록 보이기
 mainBox.addEventListener("click", ()=>{
@@ -220,6 +210,5 @@ function addBlock(e) {
 // 최초 버튼에만 초기 등록
 if (initialAddBtn) initialAddBtn.addEventListener("click", addBlock);
 if (initialDelBtn) initialDelBtn.addEventListener("click", deleteBlock);
-
 if (initialCancleBtn) initialCancleBtn.addEventListener("click", cancleBlock);
 

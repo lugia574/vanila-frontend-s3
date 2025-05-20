@@ -91,7 +91,7 @@
   min-width: 100px;
   padding: 0.625rem 0;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1.25rem;
   /* background-color: #9679b3; */
 }
 
@@ -265,5 +265,8 @@ select {
   .filter-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+  .filter-text-wrap {
+    font-size: 16px;
   }
 }

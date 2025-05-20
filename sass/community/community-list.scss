@@ -247,8 +247,18 @@ body{
         display: flex;
         justify-content: right;
 
+        .comment, .scrap {
+          min-width: 2.5rem; /* 최소 너비 확보 */
+          flex-shrink: 0;    /* 너무 작아지지 않도록 */
+          display: flex;
+          justify-content: flex-end;
+          gap: 0.4rem;
+          align-items: center;
+        }
+
+
         .comment {
-          width: 10%;
+          width: 20%;
           display: flex;
           gap: 0.4rem;
           align-items: center;
@@ -265,8 +275,6 @@ body{
         }
 
         .scrap {
-          width: 10%;
-          display: flex;
           gap: 0.4rem;
           align-items: center;
           i {
@@ -368,7 +376,7 @@ body{
    
   }
   .top-btn {
-    background-color: var(--color-background);
+    background-color: #26424a;
     background-image: url(../../assets/icons/iconmonstr-arrow-66-240.png);
   }
 }
@@ -616,15 +624,14 @@ body{
   // division section
   .division-wrap {
     width: 100%;
-    display: flex;
+    display: none;
 
     ul {
       flex-wrap: wrap;
 
       li {
         button {
-          .card-icon,
-          .list-icon {
+          .card-icon, .list-icon {
             display: none;
           }
         }
@@ -659,8 +666,7 @@ body{
       }
     }
 
-    .content-summary,
-    .content-footer {
+    .content-summary, .content-footer {
       width: 95%;
       display: flex;
       gap: 0.3rem;
@@ -677,6 +683,18 @@ body{
         gap: 0.6rem;
 
       }
+    }
+
+    .content-footer{
+      .comment i{
+        width: 0.875rem !important;
+        height: 0.875rem !important;
+      }
+      .scrap i{
+        width: 0.875rem;
+        height: 0.875rem;
+      }
+
     }
   }
 

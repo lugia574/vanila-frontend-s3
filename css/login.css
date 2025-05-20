@@ -60,6 +60,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
   /* 탭 스타일 */
   /* 로그인 폼 컨테이너 */
 }
@@ -70,6 +71,7 @@
   background-color: white;
   border-radius: 1rem;
   width: 500px;
+  max-width: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 2.5rem;
 }
@@ -180,6 +182,13 @@
 
 @media (max-width: 768px) {
   .login-wrap {
+    height: auto;
+    min-height: calc(100vh - 149px);
+    padding: 80px 1rem 60px;
+  }
+  .login-wrap .content-center {
+    width: 100%;
+    max-width: 500px;
     padding: 1.5rem;
   }
 }

@@ -29,8 +29,8 @@ body {
     position: sticky;
     width: 100%;
     margin-top: 95px;
-    background-color: var(--color-background);
-    padding: 2rem 0;
+    // background-color: var(--color-background);
+    padding: 2rem 0 0 0;
 
     .profile-wrap {
       width: 70%;
@@ -397,7 +397,7 @@ body {
   .main-wrap {
     .profile-section {
       margin-top: 6rem;
-      padding: 2rem 0;
+      padding: 2rem 0 0 0;
 
       .profile-wrap {
         width: 90%;

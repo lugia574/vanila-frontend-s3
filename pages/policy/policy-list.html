@@ -22,11 +22,12 @@
                 <span>분야</span>
               </div>
               <div class="filter-list">
-                <button class="filter-item">일자리</button>
-                <button class="filter-item">주거</button>
-                <button class="filter-item">복지/문화</button>
-                <button class="filter-item">참여/권리</button>
-                <button class="filter-item">교육</button>
+                <button id="job" class="filter-item">일자리</button>
+                <button id="home" class="filter-item">주거</button>
+                <button id="culture" class="filter-item">복지/문화</button>
+                <button id="join" class="filter-item">참여/권리</button>
+                <button id="edu" class="filter-item">교육</button>
+                <button id="no-info" class="filter-item">정보X</button>
               </div>
             </div>
             <div class="filter-list-wrap">
@@ -77,8 +78,9 @@
       <section id="policy-content-container">
         <!-- 여기 카드 컴포넌트 -->
       </section>
-
-      <div class="policy-pagination"></div>
+      <div class="policy-pagination-container">
+        <div class="policy-pagination"></div>
+      </div>
     </main>
     <jean-footer></jean-footer>
 

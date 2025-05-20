@@ -271,8 +271,16 @@ body {
   display: flex;
   justify-content: right;
 }
+.content-link .content-wrap .content-footer .right-group .comment, .content-link .content-wrap .content-footer .right-group .scrap {
+  min-width: 2.5rem; /* 최소 너비 확보 */
+  flex-shrink: 0; /* 너무 작아지지 않도록 */
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  align-items: center;
+}
 .content-link .content-wrap .content-footer .right-group .comment {
-  width: 10%;
+  width: 20%;
   display: flex;
   gap: 0.4rem;
   align-items: center;
@@ -287,8 +295,6 @@ body {
   height: 1rem;
 }
 .content-link .content-wrap .content-footer .right-group .scrap {
-  width: 10%;
-  display: flex;
   gap: 0.4rem;
   align-items: center;
 }
@@ -577,13 +583,12 @@ body {
   }
   .division-wrap {
     width: 100%;
-    display: flex;
+    display: none;
   }
   .division-wrap ul {
     flex-wrap: wrap;
   }
-  .division-wrap ul li button .card-icon,
-  .division-wrap ul li button .list-icon {
+  .division-wrap ul li button .card-icon, .division-wrap ul li button .list-icon {
     display: none;
   }
   .content-list {
@@ -607,24 +612,28 @@ body {
     width: 60% !important;
     display: inline-block;
   }
-  .content-wrap .content-summary,
-  .content-wrap .content-footer {
+  .content-wrap .content-summary, .content-wrap .content-footer {
     width: 95%;
     display: flex;
     gap: 0.3rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
     font-size: var(--font-xs-size);
   }
-  .content-wrap .content-summary p,
-  .content-wrap .content-footer p {
+  .content-wrap .content-summary p, .content-wrap .content-footer p {
     width: 100%;
   }
-  .content-wrap .content-summary .left-group, .content-wrap .content-summary .right-group,
-  .content-wrap .content-footer .left-group,
-  .content-wrap .content-footer .right-group {
+  .content-wrap .content-summary .left-group, .content-wrap .content-summary .right-group, .content-wrap .content-footer .left-group, .content-wrap .content-footer .right-group {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.6rem;
+  }
+  .content-wrap .content-footer .comment i {
+    width: 0.875rem !important;
+    height: 0.875rem !important;
+  }
+  .content-wrap .content-footer .scrap i {
+    width: 0.875rem;
+    height: 0.875rem;
   }
   .page-num {
     width: 95%;

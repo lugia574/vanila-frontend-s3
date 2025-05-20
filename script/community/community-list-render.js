@@ -12,6 +12,9 @@ const searchConditions = document.querySelector(".search-conditions");
 const filterReset = document.querySelector(".filter-reset");
 // 검색 버튼 
 const searchBtn = document.querySelector(".search-btn");
+// 입력한 검색어
+const searchText = document.querySelector(".search-wrap input");
+
 
 // 리스트 화면 전환
 listBtn.addEventListener("click", () => {
@@ -26,25 +29,31 @@ cardBtn.addEventListener("click", () => {
 
 // 검색 버튼
 searchBtn.addEventListener("click", ()=>{
-  // 필터가 적용되어 있으면서 검색이 되는 글을 가져오면 됨
-  // 필터 적용 가져오기
-
+  // 필터 적용된 배열 가져오기
+  const filterArray = getFilteredCommunityList();
+  
   // input 에서 text 가져오기
-  const searchText = document.querySelector(".search-wrap input");
-
-  if(searchText.vaue === null){
+  if(searchText.value === "" || searchText.value === null){
+    alert("검색어를 입력해주세요");
     return;
   }
 
-  let searchArray = currentArray.filter((item)=>item.title && item.title.toLowerCase().includes(searchText.value));
+  let searchArray = filterArray.filter((item)=>item.title && item.title.toLowerCase().includes(searchText.value));
   
   // 해당 되는 값 찾아서 화면에 뿌리기
-  // 어떻게 처리할지 고민 필요
+  // 정렬 조건 가져오기 
+  const sortedFilter = getCurrentSortType();
+  // 필터 & 정렬 적용
+  const sortedArr = filterAndSort(searchArray, sortedFilter);
+  // 리스트 렌더링
+  renderCommunityList(1, sortedArr);
+  // 페이징 렌더링
+  renderPagination(1);
+  
 });
 
 //--------------- 필터 관련 함수 ----------------//
-// 필터 초기화
-// 초기화
+// 1. 필터 초기화
 filterReset.addEventListener("click", () => {
   while (searchConditions.children.length > 2) {
     searchConditions.removeChild(searchConditions.lastElementChild);
@@ -56,15 +65,22 @@ filterReset.addEventListener("click", () => {
     }
   });
 
-  renderCommunityList(1);
+  // 정렬 조건
+  const sortedArr = filterAndSort(communityArr, null);
+  // 리스트 렌더링
+  renderCommunityList(1, sortedArr);
+  // 페이징 렌더링
   renderPagination(1);
 });
 
+// 2. 필터 적용된 배열 반환
 function getFilteredCommunityList() {
+  // 사용자가 선택한 필터들을 가져오기
   const filters = getSelectedFilters();
 
+  // 필터가 하나도 선택되지 않았다면, 원본 전체 배열 communityArr 반환
   if (Object.keys(filters).length === 0) return communityArr;
-
+  // 필터조건에 맞는 배열들을 반환
   return communityArr.filter(item => {
     for (const key in filters) {
       if (!filters[key].includes(item[key])) return false;
@@ -73,7 +89,7 @@ function getFilteredCommunityList() {
   });
 }
 
-// 필터 정보 수집
+// 3. 선택한 필터 정보 수집
 function getSelectedFilters() {
   const selected = document.querySelectorAll(".search-conditions .search-filter-active");
   const filters = {};
@@ -91,13 +107,14 @@ function getSelectedFilters() {
   return filters;
 }
 
-// 정렬 필터 정보 반환
+// 4. 정렬 필터 정보 반환
 function getCurrentSortType() {
+  // 정렬 필터 정보 반환, 없으면 null 반환
   const activeSort = document.querySelector('ul.array a[data-filter-type="sort"].btn-active');
   return activeSort != null ? activeSort.textContent.trim() : null;
 }
 
-// 정렬 조건 처리
+// 5. 정렬 조건 처리
 function filterAndSort(array, filterType) {
   if(filterType === null){
     return array.slice().sort((a, b) => b.id - a.id);
@@ -121,10 +138,8 @@ function filterAndSort(array, filterType) {
       // 정렬하지 않을 경우
       break;
   }
-
   return array;
 }
-
 
 // 필터 요소별 style
 filterBtns.forEach(btn => {
@@ -214,22 +229,34 @@ filterBtns.forEach(btn => {
         }
       }
     }
-    renderCommunityList(1);
+    // 필터 적용 후 리스트 렌더링으로 변경
+    const filterArray = getFilteredCommunityList();
+    // 정렬 조건 가져오기 
+    const sortedFilter = getCurrentSortType();
+
+    // 검색 내용이 있다면 적용 없다면 그대로 다시 반환
+    if(searchText.value === "" || searchText.value === null){
+      console.log("searchText.value", searchText.value);
+      const sortedArr = filterAndSort(filterArray, sortedFilter);
+      renderCommunityList(1, sortedArr);
+    }else{
+      let searchArray = filterArray.filter((item)=>item.title && item.title.toLowerCase().includes(searchText.value));
+      // 필터 & 정렬 적용
+      const sortedArr = filterAndSort(searchArray, sortedFilter);
+      renderCommunityList(1, sortedArr);
+    }
   });
 });
 
+// 화면 렌더링 
 // 리스트 화면 렌더링
-function renderCommunityList(page = 1) {
+function renderCommunityList(page = 1, filteredArr) {
   const container = document.getElementById("contnet-view");
   const pagination = document.querySelector(".pagination");
   if (!container) return;
 
   container.innerHTML = "";
   pagination.innerHTML = "";
-
-  // 필터 적용 부분
-  // 필터 배열 얻기
-  const filteredArr = getFilteredCommunityList();
 
   // 필터 결과가 있으면 그걸 쓰고, 없으면 원본 communityArr 사용
   const useArr = filteredArr && filteredArr.length > 0 ? filteredArr : communityArr;
@@ -246,7 +273,7 @@ function renderCommunityList(page = 1) {
   const pageItems = sortedArr.slice(startIndex, endIndex);
 
   // 필터와 맞는 조건의 내용이 없다면 화면을 지운다
-  if (isFilterActive && filteredArr.length === 0 && sortedFilter === null) {
+  if (isFilterActive && filteredArr && filteredArr.length === 0 && sortedFilter === null) {
     container.innerHTML = "";
     pagination.innerHTML = "";
     return;

@@ -4,6 +4,9 @@ import { calculateDDay } from "../common/calculate-dday.js";
 export const contestRender = async contents => {
   const contestGrid = document.querySelector(".contest-grid"); // .contest-list-wrap으로 잡으셈
 
+  // 화면 초기화
+  contestGrid.innerHTML = "";
+
   contents.forEach(item => {
     const card = document.createElement("contest-card");
     const src = `/pages/contest/contest-detail.html?id=${item.id + 1}`;

@@ -201,6 +201,7 @@ body {
   width: 100%;
   margin-top: 2rem;
   max-width: 1400px;
+  display: none;
 }
 .main-wrap .total-search-wrap .total-search-box {
   display: flex;

@@ -1,4 +1,5 @@
 // import { contestArr } from "../data/contest-text.js";
+import { calculateDDay } from "../common/calculate-dday.js";
 
 const contestDetail = async () => {
   const postId = parseInt(new URLSearchParams(location.search).get("id"));
@@ -11,8 +12,6 @@ const contestDetail = async () => {
 
   const contest = filterArr[0];
 
-  console.log(contest);
-
   const contestWrap = document.querySelector(".contest-detail-wrap"); // .contest-list-wrap으로 잡으셈
 
   const titleWrap = contestWrap.querySelector(".title-wrap .title-left");
@@ -21,6 +20,7 @@ const contestDetail = async () => {
   const contents = contestWrap.querySelector(".activity-contents");
   const bookmarkBtn = document.querySelector(".contest-bookmark");
   const bookmarkImg = document.querySelector(".contest-bookmark img");
+  const homePageLink = document.querySelector(".contest-apply-btn > a");
 
   let isBookmark = false;
 
@@ -37,7 +37,7 @@ const contestDetail = async () => {
   });
 
   const dday = document.createElement("strong");
-  dday.textContent = `D-${contest.day}`;
+  dday.textContent = `D-${calculateDDay(contest.접수기간.slice(11))}`;
 
   const title = document.createElement("h1");
   title.textContent = contest.title;
@@ -48,12 +48,11 @@ const contestDetail = async () => {
   // 4. 이미지 및 지원하기 버튼
   image.src = contest.contest_img;
   image.alt = contest.title;
+  homePageLink.href = contest.홈페이지;
 
-  const category = contest.공모분야; // 전처리 해줘잉
+  const category = contest.공모분야;
   const prize = contest.시상규모;
   const corporateType = contest.기업형태;
-
-  console.log(category);
 
   // 5. 상세 정보 구성
   infoField.innerHTML = `

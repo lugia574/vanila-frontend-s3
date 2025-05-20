@@ -4,92 +4,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>청바지 | 청년정책</title>
-    <link href="../../css/policy-list.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/contest.css" />
+    <link rel="stylesheet" href="../../css/policy-list.css" />
   </head>
   <body>
     <jean-header></jean-header>
-    <main id="policy-container" class="main wrap">
+    <main id="policy-container" class="wrap">
+      <h2 class="title">청년정책</h2>
+      <hr class="divider" />
       <section>
-        <div id="policy-filter">
-          <ul>
-            <li>
-              <span class="policy-filter-title">분야</span>
-              <label for=""
-                ><input type="checkbox" name="" class="policy-filter-choose" />전체</label
-              >
-              <label for=""
-                ><input type="checkbox" name="" class="policy-filter-choose" />주거</label
-              >
-              <label for=""
-                ><input type="checkbox" name="" class="policy-filter-choose" />취업</label
-              >
-              <label for=""
-                ><input type="checkbox" name="" class="policy-filter-choose" />금융</label
-              >
-              <label for=""
-                ><input type="checkbox" name="" class="policy-filter-choose" />창업</label
-              >
-              <label for=""
-                ><input type="checkbox" name="" class="policy-filter-choose" />건강</label
-              >
-            </li>
-            <li>
-              <span class="policy-filter-title">지역</span>
-              <label for=""
-                ><input type="checkbox" name="" class="policy-filter-choose" />전체</label
-              >
-              <label for=""
-                ><input type="checkbox" name="" class="policy-filter-choose" />서울</label
-              >
-              <label for=""
-                ><input type="checkbox" name="" class="policy-filter-choose" />경기</label
-              >
-              <label for=""
-                ><input type="checkbox" name="" class="policy-filter-choose" />대전</label
-              >
-              <label for=""
-                ><input type="checkbox" name="" class="policy-filter-choose" />부산</label
-              >
-              <label for=""
-                ><input type="checkbox" name="" class="policy-filter-choose" />인천</label
-              >
-            </li>
-            <li>
-              <span class="policy-filter-title">연령대</span>
-              <label for=""
-                ><input type="checkbox" name="" class="policy-filter-choose" />전체</label
-              >
-              <label for=""
-                ><input type="checkbox" name="" class="policy-filter-choose" />대학생</label
-              >
-              <label for=""
-                ><input type="checkbox" name="" class="policy-filter-choose" />청년</label
-              >
-              <label for=""
-                ><input type="checkbox" name="" class="policy-filter-choose" />연령무관</label
-              >
-            </li>
-            <li>
-              <span class="policy-filter-title">기간</span>
-              <input type="date" />
-              <input type="date" />
-            </li>
-            <li>
-              <span class="policy-filter-title">적용된 검색조건</span>
-              <label><input type="button" id="" /></label>
-            </li>
-            <li>
-              <label for="searc-option">검색 조건</label>
-              <select name="search-option" id="search-option">
-                <option value="all">전체</option>
-                <option value="title">제목</option>
-                <option value="writer">작성자</option>
-                <option value="content">내용</option>
-                <option value="title-plus-content">제목+내용</option>
-              </select>
-              <input type="text" name="" placeholder="검색어를 입력하세요" />
-            </li>
-          </ul>
+        <!-- 필터 전체(분야/연령/정렬/적용된검색조건건) 랩 -->
+        <div class="filter-container">
+          <!-- 필터 리스트 랩 -->
+          <div class="contest-filter-wrap">
+            <div class="filter-list-wrap">
+              <div class="filter-text-wrap">
+                <span>분야</span>
+              </div>
+              <div class="filter-list">
+                <button class="filter-item">일자리</button>
+                <button class="filter-item">주거</button>
+                <button class="filter-item">복지/문화</button>
+                <button class="filter-item">참여/권리</button>
+                <button class="filter-item">교육</button>
+              </div>
+            </div>
+            <div class="filter-list-wrap">
+              <div class="filter-text-wrap">
+                <span>지역</span>
+              </div>
+              <div class="filter-list">
+                <button id="korea" class="filter-item">전국</button>
+                <button id="region" class="filter-item">지역별</button>
+                <button id="seoul" class="filter-item">서울시</button>
+                <button id="gu" class="filter-item">서울구별</button>
+              </div>
+            </div>
+            <div class="filter-list-wrap">
+              <div class="filter-text-wrap">
+                <span>상세 지역</span>
+              </div>
+              <div class="filter-list detail-list"></div>
+            </div>
+            <!-- 적용된 검색조건 -->
+            <div class="active-filter-wrap">
+              <ul>
+                <li class="">적용된 검색조건</li>
+                <li class="filter-reset">
+                  <img src="/assets/icons/iconmonstr-reload-lined.svg" alt="reset" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr class="divider" />
+        <!-- 검색 및 정렬 -->
+        <div class="search-drop-wrap">
+          <div class="search-wrap">
+            <input class="search-text" type="text" name="search" placeholder="정책, 내용 검색" />
+            <button class="search-btn">검색</button>
+          </div>
+          <div class="drop-wrap">
+            <label for="order">정렬</label>
+            <select id="order" name="order">
+              <option value="">최신순</option>
+              <option value="">마감일순</option>
+              <option value="">북마크순</option>
+            </select>
+          </div>
         </div>
       </section>
 
@@ -292,8 +275,13 @@
         </div>
       </section>
     </main>
+    <jean-footer></jean-footer>
 
     <!-- script -->
     <script src="../../script/components/header.js"></script>
+    <script src="/script/components/Footer.js"></script>
+    <script src="/script/components/filter.js"></script>
+    <script src="/script/policy/policy-filter.js"></script>
+    <script src="/script/components/community-card.js"></script>
   </body>
 </html>

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     name: "김공모",
     email: "contest@example.com",
     location: "서울특별시",
-    profileImage: "../../assets/images/profile-default.png", // 기본 프로필 이미지 경로
+    profileImage: "/public/images/profile/profile.png", // 기본 프로필 이미지 경로
   };
 
   // 북마크한 공모전 데이터 (실제로는 서버에서 가져올 데이터)
@@ -165,8 +165,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="field">${contest.field}</div>
           </div>
           <div class="right-group">
-            <div class="type">${contest.type}</div>
             <div class="d-day">${contest.dDay}</div>
+            <div class="type">${contest.type}</div>
           </div>
         </div>
         <div class="content-summary">
@@ -261,8 +261,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="field">${app.field}</div>
           </div>
           <div class="right-group">
-            <div class="type">${app.type}</div>
             <div class="status ${app.statusClass}">${app.status}</div>
+            <div class="type">${app.type}</div>
           </div>
         </div>
         <div class="content-summary">
@@ -333,8 +333,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="field">${post.field}</div>
           </div>
           <div class="right-group">
-            <div class="type">${post.type}</div>
             ${post.dDay ? `<div class="d-day">${post.dDay}</div>` : ""}
+            <div class="type">${post.type}</div>
           </div>
         </div>
         <div class="content-summary">

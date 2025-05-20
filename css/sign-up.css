@@ -54,13 +54,11 @@
 }
 
 .sign-up-wrapper {
-  height: calc(100vh - 149px);
-  min-height: 1000px;
+  min-height: calc(100vh - 100px);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0;
-  background-color: #f8f9fa;
+  padding: 100px 1rem 1rem;
 }
 .sign-up-wrapper .sign-up-container {
   width: 100%;
@@ -180,7 +178,9 @@
 
 @media (max-width: 768px) {
   .sign-up-wrapper {
-    padding: 1rem;
+    height: auto;
+    min-height: calc(100vh - 149px);
+    padding: 80px 1rem 60px;
   }
   .sign-up-wrapper .sign-up-container {
     padding: 1.5rem;

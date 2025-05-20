@@ -7,61 +7,71 @@ const filterReset = document.querySelector(".filter-reset");
 // 스크랩
 const scrapBtns = document.querySelectorAll(".scrap i");
 
-console.log(filterBtns);
-console.log(filterReset);
-
 // 필터 클릭시 이벤트(style)
-// TODO : 실제 적용 필요
-filterBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const filterName = btn.textContent.trim();
-    // 필터 중복 방지
-    const matchedFilter = Array.from(searchConditions.children).find(
-      child => child.textContent.trim() === filterName
-    );
+// 기존 filterBtns 반복 제거하고, 부모에 이벤트 위임
+document.addEventListener("click", e => {
+  if (!e.target.classList.contains("filter-item")) return;
 
-    if (btn.classList.contains("btn-active")) {
-      btn.classList.remove("btn-active");
+  const btn = e.target;
+  const filterName = btn.textContent.trim();
+  const searchConditions = document.querySelector(".active-filter-wrap > ul");
 
-      if (matchedFilter) {
-        searchConditions.childNodes.forEach(filter => {
-          if (filter.textContent === filterName) {
-            filter.remove();
+  // 이미 필터 적용된 상태 확인
+  const matchedFilter = Array.from(searchConditions.children).find(
+    child => child.textContent.trim() === filterName
+  );
+
+  if (btn.classList.contains("btn-active")) {
+    btn.classList.remove("btn-active");
+
+    if (matchedFilter) {
+      matchedFilter.remove();
+    }
+    // 하위 필터 해제
+    const detailList = document.querySelector(".detail-list");
+    const activeDetailBtns = detailList.querySelectorAll(".btn-active");
+    const activeFilters = document.querySelectorAll(".search-filter-active");
+
+    activeDetailBtns.forEach(subBtn => {
+      const subName = subBtn.textContent.trim();
+      subBtn.classList.remove("btn-active");
+
+      activeFilters.forEach(active => {
+        if (active.textContent.trim() === subName) {
+          active.parentElement.remove();
+        }
+      });
+    });
+  } else {
+    btn.classList.add("btn-active");
+
+    if (!matchedFilter) {
+      const liTag = document.createElement("li");
+      const aTag = document.createElement("a");
+
+      aTag.textContent = filterName;
+      aTag.classList.add("search-filter-active");
+      aTag.href = "#";
+
+      liTag.appendChild(aTag);
+      searchConditions.appendChild(liTag);
+
+      // li에서 필터 제거
+      liTag.addEventListener("click", () => {
+        liTag.remove();
+        // 필터 버튼도 토글 해제
+        document.querySelectorAll(".filter-item").forEach(filter => {
+          if (filter.textContent.trim() === filterName) {
+            filter.classList.remove("btn-active");
           }
         });
-      }
-    } else {
-      btn.classList.add("btn-active");
-
-      if (!matchedFilter) {
-        const liTag = document.createElement("li");
-        const aTag = document.createElement("a");
-
-        aTag.textContent = filterName;
-        aTag.classList.add("search-filter-active");
-        aTag.href = "#";
-
-        liTag.appendChild(aTag);
-        searchConditions.appendChild(liTag);
-
-        // 동적으로 생성된 liTag에 이벤트가 발생한 경우
-        liTag.addEventListener("click", () => {
-          filterBtns.forEach(filter => {
-            const aTagName = liTag.querySelector("a").textContent.trim();
-            if (aTagName === filter.textContent.trim()) {
-              filter.classList.toggle("btn-active");
-            }
-          });
-          liTag.remove();
-        });
-      }
+      });
     }
-  });
+  }
 });
 
 // 초기화
 filterReset.addEventListener("click", () => {
-  console.log("ihih");
   while (searchConditions.children.length > 2) {
     searchConditions.removeChild(searchConditions.lastElementChild);
   }
@@ -71,4 +81,8 @@ filterReset.addEventListener("click", () => {
       btn.classList.remove("btn-active");
     }
   });
+
+  // 청년 정책 상세 필터 제거
+  const detailList = document.querySelector(".detail-list");
+  detailList.innerHTML = "";
 });

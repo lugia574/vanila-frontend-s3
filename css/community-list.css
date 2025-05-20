@@ -66,11 +66,10 @@ body {
   max-width: 1400px;
   margin: 1rem auto;
   padding: 1rem;
-  border-radius: var(--border-radius);
-  border: 1px solid gray;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
   background-color: white;
   z-index: 10;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .filter-wrap ul {
   display: flex;
@@ -83,7 +82,7 @@ body {
   height: auto;
   border-radius: var(--border-radius);
   padding: 0.25rem 0.6rem 0.25rem 0.6rem;
-  font-size: var(--font-small-size);
+  font-size: var(--font-middle-size);
 }
 .filter-wrap ul i {
   display: block;
@@ -128,7 +127,7 @@ body {
   width: 100%;
   max-width: 1400px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 1rem;
   margin: 0 auto;
 }
@@ -272,8 +271,16 @@ body {
   display: flex;
   justify-content: right;
 }
+.content-link .content-wrap .content-footer .right-group .comment, .content-link .content-wrap .content-footer .right-group .scrap {
+  min-width: 2.5rem; /* 최소 너비 확보 */
+  flex-shrink: 0; /* 너무 작아지지 않도록 */
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  align-items: center;
+}
 .content-link .content-wrap .content-footer .right-group .comment {
-  width: 10%;
+  width: 20%;
   display: flex;
   gap: 0.4rem;
   align-items: center;
@@ -288,8 +295,6 @@ body {
   height: 1rem;
 }
 .content-link .content-wrap .content-footer .right-group .scrap {
-  width: 10%;
-  display: flex;
   gap: 0.4rem;
   align-items: center;
 }
@@ -375,7 +380,7 @@ body {
   background-image: url(../../assets/icons/iconizer-iconmonstr-pencil-lined.svg);
 }
 .btn-wrap .top-btn {
-  background-color: white;
+  background-color: #26424a;
   background-image: url(../../assets/icons/iconmonstr-arrow-66-240.png);
 }
 
@@ -423,6 +428,7 @@ body {
   background-color: white;
   padding: 1rem 1rem 1rem 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 10rem;
 }
 .card-content-link .content-wrap {
   display: flex;
@@ -430,10 +436,14 @@ body {
   gap: 1rem;
 }
 .card-content-link .content-wrap .content-header {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  gap: 0.1rem;
   flex-wrap: wrap;
 }
 .card-content-link .content-wrap .content-header .field {
+  width: 45%;
   font-size: var(--font-small-size);
   border: none;
   border-radius: var(--border-radius);
@@ -441,14 +451,12 @@ body {
   background-color: var(--default-border);
   color: var(--color-background);
   padding: 0.2rem 0.4rem 0.2rem 0.4rem;
-  margin-right: 0.5rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .card-content-link .content-wrap .content-header .type {
-  display: flex;
-  justify-content: flex-end;
+  width: 20%;
   font-size: var(--font-small-size);
   border: none;
   border-radius: var(--border-radius);
@@ -456,18 +464,20 @@ body {
   color: var(--default-border);
   text-align: center;
   padding: 0.2rem 0.4rem 0.2rem 0.4rem;
-  margin-right: 0.2rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .card-content-link .content-wrap .content-header .d-day {
+  width: 20%;
+  text-align: center;
   font-size: var(--font-small-size);
   border: none;
   border-radius: var(--border-radius);
   background-color: var(--color-orange);
   color: var(--color-background);
   padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -509,6 +519,11 @@ body {
   display: flex;
   justify-content: right;
   gap: 0.5rem;
+}
+.card-content-link .content-wrap .content-footer .right-group i, .card-content-link .content-wrap .content-footer .right-group span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .card-content-link .content-wrap .content-footer .comment {
   display: flex;
@@ -568,13 +583,12 @@ body {
   }
   .division-wrap {
     width: 100%;
-    display: flex;
+    display: none;
   }
   .division-wrap ul {
     flex-wrap: wrap;
   }
-  .division-wrap ul li button .card-icon,
-  .division-wrap ul li button .list-icon {
+  .division-wrap ul li button .card-icon, .division-wrap ul li button .list-icon {
     display: none;
   }
   .content-list {
@@ -598,24 +612,28 @@ body {
     width: 60% !important;
     display: inline-block;
   }
-  .content-wrap .content-summary,
-  .content-wrap .content-footer {
+  .content-wrap .content-summary, .content-wrap .content-footer {
     width: 95%;
     display: flex;
     gap: 0.3rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
     font-size: var(--font-xs-size);
   }
-  .content-wrap .content-summary p,
-  .content-wrap .content-footer p {
+  .content-wrap .content-summary p, .content-wrap .content-footer p {
     width: 100%;
   }
-  .content-wrap .content-summary .left-group, .content-wrap .content-summary .right-group,
-  .content-wrap .content-footer .left-group,
-  .content-wrap .content-footer .right-group {
+  .content-wrap .content-summary .left-group, .content-wrap .content-summary .right-group, .content-wrap .content-footer .left-group, .content-wrap .content-footer .right-group {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.6rem;
+  }
+  .content-wrap .content-footer .comment i {
+    width: 0.875rem !important;
+    height: 0.875rem !important;
+  }
+  .content-wrap .content-footer .scrap i {
+    width: 0.875rem;
+    height: 0.875rem;
   }
   .page-num {
     width: 95%;

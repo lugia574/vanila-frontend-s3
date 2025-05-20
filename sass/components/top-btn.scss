@@ -1,17 +1,18 @@
+@use "../../assets/fonts/font";
+@use "../common/variables";
+
 .top-btn {
   width: 4rem;
   height: 4rem;
-  background: var(--color-orange) url(../../assets/icons/iconmonstr-arrow-66-240.png) center
+  background: var(--font-basic-color) url("/assets/icons/iconmonstr-arrow-66-240.png") center
     no-repeat;
   background-size: 60%;
-  color: var(--color-background);
   position: fixed;
   border-radius: 8rem;
   z-index: 1000;
   bottom: 5rem;
   right: 3rem;
   cursor: pointer;
-  //   transition: 1s linear;
 }
 
 @media screen and (max-width: 768px) {

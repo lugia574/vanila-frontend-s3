@@ -15,12 +15,10 @@ body{
   max-width: 1400px;
   margin: 1rem auto;
   padding: 1rem;
-  border-radius: var(--border-radius);
-  // TODO 색 확인
-  border: 1px solid gray;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
   background-color: white;
   z-index: 10;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   ul {
     display: flex;
@@ -32,11 +30,9 @@ body{
       a {
         width: auto;
         height: auto;
-        //border: none;
         border-radius: var(--border-radius);
         padding: 0.25rem 0.6rem 0.25rem 0.6rem;
-        //background-color: var(--color-background);
-        font-size: var(--font-small-size);
+        font-size: var(--font-middle-size);
       }
     }
     i {
@@ -89,7 +85,7 @@ body{
   width: 100%;
   max-width: 1400px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 1rem;
   margin: 0 auto;
 
@@ -251,8 +247,18 @@ body{
         display: flex;
         justify-content: right;
 
+        .comment, .scrap {
+          min-width: 2.5rem; /* 최소 너비 확보 */
+          flex-shrink: 0;    /* 너무 작아지지 않도록 */
+          display: flex;
+          justify-content: flex-end;
+          gap: 0.4rem;
+          align-items: center;
+        }
+
+
         .comment {
-          width: 10%;
+          width: 20%;
           display: flex;
           gap: 0.4rem;
           align-items: center;
@@ -269,8 +275,6 @@ body{
         }
 
         .scrap {
-          width: 10%;
-          display: flex;
           gap: 0.4rem;
           align-items: center;
           i {
@@ -372,7 +376,7 @@ body{
    
   }
   .top-btn {
-    background-color: white;
+    background-color: #26424a;
     background-image: url(../../assets/icons/iconmonstr-arrow-66-240.png);
   }
 }
@@ -427,7 +431,7 @@ body{
     background-color: white;
     padding: 1rem 1rem 1rem 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
+    height: 10rem;
   
   .content-wrap {
     display: flex;
@@ -435,10 +439,14 @@ body{
     gap: 1rem;
 
     .content-header {
+      width: 100%;
       display: flex;
+      justify-content: space-between;
+      gap: 0.1rem;
       flex-wrap: wrap;
 
       .field {
+        width: 45%;
         font-size: var(--font-small-size);
         border: none;
         border-radius: var(--border-radius);
@@ -446,14 +454,14 @@ body{
         background-color: var(--default-border);
         color: var(--color-background);
         padding: 0.2rem 0.4rem 0.2rem 0.4rem;
-        margin-right: 0.5rem;
         white-space: nowrap; 
         overflow: hidden; 
         text-overflow: ellipsis; 
       }
       .type {
-        display: flex;
-        justify-content: flex-end;
+        width: 20%;
+        // display: flex;
+        // justify-content: flex-end;
         font-size: var(--font-small-size);
         border: none;
         border-radius: var(--border-radius);
@@ -461,19 +469,20 @@ body{
         color: var(--default-border);
         text-align: center;
         padding: 0.2rem 0.4rem 0.2rem 0.4rem;
-        margin-right: 0.2rem;
         white-space: nowrap; 
         overflow: hidden;
         text-overflow: ellipsis;
       }
       .d-day {
+        width: 20%;
+        text-align: center;
         font-size: var(--font-small-size);
         border: none;
         border-radius: var(--border-radius);
         background-color: var(--color-orange);
         color: var(--color-background);
         padding: 0.2rem 0.4rem 0.2rem 0.4rem;
-        //white-space: nowrap;
+        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
       }
@@ -528,6 +537,13 @@ body{
         display: flex;
         justify-content: right;
         gap: 0.5rem;
+        
+        // TODO 조절 필요
+        i, span{
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
       }
 
       .comment {
@@ -608,15 +624,14 @@ body{
   // division section
   .division-wrap {
     width: 100%;
-    display: flex;
+    display: none;
 
     ul {
       flex-wrap: wrap;
 
       li {
         button {
-          .card-icon,
-          .list-icon {
+          .card-icon, .list-icon {
             display: none;
           }
         }
@@ -651,8 +666,7 @@ body{
       }
     }
 
-    .content-summary,
-    .content-footer {
+    .content-summary, .content-footer {
       width: 95%;
       display: flex;
       gap: 0.3rem;
@@ -669,6 +683,18 @@ body{
         gap: 0.6rem;
 
       }
+    }
+
+    .content-footer{
+      .comment i{
+        width: 0.875rem !important;
+        height: 0.875rem !important;
+      }
+      .scrap i{
+        width: 0.875rem;
+        height: 0.875rem;
+      }
+
     }
   }
 

@@ -17,7 +17,6 @@
       <section class="contest-wrap wrap">
         <div class="contest-content-wrap">
           <h2 class="title">공모전</h2>
-          <hr class="divider" />
           <!-- 필터 전체(분야/연령/정렬/적용된검색조건건) 랩 -->
           <div class="filter-container">
             <!-- 필터 리스트 랩 -->
@@ -27,7 +26,7 @@
                   <span>분야</span>
                 </div>
                 <div class="filter-list">
-                  <button class="filter-item btn-active">포스터/웹툰/콘텐츠</button>
+                  <button class="filter-item">포스터/웹툰/콘텐츠</button>
                   <button class="filter-item">사진/영상</button>
                   <button class="filter-item">아이디어/기획</button>
                   <button class="filter-item">IT/학술/논문</button>
@@ -60,13 +59,14 @@
               <!-- 적용된 검색조건 -->
               <div class="active-filter-wrap">
                 <ul>
-                  <li class="">적용된 검색조건</li>
-                  <li class="filter-reset">초기화</li>
+                  <li class="searched">적용된 검색조건</li>
+                  <li class="filter-reset">
+                    <img src="/assets/icons/iconmonstr-reload-lined.svg" alt="reset" />
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
-          <hr class="divider" />
           <!-- 검색 및 정렬 -->
           <div class="search-drop-wrap">
             <div class="search-wrap">
@@ -92,13 +92,13 @@
           <div class="swiper img_banner">
             <ul class="swiper-wrapper">
               <li class="swiper-slide">
-                <img src="/public/images/contest/banner.png" alt="배너" />
+                <img src="/public/images/contest/contest-banner1.png" alt="배너" />
               </li>
               <li class="swiper-slide">
-                <img src="/public/images/contest/banner2.png" alt="배너" />
+                <img src="/public/images/contest/contest-banner2.png" alt="배너" />
               </li>
               <li class="swiper-slide">
-                <img src="/public/images/contest/banner3.png" alt="배너" />
+                <img src="/public/images/contest/contest-banner3.png" alt="배너" />
               </li>
             </ul>
           </div>
@@ -113,37 +113,59 @@
           <nav class="page-num">
             <ul>
               <i class="left-arrow"></i>
-              <li>
-                <a href="#"><span>1</span></a>
+              <li class="page-btn">
+                <button><span>1</span></button>
               </li>
-              <li>
-                <a href="#"><span>2</span></a>
+              <li class="page-btn">
+                <button><span>2</span></button>
               </li>
-              <li>
-                <a href="#"><span>3</span></a>
+              <li class="page-btn">
+                <button><span>3</span></button>
               </li>
-              <li>
-                <a href="#"><span>4</span></a>
+              <li class="page-btn">
+                <button><span>4</span></button>
               </li>
-              <li>
-                <a href="#"><span>5</span></a>
+              <li class="page-btn">
+                <button><span>5</span></button>
               </li>
               <i class="right-arrow"></i>
             </ul>
           </nav>
         </div>
       </section>
+      <top-btn></top-btn>
     </main>
 
     <jean-footer></jean-footer>
+    <script src="/script/components/top-btn.js"></script>
     <script src="/script/components/header.js"></script>
     <script src="/script/components/contest.js"></script>
     <script type="module" src="/script/data/contest-text.js"></script>
+    <!-- <script type="module" src="/script/data/contest-data.json"></script> -->
     <script type="module" src="/script/contest/contest-list-render.js"></script>
     <script src="/script/components/filter.js"></script>
+    <script type="module" src="/script/contest/contest-paging.js"></script>
     <!-- <script type="module" src="/script/contest/contest-slide.js"></script> -->
-    <script>
-      var swiper = new Swiper(".img_banner", {});
+    <script type="module">
+      import { contestArr } from "/script/data/contest-text.js";
+      import { contestRender } from "/script/contest/contest-list-render.js";
+      const jsonData = await fetch("/script/data/contest-data.json");
+      const contents = await jsonData.json();
+      const sliceContents = contents.slice(0, 12);
+
+      contestRender(sliceContents);
+      var swiper = new Swiper(".img_banner", {
+        spaceBetween: 16,
+        speed: 500,
+        autoplay: {
+          delay: 2000,
+        },
+        loop: true,
+        navigation: {
+          nextEl: ".license-button-next",
+          prevEl: ".license-button-prev",
+        },
+      });
     </script>
     <script src="/script/components/Footer.js"></script>
   </body>

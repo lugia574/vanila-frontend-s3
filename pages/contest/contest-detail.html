@@ -32,8 +32,6 @@
                   <img src="#" alt="공모전이미지" />
                 </div>
                 <div class="contest-apply-wrap">
-                  <!--혜미님 하트 icon 가져다가 박을것 -->
-                  <button class="contest-bookmark">♡</button>
                   <div class="contest-apply-btn">
                     <a href="#">지원하기</a>
                   </div>
@@ -64,20 +62,23 @@
                   <button class="share-item">공유</button>
                   <button class="share-item">다운</button>
                   <button class="share-item">저장</button>
+                  <!--혜미님 하트 icon 가져다가 박을것 -->
+                  <button class="contest-bookmark">
+                    <img src="/assets/icons/iconmonstr-heart-lined.svg" alt="" />
+                  </button>
                 </div>
               </div>
             </div>
           </div>
           <!-- 공모전 상세내용 -->
           <div class="activity-detail-wrap">
-            <h2>상세내용</h2>
-            <hr class="divider" />
+            <h2 class="detail-title">상세내용</h2>
             <div class="activity-contents"></div>
           </div>
           <!-- 공모전 팀원모집 -->
           <div class="team-wrap">
-            <h2>팀원모집글</h2>
-            <div class="team"></div>
+            <h2 class="detail-title">팀원모집글</h2>
+            <ul class="team"></ul>
           </div>
         </section>
         <!-- 오른쪽 베스트글 -->
@@ -93,11 +94,18 @@
           </div>
         </aside> -->
       </div>
+      <top-btn></top-btn>
     </main>
     <jean-footer></jean-footer>
+
+    <script src="/script/components/top-btn.js"></script>
     <script src="/script/components/header.js"></script>
     <script type="module" src="/script/data/contest-text.js"></script>
     <script type="module" src="/script/contest/contest-detail-render.js"></script>
+    <script src="/script/components/community-list.js"></script>
+    <script type="module" src="/script/text/community-text.js"></script>
+    <script type="module" src="/script/contest/contest-team-render.js"></script>
+    <script type="module" src="/script/common/calculate-dday.js"></script>
     <script src="/script/components/Footer.js"></script>
   </body>
 </html>

@@ -55,7 +55,7 @@
 
 /* main */
 main {
-  margin-top: 5rem;
+  margin-top: 7rem;
 }
 
 .contest-detail-wrap {
@@ -63,36 +63,54 @@ main {
   margin: 0 auto;
 }
 
-.left-section {
-  min-width: 970px;
-}
-
-.activity-detail-content {
-  height: 500px;
-}
-
 .title-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 0;
+}
+
+.title-wrap .title-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.title-wrap .title-left > strong {
+  background-color: var(--color-orange);
+  color: white;
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--border-radius);
 }
 
 .info-wrap {
-  height: 400px;
   display: flex;
   padding: 1rem 0;
-  gap: 30px;
+  gap: 1rem;
 }
+
+.info-wrap .info-right-wrap {
+  width: 20%;
+}
+
+.contest-image {
+  max-height: 20rem;
+  overflow: hidden;
+}
+
 .info-wrap img {
-  width: 200px;
-  margin-top: 10px;
   object-fit: contain;
 }
 
 .info-left-wrap {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem 0 1.5rem;
 }
+
 .info-left-wrap h3 {
   padding: 10px 0px;
 }
@@ -100,10 +118,11 @@ main {
 .activity-infomation-field {
   justify-content: center;
 }
+
 .activity-infomation-field dl {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 1.5rem;
   grid-template-rows: repeat(2, 1fr);
 }
 
@@ -115,19 +134,27 @@ main {
 
 .contest-bookmark {
   width: 20%;
-  background-color: pink;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  background-color: var(--color-sky);
+}
+.contest-bookmark img {
+  height: 2rem;
 }
 
 .contest-apply-btn {
-  width: 80%;
+  width: 100%;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(88, 120, 195);
+  background-color: var(--font-basic-color);
   border-radius: 10px;
 }
+
 .contest-apply-btn a {
   font-size: 1.375rem;
   font-weight: 700;
@@ -135,30 +162,37 @@ main {
 }
 
 .activity-detail-wrap {
-  height: 1000px;
   padding: 1.5rem 0;
   font-weight: 700;
+  min-height: 25rem;
+}
+
+.detail-title {
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid gray;
 }
 
 .share-wrap {
+  width: 100%;
   display: flex;
+  justify-content: space-around;
   margin-top: 20px;
   gap: 10px;
 }
 
 .share-item {
-  width: 45px;
-  height: 45px;
+  width: 20%;
+  height: 50px;
   border-radius: 10px;
-  background-color: rgb(210, 228, 255);
 }
 
 .team-wrap {
-  height: 300px;
+  min-height: 300px;
 }
 
 .team {
-  border: 1px solid rgb(218, 218, 218);
+  padding: 1rem 0;
 }
 
 .right-section {
@@ -168,11 +202,11 @@ main {
 
 .best-content-wrap {
   width: 90%;
-  height: 300px;
   margin: 0 auto;
   border: 1px solid rgb(213, 213, 213);
   border-radius: 10px;
 }
+
 .best-content-wrap a {
   display: block;
   margin: 5px 0 5px;
@@ -185,13 +219,34 @@ main {
   padding: 30px 20px 0;
 }
 
-.divider {
-  margin: 10px;
-  background: rgb(221, 220, 220);
-  height: 1px;
-  border: 0;
-}
-
 .best-content {
   padding: 20px 20px 0;
+}
+
+@media screen and (max-width: 767px) {
+  main {
+    margin-top: 4rem;
+  }
+  .info-wrap {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .info-wrap .info-right-wrap {
+    width: 100%;
+  }
+  .info-left-wrap {
+    width: 100%;
+    padding: 20px 0;
+  }
+  .activity-infomation-field dl {
+    grid-template-columns: 1fr 2fr;
+  }
+  .activity-infomation-field dl dt {
+    font-weight: var(--font-bold);
+  }
+  .filter-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

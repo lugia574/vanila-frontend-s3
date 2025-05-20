@@ -246,6 +246,7 @@ function renderCommunityList(page = 1) {
   // 정렬 필터 정보 조회
   const sortedFilter = getCurrentSortType();
   const sortedArr = filterAndSort(useArr, sortedFilter);
+  console.log(sortedArr);
 
   const itemsPerPage = 10;
   const startIndex = (page - 1) * itemsPerPage;

@@ -8,7 +8,9 @@ body {
 // filter-section
 .filter-section {
   margin-top: 7rem;
-  .title {
+
+  .title{
+
     padding-bottom: 1rem;
   }
 }
@@ -81,6 +83,7 @@ body {
       display: block;
       background-position: center;
       background-repeat: no-repeat;
+
       background-image: url(../../assets/icons/iconmonstr-magnifier-lined.svg);
       width: 1.4rem;
       height: 1.4rem;
@@ -623,6 +626,7 @@ body {
       width: 100%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+
       gap: 0.7rem;
 
       li {

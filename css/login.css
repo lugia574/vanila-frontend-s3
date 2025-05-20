@@ -135,8 +135,21 @@
 .company-login .form-row button:hover {
   background-color: #1f353b;
 }
-.company-login .form-row .login-btn:hover {
-  background-color: var(--color-orange);
+.company-login .signup-link-row {
+  text-align: center;
+  margin-top: 1rem;
+}
+.company-login .signup-link-row .signup-text {
+  color: #888;
+  font-size: 0.9rem;
+}
+.company-login .signup-link-row .signup-text .signup-link {
+  color: #666;
+  text-decoration: none;
+  margin-left: 0.3rem;
+}
+.company-login .signup-link-row .signup-text .signup-link:hover {
+  color: #333;
 }
 
 /* 개인회원 로그인 폼 */

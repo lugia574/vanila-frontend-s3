@@ -10,15 +10,17 @@ const filterBtns = document.querySelectorAll(".filter-wrap a");
 const searchConditions = document.querySelector(".search-conditions");
 // 필터 초기화
 const filterReset = document.querySelector(".filter-reset");
-// 검색 버튼 
+console.log(filterReset);
+
+// 검색 버튼
 const searchBtn = document.querySelector(".search-btn");
 
 // 현재 array
 let currentArray = [];
 
 // 검색 버튼
-const searchBtn = document.querySelector(".search-btn");
-console.log(searchBtn);
+// const searchBtn = document.querySelector(".search-btn");
+// console.log(searchBtn);
 
 // 리스트 화면 전환
 listBtn.addEventListener("click", () => {
@@ -39,13 +41,13 @@ searchBtn.addEventListener("click", () => {
   // input 에서 text 가져오기
   const searchText = document.querySelector(".search-wrap input");
 
-
-  if(searchText.vaue === null){
+  if (searchText.vaue === null) {
     return;
   }
 
-  let searchArray = currentArray.filter((item)=>item.title && item.title.toLowerCase().includes(searchText.value));
-  
+  let searchArray = currentArray.filter(
+    item => item.title && item.title.toLowerCase().includes(searchText.value)
+  );
 
   // 해당 되는 값 찾아서 화면에 뿌리기
   // 어떻게 처리할지 고민 필요
@@ -108,7 +110,6 @@ function getCurrentSortType() {
 
 // 정렬 조건 처리
 function filterAndSort(array, filterType) {
-
   if (filterType === null) {
     return array.slice().sort((a, b) => b.id - a.id);
   }

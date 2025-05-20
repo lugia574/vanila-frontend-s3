@@ -95,7 +95,7 @@ body {
   font-size: var(--font-middle-size);
   background-color: var(--color-background);
 }
-.filter-wrap ul i {
+.filter-wrap ul .filter-reset {
   display: block;
   background-position: center;
   background-repeat: no-repeat;
@@ -103,6 +103,14 @@ body {
   width: 1.2rem;
   height: 1.2rem;
   cursor: pointer;
+}
+.filter-wrap .search-wrap {
+  justify-content: flex-start !important;
+  width: 50%;
+}
+.filter-wrap .search-wrap > input {
+  width: 80% !important;
+  margin: 0 !important;
 }
 .filter-wrap div {
   padding: 0.5rem;
@@ -119,7 +127,7 @@ body {
   padding: 0.5rem 1rem;
   position: relative;
 }
-.filter-wrap div i {
+.filter-wrap div .search-btn {
   position: absolute;
   display: block;
   background-position: center;
@@ -584,6 +592,20 @@ body {
   .filter-wrap > div {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .filter-wrap .search-wrap {
+    position: relative;
+    justify-content: flex-start !important;
+    width: 100%;
+  }
+  .filter-wrap .search-wrap > input {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .filter-wrap .search-wrap .search-btn {
+    top: 40% !important;
+    transform: translateY(-50%);
+    right: 1rem !important;
   }
   .filter-wrap .tag-title strong {
     font-size: 1rem;

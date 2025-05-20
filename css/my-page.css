@@ -77,16 +77,17 @@ body {
   min-width: 240px;
 }
 .main-wrap .profile-section {
-  position: sticky;
+  position: relative;
   width: 100%;
-  margin-top: 95px;
+  margin-top: 96px;
   background-color: var(--color-background);
   padding: 2rem 0;
 }
 .main-wrap .profile-section .profile-wrap {
-  width: 70%;
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -135,12 +136,13 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 2rem 0;
+  padding: 2rem 1.5rem;
 }
 .main-wrap .mypage-contents .tab-container {
-  width: 70%;
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0 1.5rem;
   display: flex;
   flex-direction: column;
 }
@@ -148,6 +150,12 @@ body {
   display: flex;
   border-bottom: 2px solid var(--color-background);
   margin-bottom: 2rem;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.main-wrap .mypage-contents .tab-container .tab-header::-webkit-scrollbar {
+  display: none;
 }
 .main-wrap .mypage-contents .tab-container .tab-header .tab-btn {
   padding: 1rem 2rem;
@@ -192,7 +200,6 @@ body {
   gap: 1rem;
   max-height: 60vh;
   overflow-y: auto;
-  padding-right: 1rem;
   scrollbar-gutter: stable;
   /* 스크롤바 스타일링 */
 }
@@ -384,11 +391,12 @@ body {
 
 @media screen and (max-width: 767px) {
   .main-wrap .profile-section {
-    margin-top: 6rem;
-    padding: 2rem 0;
+    margin-top: 60px;
+    padding: 1.5rem 0;
   }
   .main-wrap .profile-section .profile-wrap {
-    width: 90%;
+    width: 100%;
+    padding: 0 1rem;
     flex-direction: column;
     gap: 1.5rem;
   }
@@ -398,34 +406,52 @@ body {
   }
   .main-wrap .mypage-contents {
     flex-grow: 1;
+    padding: 2rem 1rem;
   }
   .main-wrap .mypage-contents .tab-container {
-    width: 90%;
+    width: 100%;
+    padding: 0 1rem;
   }
   .main-wrap .mypage-contents .tab-container .tab-header {
     overflow-x: auto;
     white-space: nowrap;
     padding-bottom: 0.5rem;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
   .main-wrap .mypage-contents .tab-container .tab-header::-webkit-scrollbar {
-    height: 4px;
-  }
-  .main-wrap .mypage-contents .tab-container .tab-header::-webkit-scrollbar-track {
-    background: var(--color-background);
-  }
-  .main-wrap .mypage-contents .tab-container .tab-header::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 10px;
+    display: none;
   }
   .main-wrap .mypage-contents .tab-container .tab-header .tab-btn {
-    padding: 0.8rem 1.2rem;
+    padding: 0.8rem 1rem;
     font-size: var(--font-small-size);
+    flex-shrink: 0;
+    margin-bottom: 0;
   }
   .content-wrap .content-header {
     flex-direction: column;
     gap: 10px;
   }
+  .content-wrap .content-header .left-group {
+    flex-wrap: wrap;
+  }
+  .content-wrap .content-header .left-group .field {
+    font-size: 0.7rem;
+    padding: 1px 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+  }
   .content-wrap .content-header .right-group {
     justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+  .content-wrap .content-header .right-group .type,
+  .content-wrap .content-header .right-group .d-day,
+  .content-wrap .content-header .right-group .status {
+    font-size: 0.7rem;
+    padding: 1px 8px;
   }
 }

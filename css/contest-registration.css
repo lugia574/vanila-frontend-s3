@@ -168,6 +168,9 @@ select option {
     justify-content: center;
     gap: 1rem;
   }
+  .contest-info-wrap .info-item {
+    width: 100%;
+  }
   h3 {
     text-align: center;
   }

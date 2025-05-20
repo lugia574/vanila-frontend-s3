@@ -1,9 +1,8 @@
-
 import { communityArr } from "../text/community-text.js";
-import '../components/community-card.js';
+import "../components/community-card.js";
 
 // view type
-let currentViewType = 'list'; // 기본값 : 리스트형
+let currentViewType = "list"; // 기본값 : 리스트형
 const cardBtn = document.getElementById("card-btn");
 const listBtn = document.getElementById("list-btn");
 
@@ -15,13 +14,13 @@ const searchConditions = document.querySelector(".search-conditions");
 const filterReset = document.querySelector(".filter-reset");
 
 // 리스트 화면 전환
-listBtn.addEventListener("click", ()=>{
-  currentViewType = 'list';
+listBtn.addEventListener("click", () => {
+  currentViewType = "list";
   renderCommunityList(1);
   renderPagination(1);
 });
-cardBtn.addEventListener("click", ()=>{
-  currentViewType = 'card';
+cardBtn.addEventListener("click", () => {
+  currentViewType = "card";
   renderCommunityList(1);
 });
 
@@ -42,7 +41,6 @@ filterReset.addEventListener("click", () => {
   renderCommunityList(1);
   renderPagination(1);
 });
-
 
 function getFilteredCommunityList() {
   const filters = getSelectedFilters();
@@ -162,9 +160,8 @@ filterBtns.forEach(btn => {
         });
         liTag.remove();
       });
-
     } else {
-      // 다중 선택 필터 처리 
+      // 다중 선택 필터 처리
       const matchedFilter = Array.from(searchConditions.children).find(
         child => child.textContent.trim() === filterName
       );
@@ -175,7 +172,6 @@ filterBtns.forEach(btn => {
         if (matchedFilter) {
           matchedFilter.remove();
         }
-
       } else {
         btn.classList.add("btn-active");
 
@@ -220,7 +216,7 @@ function renderCommunityList(page = 1) {
   const filteredArr = getFilteredCommunityList();
 
   // 필터 결과가 있으면 그걸 쓰고, 없으면 원본 communityArr 사용
-  const useArr = (filteredArr && filteredArr.length > 0) ? filteredArr : communityArr;
+  const useArr = filteredArr && filteredArr.length > 0 ? filteredArr : communityArr;
   const filters = getSelectedFilters();
   const isFilterActive = Object.keys(filters).length > 0;
   
@@ -243,7 +239,7 @@ function renderCommunityList(page = 1) {
     return;
   }
 
-  if (currentViewType === 'list') {
+  if (currentViewType === "list") {
     // 리스트형 그리기
     // TODO : 컴포넌트로 전환
     pageItems.forEach(item => {
@@ -281,7 +277,6 @@ function renderCommunityList(page = 1) {
       container.appendChild(aTag);
     });
     chanageViewCss(container);
-
   } else {
     // 카드형 그리기
     sortedArr.forEach(item => {
@@ -289,15 +284,16 @@ function renderCommunityList(page = 1) {
       communityCard.setAttribute('communityfield', item.field);
       communityCard.setAttribute('communitytype', item.type);
       communityCard.setAttribute('day', item.dDay);
+
       communityCard.setAttribute("communitytitle", item.title);
-      communityCard.setAttribute('communitysummary', item.content);
-      communityCard.setAttribute('communitywriter', item.writer);
-      communityCard.setAttribute('communitycomments', item.comment);
-      communityCard.setAttribute('communityscraps', item.scrap);
+      communityCard.setAttribute("communitysummary", item.content);
+      communityCard.setAttribute("communitywriter", item.writer);
+      communityCard.setAttribute("communitycomments", item.comment);
+      communityCard.setAttribute("communityscraps", item.scrap);
       container.appendChild(communityCard);
 
       const observer = new MutationObserver(() => {
-        const aTag = communityCard.shadowRoot?.querySelector('.card-content-link');
+        const aTag = communityCard.shadowRoot?.querySelector(".card-content-link");
         if (aTag) {
           scrap(aTag);
           titlePoint(aTag);
@@ -311,42 +307,42 @@ function renderCommunityList(page = 1) {
 }
 
 // view별 css 처리
-function chanageViewCss(container){
-  if(currentViewType === "list"){
-      container.classList.remove("card-view");
-      container.classList.add("content-list");
-  }else{
-      container.classList.remove("content-list");
-      container.classList.add("card-view");
+function chanageViewCss(container) {
+  if (currentViewType === "list") {
+    container.classList.remove("card-view");
+    container.classList.add("content-list");
+  } else {
+    container.classList.remove("content-list");
+    container.classList.add("card-view");
   }
 }
-     
+
 // 스크랩 이벤트
-function scrap(aTag){
-    const scrap = aTag.querySelector(".scrap i");
-    scrap.addEventListener("click", () => {
-        scrap.classList.toggle("scrap-active");
-    });
+function scrap(aTag) {
+  const scrap = aTag.querySelector(".scrap i");
+  scrap.addEventListener("click", () => {
+    scrap.classList.toggle("scrap-active");
+  });
 }
 
 // 마우스 오버시 style 변경
-function titlePoint(aTag){
-    const title = aTag.querySelector(".title");
-    aTag.addEventListener("mouseover", () => {
-      title.classList.add("point");
-    });
-    aTag.addEventListener("mouseout", () => {
-      title.classList.remove("point");
-    });
+function titlePoint(aTag) {
+  const title = aTag.querySelector(".title");
+  aTag.addEventListener("mouseover", () => {
+    title.classList.add("point");
+  });
+  aTag.addEventListener("mouseout", () => {
+    title.classList.remove("point");
+  });
 }
 
 // 리스트 컴포넌트 클릭시 상세 화면 이동
-function moveContent(aTag, item){
-  aTag.addEventListener("click", (e)=>{
+function moveContent(aTag, item) {
+  aTag.addEventListener("click", e => {
     console.log(`${item.id}`);
-    e.preventDefault(); 
-    window.location.href=`./community-content.html?id=${item.id}`;
-  })
+    e.preventDefault();
+    window.location.href = `./community-content.html?id=${item.id}`;
+  });
 }
 
 // 페이징 렌더링

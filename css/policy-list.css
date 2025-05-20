@@ -62,11 +62,11 @@
 head,
 body {
   font-family: "Pretendard", "BMDOHYEON", sans-serif;
-  background-color: var(--color-background);
+  background-color: white;
   color: var(--font-basic-color);
 }
 
-main .wrap {
+.wrap {
   max-width: 1400px;
   padding: 1.5rem 2rem;
   margin: 0 auto;
@@ -75,6 +75,10 @@ main .wrap {
 .blind {
   position: absolute;
   top: -9999px;
+}
+
+.hidden {
+  display: none;
 }
 
 a {
@@ -114,29 +118,22 @@ a:focus {
   }
 }
 #policy-container {
-  margin-top: 100px;
+  margin-top: 5rem;
+  height: 1800px;
   padding: 1.5rem 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 }
 
-#policy-filter {
-  width: 100%;
-  min-width: 1010px;
-  padding: 1.5rem;
-  border: 1px solid var(--font-basic-color);
-  border-radius: var(--border-radius);
+#policy-container .title {
+  padding: 2rem 0;
 }
 
-.policy-filter-title {
-  font-size: var(--font-large-size);
-  font-weight: var(--font-bold);
-  margin: 0.5rem 0.5rem 0.5rem 0;
-}
-.policy-filter-title label {
-  display: flex;
-  gap: 10px;
+#policy-container .divider {
+  margin: 0 20px 0 20px;
+  background: rgb(221, 220, 220);
+  height: 1px;
+  border: 0;
 }
 
 #policy-content-container {

@@ -33,7 +33,7 @@ class TopBtn extends HTMLElement {
 
       document.addEventListener("scroll", () => {
         const sPos = document.documentElement.scrollTop;
-        sPos > 200 ? btn.classList.add("hidden") : btn.classList.remove("hidden");
+        sPos > 200 ? btn.classList.remove("hidden") : btn.classList.add("hidden");
       });
     } catch (error) {
       console.error("top-btn 로딩 실패:", error);

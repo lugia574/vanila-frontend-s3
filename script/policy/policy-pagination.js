@@ -1,4 +1,3 @@
-import { getAllData } from "/script/policy/policy-fetch.js";
 import { renderPage } from "/script/policy/policy-render.js";
 
 const paginationContainer = document.querySelector(".policy-pagination");
@@ -13,55 +12,44 @@ function calculatePagination(totalItems) {
   const startPage = (currentBlock - 1) * 5 + 1;
   const endPage = Math.min(startPage + 4, totalPages);
 
-  return { totalPages, startPage, endPage, currentBlock };
+  return { totalPages, startPage, endPage };
 }
 
 // 페이지네이션 버튼 생성 함수
-function createPaginationButton(label, page, disabled = false) {
+function createPaginationButton(label, page, filteredItems) {
   const btn = document.createElement("button");
   btn.textContent = label;
-  btn.disabled = disabled;
+  btn.disabled = false;
+
   btn.addEventListener("click", () => {
     currentPage = page;
-    renderPage(currentPage);
-    renderPagination();
+    renderPage(currentPage, filteredItems);
+    renderPagination(filteredItems); // ✅ 다시 페이지네이션 업데이트
   });
+
   return btn;
 }
 
-// 페이지네이션 UI 렌더링
-export function renderPagination() {
-  const allItems = getAllData();
-  const totalItems = allItems.length;
+// 🔥 수정된 함수: 필터링된 items를 받아서 렌더링
+export function renderPagination(filteredItems) {
+  const totalItems = filteredItems.length;
   const { totalPages, startPage, endPage } = calculatePagination(totalItems);
 
   paginationContainer.innerHTML = "";
 
-  //   처음으로(1페이지) 이동 버튼
-  //   paginationContainer.appendChild(createPaginationButton("⏮", 1, currentPage === 1));
-
-  //   이전 페이지
+  // 이전 블록 버튼
   if (startPage > 1) {
-    paginationContainer.appendChild(createPaginationButton("◀", startPage - 1));
+    paginationContainer.appendChild(createPaginationButton("◀", startPage - 1, filteredItems));
   }
 
   for (let i = startPage; i <= endPage; i++) {
-    const btn = createPaginationButton(i, i);
+    const btn = createPaginationButton(i, i, filteredItems);
     if (i === currentPage) btn.classList.add("active");
     paginationContainer.appendChild(btn);
   }
 
-  //   다음페이지
+  // 다음 블록 버튼
   if (endPage < totalPages) {
-    paginationContainer.appendChild(createPaginationButton("▶", endPage + 1));
+    paginationContainer.appendChild(createPaginationButton("▶", endPage + 1, filteredItems));
   }
-
-  //   마지막 페이지로 이동 버튼
-  //   paginationContainer.appendChild(
-  //     createPaginationButton("⏭", totalPages, currentPage === totalPages)
-  //   );
 }
-
-// 초기 렌더링 진입점
-renderPage(currentPage);
-renderPagination();

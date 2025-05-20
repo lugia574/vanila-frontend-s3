@@ -24,8 +24,8 @@
               <div class="filter-list">
                 <button id="job" class="filter-item">일자리</button>
                 <button id="home" class="filter-item">주거</button>
-                <button id="culture" class="filter-item">복지/문화</button>
-                <button id="join" class="filter-item">참여/권리</button>
+                <button id="culture" class="filter-item">복지.문화</button>
+                <button id="join" class="filter-item">참여.권리</button>
                 <button id="edu" class="filter-item">교육</button>
                 <button id="no-info" class="filter-item">정보X</button>
               </div>
@@ -37,7 +37,7 @@
               <div class="filter-list">
                 <button id="korea" class="filter-item">전국</button>
                 <button id="region" class="filter-item">지역별</button>
-                <button id="seoul" class="filter-item">서울시</button>
+                <button id="seoul" class="filter-item">서울</button>
                 <button id="gu" class="filter-item">서울구별</button>
               </div>
             </div>
@@ -91,13 +91,12 @@
     <script src="/script/policy/policy-filter.js"></script>
     <script type="module">
       import { loadAllData } from "/script/policy/policy-fetch.js";
-      import { renderPage } from "/script/policy/policy-render.js";
+      import { renderPage, renderFilteredList } from "/script/policy/policy-render.js";
       import { renderPagination } from "/script/policy/policy-pagination.js";
 
       document.addEventListener("DOMContentLoaded", async () => {
         await loadAllData();
-        renderPage(1);
-        renderPagination();
+        renderFilteredList();
       });
     </script>
   </body>

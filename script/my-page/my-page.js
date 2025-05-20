@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     name: "김공모",
     email: "contest@example.com",
     location: "서울특별시",
+    company: "오픈AI 코리아",
     profileImage: "/public/images/profile/profile.png", // 기본 프로필 이미지 경로
   };
 
@@ -136,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function loadUserProfile() {
     document.querySelector(".user-name").textContent = userProfile.name;
     document.querySelector(".user-email").textContent = userProfile.email;
+    document.querySelector(".user-company").textContent = userProfile.company;
     document.querySelector(".user-location").textContent = userProfile.location;
 
     const profileImg = document.querySelector(".profile-img img");
@@ -387,15 +389,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // 프로필 수정 버튼 이벤트
+  // 글쓰기, 프로필 수정 버튼 이벤트
   function setupProfileEditButton() {
-    const editBtn = document.querySelector(".edit-btn");
-    if (editBtn) {
-      editBtn.addEventListener("click", function () {
-        // 프로필 수정 페이지로 이동하거나 모달 표시
-        alert("프로필 수정 페이지로 이동합니다.");
-        // 실제로는 아래와 같이 구현할 수 있음
-        // window.location.href = '/profile/edit';
+    const postBtn = document.querySelector(".my-post.edit-btn");
+    const profileBtn = document.querySelector(".profile.edit-btn");
+
+    if (postBtn) {
+      postBtn.addEventListener("click", function () {
+        window.location.href = "/pages/contest/contest-registration.html";
+      });
+    }
+
+    if (profileBtn) {
+      profileBtn.addEventListener("click", function () {
+        window.location.href = "/pages/my-page/my-profile-edit.html";
       });
     }
   }

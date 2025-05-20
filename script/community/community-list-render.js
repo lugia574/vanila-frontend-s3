@@ -153,6 +153,7 @@ filterBtns.forEach(btn => {
 
     // 정렬 필터는 다중 선택 불가능
     if (isSortFilter) {
+      // TODO : 이부분 
       const sortFilters = isSortFilter.querySelectorAll("a");
       const isAlreadyActive = btn.classList.contains("btn-active");
 
@@ -283,9 +284,6 @@ function renderCommunityList(page = 1, filteredArr) {
     pagination.innerHTML = "";
     return;
   }
-
-  // test 중
-  currentArray = sortedArr;
 
   if (currentViewType === "list") {
     // 리스트형 그리기

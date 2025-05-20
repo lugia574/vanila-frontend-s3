@@ -49,6 +49,7 @@ body {
 
     li {
       a {
+        display: block;
         width: auto;
         height: auto;
         border-radius: var(--border-radius);
@@ -427,6 +428,9 @@ body {
   background-color: var(--color-orange) !important;
   color: white;
   font-size: var(--font-small-size);
+  border-color:var(--color-orange) !important;
+
+
 }
 
 // 스크랩 버튼
@@ -657,18 +661,20 @@ body {
       grid-template-columns: repeat(2, 1fr);
 
       gap: 0.7rem;
-
       li {
         width: 100%;
         text-align: center;
         background-color: var(--color-background);
-        padding: 0.25rem 0.5rem;
         border-radius: var(--border-radius);
         font-size: 1rem;
         a {
           padding: 0.25rem 0.4rem 0.25rem 0.4rem !important;
         }
       }
+      .reset-wrap{
+        background-color: white;
+      }
+
 
       i {
         width: 1rem;
@@ -794,4 +800,12 @@ body {
       }
     }
   }
+
+  .search-conditions li{
+    padding: 0.3rem;
+    .reset-wrap{
+      background: white !important;
+    }
+  }
+
 }

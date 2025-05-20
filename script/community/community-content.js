@@ -1,12 +1,13 @@
 import { communityArr } from "../text/community-text.js";
 
+// 전역변수
 const regBtn = document.querySelector(".register-btn");
+let timer;
 
 // 저장 버튼 style
 regBtn.addEventListener("mouseover", ()=>{
     regBtn.classList.add("btn-point");
 });
-
 regBtn.addEventListener("mouseout", ()=>{
     regBtn.classList.remove("btn-point");
 });
@@ -100,6 +101,6 @@ function deadLineCal(recruEndDate){
 
   // 3. 1초마다 업데이트
   updateCountdown(); // 즉시 실행 한 번
-  const timer = setInterval(updateCountdown, 1000);
+  timer = setInterval(updateCountdown, 1000);
 }
 

@@ -38,8 +38,8 @@
 
     // 공모전 main/sub 선택
     .type-detail{
+        width: 100%;
         display: flex;
-        // todo : 아래로 떨어지게 설정
         gap: 5rem;
         padding-bottom: 0.5rem;
 
@@ -47,12 +47,14 @@
             width: 100%;
 
             .main-type-main, .sub-type-main{
+                width: 100%;
                 position: relative;  
 
                 .title{
                     padding-bottom: 0.5rem;
                 }
                 li:first-child{
+                    width: 100%;
                     a{  
                         // 분야, 참여
                         color: black;
@@ -61,6 +63,7 @@
                 }
 
                 li:nth-child(2){
+                    width: 100%;
                     a{
                         // 공모전 분야를 선택해주세요.
                         display: block;
@@ -173,7 +176,7 @@
         gap: 5rem;
 
         .recruitment-end-wrap{
-            width: 100%;
+            width: 50%;
             display: flex;
             flex-direction: column;
 
@@ -200,7 +203,7 @@
             display: flex;
             gap: 5rem;
             padding-bottom: 0.5rem;
-            width: 100%;
+            width: 50%;
 
             .age-group-main{
                 width: 100%;
@@ -393,6 +396,12 @@ input[type="date"] {
 }
 
 @media screen and (max-width:768px){
+
+    .basic-info-section{
+        padding-top: 4rem;
+    }
+
+
     .basic-info-wrap{
         .type-detail, .period-wrap{
             display: flex;

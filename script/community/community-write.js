@@ -1,10 +1,9 @@
 
 // 전역 변수
 // 모집인원 추가 버튼
-const addBtn = document.querySelector("#addBtn");
-console.log(addBtn);
+const addBtn = document.querySelector(".add-btn");
 // 모집인원 삭제 버튼
-const delBtn = document.querySelector("#delBtn");
+const delBtn = document.querySelector(".del-btn");
 // 라디오 박스 옵션 체크 여부1 : 공모전
 const optionOne = document.querySelector("#option1");
 // 라디오 박스 옵션 체크 여부2 : 스터디
@@ -35,9 +34,6 @@ const ageCategoryList = document.querySelectorAll(".age-group-sub li");
 
 // cancle btn
 const cancleBtn = document.querySelector(".canale-btn");
-
-
-
 
 
 // 날짜 박스안에 오늘 날짜 설정
@@ -118,106 +114,106 @@ cancleBtn.addEventListener("click", ()=>{
 
 
 // 추가 제거 버튼
+// let blockId = 1;
 
-let blockId = 1;
-// 버튼 클릭시 인원 추가/제거 : 같은 위치에 있느 ㄴdiv 삭제
-// 아래에 생성
-// addBtn.addEventListener("click", (e)=>{
-//     // 부모 찾아서 복사
-//     const parent = e.target.closest(".recruitment-count-wrap");
-//     const clone = parent.cloneNode(true);
-//     console.log(clone);
+// // 최초 add 버튼 선택
+// const initialAddBtn = document.querySelector(".add-btn");
 
-//     clone.querySelectorAll("input").forEach(input => input.value = "");
+// // 이벤트 등록 함수
+// function addBlock(e) {
+//   e.preventDefault();
 
-//     // 고유 번호 증가 및 부여
-//     blockId++;
-//     clone.setAttribute("data-id", blockId);
+//   // 부모 블록 복사
+//   const parent = e.target.closest(".recruitment-count-wrap");
+//   const clone = parent.cloneNode(true);
+
+//   // input 초기화
+//   clone.querySelectorAll("input").forEach(input => input.value = "");
+
+//   // 고유 ID 부여
+//   blockId++;
+//   clone.setAttribute("data-id", blockId);
+
+//   // 복제된 블록의 새 add 버튼에 이벤트 다시 바인딩
+//   const newAddBtn = clone.querySelector(".add-btn");
+//   if (newAddBtn) {
+//     newAddBtn.addEventListener("click", addBlock);
+//   }
+
+//   // 복제된 블록 추가
+//   const recruitmentContainer = document.querySelector(".recruitment-container");
+//   recruitmentContainer.appendChild(clone);
+// }
+
+// // 최초 버튼에만 초기 등록
+// if (initialAddBtn) {
+//   initialAddBtn.addEventListener("click", addBlock);
+// }
+
+// // 삭제
+// delBtn.addEventListener("click", function (e) {
+//     // 삭제 버튼 클릭 시
+   
+//     e.preventDefault();
+//     const container = document.getElementById("recruitment-container");
+//     const blocks = container.querySelectorAll(".recruitment-count-wrap");
+
+//     if (blocks.length > 1) {
+//         const targetWrap = e.target.closest(".recruitment-count-wrap");
+//         targetWrap.remove();
+//     } else {
+//         alert("최소 1개는 남겨야 합니다.");
+//     }
     
-//     const recruitmentContainer = document.querySelector(".recruitment-container") 
-//     recruitmentContainer.appendChild(clone);
 // });
 
+let blockId = 1;
 
-//let blockId = 1; // 예시용 고유 번호
+// 최초 버튼 선택
+const initialAddBtn = document.querySelector(".add-btn");
+const initialDelBtn = document.querySelector(".del-btn");
 
-//const addBtn = document.querySelector(".add-btn");
+// 삭제 함수
+function deleteBlock(e) {
+  e.preventDefault();
 
-addBtn.addEventListener("click", (e) => {
-  // 부모 찾아서 복사
+  const container = document.querySelector(".recruitment-container");
+  const blocks = container.querySelectorAll(".recruitment-count-wrap");
+
+  if (blocks.length > 1) {
+    const targetWrap = e.target.closest(".recruitment-count-wrap");
+    targetWrap.remove();
+  } else {
+    alert("최소 1개는 남겨야 합니다.");
+  }
+}
+
+// 추가 함수
+function addBlock(e) {
+  e.preventDefault();
+
   const parent = e.target.closest(".recruitment-count-wrap");
   const clone = parent.cloneNode(true);
 
   // input 초기화
   clone.querySelectorAll("input").forEach(input => input.value = "");
 
-  // 고유 번호 증가 및 부여
+  // 고유 ID 부여
   blockId++;
   clone.setAttribute("data-id", blockId);
-  console.log(clone);  
-  // 새롭게 복사된 블록 내부의 add-btn 가져오기
-  const newAddBtn = clone.querySelector("#addBtn");
-  console.log("newAddBtn", newAddBtn);
-  if (newAddBtn) {
-    newAddBtn.addEventListener("click", (e) => {
-      // 재귀 호출처럼 동일한 동작 실행
-      const parent = e.target.closest(".recruitment-count-wrap");
-      const clone = parent.cloneNode(true);
-      clone.querySelectorAll("input").forEach(input => input.value = "");
-      blockId++;
-      clone.setAttribute("data-id", blockId);
 
-      // 또 복사된 블록의 버튼에도 다시 이벤트 붙이기
-      const innerAddBtn = clone.querySelector(".add-btn");
-      if (innerAddBtn) {
-        innerAddBtn.addEventListener("click", arguments.callee); // 자기 자신 재등록
-      }
+  // 복제된 버튼들에 이벤트 재등록
+  const newAddBtn = clone.querySelector(".add-btn");
+  const newDelBtn = clone.querySelector(".del-btn");
 
-      const recruitmentContainer = document.querySelector(".recruitment-container");
-      recruitmentContainer.appendChild(clone);
-    });
-  }
+  if (newAddBtn) newAddBtn.addEventListener("click", addBlock);
+  if (newDelBtn) newDelBtn.addEventListener("click", deleteBlock);
 
-  // 복제된 블록을 DOM에 추가
+  // 복제된 블록 추가
   const recruitmentContainer = document.querySelector(".recruitment-container");
   recruitmentContainer.appendChild(clone);
-});
+}
 
-
-// 삭제
-// let blockId = 1; // 고유 번호 초기값
-
-// document.addEventListener("click", function (e) {
-//     // 추가 버튼 클릭 시
-//     if (e.target.classList.contains("addBtn")) {
-//         const parent = e.target.closest(".recruitment-count-wrap");
-//         const clone = parent.cloneNode(true);
-//         clone.querySelectorAll("input").forEach(input => input.value = "");
-
-//         // 고유 번호 증가 및 부여
-//         blockId++;
-//         clone.setAttribute("data-id", blockId);
-        
-//         // 버튼 텍스트에 번호 표시 (선택)
-//         clone.querySelector(".addBtn").textContent = `추가 (${blockId})`;
-//         clone.querySelector(".delBtn").textContent = `삭제 (${blockId})`;
-
-//         document.getElementById("recruitment-container").appendChild(clone);
-//     }
-
-//     // 삭제 버튼 클릭 시
-//     if (e.target.classList.contains("delBtn")) {
-//         const container = document.getElementById("recruitment-container");
-//         const blocks = container.querySelectorAll(".recruitment-count-wrap");
-        
-//         if (blocks.length > 1) {
-//             // 해당 블록만 삭제
-//             const targetWrap = e.target.closest(".recruitment-count-wrap");
-//             targetWrap.remove();
-//         } else {
-//             alert("최소 1개는 남겨야 합니다.");
-//         }
-//     }
-// });
-// </script>
-
+// 최초 버튼에만 초기 등록
+if (initialAddBtn) initialAddBtn.addEventListener("click", addBlock);
+if (initialDelBtn) initialDelBtn.addEventListener("click", deleteBlock);

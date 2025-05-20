@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     name: "김공모",
     email: "contest@example.com",
     location: "서울특별시",
-    profileImage: "../../assets/images/profile-default.png", // 기본 프로필 이미지 경로
+    profileImage: "/public/images/profile/profile.png", // 기본 프로필 이미지 경로
   };
 
   // 북마크한 공모전 데이터 (실제로는 서버에서 가져올 데이터)

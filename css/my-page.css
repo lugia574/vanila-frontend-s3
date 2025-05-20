@@ -79,9 +79,8 @@ body {
 .main-wrap .profile-section {
   position: relative;
   width: 100%;
-  margin-top: 96px;
-  background-color: var(--color-background);
-  padding: 2rem 0;
+  margin-top: 95px;
+  padding: 2rem 0 0 0;
 }
 .main-wrap .profile-section .profile-wrap {
   width: 100%;
@@ -391,8 +390,8 @@ body {
 
 @media screen and (max-width: 767px) {
   .main-wrap .profile-section {
-    margin-top: 60px;
-    padding: 1.5rem 0;
+    margin-top: 6rem;
+    padding: 2rem 0 0 0;
   }
   .main-wrap .profile-section .profile-wrap {
     width: 100%;

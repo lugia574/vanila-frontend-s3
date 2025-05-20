@@ -57,7 +57,7 @@ function getFilteredCommunityList() {
   });
 }
 
-// 선택 필터 조건에 해당하는 배열 반환
+// 필터 정보 수집
 function getSelectedFilters() {
   const selected = document.querySelectorAll(".search-conditions .search-filter-active");
   const filters = {};
@@ -74,6 +74,41 @@ function getSelectedFilters() {
   });
   return filters;
 }
+
+// 정렬 필터 정보 반환
+function getCurrentSortType() {
+  const activeSort = document.querySelector('ul.array a[data-filter-type="sort"].btn-active');
+  return activeSort != null ? activeSort.textContent.trim() : null;
+}
+
+// 정렬 조건 처리
+function filterAndSort(array, filterType) {
+  if(filterType === null){
+    return array;
+  }
+  
+  switch (filterType) {
+    case '최신순': // writeDate가 빠른 순 (즉, 최신이 먼저면 내림차순)
+      array.sort((a, b) => new Date(b.writeDate) - new Date(a.writeDate));
+      break;
+    case '인기순': // comment 많은 순 (내림차순)
+      array.sort((a, b) => b.comment - a.comment);
+      break;
+    case '스크랩순': // scrap 많은 순 (내림차순)
+      array.sort((a, b) => b.scrap - a.scrap);
+      console.log("스크랩순", array);
+      break;
+    case '종료임박순': // recruitmentEndDate가 가까운 순 (오름차순)
+      array.sort((a, b) => new Date(a.recruitmentEndDate) - new Date(b.recruitmentEndDate));
+      break;
+    default:
+      // 정렬하지 않을 경우
+      break;
+  }
+
+  return array;
+}
+
 
 // 필터 요소별 style
 // TODO : 코드 정리 필요
@@ -188,14 +223,21 @@ function renderCommunityList(page = 1) {
   const useArr = (filteredArr && filteredArr.length > 0) ? filteredArr : communityArr;
   const filters = getSelectedFilters();
   const isFilterActive = Object.keys(filters).length > 0;
+  
+  // 정렬 필터 정보 조회
+  const sortedFilter = getCurrentSortType();
+  const sortedArr = filterAndSort(useArr, sortedFilter);
+  console.log("sortedArr", sortedArr);
+
+
 
   const itemsPerPage = 10;
   const startIndex = (page - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const pageItems = useArr.slice(startIndex, endIndex);
+  const pageItems = sortedArr.slice(startIndex, endIndex);
 
   // 필터와 맞는 조건의 내용이 없다면 화면을 지운다
-  if (isFilterActive && filteredArr.length === 0) {
+  if (isFilterActive && filteredArr.length === 0 && sortedFilter === null) {
     container.innerHTML = "";
     pagination.innerHTML = "";
     return;
@@ -242,7 +284,7 @@ function renderCommunityList(page = 1) {
 
   } else {
     // 카드형 그리기
-    useArr.forEach(item => {
+    sortedArr.forEach(item => {
       const communityCard = document.createElement('community-card');
       communityCard.setAttribute('communityfield', item.field);
       communityCard.setAttribute('communitytype', item.type);

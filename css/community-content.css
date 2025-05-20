@@ -327,3 +327,74 @@ body {
   background: #26424a !important;
   color: white;
 }
+
+@media screen and (max-width: 768px) {
+  .post-section {
+    padding-top: 3rem;
+  }
+  .post-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch; /* 자식이 너비/높이에 맞게 */
+    height: auto;
+    min-width: 0; /* flex item의 자식들이 줄바꿈 허용하도록 */
+  }
+  .post-header .title-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 0; /* flex item의 자식들이 줄바꿈 허용하도록 */
+    white-space: normal;
+  }
+  .post-header .title-wrap .main-type, .post-header .title-wrap .title {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+  .post-header .write-info {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    gap: 1rem;
+  }
+  .post-header .write-info span {
+    text-align: center;
+    font-size: var(--font-small-size);
+  }
+  .recruitment-info-wrap .info-grid .info-left, .recruitment-info-wrap .info-grid .info-right {
+    width: 100%;
+  }
+  .post-detail .content-detail {
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.1rem 0.5rem;
+  }
+  .post-detail .content-detail .content-left, .post-detail .content-detail .content-right {
+    display: flex;
+    flex-direction: column;
+  }
+  .post-detail .content-detail .content-left {
+    width: 10%;
+    font-weight: var(--font-bold);
+  }
+  .post-detail .content-detail .content-right {
+    width: 90%;
+  }
+  .comment-section .comment-form {
+    height: 12rem;
+    padding-bottom: 2rem;
+  }
+  .comment-section .comment-form .comment-left {
+    height: 70%;
+  }
+  .comment-section .comment-form .comment-right {
+    width: 90%;
+    padding: 0.5rem 0 0.5rem 0;
+  }
+  .comment-section .comment-form .comment-right .comment-wrap {
+    width: 100%;
+    height: 70%;
+    margin-bottom: 1rem;
+  }
+}

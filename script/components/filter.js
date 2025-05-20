@@ -6,6 +6,7 @@ const filterReset = document.querySelector(".filter-reset");
 
 let contestArr = [];
 
+// 더미데이터 불러옴
 fetch("/script/data/contest-data.json")
   .then(res => res.json())
   .then(data => {
@@ -14,7 +15,7 @@ fetch("/script/data/contest-data.json")
 
 // 필터 적용 함수
 function applyFilters() {
-  const activeFilters = document.querySelectorAll(".filter-item");
+  const activeFilters = document.querySelectorAll(".btn-active");
   const selectedFilters = Array.from(activeFilters).map(el => el.textContent.trim());
 
   if (selectedFilters === 0) {
@@ -22,15 +23,20 @@ function applyFilters() {
     return;
   }
 
+  // 카테고리 자르기
   const filtered = contestArr.filter(item => {
-    return selectedFilters.every(filter => {
-      return (
-        (item["공모분야"] && item["공모분야"].includes(filter)) ||
-        (item["참여대상"] && item["참여대상"].includes(filter)) ||
-        (item["시상규모"] && item["시상규모"].includes(filter))
+    return selectedFilters.some(filter => {
+      const subFilters = filter.split("/"); // "스포츠/음악" -> ["스포츠, 음악"]
+
+      return subFilters.some(
+        sub =>
+          (item["공모분야"] && item["공모분야"].includes(sub)) ||
+          (item["참여대상"] && item["참여대상"].includes(sub)) ||
+          (item["시상규모"] && item["시상규모"].includes(sub))
       );
     });
   });
+
   contestRender(filtered.slice(0, 12));
 }
 

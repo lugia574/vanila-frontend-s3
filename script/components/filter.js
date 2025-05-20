@@ -3,8 +3,11 @@ import { contestRender } from "/script/contest/contest-list-render.js";
 const filterBtns = document.querySelectorAll(".filter-list > button");
 const searchConditions = document.querySelector(".active-filter-wrap> ul");
 const filterReset = document.querySelector(".filter-reset");
+const searchBtn = document.querySelector(".search-btn");
+console.log(searchBtn);
 
 let contestArr = [];
+let selectedFilters = [];
 
 // 더미데이터 불러옴
 fetch("/script/data/contest-data.json")
@@ -16,29 +19,44 @@ fetch("/script/data/contest-data.json")
 // 필터 적용 함수
 function applyFilters() {
   const activeFilters = document.querySelectorAll(".btn-active");
-  const selectedFilters = Array.from(activeFilters).map(el => el.textContent.trim());
+  // 갱신
+  selectedFilters = Array.from(activeFilters).map(el => el.textContent.trim());
+
+  // 검색 펑션 혜미 하시면 바로 훔치기 !@!!!!!!!!!!
 
   if (selectedFilters === 0) {
     contestRender(contestArr.slice(0, 12));
     return;
   }
 
-  // 카테고리 자르기
-  const filtered = contestArr.filter(item => {
-    return selectedFilters.some(filter => {
-      const subFilters = filter.split("/"); // "스포츠/음악" -> ["스포츠, 음악"]
-
-      return subFilters.some(
-        sub =>
-          (item["공모분야"] && item["공모분야"].includes(sub)) ||
-          (item["참여대상"] && item["참여대상"].includes(sub)) ||
-          (item["시상규모"] && item["시상규모"].includes(sub))
-      );
-    });
-  });
-
+  const filtered = getFilteredCommunityList(selectedFilters);
   contestRender(filtered.slice(0, 12));
 }
+
+searchBtn.addEventListener("click", () => {
+  // 필터 적용된 배열 가져오기
+  const filterArray = getFilteredCommunityList(selectedFilters);
+  // 필터 적용된 배열이 없으면 기본 배열 가져오기
+  const filterSearch = filterArray.length > 0 ? filterArray : contestArr;
+  // 입력한 검색어
+  const searchText = document.querySelector(".search-wrap input");
+
+  if (searchText.value === "" || searchText.value === null) {
+    alert("검색어를 입력해주세요");
+    return;
+  }
+
+  let searchArray = filterSearch.filter(
+    item => item.title && item.title.toLowerCase().includes(searchText.value)
+  );
+
+  // 정렬 조건 가져오기
+  const sortedFilter = getCurrentSortType();
+  // 필터 & 정렬 적용
+  const sortedArr = filterAndSort(searchArray, sortedFilter);
+
+  contestRender(sortedArr.slice(0, 12));
+});
 
 // 필터 클릭 이벤트
 document.addEventListener("click", e => {
@@ -124,17 +142,21 @@ filterReset.addEventListener("click", () => {
 });
 
 // 필터 가져오기
-function getFilteredCommunityList() {
-  const filters = getSelectedFilters();
+function getFilteredCommunityList(selectedFilters) {
+  // 카테고리 자르기
+  const filtered = contestArr.filter(item => {
+    return selectedFilters.some(filter => {
+      const subFilters = filter.split("/"); // "스포츠/음악" -> ["스포츠, 음악"]
 
-  if (Object.keys(filters).length === 0) return communityArr;
-
-  return communityArr.filter(item => {
-    for (const key in filters) {
-      if (!filters[key].includes(item[key])) return false;
-    }
-    return true;
+      return subFilters.some(
+        sub =>
+          (item["공모분야"] && item["공모분야"].includes(sub)) ||
+          (item["참여대상"] && item["참여대상"].includes(sub)) ||
+          (item["시상규모"] && item["시상규모"].includes(sub))
+      );
+    });
   });
+  return filtered;
 }
 
 // 필터 정보 수집

@@ -54,12 +54,11 @@
 }
 
 .sign-up-wrapper {
-  height: auto;
-  min-height: calc(100vh - 149px);
+  min-height: calc(100vh - 100px);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0;
+  padding: 100px 1rem 1rem;
 }
 .sign-up-wrapper .sign-up-container {
   width: 100%;

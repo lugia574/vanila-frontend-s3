@@ -14,7 +14,6 @@
       <h2 class="title">청년정책</h2>
       <hr class="divider" />
       <section>
-        <!-- 필터 전체(분야/연령/정렬/적용된검색조건건) 랩 -->
         <div class="filter-container">
           <!-- 필터 리스트 랩 -->
           <div class="contest-filter-wrap">
@@ -78,21 +77,25 @@
       <section id="policy-content-container">
         <!-- 여기 카드 컴포넌트 -->
       </section>
+
+      <div class="policy-pagination"></div>
     </main>
     <jean-footer></jean-footer>
 
     <!-- script -->
     <script src="../../script/components/header.js"></script>
     <script src="/script/components/Footer.js"></script>
-    <script src="/script/components/filter.js"></script>
+    <script src="/script/policy/policy-filter-component.js"></script>
     <script src="/script/policy/policy-filter.js"></script>
     <script type="module">
       import { loadAllData } from "/script/policy/policy-fetch.js";
       import { renderPage } from "/script/policy/policy-render.js";
+      import { renderPagination } from "/script/policy/policy-pagination.js";
 
       document.addEventListener("DOMContentLoaded", async () => {
         await loadAllData();
         renderPage(1);
+        renderPagination();
       });
     </script>
   </body>

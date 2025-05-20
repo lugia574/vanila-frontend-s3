@@ -68,7 +68,7 @@ body {
 
 .wrap {
   max-width: 1400px;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 1rem;
   margin: 0 auto;
 }
 
@@ -118,14 +118,13 @@ a:focus {
   }
 }
 #policy-container {
-  margin-top: 5rem;
-  padding: 1.5rem 2rem;
+  margin-top: 7rem;
   display: flex;
   flex-direction: column;
 }
 
 #policy-container .title {
-  padding: 2rem 0;
+  padding: 0 0 2rem 0;
 }
 
 #policy-container .divider {
@@ -151,6 +150,8 @@ a:focus {
   flex-direction: column;
   gap: 5px;
   min-width: 150px;
+  min-height: 150px;
+  max-height: 200px;
   padding: 1rem;
   border: 1px solid var(--font-basic-color);
   border-radius: var(--border-radius);
@@ -177,4 +178,25 @@ a:focus {
   flex-direction: column;
   gap: 5px;
   border-bottom: 1px solid var(--color-background);
+}
+.content-card .content h3,
+.content-card .content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.policy-pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.policy-pagination {
+  height: 50px;
+}
+.policy-pagination button {
+  width: 30px;
+  height: 30px;
+  background: none;
 }

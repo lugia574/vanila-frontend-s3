@@ -407,7 +407,7 @@ body {
 
 @media screen and (max-width: 767px) {
   .main-wrap .main-banner {
-    margin-top: 7rem;
+    margin-top: 4.2rem;
   }
   .main-wrap .main-banner .image-slider .image-slide-list .image-slide {
     height: 600px;

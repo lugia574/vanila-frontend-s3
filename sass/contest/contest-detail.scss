@@ -89,7 +89,6 @@ main {
   align-items: center;
   gap: 1rem;
   justify-content: center;
-  background-color: var(--color-sky);
   img {
     height: 2rem;
   }
@@ -183,12 +182,16 @@ main {
     justify-content: center;
     align-items: center;
   }
-  .info-wrap .info-right-wrap {
+  .info-wrap .info-right-wrap,
+  .left-section {
     width: 100%;
   }
   .info-left-wrap {
     width: 100%;
     padding: 20px 0;
+  }
+  .activity-infomation-field {
+    width: 100%;
   }
   .activity-infomation-field dl {
     grid-template-columns: 1fr 2fr;
@@ -199,5 +202,9 @@ main {
   .filter-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contest-image {
+    overflow: hidden;
   }
 }

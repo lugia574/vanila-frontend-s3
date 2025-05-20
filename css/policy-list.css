@@ -118,14 +118,13 @@ a:focus {
   }
 }
 #policy-container {
-  margin-top: 3rem;
-  padding: 1.5rem 2rem;
+  margin-top: 7rem;
   display: flex;
   flex-direction: column;
 }
 
 #policy-container .title {
-  padding: 2rem 0;
+  padding: 0 0 2rem 0;
 }
 
 #policy-container .divider {
@@ -194,7 +193,6 @@ a:focus {
 }
 
 .policy-pagination {
-  min-width: 300px;
   height: 50px;
 }
 .policy-pagination button {

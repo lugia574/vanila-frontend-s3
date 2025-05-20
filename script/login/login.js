@@ -62,16 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // 회원가입 버튼
-  document.addEventListener("DOMContentLoaded", function () {
-    const signUpBtn = document.getElementById("go-to-signup-btn");
-    if (signUpBtn) {
-      signUpBtn.addEventListener("click", function () {
-        window.location.href = "/pages/sign-up/sign-up.html";
-      });
-    }
-  });
-
   // 간편 로그인 처리
   const socialButtons = [
     { selector: ".naver-login", provider: "naver" },

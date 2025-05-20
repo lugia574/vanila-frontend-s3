@@ -147,7 +147,7 @@ select {
 .contest-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 2rem;
   // padding: 30px;
   contest-card {
     display: block;
@@ -212,6 +212,7 @@ select {
   }
   .contest-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   .filter-list {

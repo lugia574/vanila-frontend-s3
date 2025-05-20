@@ -60,6 +60,9 @@ body {
 .filter-section {
   margin-top: 7rem;
 }
+.filter-section .title {
+  padding-bottom: 1rem;
+}
 
 .filter-wrap {
   width: 100%;
@@ -101,6 +104,7 @@ body {
   display: flex;
   margin: 0 auto;
   width: 60%;
+  height: 2.5rem;
   border: none;
   border-radius: var(--border-radius);
   background: var(--color-background);
@@ -110,17 +114,18 @@ body {
 .filter-wrap div i {
   position: absolute;
   display: block;
-  background-position: center; /* 배경 이미지 중앙 정렬 */
-  background-repeat: no-repeat; /* 배경 이미지 반복 방지 */
+  background-position: center;
+  background-repeat: no-repeat;
   background-image: url(../../assets/icons/iconmonstr-magnifier-lined.svg);
   width: 1.4rem;
   height: 1.4rem;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  top: 50%; /* 세로 중앙에서 시작 */
-  right: calc(20% + 1.5rem); /* 오른쪽 여백 조정 */
-  transform: translateY(-50%); /* 정확한 세로 중앙 정렬 */
+  top: 50%;
+  right: calc(20% + 1.5rem);
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .division-wrap {
@@ -555,15 +560,17 @@ body {
 
 @media screen and (max-width: 768px) {
   .filter-section {
-    margin-top: 7rem;
+    margin-top: 4rem;
   }
   .filter-wrap {
     width: 100%;
     padding: 1rem 0.5rem 1rem 0.5rem;
   }
   .filter-wrap ul {
-    gap: 1rem;
-    padding: 0.5rem;
+    gap: 0.7rem;
+  }
+  .filter-wrap ul li a {
+    padding: 0.25rem 0.4rem 0.25rem 0.4rem !important;
   }
   .filter-wrap ul i {
     width: 1rem;
@@ -574,7 +581,7 @@ body {
   }
   .filter-wrap div input {
     width: 95%;
-    height: 40px;
+    height: 2.5rem;
   }
   .filter-wrap div i {
     right: 10%;

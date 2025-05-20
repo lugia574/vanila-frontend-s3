@@ -37,8 +37,9 @@ body{
             text-align: center;
             height: 1.5rem;
             line-height:1.5rem;
-            font-size: var(--font-large-size);
+            font-size: 1.25rem;
             font-weight: var(--font-bold);
+            word-break: keep-all;
 
             white-space: nowrap;      /* 줄바꿈 안 함 */
             overflow: hidden;         /* 넘친 부분 숨김 */
@@ -67,7 +68,7 @@ body{
         width: 100%;
         display: flex;
         flex-wrap: wrap;
-        //justify-content: space-between;
+        justify-content: space-between;
         padding: 20px 0 10px 0;
         gap: 0.5rem;
 
@@ -121,7 +122,7 @@ body{
                 text-overflow: ellipsis;  /* ... 처리 */
             }
 
-            .period, .dead-line{
+            .division, .recruitment-age, .period, .dead-line{
                 display: flex;
                 flex-wrap: wrap;
             }
@@ -144,20 +145,20 @@ body{
 
     .recruitment-detail{
         display: flex;
+        flex-wrap: wrap;
         gap: 1.5rem;
         padding: 0.5rem 0.5rem 0.1rem 0.5rem;
 
         .detail-left{
-            //width: 10%;
             span{
                 font-weight: var(--font-bold);
             }
         }
         .detail-right{
-            //width: 90%;
             display: flex;
+            flex-wrap: wrap;
+
             gap: 1rem;
-            //flex-direction: column;
         }
 
         .recruitment-left, .recruitment-right{
@@ -176,12 +177,16 @@ body{
 
     .content-detail{
         display: flex;
+        flex-wrap: wrap;
         gap: 1.5rem;
         padding: 0.5rem 0.5rem 0.1rem 0.5rem;
+
 
         .content-left, .content-right{
             display: flex;
             flex-direction: column;
+            flex-wrap: wrap;
+
             //gap: 1rem;
         }
         .content-left{
@@ -350,6 +355,7 @@ body{
         align-items: stretch; /* 자식이 너비/높이에 맞게 */
         height: auto;
         min-width: 0; /* flex item의 자식들이 줄바꿈 허용하도록 */
+        gap: 0.5rem;
 
         .title-wrap{
             display: flex;
@@ -411,12 +417,10 @@ body{
                 flex-direction: column;
             }
             .content-left{
-                width: 10%;
+                gap: 0;
                 font-weight: var(--font-bold);
             }
             .content-right{
-                width: 90%;
-
             }
         }
     }

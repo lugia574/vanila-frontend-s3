@@ -120,16 +120,36 @@ body {
   font-size: 2rem;
   font-weight: var(--font-bold);
 }
-.main-wrap .profile-section .profile-wrap .profile-info .profile-detail .user-email,
-.main-wrap .profile-section .profile-wrap .profile-info .profile-detail .user-location {
+.main-wrap .profile-section .profile-wrap .profile-info .profile-detail .user-email {
   font-size: var(--font-medium-size);
   color: var(--font-basic-color);
 }
-.main-wrap .profile-section .profile-wrap .profile-edit .edit-btn {
-  padding: 0;
+.main-wrap .profile-section .profile-wrap .profile-info .profile-detail .user-extra {
+  display: flex;
+  gap: 1rem;
+  font-size: var(--font-medium-size);
   color: var(--font-basic-color);
+}
+.main-wrap .profile-section .profile-wrap .profile-info .profile-detail .user-extra .user-location,
+.main-wrap .profile-section .profile-wrap .profile-info .profile-detail .user-extra .user-company {
+  margin: 0;
+}
+.main-wrap .profile-section .profile-wrap .profile-edit {
+  display: flex;
+}
+.main-wrap .profile-section .profile-wrap .profile-edit .edit-btn {
+  padding: 2px 10px;
+  border: none;
+  border-radius: 8px;
   font-size: var(--font-small-size);
   cursor: pointer;
+}
+.main-wrap .profile-section .profile-wrap .profile-edit .edit-btn + .edit-btn {
+  margin-left: 0.5rem;
+}
+.main-wrap .profile-section .profile-wrap .profile-edit .my-post:hover {
+  background-color: orange;
+  color: white;
 }
 .main-wrap .mypage-contents {
   width: 100%;
@@ -271,8 +291,6 @@ body {
   font-size: var(--font-small-size);
   border: none;
   border-radius: 8px;
-  background-color: var(--default-border);
-  color: var(--color-background);
   padding: 2px 10px;
   display: flex;
   align-items: center;
@@ -281,8 +299,6 @@ body {
   font-size: var(--font-small-size);
   border: none;
   border-radius: 8px;
-  background-color: var(--color-background);
-  color: var(--default-border);
   padding: 2px 10px;
   display: flex;
   align-items: center;

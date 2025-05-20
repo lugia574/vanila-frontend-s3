@@ -1,0 +1,158 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "BMDOHYEON";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("/assets/fonts/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("/assets/fonts/Pretendard-Medium.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("/assets/fonts/Pretendard-SemiBold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("/assets/fonts/Pretendard-Bold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("/assets/fonts/Pretendard-ExtraBold.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+:root {
+  /* 색상코드 */
+  --color-background: #f0f0f0;
+  --color-sky: #a4d7ee;
+  --color-ivory: #f9e3a3;
+  --color-orange: #fc8d09;
+  /* 폰트 */
+  --font-basic-color: #26424a;
+  --font-small-size: 0.875rem;
+  --font-middle-size: 1rem;
+  --font-large-size: 1.125rem;
+  --font-xlarge-size: 2rem;
+  --font-default: 400;
+  --font-bold: 700;
+  --default-border: #26424a;
+  --border-radius: 0.5rem;
+}
+
+.profile-edit-wrapper {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 1rem 1rem;
+}
+.profile-edit-wrapper .profile-edit-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 2.5rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.profile-edit-wrapper .profile-edit-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #26424a;
+  font-weight: 600;
+}
+.profile-edit-wrapper .profile-edit-container .profile-edit-form .input-group {
+  margin-bottom: 1.5rem;
+}
+.profile-edit-wrapper .profile-edit-container .profile-edit-form .input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+.profile-edit-wrapper .profile-edit-container .profile-edit-form .input-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.profile-edit-wrapper .profile-edit-container .profile-edit-form .input-group input:focus {
+  outline: none;
+  border-color: #26424a;
+}
+.profile-edit-wrapper .profile-edit-container .profile-edit-form .image-upload-group {
+  margin-bottom: 2rem;
+}
+.profile-edit-wrapper .profile-edit-container .profile-edit-form .image-upload-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+.profile-edit-wrapper .profile-edit-container .profile-edit-form .image-upload-group .preview-img-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.profile-edit-wrapper .profile-edit-container .profile-edit-form .image-upload-group .preview-img-wrapper img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+.profile-edit-wrapper .profile-edit-container .profile-edit-form .image-upload-group .preview-img-wrapper input[type=file] {
+  flex: 1;
+}
+.profile-edit-wrapper .profile-edit-container .profile-edit-form .btn-group {
+  margin-top: 2rem;
+}
+.profile-edit-wrapper .profile-edit-container .profile-edit-form .btn-group .save-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: #fc8d09;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.profile-edit-wrapper .profile-edit-container .profile-edit-form .btn-group .save-btn:hover {
+  background-color: #e87d00;
+}
+
+@media (max-width: 768px) {
+  .profile-edit-wrapper {
+    padding: 80px 1rem 60px;
+  }
+  .profile-edit-wrapper .profile-edit-container {
+    padding: 1.5rem;
+  }
+  .profile-edit-wrapper .profile-edit-container .profile-edit-form .input-group label {
+    font-size: 0.95rem;
+  }
+  .profile-edit-wrapper .profile-edit-container .profile-edit-form .input-group input {
+    font-size: 0.95rem;
+    padding: 0.7rem;
+  }
+  .profile-edit-wrapper .profile-edit-container .profile-edit-form .btn-group .edit-btn {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+}

@@ -1,5 +1,10 @@
 
 // 전역 변수
+
+// 모집인원 추가 버튼
+const addBtn = document.querySelector(".add-btn");
+// 모집인원 삭제 버튼
+const delBtn = document.querySelector(".del-btn");
 // 라디오 박스 옵션 체크 여부1 : 공모전
 const optionOne = document.querySelector("#option1");
 // 라디오 박스 옵션 체크 여부2 : 스터디
@@ -215,4 +220,6 @@ function addBlock(e) {
 // 최초 버튼에만 초기 등록
 if (initialAddBtn) initialAddBtn.addEventListener("click", addBlock);
 if (initialDelBtn) initialDelBtn.addEventListener("click", deleteBlock);
+
 if (initialCancleBtn) initialCancleBtn.addEventListener("click", cancleBlock);
+

@@ -39,6 +39,7 @@
   min-width: 100px;
   padding: 0.625rem 0;
   font-weight: 700;
+  font-size: 1.25rem;
   /* background-color: #9679b3; */
 }
 
@@ -50,12 +51,14 @@
 
 .filter-item,
 .search-filter-active {
+  // box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-background);
   padding: 0.25rem 0.5rem;
   height: auto;
   box-sizing: border-box;
   border-radius: var(--border-radius);
   font-size: 1rem;
-  background-color: #fff;
+  // background-color: #fff;
   color: #202020;
 }
 
@@ -147,7 +150,7 @@ select {
 .contest-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 2rem;
   // padding: 30px;
   contest-card {
     display: block;
@@ -210,12 +213,19 @@ select {
   .contest-wrap {
     margin-top: 4rem;
   }
+  .filter-list-wrap {
+    flex-direction: column;
+  }
   .contest-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   .filter-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+  .filter-text-wrap {
+    font-size: 16px;
   }
 }

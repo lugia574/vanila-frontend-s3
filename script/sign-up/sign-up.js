@@ -87,7 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 회원가입 성공 메시지
     alert("회원가입이 완료되었습니다. 관리자 인증 후 이용 가능합니다.");
-    // 로그인 페이지로 이동 (예시)
-    // window.location.href = 'login.html';
+    window.location.href = "/pages/login/login.html";
   });
 });

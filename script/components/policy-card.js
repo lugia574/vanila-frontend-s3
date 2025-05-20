@@ -5,10 +5,12 @@ export const createCard = item => {
   // 출처별 분기 처리
   let linkHref = "#";
   switch (item.source) {
-    case "korea" || "region":
+    case "korea":
+    case "region":
       linkHref = `https://youth.seoul.go.kr/infoData/youthPlcyInfo/view.do?plcyBizId=${item.link}`;
       break;
-    case "seoul" || "seoul-gu":
+    case "seoul":
+    case "seoul-gu":
       linkHref = `https://youth.seoul.go.kr/infoData/plcyInfo/view.do?plcyBizId=${item.link}`;
       break;
     default:

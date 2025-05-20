@@ -135,6 +135,9 @@
 .company-login .form-row button:hover {
   background-color: #1f353b;
 }
+.company-login .form-row .login-btn:hover {
+  background-color: var(--color-orange);
+}
 
 /* 개인회원 로그인 폼 */
 .personal-login {

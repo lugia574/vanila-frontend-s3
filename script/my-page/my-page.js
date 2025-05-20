@@ -165,8 +165,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="field">${contest.field}</div>
           </div>
           <div class="right-group">
-            <div class="type">${contest.type}</div>
             <div class="d-day">${contest.dDay}</div>
+            <div class="type">${contest.type}</div>
           </div>
         </div>
         <div class="content-summary">
@@ -261,8 +261,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="field">${app.field}</div>
           </div>
           <div class="right-group">
-            <div class="type">${app.type}</div>
             <div class="status ${app.statusClass}">${app.status}</div>
+            <div class="type">${app.type}</div>
           </div>
         </div>
         <div class="content-summary">
@@ -333,8 +333,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="field">${post.field}</div>
           </div>
           <div class="right-group">
-            <div class="type">${post.type}</div>
             ${post.dDay ? `<div class="d-day">${post.dDay}</div>` : ""}
+            <div class="type">${post.type}</div>
           </div>
         </div>
         <div class="content-summary">

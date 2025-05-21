@@ -103,9 +103,12 @@
 
 .filter-item,
 .search-filter-active {
+  display: flex;
   background-color: var(--color-background);
   padding: 0.25rem 0.5rem;
-  height: auto;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
   border-radius: var(--border-radius);
   font-size: 1rem;

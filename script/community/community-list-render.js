@@ -447,6 +447,22 @@ function renderPagination(currentPage = 1) {
   pagination.append(rightLi);
 }
 
+function handleResize() {
+  const mobileBreakpoint = 768;
+  if(window.innerWidth <= mobileBreakpoint && currentViewType !== 'list'){
+    currentViewType = 'list';
+    renderCommunityList(1);
+    renderPagination(1);
+  } else if(window.innerWidth > mobileBreakpoint && currentViewType !== 'card'){
+    currentViewType = 'card';
+    renderCommunityList(1);
+  }
+}
+
+handleResize();
+
+window.addEventListener('resize', handleResize);
+
 // 윈도우 최초 로드
 window.addEventListener("DOMContentLoaded", () => {
   renderCommunityList(1);

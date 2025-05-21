@@ -2,16 +2,6 @@ class CommunityList extends HTMLElement {
   constructor() {
     super();
     this.shadow = this.attachShadow({ mode: "open" });
-    this.requiredAttributes = [
-      "communityField",
-      "communityType",
-      "day",
-      "communityTitle",
-      "communitySummary",
-      "communityWriter",
-      "communityComments",
-      "communityScraps",
-    ];
   }
 
   static get observedAttributes() {
@@ -38,18 +28,20 @@ class CommunityList extends HTMLElement {
     }
   }
 
-
+  // connectedCallback은 생략하거나 비워둠 → 속성 다 들어온 후에만 렌더
   connectedCallback() {
-    if (this.shouldRender()) {
-      this.render();
-    } 
+    // Do nothing to avoid premature render
   }
-  // connectedCallback() {
-  //   // 초기에는 렌더링을 하지 않음 (attributeChangedCallback에서 처리)
-  // }
 
   shouldRender() {
-    return this.requiredAttributes.every(attr => this.getAttribute(attr) !== null);
+    return this.hasAttribute("communityField") &&
+           this.hasAttribute("communityType") &&
+           this.hasAttribute("day") &&
+           this.hasAttribute("communityTitle") &&
+           this.hasAttribute("communitySummary") &&
+           this.hasAttribute("communityWriter") &&
+           this.hasAttribute("communityComments") &&
+           this.hasAttribute("communityScraps");
   }
 
   async render() {
@@ -66,17 +58,17 @@ class CommunityList extends HTMLElement {
     if (this.renderingInProgress) return;
     this.renderingInProgress = true;
 
-    this.shadow.innerHTML = "";
+    this.shadow.innerHTML = ""; // 기존 내용 제거
 
     try {
       const commRes = await fetch("../../css/common.css");
       const commCss = await commRes.text();
 
-      const CommunityListRes = await fetch("../../css/community-list.css", { cache: "no-store" });
-      const CommunityListCss = await CommunityListRes.text();
+      const listRes = await fetch("../../css/community-list.css", { cache: "no-store" });
+      const listCss = await listRes.text();
 
       const style = document.createElement("style");
-      style.textContent = `${commCss}\n${CommunityListCss}`;
+      style.textContent = `${commCss}\n${listCss}`;
 
       const communityList = document.createElement("a");
       communityList.className = "content-link";
@@ -84,36 +76,35 @@ class CommunityList extends HTMLElement {
         <a href="/pages/community/community-content.html?id=${communityId}">
           <div class="content-wrap">
             <div class="content-header">
-                <div class="left-group">
-                    <div class="title">${communityTitle}</div>
-                    <div class="field">${communityField}</div>
-                </div>
-                <div class="right-group">
-                    <div class="type">${communityType}</div>
-                    <div class="d-day">D-${day}</div>  
-                </div>
+              <div class="left-group">
+                <div class="title">${communityTitle}</div>
+                <div class="field">${communityField}</div>
+              </div>
+              <div class="right-group">
+                <div class="type">${communityType}</div>
+                <div class="d-day">D-${day}</div>  
+              </div>
             </div>
 
             <div class="content-summary">
-                <p>${communitySummary}</p>
+              <p>${communitySummary}</p>
             </div>
 
             <div class="content-footer">
-                <div class="left-group">
-                    <div class="writer">${communityWriter}</div>
-                </div>
+              <div class="left-group">
+                <div class="writer">${communityWriter}</div>
+              </div>
 
-                <div class="right-group">
-                    <div class="comment">
-                        <i></i>
-                        <span>${communityComments}</span>
-                    </div>
-                    
-                    <div class="scrap">
-                        <i></i>
-                        <span>${communityScraps}</span>
-                    </div>
+              <div class="right-group">
+                <div class="comment">
+                  <i></i>
+                  <span>${communityComments}</span>
                 </div>
+                <div class="scrap">
+                  <i></i>
+                  <span>${communityScraps}</span>
+                </div>
+              </div>
             </div>
           </div>
         </a>

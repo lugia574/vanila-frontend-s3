@@ -57,3 +57,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.license-card .license-bottom .license-summary p {
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

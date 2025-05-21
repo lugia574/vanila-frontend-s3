@@ -15,6 +15,11 @@ header {
   position: fixed;
   top: 0;
 
+  .logo > a {
+    display: flex;
+    align-items: center;
+  }
+
   .content-center {
     color: var(--font-basic-color);
 
@@ -44,6 +49,7 @@ header {
   #main-nav {
     display: flex;
     width: 100%;
+
     justify-content: center;
     align-items: center;
     flex: 1;
@@ -55,7 +61,7 @@ header {
         width: 20%;
         display: flex;
         justify-content: center;
-        font-size: var(--font-large-size);
+        font-size: 1.5rem;
         a {
           text-align: center;
           width: 100%;

@@ -4,13 +4,12 @@ const filterBtns = document.querySelectorAll(".filter-list > button");
 const searchConditions = document.querySelector(".active-filter-wrap> ul");
 const filterReset = document.querySelector(".filter-reset");
 const searchBtn = document.querySelector(".search-btn");
-console.log(searchBtn);
 
 let contestArr = [];
 let selectedFilters = [];
 
 // 더미데이터 불러옴
-fetch("/script/data/contest-data.json")
+await fetch("/script/data/contest-data.json")
   .then(res => res.json())
   .then(data => {
     contestArr = data;
@@ -22,9 +21,7 @@ function applyFilters() {
   // 갱신
   selectedFilters = Array.from(activeFilters).map(el => el.textContent.trim());
 
-  // 검색 펑션 혜미 하시면 바로 훔치기 !@!!!!!!!!!!
-
-  if (selectedFilters === 0) {
+  if (selectedFilters.length === 0) {
     contestRender(contestArr.slice(0, 12));
     return;
   }
@@ -210,3 +207,5 @@ function filterAndSort(array, filterType) {
 
   return array;
 }
+
+applyFilters();

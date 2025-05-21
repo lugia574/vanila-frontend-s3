@@ -2,6 +2,16 @@ class CommunityList extends HTMLElement {
   constructor() {
     super();
     this.shadow = this.attachShadow({ mode: "open" });
+    this.requiredAttributes = [
+      "communityField",
+      "communityType",
+      "day",
+      "communityTitle",
+      "communitySummary",
+      "communityWriter",
+      "communityComments",
+      "communityScraps",
+    ];
   }
 
   static get observedAttributes() {
@@ -20,12 +30,26 @@ class CommunityList extends HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue !== newValue) {
       clearTimeout(this._renderTimeout);
-      this._renderTimeout = setTimeout(() => this.render(), 0); // debounce
+      this._renderTimeout = setTimeout(() => {
+        if (this.shouldRender()) {
+          this.render();
+        }
+      }, 0);
     }
   }
 
+
   connectedCallback() {
-    this.render();
+    if (this.shouldRender()) {
+      this.render();
+    } 
+  }
+  // connectedCallback() {
+  //   // 초기에는 렌더링을 하지 않음 (attributeChangedCallback에서 처리)
+  // }
+
+  shouldRender() {
+    return this.requiredAttributes.every(attr => this.getAttribute(attr) !== null);
   }
 
   async render() {
@@ -39,18 +63,16 @@ class CommunityList extends HTMLElement {
     const communityComments = this.getAttribute("communityComments") || "0";
     const communityScraps = this.getAttribute("communityScraps") || "0";
 
-    // 중복 렌더링 방지
     if (this.renderingInProgress) return;
     this.renderingInProgress = true;
 
-    this.shadow.innerHTML = ""; // 기존 내용 제거
-    //
+    this.shadow.innerHTML = "";
 
     try {
       const commRes = await fetch("../../css/common.css");
       const commCss = await commRes.text();
 
-      const CommunityListRes = await fetch("../../css/community-list.css", { cache: "no-store" }); // 확장자 누락 주의
+      const CommunityListRes = await fetch("../../css/community-list.css", { cache: "no-store" });
       const CommunityListCss = await CommunityListRes.text();
 
       const style = document.createElement("style");
@@ -59,48 +81,50 @@ class CommunityList extends HTMLElement {
       const communityList = document.createElement("a");
       communityList.className = "content-link";
       communityList.innerHTML = `
-      <a href="/pages/community/community-content.html?id=${communityId}">
-        <div class="content-wrap">
-          <div class="content-header">
-              <div class="left-group">
-                  <div class="title">${communityTitle}</div>
-                  <div class="field">${communityField}</div>
-              </div>
-              <div class="right-group">
-                  <div class="type">${communityType}</div>
-                  <div class="d-day">D-${day}</div>  
-              </div>
-          </div>
+        <a href="/pages/community/community-content.html?id=${communityId}">
+          <div class="content-wrap">
+            <div class="content-header">
+                <div class="left-group">
+                    <div class="title">${communityTitle}</div>
+                    <div class="field">${communityField}</div>
+                </div>
+                <div class="right-group">
+                    <div class="type">${communityType}</div>
+                    <div class="d-day">D-${day}</div>  
+                </div>
+            </div>
 
-          <div class="content-summary">
-              <P>${communitySummary}</P>
-          </div>
+            <div class="content-summary">
+                <p>${communitySummary}</p>
+            </div>
 
-          <div class="content-footer">
-              <div class="left-group">
-                  <div class="writer">${communityWriter}</div>
-              </div>
+            <div class="content-footer">
+                <div class="left-group">
+                    <div class="writer">${communityWriter}</div>
+                </div>
 
-              <div class="right-group">
-                  <div class="comment">
-                      <i></i>
-                      <span>${communityComments}</span>
-                  </div>
-                  
-                  <div class="scrap">
-                      <i></i>
-                      <span>${communityScraps}</span>
-                  </div>
-              </div>
+                <div class="right-group">
+                    <div class="comment">
+                        <i></i>
+                        <span>${communityComments}</span>
+                    </div>
+                    
+                    <div class="scrap">
+                        <i></i>
+                        <span>${communityScraps}</span>
+                    </div>
+                </div>
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
       `;
 
       this.shadow.appendChild(style);
       this.shadow.appendChild(communityList);
     } catch (error) {
       console.error("communityList 로딩 실패:", error);
+    } finally {
+      this.renderingInProgress = false;
     }
   }
 }

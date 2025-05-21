@@ -66,6 +66,10 @@ header {
   position: fixed;
   top: 0;
 }
+header .logo > a {
+  display: flex;
+  align-items: center;
+}
 header .content-center {
   color: var(--font-basic-color);
   font-family: "Pretendard", sans-serif;
@@ -99,7 +103,7 @@ header #main-nav ul li {
   width: 20%;
   display: flex;
   justify-content: center;
-  font-size: var(--font-large-size);
+  font-size: 1.5rem;
 }
 header #main-nav ul li a {
   text-align: center;

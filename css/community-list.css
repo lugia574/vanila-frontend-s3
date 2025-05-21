@@ -508,6 +508,7 @@ body {
   width: 20%;
   display: flex;
   justify-content: center;
+  align-items: center;
   text-align: center;
   font-size: var(--font-small-size);
   border: none;
@@ -670,29 +671,34 @@ body {
     width: 95%;
   }
   .content-wrap .content-header {
-    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
   .content-wrap .content-header .left-group {
-    width: 70% !important;
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+  .content-wrap .content-header .left-group .field {
+    display: none !important;
   }
   .content-wrap .content-header .right-group {
-    width: 30% !important;
+    width: 100% !important;
     display: flex !important;
     justify-content: flex-end !important;
   }
   .content-wrap .content-header .right-group .type {
-    display: none;
+    display: none !important;
   }
   .content-wrap .content-header .right-group .d-day {
-    width: 60% !important;
+    width: 20% !important;
     display: inline-block;
+    padding: 0.2rem;
   }
   .content-wrap .content-summary,
   .content-wrap .content-footer {
     width: 95%;
     display: flex;
     gap: 0.3rem;
-    padding: 0.5rem 1rem 0.5rem 1rem;
     font-size: var(--font-xs-size);
   }
   .content-wrap .content-summary p,

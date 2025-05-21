@@ -502,6 +502,7 @@ body {
         overflow: hidden;
         text-overflow: ellipsis;
       }
+
       .type {
         width: 20%;
         display: flex;
@@ -522,7 +523,7 @@ body {
         width: 20%;
         display: flex;
         justify-content: center;
-        // align-items: center;
+        align-items: center;
         text-align: center;
         font-size: var(--font-small-size);
         border: none;
@@ -726,6 +727,10 @@ body {
     }
   }
 
+  // #card-view {
+  //   grid-template-columns: repeat(1, 1fr);
+  // }
+
   // content section
   .content-list {
     width: 95%;
@@ -733,22 +738,29 @@ body {
 
   .content-wrap {
     .content-header {
-      display: flex;
-      //gap: 0.5rem;
+      // display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
 
       .left-group {
-        width: 70% !important;
+        width: 100% !important;
+        justify-content: space-between !important;
+        .field {
+          display: none !important;
+        }
       }
       .right-group {
-        width: 30% !important;
+        width: 100% !important;
         display: flex !important;
         justify-content: flex-end !important;
         .type {
-          display: none;
+          display: none !important;
         }
+
         .d-day {
-          width: 60% !important;
+          width: 20% !important;
           display: inline-block;
+          padding: 0.2rem;
         }
       }
     }
@@ -758,7 +770,7 @@ body {
       width: 95%;
       display: flex;
       gap: 0.3rem;
-      padding: 0.5rem 1rem 0.5rem 1rem;
+      // padding: 0.5rem 1rem 0.5rem 1rem;
       font-size: var(--font-xs-size);
 
       p {

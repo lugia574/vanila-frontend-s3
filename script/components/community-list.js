@@ -38,9 +38,15 @@ class CommunityList extends HTMLElement {
     }
   }
 
+
   connectedCallback() {
-    // 초기에는 렌더링을 하지 않음 (attributeChangedCallback에서 처리)
+    if (this.shouldRender()) {
+      this.render();
+    } 
   }
+  // connectedCallback() {
+  //   // 초기에는 렌더링을 하지 않음 (attributeChangedCallback에서 처리)
+  // }
 
   shouldRender() {
     return this.requiredAttributes.every(attr => this.getAttribute(attr) !== null);

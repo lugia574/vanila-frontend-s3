@@ -68,7 +68,9 @@
     flex-direction: column;
     gap: 5px;
     border-bottom: 1px solid var(--color-background);
-
+    h3 {
+      font-size: 1.5rem;
+    }
     h3,
     p {
       overflow: hidden;
@@ -91,5 +93,26 @@
     width: 30px;
     height: 30px;
     background: none;
+  }
+}
+
+// 모바일 폰트 조정
+@media screen and (max-width: 767px) {
+  #policy-container {
+    margin-top: 4rem;
+  }
+  .card-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .content-card {
+    gap: 1rem;
+
+    h3 {
+      overflow: auto;
+      white-space: wrap;
+    }
+    .content {
+      gap: 1rem;
+    }
   }
 }

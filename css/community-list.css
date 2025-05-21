@@ -188,9 +188,10 @@ body {
   cursor: pointer;
 }
 .content-link .content-wrap {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
   width: 100%;
   max-width: 1400px;
   border-radius: var(--border-radius);
@@ -201,7 +202,6 @@ body {
 }
 .content-link .content-wrap .content-header {
   display: flex;
-  padding: 1rem 1rem 0 1rem;
 }
 .content-link .content-wrap .content-header .left-group,
 .content-link .content-wrap .content-header .right-group {
@@ -214,13 +214,16 @@ body {
 .content-link .content-wrap .content-header .left-group .title {
   margin-top: 0.1rem;
   font-weight: var(--font-bold);
-  font-size: var(--font-large-size);
+  font-size: 1.5rem;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .content-link .content-wrap .content-header .left-group .field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   font-size: var(--font-middle-size);
   border: none;
@@ -244,7 +247,9 @@ body {
   border-radius: var(--border-radius);
   background-color: var(--color-background);
   color: var(--default-border);
-  padding: 0.2rem 0.6rem 0.2rem 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -252,12 +257,14 @@ body {
 .content-link .content-wrap .content-header .right-group .d-day {
   width: 35%;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: var(--font-small-size);
   border: none;
   border-radius: 8px;
   background-color: var(--color-orange);
   color: var(--color-background);
-  padding: 0.2rem 0.6rem 0.2rem 0.6rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -265,8 +272,7 @@ body {
 .content-link .content-wrap .content-summary {
   display: flex;
   justify-content: space-between;
-  font-size: var(--font-small-size);
-  padding: 0 1rem 0.5rem 1rem;
+  font-size: var(--font-middle-size);
   color: var(--font-basic-color);
 }
 .content-link .content-wrap .content-summary p {
@@ -277,7 +283,6 @@ body {
 .content-link .content-wrap .content-footer {
   display: flex;
   justify-content: space-between;
-  padding: 0 1rem 0.5rem 1rem;
   font-size: var(--font-small-size);
 }
 .content-link .content-wrap .content-footer .left-group,
@@ -486,33 +491,36 @@ body {
 }
 .card-content-link .content-wrap .content-header .type {
   width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: var(--font-small-size);
   border: none;
   border-radius: var(--border-radius);
   background-color: var(--color-background);
   color: var(--default-border);
   text-align: center;
-  padding: 0.2rem 0.4rem 0.2rem 0.4rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .card-content-link .content-wrap .content-header .d-day {
   width: 20%;
+  display: flex;
+  justify-content: center;
   text-align: center;
   font-size: var(--font-small-size);
   border: none;
   border-radius: var(--border-radius);
   background-color: var(--color-orange);
   color: var(--color-background);
-  padding: 0.2rem 0.4rem 0.2rem 0.4rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .card-content-link .content-wrap .content-title .title {
   width: 100%;
-  font-size: var(--font-middle-size);
+  font-size: 1.5rem;
   font-weight: var(--font-bold);
   white-space: nowrap;
   overflow: hidden;
@@ -529,7 +537,6 @@ body {
   width: 100%;
   display: flex;
   border-top: 1px solid var(--color-background);
-  padding-top: 0.5rem;
 }
 .card-content-link .content-wrap .content-footer .left-group,
 .card-content-link .content-wrap .content-footer .right-group {

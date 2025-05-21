@@ -179,6 +179,9 @@ a:focus {
   gap: 5px;
   border-bottom: 1px solid var(--color-background);
 }
+.content-card .content h3 {
+  font-size: 1.5rem;
+}
 .content-card .content h3,
 .content-card .content p {
   overflow: hidden;
@@ -199,4 +202,23 @@ a:focus {
   width: 30px;
   height: 30px;
   background: none;
+}
+
+@media screen and (max-width: 767px) {
+  #policy-container {
+    margin-top: 4rem;
+  }
+  .card-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .content-card {
+    gap: 1rem;
+  }
+  .content-card h3 {
+    overflow: auto;
+    white-space: wrap;
+  }
+  .content-card .content {
+    gap: 1rem;
+  }
 }

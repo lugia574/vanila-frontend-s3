@@ -7,10 +7,10 @@
   justify-content: center;
   overflow: hidden;
   height: 100%;
+  position: relative;
 }
 
 .contest-item-image {
-  position: relative;
   overflow: hidden;
   aspect-ratio: 7 / 7.5;
 }
@@ -22,14 +22,13 @@
 }
 
 .dday-wrap {
-  width: 20%;
-  height: 8%;
+  // height: 8%;
   position: absolute;
   top: 10px;
   left: 10px;
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
-  padding: 4px 8px;
+  padding: 0.2rem 1rem;
   border-radius: 4px;
   font-size: var(--font-middle-size);
   display: flex;

@@ -73,21 +73,6 @@ document.addEventListener("click", e => {
     if (matchedFilter) {
       matchedFilter.remove();
     }
-    // 하위 필터 해제
-    const detailList = document.querySelector(".detail-list");
-    const activeDetailBtns = detailList.querySelectorAll(".btn-active");
-    const activeFilters = document.querySelectorAll(".search-filter-active");
-
-    activeDetailBtns.forEach(subBtn => {
-      const subName = subBtn.textContent.trim();
-      subBtn.classList.remove("btn-active");
-
-      activeFilters.forEach(active => {
-        if (active.textContent.trim() === subName) {
-          active.parentElement.remove();
-        }
-      });
-    });
 
     applyFilters();
   } else {

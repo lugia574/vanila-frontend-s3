@@ -324,6 +324,7 @@ function renderCommunityList(page = 1, filteredArr) {
     });
     chanageViewCss(container);
   } else {
+    console.log(currentViewType);
     // 카드형 그리기
     sortedArr.forEach(item => {
       const communityCard = document.createElement("community-card");
@@ -465,6 +466,7 @@ window.addEventListener('resize', handleResize);
 
 // 윈도우 최초 로드
 window.addEventListener("DOMContentLoaded", () => {
+  currentViewType = "list";
   renderCommunityList(1);
   renderPagination(1);
 });

@@ -1,4 +1,3 @@
 # vanila-frontend
 
-다시 시작
-ㄵㄴㄴ
+진심 왜 안됨?
